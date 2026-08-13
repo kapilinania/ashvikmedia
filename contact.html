@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Ashvik Media</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link">Our Work</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+      <button class="mobile-nav-toggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+      </a>
+      <button class="mobile-drawer-close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+      <a href="services.html" class="mobile-nav-link"><span>Services</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+      <a href="portfolio.html" class="mobile-nav-link"><span>Our Work</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+      <a href="about.html" class="mobile-nav-link"><span>About Us</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+      <a href="packages.html" class="mobile-nav-link"><span>Packages</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+      <a href="contact.html" class="mobile-nav-link active"><span>Contact</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">Contact <span class="text-gold">Us</span></h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i> <span>Contact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Details Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info Left -->
+        <div>
+          <div class="section-tag section-tag-gold">LET'S CONNECT</div>
+          <h2 class="section-title">Schedule A Free Strategy Consultation</h2>
+          <p class="section-description">
+            Ready to grow your online store, elevate your social media presence, or create stunning brand graphics? Get in touch with our marketing team today.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <div class="icon-badge" style="margin-bottom: 0;"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h4 style="font-weight: 700;">Location</h4>
+                <p style="color: var(--text-dark-secondary);">Indore, Madhya Pradesh, India</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <div class="icon-badge" style="margin-bottom: 0;"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h4 style="font-weight: 700;">Email Us</h4>
+                <p style="color: var(--text-dark-secondary);">contact@ashvikmedia.com</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <div class="icon-badge" style="margin-bottom: 0;"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h4 style="font-weight: 700;">Call Us</h4>
+                <p style="color: var(--text-dark-secondary);">+91 98765 43210</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Right -->
+        <div style="background-color: var(--light-card); border: 1px solid var(--light-border); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md);">
+          <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem;">Send Us A Message</h3>
+          <form class="contact-form-element">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" placeholder="e.g. rahul@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Service Interested In</label>
+              <select class="form-select">
+                <option value="ecommerce">E-Commerce Solutions</option>
+                <option value="social-media">Social Media Management</option>
+                <option value="graphics">Graphic Design & Branding</option>
+                <option value="all">All-in-One Growth Bundle</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Project Details</label>
+              <textarea class="form-textarea" rows="4" placeholder="Tell us about your brand goals..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width: 100%;">SEND MESSAGE <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        © Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
