@@ -379,6 +379,147 @@ document.addEventListener('DOMContentLoaded', () => {
       // Initialize
       updateCustomCalculator();
     }
+
+    // 13. Interactive 8-Second Lead Capture Call Back Modal
+    function initCallBackModal() {
+      if (localStorage.getItem('ashvik_modal_submitted') === 'true') {
+        return;
+      }
+      if (sessionStorage.getItem('ashvik_modal_closed') === 'true') {
+        return;
+      }
+
+      if (!document.getElementById('callBackModalOverlay')) {
+        const modalHTML = `
+          <div class="callback-modal-overlay" id="callBackModalOverlay">
+            <div class="callback-modal-card">
+              <button class="callback-modal-close" id="callBackModalClose" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+              <div class="callback-modal-badge">
+                <span class="status-dot-pulse" style="background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+                INSTANT 15-MIN CALLBACK
+              </div>
+              <h3 class="callback-modal-title">Request a <span class="text-gold">Call Back</span></h3>
+              <p class="callback-modal-desc">Enter your details below and one of our senior growth experts will reach out to you shortly.</p>
+              <form class="callback-modal-form" id="callBackModalForm">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                  <div class="input-icon-wrapper">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" class="form-input" id="cbName" placeholder="Your Full Name" required>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                  <div class="input-icon-wrapper">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" class="form-input" id="cbPhone" placeholder="Your Mobile Number (+91 99935 15138)" required>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-gold callback-submit-btn" style="width: 100%;">
+                  <span>REQUEST CALL BACK</span>
+                  <i class="fa-solid fa-phone-volume"></i>
+                </button>
+              </form>
+              <div class="callback-modal-footer">
+                <i class="fa-solid fa-lock"></i> 100% Confidential & Free Audit
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+      }
+
+      const overlay = document.getElementById('callBackModalOverlay');
+      const closeBtn = document.getElementById('callBackModalClose');
+      const form = document.getElementById('callBackModalForm');
+
+      setTimeout(() => {
+        if (localStorage.getItem('ashvik_modal_submitted') !== 'true' && 
+            sessionStorage.getItem('ashvik_modal_closed') !== 'true') {
+          if (overlay) overlay.classList.add('show');
+        }
+      }, 8000);
+
+      function closeModal() {
+        if (overlay) overlay.classList.remove('show');
+        sessionStorage.setItem('ashvik_modal_closed', 'true');
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      if (overlay) {
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closeModal();
+        });
+      }
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('cbName').value;
+          const phone = document.getElementById('cbPhone').value;
+
+          const modalCard = overlay.querySelector('.callback-modal-card');
+          if (modalCard) {
+            modalCard.innerHTML = `
+              <div style="text-align: center; padding: 1rem 0;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-gold); color: #0A0C10; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1.25rem; box-shadow: 0 0 20px rgba(255,199,0,0.4);">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem;">Request Submitted!</h3>
+                <p style="color: #94A3B8; font-size: 0.88rem; line-height: 1.5; margin-bottom: 1.25rem;">Thank you, <strong>${name}</strong>. Our growth team will call you shortly on <strong>${phone}</strong>.</p>
+                <button class="btn btn-gold" id="cbSuccessDone" style="width: 100%;">DONE</button>
+              </div>
+            `;
+          }
+
+          localStorage.setItem('ashvik_modal_submitted', 'true');
+
+          const doneBtn = document.getElementById('cbSuccessDone');
+          if (doneBtn) {
+            doneBtn.addEventListener('click', () => {
+              if (overlay) overlay.classList.remove('show');
+            });
+          }
+        });
+      }
+    }
+
+    initCallBackModal();
+
+    // 14. Floating 3-Button Quick Action Widget (WhatsApp, Instagram, Phone Call)
+    function initFloatingQuickActions() {
+      if (!document.getElementById('floatingQuickActionsStack')) {
+        const floatingHTML = `
+          <div class="floating-quick-actions-stack" id="floatingQuickActionsStack">
+            <!-- 1. WhatsApp Button (Top) -->
+            <a href="https://wa.me/919993515138" target="_blank" rel="noopener noreferrer" class="floating-action-btn btn-whatsapp" aria-label="Chat on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span class="floating-action-tooltip">Chat on WhatsApp</span>
+            </a>
+
+            <!-- 2. Instagram Button (Middle) -->
+            <a href="https://instagram.com/ashvikmedia" target="_blank" rel="noopener noreferrer" class="floating-action-btn btn-instagram" aria-label="Follow on Instagram">
+              <i class="fa-brands fa-instagram"></i>
+              <span class="floating-action-tooltip">Follow on Instagram</span>
+            </a>
+
+            <!-- 3. Direct Phone Call Button (Bottom) -->
+            <a href="tel:+919993515138" class="floating-action-btn btn-phone" aria-label="Direct Phone Call">
+              <i class="fa-solid fa-phone"></i>
+              <span class="floating-action-tooltip">Call +91 99935 15138</span>
+            </a>
+          </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', floatingHTML);
+      }
+    }
+
+    initFloatingQuickActions();
   });
+
+
 
 
