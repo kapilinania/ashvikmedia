@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Packages & Pricing | Ashvik Media</title>
+  <title>Packages & Pricing | Ashvik Media - Growth & Marketing Agency</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/pages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- Custom Glowing Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
 
   <!-- Navigation Bar -->
   <header class="navbar">
@@ -25,7 +29,7 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       <a href="contact.html" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
-      <button class="mobile-nav-toggle"><i class="fa-solid fa-bars"></i></button>
+      <button class="mobile-nav-toggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
 
@@ -36,7 +40,7 @@
       <a href="index.html" class="brand-logo">
         <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
       </a>
-      <button class="mobile-drawer-close"><i class="fa-solid fa-xmark"></i></button>
+      <button class="mobile-drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="mobile-nav-links">
       <a href="index.html" class="mobile-nav-link"><span>Home</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
@@ -51,87 +55,514 @@
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <h1 class="page-hero-title">Marketing <span class="text-gold">Packages</span></h1>
+      <h1 class="page-hero-title">Marketing & Growth <span class="text-gold">Packages</span></h1>
       <div class="breadcrumb">
-        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i> <span>Packages</span>
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i> <span>Growth Packages</span>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section -->
+  <!-- Pricing Section with Interactive Billing Cycle Toggle -->
   <section class="section-padding">
     <div class="container">
-      <div style="text-align: center;">
-        <div class="section-tag section-tag-gold">TRANSPARENT PRICING</div>
-        <h2 class="section-title">Scalable Plans Built For Every Growth Stage</h2>
+      <div class="text-center">
+        <div class="section-tag section-tag-gold">TRANSPARENT VALUE & ROI</div>
+        <h2 class="section-title">Scalable Growth Plans Built For <span class="text-gold">Every Business Stage</span></h2>
+        <p class="section-description text-center" style="margin-left: auto; margin-right: auto; max-width: 680px;">
+          Choose a tailored growth retainer or customize your exact add-ons below. All plans include dedicated account management and weekly ROI reporting.
+        </p>
+
+        <!-- Interactive Billing Cycle Switcher -->
+        <div class="billing-switcher-wrapper">
+          <button class="billing-switch-btn active" data-cycle="monthly">Monthly Billing</button>
+          <button class="billing-switch-btn" data-cycle="quarterly">
+            Quarterly
+            <span class="billing-discount-tag">SAVE 15%</span>
+          </button>
+          <button class="billing-switch-btn" data-cycle="annual">
+            Annual
+            <span class="billing-discount-tag">SAVE 25%</span>
+          </button>
+        </div>
       </div>
 
+      <!-- Pricing Cards Grid -->
       <div class="pricing-grid">
-        <!-- Starter Plan -->
+        <!-- Starter Growth Plan -->
         <div class="pricing-card">
           <div>
-            <h3 class="hero-card-title">Starter Growth</h3>
-            <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Ideal for newly launched online brands.</p>
-            <div class="pricing-price">₹19,999 <span>/ month</span></div>
+            <div class="pricing-card-header-icon">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3 class="pricing-card-title">Starter Growth</h3>
+            <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Ideal for newly launched online stores & startups seeking brand visibility.</p>
+            <div class="pricing-price">
+              <span class="pricing-price-val" data-monthly="19999">₹19,999</span>
+              <span>/ month</span>
+            </div>
             <div class="check-list">
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>E-Commerce Store Setup</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>12 Custom Graphic Posts/mo</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Basic Social Media Management</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Monthly Performance Report</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>E-Commerce Store & Page Setup</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>12 Custom Brand Graphic Posts/mo</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Social Media Profile Management</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Basic Ad Setup & Target Audiences</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Monthly Growth Analytics Report</span></div>
             </div>
           </div>
           <div style="margin-top: 2rem;">
-            <a href="contact.html" class="btn btn-outline-dark" style="width: 100%;">Get Started</a>
+            <a href="contact.html?plan=starter" class="btn btn-outline-dark" style="width: 100%;">START WITH STARTER</a>
           </div>
         </div>
 
-        <!-- Growth Pro Plan (Featured) -->
+        <!-- Pro Performance Plan (Featured) -->
         <div class="pricing-card featured">
-          <div class="pricing-badge">MOST POPULAR</div>
+          <div class="pricing-badge">🔥 MOST POPULAR - BEST VALUE</div>
           <div>
-            <h3 class="hero-card-title">Pro Performance</h3>
-            <p style="font-size: 0.85rem; color: var(--text-dark-muted);">For scaling stores requiring high-conversion ads.</p>
-            <div class="pricing-price">₹39,999 <span>/ month</span></div>
+            <div class="pricing-card-header-icon" style="background: var(--primary-gold); color: #0A0C10;">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3 class="pricing-card-title">Pro Performance</h3>
+            <p style="font-size: 0.85rem; color: var(--text-dark-muted);">For scaling D2C brands & stores needing high-converting paid ad creatives.</p>
+            <div class="pricing-price">
+              <span class="pricing-price-val" data-monthly="39999">₹39,999</span>
+              <span>/ month</span>
+            </div>
             <div class="check-list">
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Full E-Commerce Optimization</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>24 High-Quality Creatives + Reels</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Paid Meta & Google Ads Management</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Weekly Growth Analytics & Strategy</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Dedicated Account Manager</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Full E-Commerce Store Optimization</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>24 High-Impact Creatives + Viral Reels</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Meta & Google High-ROI Paid Ads</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Conversion Funnel & A/B Testing</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Weekly Performance & ROAS Reports</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Dedicated Senior Growth Lead</span></div>
             </div>
           </div>
           <div style="margin-top: 2rem;">
-            <a href="contact.html" class="btn btn-gold" style="width: 100%;">Choose Pro</a>
+            <a href="contact.html?plan=pro" class="btn btn-gold" style="width: 100%;">CLAIM PRO PERFORMANCE</a>
           </div>
         </div>
 
-        <!-- Enterprise Plan -->
+        <!-- Enterprise Dominance Plan -->
         <div class="pricing-card">
           <div>
-            <h3 class="hero-card-title">Enterprise Dominance</h3>
-            <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Omnichannel growth strategy & complete brand handling.</p>
-            <div class="pricing-price">₹79,999 <span>/ month</span></div>
+            <div class="pricing-card-header-icon">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <h3 class="pricing-card-title">Enterprise Dominance</h3>
+            <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Complete omnichannel marketing execution & market dominance.</p>
+            <div class="pricing-price">
+              <span class="pricing-price-val" data-monthly="79999">₹79,999</span>
+              <span>/ month</span>
+            </div>
             <div class="check-list">
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>End-to-End E-Commerce & Marketplace</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Unlimited Graphics & Ad Creatives</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Multi-Platform Paid Advertising</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Influencer & PR Campaigns</span></div>
-              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>24/7 Priority VIP Support</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>End-to-End E-Commerce & Marketplace SEO</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Unlimited Graphics, Ads & Amazon A+</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Multi-Platform Paid Advertising Scaling</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Influencer Collaborations & PR</span></div>
+              <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>24/7 Priority VIP Director Support</span></div>
             </div>
           </div>
           <div style="margin-top: 2rem;">
-            <a href="contact.html" class="btn btn-outline-dark" style="width: 100%;">Contact Enterprise</a>
+            <a href="contact.html?plan=enterprise" class="btn btn-outline-dark" style="width: 100%;">TALK TO ENTERPRISE TEAM</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- NEW SECTION 1: Interactive Custom Growth Package & Add-On Estimator -->
+  <section class="section-padding custom-builder-wrapper">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag section-tag-gold">FLEXIBLE TAILORED STACK</div>
+        <h2 class="section-title">Build Your Custom <span class="text-gold">Growth Package</span></h2>
+        <p class="section-description text-center" style="margin-left: auto; margin-right: auto; max-width: 680px;">
+          Mix and match specialized services to build a custom growth stack. Toggle add-ons below to see your live estimated monthly retainer.
+        </p>
+      </div>
+
+      <div class="custom-builder-grid">
+        <!-- Add-On Cards Selection Grid -->
+        <div class="addon-cards-wrapper">
+          <div class="addon-card-item selected" data-name="E-Commerce Store Optimization" data-price="15000">
+            <div class="addon-checkbox"><i class="fa-solid fa-check"></i></div>
+            <div class="addon-card-info">
+              <h5>E-Commerce Store Funnel & CRO</h5>
+              <p>Conversion rate optimization, store audit, checkout streamlining, and speed optimization.</p>
+              <div class="addon-price-tag">+ ₹15,000 / month</div>
+            </div>
+          </div>
+
+          <div class="addon-card-item selected" data-name="12 Short-Form Viral Reels" data-price="18000">
+            <div class="addon-checkbox"><i class="fa-solid fa-check"></i></div>
+            <div class="addon-card-info">
+              <h5>12 Viral Reels & Short Video Ads</h5>
+              <p>Scriptwriting, professional video editing, motion graphics, and sound design.</p>
+              <div class="addon-price-tag">+ ₹18,000 / month</div>
+            </div>
+          </div>
+
+          <div class="addon-card-item" data-name="Amazon A+ Content & Listing SEO" data-price="12000">
+            <div class="addon-checkbox"></div>
+            <div class="addon-card-info">
+              <h5>Amazon A+ Content & Listing SEO</h5>
+              <p>Premium EBC banner graphics, storefront design, and high-converting search keywords.</p>
+              <div class="addon-price-tag">+ ₹12,000 / month</div>
+            </div>
+          </div>
+
+          <div class="addon-card-item selected" data-name="Meta & TikTok Paid Ad Campaigns" data-price="22000">
+            <div class="addon-checkbox"><i class="fa-solid fa-check"></i></div>
+            <div class="addon-card-info">
+              <h5>Meta & TikTok Paid Ad Scaling</h5>
+              <p>Media buying, retargeting funnels, audience testing, and daily ROAS monitoring.</p>
+              <div class="addon-price-tag">+ ₹22,000 / month</div>
+            </div>
+          </div>
+
+          <div class="addon-card-item" data-name="Complete Visual Brand Identity" data-price="14000">
+            <div class="addon-checkbox"></div>
+            <div class="addon-card-info">
+              <h5>Complete Visual Brand Identity Kit</h5>
+              <p>Custom logo design, brand guidelines, color palettes, packaging assets, and social kits.</p>
+              <div class="addon-price-tag">+ ₹14,000 / month</div>
+            </div>
+          </div>
+
+          <div class="addon-card-item" data-name="A/B Landing Page Testing" data-price="10000">
+            <div class="addon-checkbox"></div>
+            <div class="addon-card-info">
+              <h5>A/B Landing Page Testing & Analytics</h5>
+              <p>Continuous conversion heatmaps, user behavior tracking, and landing page split tests.</p>
+              <div class="addon-price-tag">+ ₹10,000 / month</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Live Estimator Summary Card -->
+        <div class="builder-total-card">
+          <div class="builder-total-header">Your Custom Stack Summary</div>
+          <div class="builder-selected-list" id="builderSelectedList">
+            <!-- Populated dynamically via JS -->
+          </div>
+          <div class="builder-summary-row">
+            <span class="builder-summary-label">Estimated Retainer:</span>
+            <span class="builder-summary-val" id="builderTotalVal">₹55,000</span>
+          </div>
+          <a href="contact.html?custom=true" id="getCustomProposalBtn" class="btn btn-gold" style="width: 100%; margin-top: 1.5rem;">
+            <span>REQUEST PROPOSAL FOR THIS STACK</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 2: Detailed Feature Comparison Matrix Table -->
+  <section class="section-padding comparison-matrix-wrapper">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag section-tag-gold">FULL TRANSPARENCY</div>
+        <h2 class="section-title">Detailed Feature <span class="text-gold">Comparison Matrix</span></h2>
+        <p class="section-description text-center" style="margin-left: auto; margin-right: auto; max-width: 680px;">
+          Compare feature availability across all retainer tiers to pick the optimal package for your roadmap.
+        </p>
+      </div>
+
+      <div class="comparison-table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature & Capability</th>
+              <th>Starter Growth</th>
+              <th>Pro Performance (Popular)</th>
+              <th>Enterprise Dominance</th>
+              <th>Custom Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="comparison-feature-name">Monthly Custom Graphic Creatives</td>
+              <td class="comparison-cell-val">12 Creatives</td>
+              <td class="comparison-cell-val" style="color: #D97706;">24 Creatives + Reels</td>
+              <td class="comparison-cell-val" style="color: #10B981;">Unlimited</td>
+              <td class="comparison-cell-val">As Configured</td>
+            </tr>
+            <tr>
+              <td class="comparison-feature-name">Short-Form Video & Reel Editing</td>
+              <td class="comparison-cell-cross"><i class="fa-solid fa-minus"></i></td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> (8/mo)</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> (16+/mo)</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Optional</td>
+            </tr>
+            <tr>
+              <td class="comparison-feature-name">Paid Meta & TikTok Ad Management</td>
+              <td class="comparison-cell-val">Basic Setup</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Full Scaling</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Omnichannel</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Optional</td>
+            </tr>
+            <tr>
+              <td class="comparison-feature-name">E-Commerce Store Optimization & CRO</td>
+              <td class="comparison-cell-cross"><i class="fa-solid fa-minus"></i></td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Included</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Advanced A/B</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Optional</td>
+            </tr>
+            <tr>
+              <td class="comparison-feature-name">Amazon A+ Content & Marketplace SEO</td>
+              <td class="comparison-cell-cross"><i class="fa-solid fa-minus"></i></td>
+              <td class="comparison-cell-cross"><i class="fa-solid fa-minus"></i></td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Included</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Optional</td>
+            </tr>
+            <tr>
+              <td class="comparison-feature-name">Reporting & Analytics Frequency</td>
+              <td class="comparison-cell-val">Monthly</td>
+              <td class="comparison-cell-val" style="color: #D97706;">Weekly ROI Reports</td>
+              <td class="comparison-cell-val" style="color: #10B981;">Real-Time Dashboard</td>
+              <td class="comparison-cell-val">Weekly</td>
+            </tr>
+            <tr>
+              <td class="comparison-feature-name">Dedicated Account Manager</td>
+              <td class="comparison-cell-cross"><i class="fa-solid fa-minus"></i> Shared</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Senior Lead</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> VP Director</td>
+              <td class="comparison-cell-check"><i class="fa-solid fa-circle-check"></i> Dedicated</td>
+            </tr>
+            <tr>
+              <td class="comparison-feature-name">Support SLA</td>
+              <td class="comparison-cell-val">24-48 Hours</td>
+              <td class="comparison-cell-val" style="color: #D97706;">Same-Day Priority</td>
+              <td class="comparison-cell-val" style="color: #10B981;">24/7 VIP Phone</td>
+              <td class="comparison-cell-val">Same-Day Priority</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 3: Risk-Free Guarantee & Package FAQ Accordion -->
+  <section class="section-padding packages-faq-wrapper" style="background: var(--light-bg-alt);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag section-tag-gold">PEACE OF MIND</div>
+        <h2 class="section-title">Growth Guarantees & <span class="text-gold">Package FAQs</span></h2>
+        <p class="section-description text-center" style="margin-left: auto; margin-right: auto; max-width: 680px;">
+          Have questions before picking a retainer? We believe in zero friction, complete transparency, and performance-driven agreements.
+        </p>
+      </div>
+
+      <div class="packages-faq-grid">
+        <!-- Guarantee Box Card -->
+        <div class="guarantee-box-card">
+          <div class="guarantee-box-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1rem;">The Ashvik Performance Guarantee</h3>
+          <p style="color: #94A3B8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            We don't lock you into restrictive long-term contracts. All our monthly retainers operate on a performance-driven basis. If we don't meet agreed campaign deliverables in month 1, we rework your creatives for free.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <i class="fa-solid fa-circle-check text-gold"></i>
+              <span style="font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">No Locked-In Long Term Contracts</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <i class="fa-solid fa-circle-check text-gold"></i>
+              <span style="font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">NDA & Data Protection Included</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <i class="fa-solid fa-circle-check text-gold"></i>
+              <span style="font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">100% Asset Ownership (Logos & Creatives)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="faq-accordion-wrapper">
+          <div class="faq-item active">
+            <div class="faq-question">
+              <h4>Can I upgrade or downgrade my plan at any time?</h4>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! You can upgrade, downgrade, or pause your package at the end of any monthly billing cycle with just 7 days notice to your dedicated account lead.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Are ad budgets included in the monthly retainer?</h4>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>No, ad spend is paid directly to Meta, Google, or TikTok from your ad manager account. Our package fee covers complete campaign strategy, ad creative design, copywriting, media buying, and daily optimization.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>How soon will we see measurable results?</h4>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Graphic assets and store optimizations are completed within the first 5-7 business days. Paid ad testing begins immediately, with initial ROAS signals and audience data typically stabilizing within 10-14 days.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Do you offer custom packages for international clients?</h4>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely! We manage campaigns for brands across the US, UK, UAE, and APAC. We offer invoicing in USD, AED, or EUR with dedicated global account directors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Futuristic Footer -->
   <footer class="footer">
     <div class="container">
+      <!-- Footer Top Interactive CTA Banner -->
+      <div class="footer-cta-banner">
+        <div class="footer-cta-info">
+          <span class="status-indicator-pill">
+            <span class="status-dot-pulse"></span>
+            ACCEPTING NEW PROJECTS FOR 2026
+          </span>
+          <h3 class="footer-cta-heading">Ready To Scale Your Brand To <span class="text-gold">New Heights?</span></h3>
+          <p class="footer-cta-subtext">Book a free strategy session with our senior digital marketing & growth specialists today.</p>
+        </div>
+        <div class="footer-cta-actions">
+          <a href="contact.html" class="btn btn-gold footer-banner-btn">
+            <span>GET FREE STRATEGY CALL</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-dark-outline footer-banner-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>CHAT ON WHATSAPP</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Newsletter -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            Ashvik Media is a premier full-service digital agency empowering e-commerce brands, high-growth businesses, and creators with world-class marketing, design, and conversion strategies.
+          </p>
+          <div class="footer-newsletter-box">
+            <h5 class="newsletter-title">Subscribe to Growth Insights</h5>
+            <form class="newsletter-form">
+              <div class="newsletter-input-group">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
+                <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="social-links-wrapper">
+            <span class="social-label">Follow Our Journey:</span>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Home</a>
+            <a href="about.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> About Us</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Services</a>
+            <a href="portfolio.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Our Work</a>
+            <a href="packages.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Growth Packages</a>
+            <a href="blog.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Blog & Insights</a>
+            <a href="contact.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Contact Us</a>
+            <a href="privacy-policy.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Privacy Policy</a>
+            <a href="terms.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-title">Expertise & Services</h4>
+          <div class="footer-links">
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Performance Marketing</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-title">Headquarters</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="contact-item-label">Office Address</span>
+                <p class="contact-item-val">Vijay Nagar, Scheme No 54, Indore, Madhya Pradesh 452010, India</p>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="contact-item-label">Email Us</span>
+                <a href="mailto:contact@ashvikmedia.com" class="contact-item-val link-val">contact@ashvikmedia.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span class="contact-item-label">Call / WhatsApp</span>
+                <a href="tel:+919876543210" class="contact-item-val link-val">+91 98765 43210</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <span class="contact-item-label">Working Hours</span>
+                <p class="contact-item-val">Mon - Sat: 9:00 AM - 7:00 PM IST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
       <div class="footer-bottom">
-        © Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.
+        <div class="footer-bottom-content">
+          <p>© Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.</p>
+          <div class="footer-bottom-extra">
+            <span>Crafted with <i class="fa-solid fa-heart" style="color: var(--primary-gold);"></i> for digital growth</span>
+          </div>
+        </div>
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+          <span>TOP</span>
+        </button>
       </div>
     </div>
   </footer>

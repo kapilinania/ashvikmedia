@@ -58,86 +58,344 @@
     </div>
   </section>
 
-  <!-- Contact Form & Details Section -->
-  <section class="section-padding">
+  <!-- Interactive Contact Form & Details Section (LET'S CONNECT) -->
+  <section class="section-padding" style="position: relative; overflow: hidden;">
     <div class="container">
       <div class="contact-grid">
-        <!-- Contact Info Left -->
-        <div>
-          <div class="section-tag section-tag-gold">LET'S CONNECT</div>
-          <h2 class="section-title">Schedule A Free Strategy Consultation</h2>
-          <p class="section-description">
-            Ready to grow your online store, elevate your social media presence, or create stunning brand graphics? Get in touch with our marketing team today.
-          </p>
-
-          <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <div class="icon-badge" style="margin-bottom: 0;"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <h4 style="font-weight: 700;">Location</h4>
-                <p style="color: var(--text-dark-secondary);">Indore, Madhya Pradesh, India</p>
-              </div>
+        
+        <!-- Contact Info Left Column -->
+        <div class="contact-info-wrapper">
+          <div>
+            <div class="section-tag section-tag-gold">
+              <span class="status-dot-pulse" style="display: inline-block; margin-right: 4px;"></span>
+              LET'S CONNECT
             </div>
+            <h2 class="section-title">Schedule A Free <span class="text-gold">Growth Strategy</span> Consultation</h2>
+            <p class="section-description" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 2rem;">
+              Ready to scale your e-commerce store, supercharge your social media advertising, or create a world-class brand identity? Reach out directly or book your 1-on-1 strategy call today.
+            </p>
+          </div>
 
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <div class="icon-badge" style="margin-bottom: 0;"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <h4 style="font-weight: 700;">Email Us</h4>
-                <p style="color: var(--text-dark-secondary);">contact@ashvikmedia.com</p>
-              </div>
+          <!-- Interactive Contact Cards -->
+          <div class="contact-card-box">
+            <div class="contact-card-icon">
+              <i class="fa-solid fa-location-dot"></i>
             </div>
+            <div class="contact-card-content">
+              <span class="contact-card-label">Headquarters Address</span>
+              <div class="contact-card-val">Vijay Nagar, Scheme No 54</div>
+              <div class="contact-card-sub">Indore, Madhya Pradesh 452010, India</div>
+            </div>
+            <a href="#officeMapSection" class="contact-card-action">Map View <i class="fa-solid fa-arrow-down"></i></a>
+          </div>
 
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <div class="icon-badge" style="margin-bottom: 0;"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <h4 style="font-weight: 700;">Call Us</h4>
-                <p style="color: var(--text-dark-secondary);">+91 98765 43210</p>
-              </div>
+          <div class="contact-card-box">
+            <div class="contact-card-icon">
+              <i class="fa-solid fa-envelope"></i>
             </div>
+            <div class="contact-card-content">
+              <span class="contact-card-label">Direct Email Support</span>
+              <div class="contact-card-val">
+                <a href="mailto:contact@ashvikmedia.com" class="contact-card-link">contact@ashvikmedia.com</a>
+              </div>
+              <div class="contact-card-sub">Guaranteed response within 2 hours</div>
+            </div>
+            <a href="mailto:contact@ashvikmedia.com" class="contact-card-action">Send Mail <i class="fa-solid fa-paper-plane"></i></a>
+          </div>
+
+          <div class="contact-card-box">
+            <div class="contact-card-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-card-content">
+              <span class="contact-card-label">Direct Phone & WhatsApp</span>
+              <div class="contact-card-val">
+                <a href="tel:+919876543210" class="contact-card-link">+91 98765 43210</a>
+              </div>
+              <div class="contact-card-sub">Available Mon - Sat, 9:00 AM - 7:00 PM IST</div>
+            </div>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="contact-card-action" style="color: #25D366;">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+
+          <!-- Feature Guarantee Badges -->
+          <div class="contact-guarantee-list">
+            <span class="guarantee-chip"><i class="fa-solid fa-circle-check"></i> Free 30-Min Strategy Audit</span>
+            <span class="guarantee-chip"><i class="fa-solid fa-circle-check"></i> Custom ROI Roadmap</span>
+            <span class="guarantee-chip"><i class="fa-solid fa-circle-check"></i> NDA Protected Confidentiality</span>
           </div>
         </div>
 
-        <!-- Contact Form Right -->
-        <div style="background-color: var(--light-card); border: 1px solid var(--light-border); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md);">
-          <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem;">Send Us A Message</h3>
+        <!-- Contact Form Right Column -->
+        <div class="contact-form-card">
+          <div class="contact-form-header">
+            <div>
+              <h3 class="contact-form-header-title">Send Us A Message</h3>
+              <p style="font-size: 0.8rem; color: #94A3B8; margin: 2px 0 0 0;">Fill in your details for a fast strategy proposal</p>
+            </div>
+            <span class="contact-form-header-tag">🚀 24h Response</span>
+          </div>
+
           <form class="contact-form-element">
             <div class="form-group">
-              <label class="form-label">Full Name</label>
-              <input type="text" class="form-input" placeholder="e.g. Rahul Sharma" required>
+              <label class="form-label">Your Full Name</label>
+              <div class="input-icon-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" class="form-input" placeholder="e.g. Rahul Sharma" required>
+              </div>
             </div>
+
+            <div class="contact-form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" class="form-input" placeholder="rahul@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Phone / WhatsApp</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-phone"></i>
+                  <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+            </div>
+
             <div class="form-group">
-              <label class="form-label">Email Address</label>
-              <input type="email" class="form-input" placeholder="e.g. rahul@example.com" required>
+              <label class="form-label">Primary Service Required</label>
+              <div class="input-icon-wrapper">
+                <i class="fa-solid fa-layer-group"></i>
+                <select class="form-select">
+                  <option value="ecommerce">E-Commerce Store & Sales Growth</option>
+                  <option value="social-media">Social Media Ads & Viral Reels</option>
+                  <option value="graphics">Graphic Design & Brand Identity</option>
+                  <option value="amazon">Amazon A+ Content & Listing SEO</option>
+                  <option value="all">All-In-One Full Growth Package</option>
+                </select>
+              </div>
             </div>
+
             <div class="form-group">
-              <label class="form-label">Phone Number</label>
-              <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+              <label class="form-label">Estimated Monthly Marketing Budget</label>
+              <div class="budget-options-grid">
+                <label class="budget-pill-option">
+                  <input type="radio" name="budget" value="25k-50k">
+                  <span class="budget-pill-label">₹25k - ₹50k</span>
+                </label>
+                <label class="budget-pill-option">
+                  <input type="radio" name="budget" value="50k-1L" checked>
+                  <span class="budget-pill-label">₹50k - ₹1L</span>
+                </label>
+                <label class="budget-pill-option">
+                  <input type="radio" name="budget" value="1L-3L">
+                  <span class="budget-pill-label">₹1L - ₹3L</span>
+                </label>
+                <label class="budget-pill-option">
+                  <input type="radio" name="budget" value="3L+">
+                  <span class="budget-pill-label">₹3L+ / Enterprise</span>
+                </label>
+              </div>
             </div>
+
             <div class="form-group">
-              <label class="form-label">Service Interested In</label>
-              <select class="form-select">
-                <option value="ecommerce">E-Commerce Solutions</option>
-                <option value="social-media">Social Media Management</option>
-                <option value="graphics">Graphic Design & Branding</option>
-                <option value="all">All-in-One Growth Bundle</option>
-              </select>
+              <label class="form-label">Project Details & Brand Goals</label>
+              <textarea class="form-textarea" rows="4" placeholder="Tell us about your brand goals, target market, or existing challenges..."></textarea>
             </div>
-            <div class="form-group">
-              <label class="form-label">Project Details</label>
-              <textarea class="form-textarea" rows="4" placeholder="Tell us about your brand goals..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold" style="width: 100%;">SEND MESSAGE <i class="fa-solid fa-paper-plane"></i></button>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; padding: 1rem; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.5px;">
+              <span>SEND STRATEGY REQUEST</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Ultra-Modern Google Map Hub Section -->
+  <section class="section-padding contact-map-section" id="officeMapSection">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <div class="section-tag section-tag-gold">LOCATE OUR OFFICE HUB</div>
+        <h2 class="section-title">Visit Our Agency Headquarters In <span class="text-gold">Indore</span></h2>
+        <p class="section-description text-center" style="margin-left: auto; margin-right: auto; max-width: 680px;">
+          Conveniently located in Vijay Nagar, Scheme No 54 — the commercial heart & tech corridor of Indore. Drop by for a cup of coffee and a face-to-face growth session!
+        </p>
+      </div>
+
+      <!-- Interactive Map Hub Card Architecture -->
+      <div class="contact-map-hub-card">
+        <div class="map-control-bar">
+          <div class="map-control-info">
+            <div class="map-control-icon">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <div>
+              <div class="map-control-title">Ashvik Media Headquarters</div>
+              <div class="map-control-subtitle">Vijay Nagar, Scheme No 54, Indore, MP 452010, India</div>
+            </div>
+          </div>
+
+          <div class="map-action-buttons">
+            <a href="https://maps.google.com/?q=Vijay+Nagar+Scheme+No+54+Indore" target="_blank" rel="noopener noreferrer" class="map-action-btn map-action-btn-gold">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span>GET DIRECTIONS</span>
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="map-action-btn map-action-btn-outline">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WHATSAPP US</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="map-viewport-frame">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13318.205467143414!2d75.89682020000001!3d22.7552096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396302af403406fb%3A0x5b50834b117f8bab!2sVijay%20Nagar%2C%20Scheme%20No%2054%2C%20Indore%2C%20Madhya%20Pradesh%20452010!5e1!3m2!1sen!2sin!4v1786725967397!5m2!1sen!2sin" width="100%" height="520" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Ashvik Media Google Maps Indore Location"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Interactive Futuristic Footer -->
   <footer class="footer">
     <div class="container">
+      <!-- Footer Top Interactive CTA Banner -->
+      <div class="footer-cta-banner">
+        <div class="footer-cta-info">
+          <span class="status-indicator-pill">
+            <span class="status-dot-pulse"></span>
+            ACCEPTING NEW PROJECTS FOR 2026
+          </span>
+          <h3 class="footer-cta-heading">Ready To Scale Your Brand To <span class="text-gold">New Heights?</span></h3>
+          <p class="footer-cta-subtext">Book a free strategy session with our senior digital marketing & growth specialists today.</p>
+        </div>
+        <div class="footer-cta-actions">
+          <a href="contact.html" class="btn btn-gold footer-banner-btn">
+            <span>GET FREE STRATEGY CALL</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-dark-outline footer-banner-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>CHAT ON WHATSAPP</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Newsletter -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            Ashvik Media is a premier full-service digital agency empowering e-commerce brands, high-growth businesses, and creators with world-class marketing, design, and conversion strategies.
+          </p>
+          <div class="footer-newsletter-box">
+            <h5 class="newsletter-title">Subscribe to Growth Insights</h5>
+            <form class="newsletter-form">
+              <div class="newsletter-input-group">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
+                <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="social-links-wrapper">
+            <span class="social-label">Follow Our Journey:</span>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Home</a>
+            <a href="about.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> About Us</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Services</a>
+            <a href="portfolio.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Our Work</a>
+            <a href="packages.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Growth Packages</a>
+            <a href="blog.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Blog & Insights</a>
+            <a href="contact.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Contact Us</a>
+            <a href="privacy-policy.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Privacy Policy</a>
+            <a href="terms.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-title">Expertise & Services</h4>
+          <div class="footer-links">
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Performance Marketing</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-title">Headquarters</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="contact-item-label">Office Address</span>
+                <p class="contact-item-val">Vijay Nagar, Scheme No 54, Indore, Madhya Pradesh 452010, India</p>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="contact-item-label">Email Us</span>
+                <a href="mailto:contact@ashvikmedia.com" class="contact-item-val link-val">contact@ashvikmedia.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span class="contact-item-label">Call / WhatsApp</span>
+                <a href="tel:+919876543210" class="contact-item-val link-val">+91 98765 43210</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <span class="contact-item-label">Working Hours</span>
+                <p class="contact-item-val">Mon - Sat: 9:00 AM - 7:00 PM IST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
       <div class="footer-bottom">
-        © Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.
+        <div class="footer-bottom-content">
+          <p>© Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.</p>
+          <div class="footer-bottom-extra">
+            <span>Crafted with <i class="fa-solid fa-heart" style="color: var(--primary-gold);"></i> for digital growth</span>
+          </div>
+        </div>
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+          <span>TOP</span>
+        </button>
       </div>
     </div>
   </footer>
@@ -145,3 +403,4 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+

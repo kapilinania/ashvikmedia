@@ -281,4 +281,104 @@ document.addEventListener('DOMContentLoaded', () => {
 
       revealElements.forEach(el => revealObserver.observe(el));
     }
+
+    // 10. Interactive Back To Top Smooth Scroll
+    const backToTopBtn = document.getElementById('backToTopBtn') || document.querySelector('.back-to-top-btn');
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // 11. Packages Billing Cycle Switcher (Monthly, Quarterly 15% OFF, Annual 25% OFF)
+    const billingBtns = document.querySelectorAll('.billing-switch-btn');
+    const priceElements = document.querySelectorAll('.pricing-price-val');
+
+    if (billingBtns.length > 0 && priceElements.length > 0) {
+      billingBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          billingBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const cycle = btn.getAttribute('data-cycle'); // 'monthly', 'quarterly', 'annual'
+
+          priceElements.forEach(priceEl => {
+            const monthlyPrice = parseInt(priceEl.getAttribute('data-monthly'), 10);
+            let finalPrice = monthlyPrice;
+
+            if (cycle === 'quarterly') {
+              finalPrice = Math.round(monthlyPrice * 0.85); // 15% OFF
+            } else if (cycle === 'annual') {
+              finalPrice = Math.round(monthlyPrice * 0.75); // 25% OFF
+            }
+
+            priceEl.textContent = `₹${finalPrice.toLocaleString('en-IN')}`;
+          });
+        });
+      });
+    }
+
+    // 12. Custom Package Addon Calculator
+    const addonItems = document.querySelectorAll('.addon-card-item');
+    const selectedListContainer = document.getElementById('builderSelectedList');
+    const totalValEl = document.getElementById('builderTotalVal');
+    const customProposalBtn = document.getElementById('getCustomProposalBtn');
+
+    if (addonItems.length > 0 && totalValEl) {
+      function updateCustomCalculator() {
+        let total = 0;
+        let count = 0;
+        if (selectedListContainer) selectedListContainer.innerHTML = '';
+
+        addonItems.forEach(item => {
+          if (item.classList.contains('selected')) {
+            count++;
+            const name = item.getAttribute('data-name');
+            const price = parseInt(item.getAttribute('data-price'), 10);
+            total += price;
+
+            if (selectedListContainer) {
+              const row = document.createElement('div');
+              row.className = 'builder-selected-item';
+              row.innerHTML = `<span><i class="fa-solid fa-check text-gold"></i> ${name}</span> <span class="builder-selected-price">+₹${price.toLocaleString('en-IN')}</span>`;
+              selectedListContainer.appendChild(row);
+            }
+          }
+        });
+
+        if (count === 0 && selectedListContainer) {
+          selectedListContainer.innerHTML = '<p style="font-size:0.85rem; color:#94A3B8;">No add-ons selected yet. Click options on the left to build your package.</p>';
+        }
+
+        totalValEl.textContent = `₹${total.toLocaleString('en-IN')}`;
+
+        if (customProposalBtn) {
+          customProposalBtn.href = `contact.html?custom_package=true&total=${total}`;
+        }
+      }
+
+      addonItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          item.classList.toggle('selected');
+          const checkbox = item.querySelector('.addon-checkbox');
+          if (checkbox) {
+            if (item.classList.contains('selected')) {
+              checkbox.innerHTML = '<i class="fa-solid fa-check"></i>';
+            } else {
+              checkbox.innerHTML = '';
+            }
+          }
+          updateCustomCalculator();
+        });
+      });
+
+      // Initialize
+      updateCustomCalculator();
+    }
   });
+
+
