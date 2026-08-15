@@ -520,6 +520,821 @@ document.addEventListener('DOMContentLoaded', () => {
     initFloatingQuickActions();
   });
 
+/* ==========================================================================
+   SOCIAL MEDIA PAGE INTERACTIVE ENGINE
+   ========================================================================== */
+window.updateSocialCalc = function() {
+  const budgetRange = document.getElementById('budgetRange');
+  const budgetVal = document.getElementById('budgetVal');
+  if (!budgetRange || !budgetVal) return;
+
+  const budget = parseInt(budgetRange.value, 10);
+  budgetVal.innerText = '₹' + budget.toLocaleString('en-IN');
+
+  const activePlatBtn = document.querySelector('.calc-platform-btn.active');
+  const platform = activePlatBtn ? activePlatBtn.dataset.platform : 'instagram';
+  const objective = document.getElementById('calcObjective')?.value || 'sales';
+
+  // Multipliers based on platform & objective
+  let multReach = 7.4;
+  let multViews = 16.8;
+  let multConv = 0.035;
+  let roasVal = '5.2X';
+
+  if (platform === 'tiktok') { multReach = 9.2; multViews = 24.0; multConv = 0.028; roasVal = '6.4X'; }
+  else if (platform === 'meta') { multReach = 6.5; multViews = 12.0; multConv = 0.048; roasVal = '4.8X'; }
+  else if (platform === 'youtube') { multReach = 5.8; multViews = 10.5; multConv = 0.040; roasVal = '5.0X'; }
+  else if (platform === 'linkedin') { multReach = 3.2; multViews = 6.0; multConv = 0.065; roasVal = '7.1X'; }
+
+  if (objective === 'viral') { multReach *= 1.5; multViews *= 1.8; multConv *= 0.6; }
+  else if (objective === 'leads') { multReach *= 0.8; multConv *= 1.4; }
+
+  const reach = Math.round(budget * multReach);
+  const views = Math.round(budget * multViews);
+  const convMin = Math.round(budget * multConv * 0.8);
+  const convMax = Math.round(budget * multConv * 1.2);
+
+  document.getElementById('resReach').innerText = reach.toLocaleString('en-IN') + '+';
+  document.getElementById('resViews').innerText = views.toLocaleString('en-IN') + '+';
+  document.getElementById('resConversions').innerText = convMin + ' - ' + convMax;
+  document.getElementById('resROI').innerText = roasVal;
+
+  const maxBudget = 250000;
+  const pct = Math.min(100, Math.max(20, Math.round((budget / maxBudget) * 100)));
+  const barReach = document.getElementById('barReach');
+  const barViews = document.getElementById('barViews');
+  const barConversions = document.getElementById('barConversions');
+  if (barReach) barReach.style.width = pct + '%';
+  if (barViews) barViews.style.width = Math.min(100, pct + 15) + '%';
+  if (barConversions) barConversions.style.width = Math.min(100, pct + 10) + '%';
+};
+
+// Platform Selection Buttons
+document.addEventListener('DOMContentLoaded', () => {
+  const platBtns = document.querySelectorAll('.calc-platform-btn');
+  platBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      platBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      window.updateSocialCalc();
+    });
+  });
+
+  // Feed Tabs Filter
+  const feedTabs = document.querySelectorAll('.feed-tab');
+  const feedCards = document.querySelectorAll('.feed-card');
+  feedTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      feedTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.filter;
+      feedCards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+
+
+/* ==========================================================================
+   E-COMMERCE STORE ENGINE (Products, Cart, WhatsApp Checkout, LocalStorage Order History)
+   ========================================================================== */
+const ecomProducts = [
+  {
+    id: 'p1',
+    title: 'Shopify E-Com Scaling Blueprint Theme',
+    category: 'shopify',
+    price: 4999,
+    originalPrice: 9999,
+    rating: 5.0,
+    reviews: 48,
+    badge: 'BESTSELLER',
+    icon: 'fa-bag-shopping',
+    desc: 'High-converting custom Shopify theme loaded with sticky add-to-cart, countdown timers, up-sell slide drawer, and 0.9s load speed.'
+  },
+  {
+    id: 'p2',
+    title: 'Amazon A+ Content & Brand Store Kit',
+    category: 'amazon',
+    price: 7999,
+    originalPrice: 14999,
+    rating: 4.9,
+    reviews: 62,
+    badge: 'HOT',
+    icon: 'fa-amazon',
+    desc: '7 Premium module Amazon A+ EBC visual designs, keyword-rich listing copy, and storefront banners built for 3.2X higher sales.'
+  },
+  {
+    id: 'p3',
+    title: 'Complete D2C E-Commerce Growth Bundle',
+    category: 'scaling',
+    price: 24999,
+    originalPrice: 45000,
+    rating: 5.0,
+    reviews: 89,
+    badge: 'FEATURED BUNDLE',
+    icon: 'fa-chart-line',
+    desc: 'Full suite solution: Shopify Store Build + Meta/TikTok Ad Creatives + 20 Viral Short Video Hooks + WhatsApp Order Automation.'
+  },
+  {
+    id: 'p4',
+    title: 'High-Conversion Checkout & CRO Audit Pack',
+    category: 'cro',
+    price: 6499,
+    originalPrice: 11999,
+    rating: 4.8,
+    reviews: 31,
+    badge: 'POPULAR',
+    icon: 'fa-bolt',
+    desc: 'Full UI/UX audit of your checkout funnel, cart abandonment recovery email templates, and speed optimization checklist.'
+  },
+  {
+    id: 'p5',
+    title: 'Shopify Custom Subscription Store Template',
+    category: 'shopify',
+    price: 8999,
+    originalPrice: 16999,
+    rating: 4.9,
+    reviews: 24,
+    badge: 'NEW',
+    icon: 'fa-repeat',
+    desc: 'Specialized layout for recurring subscription products, box delivery, customer portal, and tiered loyalty rewards.'
+  },
+  {
+    id: 'p6',
+    title: 'E-Commerce Performance Marketing Toolkit',
+    category: 'scaling',
+    price: 12999,
+    originalPrice: 22000,
+    rating: 5.0,
+    reviews: 57,
+    badge: 'PRO TOOLKIT',
+    icon: 'fa-bullseye',
+    desc: 'Meta & Google Ads audience targeting templates, high-ROAS ad copies, UTM tracking sheet, and retargeting workflows.'
+  }
+];
+
+let cart = JSON.parse(localStorage.getItem('ashvik_cart')) || [];
+let appliedDiscountPct = 0;
+
+window.renderProducts = function(items = ecomProducts) {
+  const grid = document.getElementById('productGrid');
+  if (!grid) return;
+
+  if (items.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--text-dark-secondary);">No products matching your search query or filter.</div>`;
+    return;
+  }
+
+  grid.innerHTML = items.map(p => `
+    <div class="product-card">
+      ${p.badge ? `<div class="product-badge-tag">${p.badge}</div>` : ''}
+      <div class="product-img-box">
+        <i class="fa-brands ${p.icon.startsWith('fa-amazon') ? 'fa-amazon' : 'fa-solid ' + p.icon}"></i>
+      </div>
+      <div class="product-content">
+        <div class="product-cat">${p.category.toUpperCase()}</div>
+        <h3 class="product-title">${p.title}</h3>
+        <div class="product-rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <span style="color:var(--text-dark-secondary); margin-left:0.3rem;">(${p.rating} / ${p.reviews} reviews)</span>
+        </div>
+        <p class="product-desc">${p.desc}</p>
+
+        <div class="product-price-row">
+          <span class="price-current">₹${p.price.toLocaleString('en-IN')}</span>
+          <span class="price-original">₹${p.originalPrice.toLocaleString('en-IN')}</span>
+        </div>
+
+        <div class="product-actions">
+          <button class="btn btn-gold" style="flex-grow:1; font-size:0.85rem;" onclick="addToCart('${p.id}')">
+            <i class="fa-solid fa-cart-plus"></i> Add To Cart
+          </button>
+          <button class="btn btn-dark-outline" style="padding:0.6rem 0.8rem;" onclick="openQuickView('${p.id}')" title="Quick View">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+};
+
+window.filterProducts = function() {
+  const query = document.getElementById('storeSearchInput')?.value.toLowerCase().trim() || '';
+  const activePill = document.querySelector('.filter-pill.active');
+  const cat = activePill ? activePill.dataset.category : 'all';
+
+  let filtered = ecomProducts.filter(p => {
+    const matchCat = cat === 'all' || p.category === cat;
+    const matchQuery = p.title.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query);
+    return matchCat && matchQuery;
+  });
+
+  window.renderProducts(filtered);
+};
+
+window.sortProducts = function() {
+  const sortVal = document.getElementById('storeSortSelect')?.value || 'featured';
+  let copy = [...ecomProducts];
+
+  if (sortVal === 'price-low') copy.sort((a,b) => a.price - b.price);
+  else if (sortVal === 'price-high') copy.sort((a,b) => b.price - a.price);
+  else if (sortVal === 'rating') copy.sort((a,b) => b.rating - a.rating);
+
+  window.renderProducts(copy);
+};
+
+window.toggleCartDrawer = function() {
+  const drawer = document.getElementById('cartDrawer');
+  const overlay = document.getElementById('cartOverlay');
+  if (drawer && overlay) {
+    drawer.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
+};
+
+window.addToCart = function(productId) {
+  const item = ecomProducts.find(p => p.id === productId);
+  if (!item) return;
+
+  const existing = cart.find(c => c.id === productId);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ ...item, qty: 1 });
+  }
+
+  localStorage.setItem('ashvik_cart', JSON.stringify(cart));
+  window.updateCartUI();
+  window.toggleCartDrawer();
+};
+
+window.changeQty = function(index, delta) {
+  if (cart[index]) {
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) {
+      cart.splice(index, 1);
+    }
+  }
+  localStorage.setItem('ashvik_cart', JSON.stringify(cart));
+  window.updateCartUI();
+};
+
+window.removeFromCart = function(index) {
+  if (cart[index]) {
+    cart.splice(index, 1);
+  }
+  localStorage.setItem('ashvik_cart', JSON.stringify(cart));
+  window.updateCartUI();
+};
+
+window.applyPromoCode = function() {
+  const code = document.getElementById('promoInput')?.value.trim().toUpperCase();
+  if (code === 'ASHVIK10') {
+    appliedDiscountPct = 0.10;
+    alert('🎉 Promo Code ASHVIK10 Applied! 10% Discount calculated.');
+  } else {
+    alert('Invalid promo code. Try "ASHVIK10" for 10% off!');
+    appliedDiscountPct = 0;
+  }
+  window.updateCartUI();
+};
+
+window.updateCartUI = function() {
+  const countBadges = document.querySelectorAll('#cartCountBadge, #cartHeaderCount');
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  countBadges.forEach(b => b.innerText = totalQty);
+
+  const body = document.getElementById('cartDrawerBody');
+  if (!body) return;
+
+  if (cart.length === 0) {
+    body.innerHTML = `
+      <div style="text-align:center; padding:3rem 1rem; color:var(--text-dark-secondary);">
+        <i class="fa-solid fa-cart-shopping" style="font-size:3rem; color:var(--dark-border); margin-bottom:1rem;"></i>
+        <p>Your cart is empty.</p>
+        <button class="btn btn-gold" style="margin-top:1rem;" onclick="toggleCartDrawer()">Browse Store</button>
+      </div>
+    `;
+    document.getElementById('cartSubtotalVal').innerText = '₹0';
+    document.getElementById('cartTotalVal').innerText = '₹0';
+    document.getElementById('discountRow').style.display = 'none';
+    return;
+  }
+
+  body.innerHTML = cart.map((item, idx) => `
+    <div class="cart-item">
+      <div class="cart-item-icon"><i class="fa-solid ${item.icon}"></i></div>
+      <div class="cart-item-info">
+        <div class="cart-item-title">${item.title}</div>
+        <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')}</div>
+        <div class="cart-qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
+          <span style="font-size:0.85rem; color:#FFF; min-width:16px; text-align:center;">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+        </div>
+      </div>
+      <button class="cart-item-remove" onclick="removeFromCart(${idx})" title="Remove"><i class="fa-solid fa-trash"></i></button>
+    </div>
+  `).join('');
+
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  const discountAmt = subtotal * appliedDiscountPct;
+  const total = subtotal - discountAmt;
+
+  document.getElementById('cartSubtotalVal').innerText = '₹' + subtotal.toLocaleString('en-IN');
+  if (appliedDiscountPct > 0) {
+    document.getElementById('discountRow').style.display = 'flex';
+    document.getElementById('cartDiscountVal').innerText = '-₹' + discountAmt.toLocaleString('en-IN');
+  } else {
+    document.getElementById('discountRow').style.display = 'none';
+  }
+  document.getElementById('cartTotalVal').innerText = '₹' + total.toLocaleString('en-IN');
+};
+
+// WhatsApp Direct Checkout & LocalStorage Order Persistence
+window.executeWhatsAppCheckout = function() {
+  if (cart.length === 0) {
+    alert('Your cart is empty! Please add products before checking out.');
+    return;
+  }
+
+  const name = document.getElementById('custName')?.value.trim() || 'Valued Customer';
+  const phone = document.getElementById('custPhone')?.value.trim() || 'Not Provided';
+  const note = document.getElementById('custNote')?.value.trim() || 'N/A';
+
+  const orderId = '#AM-' + Math.floor(10000 + Math.random() * 90000);
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  const discountAmt = subtotal * appliedDiscountPct;
+  const total = subtotal - discountAmt;
+  const dateStr = new Date().toLocaleString();
+
+  let message = `🛒 *NEW E-COMMERCE STORE ORDER - ASHVIK MEDIA*\n`;
+  message += `----------------------------------\n`;
+  message += `*Order ID:* ${orderId}\n`;
+  message += `*Date:* ${dateStr}\n\n`;
+  message += `*Customer Details:*\n`;
+  message += `• Name: ${name}\n`;
+  message += `• WhatsApp Phone: ${phone}\n`;
+  message += `• Notes / Requirements: ${note}\n\n`;
+  message += `*Order Items:*\n`;
+
+  cart.forEach((item, i) => {
+    message += `${i+1}. ${item.title} (x${item.qty}) - ₹${(item.price * item.qty).toLocaleString('en-IN')}\n`;
+  });
+
+  message += `\n----------------------------------\n`;
+  message += `*Subtotal:* ₹${subtotal.toLocaleString('en-IN')}\n`;
+  if (appliedDiscountPct > 0) {
+    message += `*Discount (ASHVIK10):* -₹${discountAmt.toLocaleString('en-IN')}\n`;
+  }
+  message += `*Total Amount:* ₹${total.toLocaleString('en-IN')}\n`;
+  message += `----------------------------------\n`;
+  message += `Thank you! Please confirm my order placement.`;
+
+  // 1. Save to LocalStorage order history
+  const orders = JSON.parse(localStorage.getItem('ashvik_orders')) || [];
+  const newOrder = {
+    id: orderId,
+    date: dateStr,
+    name: name,
+    phone: phone,
+    items: [...cart],
+    total: total,
+    status: 'Sent to WhatsApp'
+  };
+  orders.unshift(newOrder);
+  localStorage.setItem('ashvik_orders', JSON.stringify(orders));
+
+  // 2. Clear Cart
+  cart = [];
+  localStorage.removeItem('ashvik_cart');
+  window.updateCartUI();
+  window.updateOrderCountBadge();
+
+  // 3. Open WhatsApp link
+  const waUrl = `https://wa.me/919993515138?text=${encodeURIComponent(message)}`;
+  window.open(waUrl, '_blank');
+  window.toggleCartDrawer();
+  alert(`Order ${orderId} saved to local storage and redirected to WhatsApp!`);
+};
+
+window.openOrderHistoryModal = function() {
+  const modal = document.getElementById('orderHistoryModal');
+  const overlay = document.getElementById('orderModalOverlay');
+  if (modal && overlay) {
+    window.renderOrderHistory();
+    modal.classList.add('active');
+    overlay.classList.add('active');
+  }
+};
+
+window.closeOrderHistoryModal = function() {
+  const modal = document.getElementById('orderHistoryModal');
+  const overlay = document.getElementById('orderModalOverlay');
+  if (modal && overlay) {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+};
+
+window.renderOrderHistory = function() {
+  const body = document.getElementById('orderModalBody');
+  if (!body) return;
+
+  const orders = JSON.parse(localStorage.getItem('ashvik_orders')) || [];
+  window.updateOrderCountBadge();
+
+  if (orders.length === 0) {
+    body.innerHTML = `
+      <div style="text-align:center; padding:2rem; color:var(--text-dark-secondary);">
+        <i class="fa-solid fa-clock-rotate-left" style="font-size:2.5rem; color:var(--dark-border); margin-bottom:1rem;"></i>
+        <p>No previous order history found in local storage.</p>
+      </div>
+    `;
+    return;
+  }
+
+  body.innerHTML = orders.map(o => `
+    <div class="order-history-card">
+      <div class="oh-header">
+        <span class="oh-id">${o.id}</span>
+        <span class="oh-status"><i class="fa-brands fa-whatsapp"></i> ${o.status}</span>
+      </div>
+      <div style="font-size:0.78rem; color:var(--text-dark-muted); margin-bottom:0.4rem;">Placed on: ${o.date}</div>
+      <div class="oh-items">
+        ${o.items.map(it => `<div>• ${it.title} (x${it.qty}) - ₹${(it.price * it.qty).toLocaleString('en-IN')}</div>`).join('')}
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--dark-border); padding-top:0.6rem;">
+        <span style="font-weight:800; color:var(--primary-gold);">Total Paid: ₹${o.total.toLocaleString('en-IN')}</span>
+        <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20inquiring%20about%20my%20order%20${o.id}" target="_blank" class="btn btn-gold" style="padding:0.3rem 0.8rem; font-size:0.75rem;">
+          Track / Re-Order <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  `).join('');
+};
+
+window.clearOrderHistory = function() {
+  if (confirm('Are you sure you want to clear all order history from LocalStorage?')) {
+    localStorage.removeItem('ashvik_orders');
+    window.renderOrderHistory();
+  }
+};
+
+window.updateOrderCountBadge = function() {
+  const orders = JSON.parse(localStorage.getItem('ashvik_orders')) || [];
+  const badge = document.getElementById('orderCountBadge');
+  if (badge) badge.innerText = orders.length;
+};
+
+window.openQuickView = function(id) {
+  const item = ecomProducts.find(p => p.id === id);
+  if (!item) return;
+
+  const modal = document.getElementById('quickViewModal');
+  const overlay = document.getElementById('quickViewOverlay');
+  const title = document.getElementById('qvTitle');
+  const body = document.getElementById('qvBody');
+
+  if (modal && overlay && body) {
+    title.innerText = item.title;
+    body.innerHTML = `
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center;">
+        <div style="width:120px; height:120px; background:#181E29; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-size:3rem; color:var(--primary-gold);">
+          <i class="fa-solid ${item.icon}"></i>
+        </div>
+        <div style="flex-grow:1;">
+          <div class="product-cat">${item.category}</div>
+          <div style="font-size:1.8rem; font-weight:800; color:var(--primary-gold); margin:0.4rem 0;">₹${item.price.toLocaleString('en-IN')} <span style="font-size:1rem; color:var(--text-dark-muted); text-decoration:line-through;">₹${item.originalPrice.toLocaleString('en-IN')}</span></div>
+          <p style="font-size:0.9rem; color:var(--text-dark-secondary); line-height:1.5;">${item.desc}</p>
+          <button class="btn btn-gold" style="margin-top:1.2rem; width:100%;" onclick="addToCart('${item.id}'); closeQuickView();">
+            ADD TO CART & CHECKOUT VIA WHATSAPP <i class="fa-solid fa-cart-plus"></i>
+          </button>
+        </div>
+      </div>
+    `;
+    modal.classList.add('active');
+    overlay.classList.add('active');
+  }
+};
+
+window.closeQuickView = function() {
+  const modal = document.getElementById('quickViewModal');
+  const overlay = document.getElementById('quickViewOverlay');
+  if (modal && overlay) {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('productGrid')) {
+    window.renderProducts();
+    window.updateCartUI();
+    window.updateOrderCountBadge();
+
+    const pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        window.filterProducts();
+      });
+    });
+  }
+});
+
+
+/* ==========================================================================
+   GRAPHICS PAGE INTERACTIVE ENGINE (Before/After Slider & Package Builder)
+   ========================================================================== */
+function initBeforeAfterSlider() {
+  const container = document.getElementById('beforeAfterSlider');
+  const afterLayer = document.getElementById('baAfterLayer');
+  const handle = document.getElementById('baHandle');
+  if (!container || !afterLayer || !handle) return;
+
+  let isDragging = false;
+
+  const moveSlider = (clientX) => {
+    const rect = container.getBoundingClientRect();
+    let x = clientX - rect.left;
+    if (x < 0) x = 0;
+    if (x > rect.width) x = rect.width;
+    const pct = (x / rect.width) * 100;
+    afterLayer.style.width = pct + '%';
+    handle.style.left = pct + '%';
+  };
+
+  container.addEventListener('mousedown', (e) => { isDragging = true; moveSlider(e.clientX); });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+  window.addEventListener('mousemove', (e) => { if (isDragging) moveSlider(e.clientX); });
+
+  container.addEventListener('touchstart', (e) => { isDragging = true; moveSlider(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend', () => { isDragging = false; });
+  window.addEventListener('touchmove', (e) => { if (isDragging) moveSlider(e.touches[0].clientX); }, { passive: true });
+}
+
+window.calcGraphicsPackage = function() {
+  const checkboxes = document.querySelectorAll('.gfx-check:checked');
+  let total = 0;
+  let names = [];
+
+  checkboxes.forEach(cb => {
+    total += parseInt(cb.value, 10);
+    names.push(cb.dataset.name);
+  });
+
+  const listEl = document.getElementById('gfxSelectedList');
+  const priceEl = document.getElementById('gfxTotalPrice');
+  const timeEl = document.getElementById('gfxTimeframe');
+
+  if (listEl) {
+    if (names.length === 0) {
+      listEl.innerHTML = `<div>No assets selected yet.</div>`;
+    } else {
+      listEl.innerHTML = names.map(n => `<div>• ${n}</div>`).join('');
+    }
+  }
+
+  if (priceEl) priceEl.innerText = '₹' + total.toLocaleString('en-IN');
+  if (timeEl) {
+    if (total > 20000) timeEl.innerText = '7 - 10 Business Days';
+    else if (total > 10000) timeEl.innerText = '4 - 6 Business Days';
+    else timeEl.innerText = '2 - 4 Business Days';
+  }
+};
+
+window.orderGraphicsWhatsApp = function() {
+  const checkboxes = document.querySelectorAll('.gfx-check:checked');
+  if (checkboxes.length === 0) {
+    alert('Please select at least one graphic design service item.');
+    return;
+  }
+
+  let total = 0;
+  let items = [];
+  checkboxes.forEach(cb => {
+    total += parseInt(cb.value, 10);
+    items.push(cb.dataset.name);
+  });
+
+  let msg = `🎨 *CUSTOM GRAPHIC DESIGN PACKAGE INQUIRY - ASHVIK MEDIA*\n`;
+  msg += `----------------------------------\n`;
+  msg += `*Selected Design Assets:*\n`;
+  items.forEach(it => msg += `• ${it}\n`);
+  msg += `\n*Estimated Investment:* ₹${total.toLocaleString('en-IN')}\n`;
+  msg += `----------------------------------\n`;
+  msg += `Hi Ashvik Media! I'd like to initiate this design project. Please provide further onboarding details.`;
+
+  window.open(`https://wa.me/919993515138?text=${encodeURIComponent(msg)}`, '_blank');
+};
+
+/* Brand Style & Color Palette Generator Engine */
+const vibeData = {
+  luxury: {
+    badge: '👑 LUXURY GOLD & BLACK SYSTEM',
+    name: 'AURUM & CO.',
+    tagline: '"Precision Craftsmanship Meets Modern Visual Elegance"',
+    accentColor: '#FFC700',
+    borderColor: '#FFC700',
+    swatches: [
+      { hex: '#FFC700', label: 'Primary Gold' },
+      { hex: '#0A0C10', label: 'Deep Dark' },
+      { hex: '#10B981', label: 'Emerald Accent' }
+    ],
+    font: 'Plus Jakarta Sans (Heading) + Inter (Body)',
+    vibeDesc: 'High-contrast luxury theme designed for premium D2C brands, fine jewelry, fragrance, and high-ticket service providers.'
+  },
+  cyberpunk: {
+    badge: '⚡ NEON CYBERPUNK WEB3 SYSTEM',
+    name: 'SYNTHEX LABS',
+    tagline: '"Futuristic Visual Identity For Next-Gen Tech & Web3"',
+    accentColor: '#00F2FE',
+    borderColor: '#00F2FE',
+    swatches: [
+      { hex: '#00F2FE', label: 'Electric Cyan' },
+      { hex: '#FF007F', label: 'Neon Magenta' },
+      { hex: '#0F172A', label: 'Cyber Slate' }
+    ],
+    font: 'Space Grotesk (Heading) + Fira Code (Data)',
+    vibeDesc: 'High-energy glowing neon aesthetic crafted for tech startups, AI products, crypto exchanges, and gaming brands.'
+  },
+  organic: {
+    badge: '🌿 MINIMALIST ORGANIC SYSTEM',
+    name: 'VERDANT BOTANICALS',
+    tagline: '"Earthy Warmth & Clean Sustainable Aesthetics"',
+    accentColor: '#10B981',
+    borderColor: '#10B981',
+    swatches: [
+      { hex: '#E2D8C3', label: 'Warm Oat' },
+      { hex: '#047857', label: 'Forest Green' },
+      { hex: '#D97706', label: 'Terracotta' }
+    ],
+    font: 'Playfair Display (Serif) + Outfit (Clean Body)',
+    vibeDesc: 'Soft natural tones and elegant typography engineered for eco-friendly skincare, wellness, and organic D2C brands.'
+  },
+  corporate: {
+    badge: '💼 CORPORATE ELITE EXECUTIVE',
+    name: 'VANGUARD CAPITAL',
+    tagline: '"Authority, Trust, & High-Conversion Precision"',
+    accentColor: '#2563EB',
+    borderColor: '#2563EB',
+    swatches: [
+      { hex: '#2563EB', label: 'Royal Blue' },
+      { hex: '#F8FAFC', label: 'Pure Platinum' },
+      { hex: '#1E293B', label: 'Executive Navy' }
+    ],
+    font: 'Cabinet Grotesk (Heading) + Plus Jakarta (Body)',
+    vibeDesc: 'Clean corporate minimalism engineered for fintech, SaaS, legal, real estate, and B2B enterprise firms.'
+  }
+};
+
+let activeVibeKey = 'luxury';
+
+window.updateBrandVibe = function(vibeKey) {
+  const data = vibeData[vibeKey];
+  if (!data) return;
+  activeVibeKey = vibeKey;
+
+  const card = document.getElementById('mockupCard');
+  const badge = document.getElementById('mockupBadge');
+  const name = document.getElementById('mockupName');
+  const tagline = document.getElementById('mockupTagline');
+  const swatchesGrid = document.getElementById('swatchesGrid');
+  const vibeSpecBox = document.getElementById('vibeSpecBox');
+  const btn = document.getElementById('mockupBtn');
+
+  if (card && badge && name && tagline && swatchesGrid && vibeSpecBox) {
+    card.style.borderColor = data.borderColor;
+    badge.innerText = data.badge;
+    badge.style.background = data.accentColor;
+    badge.style.color = (vibeKey === 'organic' || vibeKey === 'corporate') ? '#FFF' : '#000';
+
+    name.innerText = data.name;
+    name.style.color = (vibeKey === 'cyberpunk') ? '#00F2FE' : 'var(--text-dark-primary)';
+    tagline.innerText = data.tagline;
+
+    swatchesGrid.innerHTML = data.swatches.map(s => `
+      <div class="swatch-box" onclick="navigator.clipboard.writeText('${s.hex}'); alert('Copied hex code ${s.hex} to clipboard!');">
+        <div class="swatch-color-circle" style="background:${s.hex};"></div>
+        <div class="swatch-hex">${s.hex}</div>
+        <div class="swatch-label">${s.label}</div>
+      </div>
+    `).join('');
+
+    vibeSpecBox.innerHTML = `
+      <div><strong>Recommended Font Pairing:</strong> ${data.font}</div>
+      <div style="margin-top:0.4rem;"><strong>Design Psychology:</strong> ${data.vibeDesc}</div>
+    `;
+
+    if (btn) {
+      btn.style.background = data.accentColor;
+      btn.style.color = (vibeKey === 'organic' || vibeKey === 'corporate') ? '#FFF' : '#000';
+    }
+  }
+};
+
+window.orderCurrentVibeWhatsApp = function() {
+  const data = vibeData[activeVibeKey];
+  const msg = `Hi Ashvik Media! I explored your Interactive Brand Generator and love the *${data.badge}* (${data.name}) style. I want to build a brand identity system in this aesthetic!`;
+  window.open(`https://wa.me/919993515138?text=${encodeURIComponent(msg)}`, '_blank');
+};
+
+window.openGraphicModal = function(title, desc, cat, color = '#FFC700', font = 'Plus Jakarta Sans', impact = '+340% Brand Trust') {
+  const modal = document.getElementById('graphicModal');
+  const overlay = document.getElementById('graphicModalOverlay');
+  const tEl = document.getElementById('gmTitle');
+  const bEl = document.getElementById('gmBody');
+  const wabtn = document.getElementById('gmWabtn');
+
+  if (modal && overlay && bEl) {
+    tEl.innerText = title;
+    bEl.innerHTML = `
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <span style="font-size:0.8rem; font-weight:800; color:${color}; text-transform:uppercase;">Category: ${cat}</span>
+        <span style="background:rgba(255,255,255,0.06); padding:0.2rem 0.6rem; border-radius:var(--radius-pill); font-size:0.75rem; color:var(--text-dark-primary);"><i class="fa-solid fa-chart-line text-gold"></i> ${impact}</span>
+      </div>
+      <div style="background:rgba(255,255,255,0.03); border:1px solid var(--dark-border); border-radius:var(--radius-md); padding:2.5rem 1.5rem; text-align:center; margin-bottom:1.2rem;">
+        <i class="fa-solid fa-wand-magic-sparkles" style="font-size:3.8rem; color:${color}; margin-bottom:1rem;"></i>
+        <h4 style="font-size:1.2rem; color:var(--text-dark-primary);">${title}</h4>
+      </div>
+      <p style="font-size:0.95rem; color:var(--text-dark-secondary); line-height:1.6; margin-bottom:1.2rem;">${desc}</p>
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; background:rgba(0,0,0,0.3); padding:1rem; border-radius:var(--radius-md); font-size:0.85rem; color:var(--text-dark-secondary);">
+        <div><strong style="color:#FFF;">Primary Accent:</strong> ${color}</div>
+        <div><strong style="color:#FFF;">Typography Specs:</strong> ${font}</div>
+        <div><strong style="color:#FFF;">Formats Included:</strong> AI, EPS, SVG, 4K PNG</div>
+        <div><strong style="color:#FFF;">Turnaround:</strong> 3 - 5 Days</div>
+      </div>
+    `;
+    
+    if (wabtn) {
+      wabtn.href = `https://wa.me/919993515138?text=${encodeURIComponent("Hi Ashvik Media! I'm interested in getting custom graphic design built similar to: " + title)}`;
+    }
+
+    modal.classList.add('active');
+    overlay.classList.add('active');
+  }
+};
+
+window.closeGraphicModal = function() {
+  const modal = document.getElementById('graphicModal');
+  const overlay = document.getElementById('graphicModalOverlay');
+  if (modal && overlay) {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initBeforeAfterSlider();
+  window.calcGraphicsPackage();
+
+  if (document.getElementById('brandPreviewStage')) {
+    window.updateBrandVibe('luxury');
+
+    const vibeBtns = document.querySelectorAll('.vibe-btn');
+    vibeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        vibeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        window.updateBrandVibe(btn.dataset.vibe);
+      });
+    });
+  }
+
+  // Graphics Category Filter Tabs
+  const gTabs = document.querySelectorAll('.graphics-tab');
+  const gCards = document.querySelectorAll('.graphic-item-card');
+  gTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      gTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.filter;
+      gCards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+
+
+
 
 
 

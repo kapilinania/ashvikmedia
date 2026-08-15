@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Store & Solutions | Ashvik Media</title>
+  <meta name="description" content="Explore Ashvik Media's E-Commerce store for premium Shopify templates, Amazon A+ design bundles, scaling toolkits, and WhatsApp instant checkout.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Custom Interactive Glowing Gold Cursor System -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="social-media.html" class="nav-link">Social Media</a>
+        <a href="ecommerce.html" class="nav-link active">E-Commerce</a>
+        <a href="graphics.html" class="nav-link">Graphics</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-ecom-actions">
+        <!-- Order History Button -->
+        <button class="ecom-action-btn" id="btnOrderHistory" onclick="openOrderHistoryModal()" title="View Order History">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Order History</span>
+          <span class="action-badge" id="orderCountBadge">0</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="ecom-action-btn btn-cart-trigger" id="btnCartTrigger" onclick="toggleCartDrawer()" title="View Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+          <span class="action-badge badge-gold" id="cartCountBadge">0</span>
+        </button>
+
+        <button class="mobile-nav-toggle" onclick="openMobileNav(event)" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sleek Minimalist Mobile Drawer -->
+  <div class="mobile-drawer-overlay" onclick="closeMobileNav(event)"></div>
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+      </a>
+      <button class="mobile-drawer-close" onclick="closeMobileNav(event)" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">
+        <span>Home</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="services.html" class="mobile-nav-link">
+        <span>Services</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="social-media.html" class="mobile-nav-link">
+        <span>Social Media</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="ecommerce.html" class="mobile-nav-link active">
+        <span>E-Commerce</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="graphics.html" class="mobile-nav-link">
+        <span>Graphics</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="about.html" class="mobile-nav-link">
+        <span>About Us</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="contact.html" class="mobile-nav-link">
+        <span>Contact</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="mobile-drawer-contact-info">
+        <div><i class="fa-solid fa-phone"></i> +91 99935 15138</div>
+        <div><i class="fa-solid fa-envelope"></i> contact@ashvikmedia.com</div>
+      </div>
+      <a href="contact.html" class="btn btn-gold" style="width: 100%;">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">E-Commerce <span class="text-gold">Store & Solutions</span></h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i> <span>E-Commerce</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Hero Banner -->
+  <section class="ecom-hero" style="padding-top: 3rem;">
+    <div class="container">
+      <div class="ecom-hero-card">
+        <div class="ecom-hero-text">
+          <div class="section-tag section-tag-gold" style="margin-bottom:1rem;"><i class="fa-solid fa-store"></i> ASHVIK E-STORE</div>
+          <h1 class="ecom-hero-title">Scale Your E-Commerce Store With Proven Solutions</h1>
+          <p class="ecom-hero-desc">
+            Explore ready-to-launch Shopify themes, Amazon A+ content kits, high-ROAS marketing packages, and custom digital growth bundles. Instant checkout via WhatsApp & Local Storage order history!
+          </p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+            <a href="#store-catalog" class="btn btn-gold">BROWSE PRODUCTS <i class="fa-solid fa-arrow-down"></i></a>
+            <button class="btn btn-dark-outline" onclick="openOrderHistoryModal()"><i class="fa-solid fa-clock-rotate-left text-gold"></i> VIEW MY ORDERS</button>
+          </div>
+        </div>
+        <div class="ecom-hero-badge-box">
+          <div class="hero-whatsapp-pill">
+            <i class="fa-brands fa-whatsapp" style="font-size:1.8rem; color:#25D366;"></i>
+            <div>
+              <strong>Instant WhatsApp Checkout</strong>
+              <div style="font-size:0.8rem; color:var(--text-dark-secondary);">No credit card required. Direct order confirmation.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog Controls Bar -->
+  <section class="store-controls-section" id="store-catalog">
+    <div class="container">
+      <div class="store-bar-wrapper">
+        <!-- Search -->
+        <div class="store-search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="storeSearchInput" placeholder="Search products, Shopify templates, Amazon kits..." onkeyup="filterProducts()">
+        </div>
+
+        <!-- Filter Categories -->
+        <div class="store-filter-pills" id="categoryPills">
+          <button class="filter-pill active" data-category="all">All Products</button>
+          <button class="filter-pill" data-category="shopify">Shopify Themes</button>
+          <button class="filter-pill" data-category="amazon">Amazon A+ Kits</button>
+          <button class="filter-pill" data-category="scaling">Growth Bundles</button>
+          <button class="filter-pill" data-category="cro">CRO & Funnels</button>
+        </div>
+
+        <!-- Sort Select -->
+        <div class="store-sort-box">
+          <label style="font-size:0.85rem; color:var(--text-dark-secondary);">Sort:</label>
+          <select id="storeSortSelect" onchange="sortProducts()">
+            <option value="featured">Featured First</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid Section -->
+  <section class="section-padding" style="padding-top:2rem;">
+    <div class="container">
+      <div class="product-grid" id="productGrid">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Side Slide-Out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3 style="display:flex; align-items:center; gap:0.5rem; color:var(--text-dark-primary); font-size:1.2rem;">
+        <i class="fa-solid fa-cart-shopping text-gold"></i> Your Shopping Cart (<span id="cartHeaderCount">0</span>)
+      </h3>
+      <button class="cart-drawer-close" onclick="toggleCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <!-- Empty Cart View / Items View -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="promo-code-row">
+        <input type="text" id="promoInput" placeholder="Enter Promo (e.g. ASHVIK10)" style="text-transform:uppercase;">
+        <button class="btn btn-dark-outline" onclick="applyPromoCode()">Apply</button>
+      </div>
+
+      <div class="cart-summary-box">
+        <div class="cart-sum-row">
+          <span>Subtotal:</span>
+          <span id="cartSubtotalVal">₹0</span>
+        </div>
+        <div class="cart-sum-row text-gold" id="discountRow" style="display:none;">
+          <span>Discount Applied:</span>
+          <span id="cartDiscountVal">-₹0</span>
+        </div>
+        <div class="cart-sum-row cart-total-row">
+          <span>Total Payable:</span>
+          <span class="text-gold" id="cartTotalVal">₹0</span>
+        </div>
+      </div>
+
+      <!-- Customer Checkout Details Form -->
+      <div class="checkout-customer-fields">
+        <h4 style="font-size:0.9rem; margin-bottom:0.6rem; color:var(--text-dark-primary);">Customer Quick Details:</h4>
+        <input type="text" id="custName" placeholder="Your Name *" required class="checkout-input">
+        <input type="tel" id="custPhone" placeholder="WhatsApp Phone Number *" required class="checkout-input">
+        <input type="text" id="custNote" placeholder="Special requirements or website URL..." class="checkout-input">
+      </div>
+
+      <button class="btn btn-gold whatsapp-checkout-btn" onclick="executeWhatsAppCheckout()">
+        <i class="fa-brands fa-whatsapp" style="font-size:1.4rem;"></i> PROCEED TO WHATSAPP CHECKOUT
+      </button>
+    </div>
+  </div>
+
+  <!-- Order History Modal -->
+  <div class="modal-overlay" id="orderModalOverlay" onclick="closeOrderHistoryModal()"></div>
+  <div class="modal-card" id="orderHistoryModal">
+    <div class="modal-header">
+      <h3><i class="fa-solid fa-clock-rotate-left text-gold"></i> Your Order History (LocalStorage)</h3>
+      <button class="modal-close-btn" onclick="closeOrderHistoryModal()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" id="orderModalBody">
+      <!-- Populated via localStorage ashvik_orders -->
+    </div>
+    <div class="modal-footer" style="display:flex; justify-content:space-between; align-items:center;">
+      <button class="btn btn-dark-outline" style="color:#EF4444; border-color:rgba(239,68,68,0.3);" onclick="clearOrderHistory()">
+        <i class="fa-solid fa-trash"></i> Clear Order History
+      </button>
+      <button class="btn btn-gold" onclick="closeOrderHistoryModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-overlay" id="quickViewOverlay" onclick="closeQuickView()"></div>
+  <div class="modal-card" id="quickViewModal" style="max-width: 650px;">
+    <div class="modal-header">
+      <h3 id="qvTitle">Product Quick View</h3>
+      <button class="modal-close-btn" onclick="closeQuickView()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" id="qvBody">
+      <!-- Quick View Details -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Footer Top Interactive CTA Banner -->
+      <div class="footer-cta-banner">
+        <div class="footer-cta-info">
+          <span class="status-indicator-pill">
+            <span class="status-dot-pulse"></span>
+            ACCEPTING NEW PROJECTS FOR 2026
+          </span>
+          <h3 class="footer-cta-heading">Ready To Scale Your Brand To <span class="text-gold">New Heights?</span></h3>
+          <p class="footer-cta-subtext">Book a free strategy session with our senior digital marketing & growth specialists today.</p>
+        </div>
+        <div class="footer-cta-actions">
+          <a href="contact.html" class="btn btn-gold footer-banner-btn">
+            <span>GET FREE STRATEGY CALL</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/919993515138" target="_blank" rel="noopener noreferrer" class="btn btn-dark-outline footer-banner-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>CHAT ON WHATSAPP</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            Ashvik Media is a premier digital marketing & performance agency crafting viral social media campaigns, high-converting e-commerce solutions, and premium graphic design.
+          </p>
+          <div class="social-links-wrapper">
+            <span class="social-label">Follow Our Journey:</span>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/919993515138" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Home</a>
+            <a href="about.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> About Us</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Services</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce</a>
+            <a href="graphics.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphics</a>
+            <a href="blog.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Blog & Insights</a>
+            <a href="contact.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Contact Us</a>
+            <a href="privacy-policy.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Privacy Policy</a>
+            <a href="terms.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-title">Expertise & Services</h4>
+          <div class="footer-links">
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
+            <a href="graphics.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-title">Headquarters</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="contact-item-label">Office Address</span>
+                <p class="contact-item-val">Brahmapuri Colony, Indore, MP 452001, India</p>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="contact-item-label">Email Us</span>
+                <a href="mailto:contact@ashvikmedia.com" class="contact-item-val link-val">contact@ashvikmedia.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span class="contact-item-label">Call / WhatsApp</span>
+                <a href="tel:+919993515138" class="contact-item-val link-val">+91 99935 15138</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>© Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.</p>
+          <div class="footer-bottom-extra">
+            <span>Crafted with <i class="fa-solid fa-heart" style="color: var(--primary-gold);"></i> for digital growth</span>
+          </div>
+        </div>
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+          <span>TOP</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

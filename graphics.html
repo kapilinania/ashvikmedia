@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Graphics & Brand Identity | Ashvik Media</title>
+  <meta name="description" content="Transform your brand with luxury graphic design, logo identity systems, high-converting packaging, 3D renders, and interactive brand style generators from Ashvik Media.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Custom Interactive Glowing Gold Cursor System -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="social-media.html" class="nav-link">Social Media</a>
+        <a href="ecommerce.html" class="nav-link">E-Commerce</a>
+        <a href="graphics.html" class="nav-link active">Graphics</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="mobile-header-actions">
+        <a href="contact.html" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+
+        <button class="mobile-nav-toggle" onclick="openMobileNav(event)" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sleek Minimalist Mobile Drawer -->
+  <div class="mobile-drawer-overlay" onclick="closeMobileNav(event)"></div>
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+      </a>
+      <button class="mobile-drawer-close" onclick="closeMobileNav(event)" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">
+        <span>Home</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="services.html" class="mobile-nav-link">
+        <span>Services</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="social-media.html" class="mobile-nav-link">
+        <span>Social Media</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="ecommerce.html" class="mobile-nav-link">
+        <span>E-Commerce</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="graphics.html" class="mobile-nav-link active">
+        <span>Graphics</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="about.html" class="mobile-nav-link">
+        <span>About Us</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <a href="contact.html" class="mobile-nav-link">
+        <span>Contact</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="mobile-drawer-contact-info">
+        <div><i class="fa-solid fa-phone"></i> +91 99935 15138</div>
+        <div><i class="fa-solid fa-envelope"></i> contact@ashvikmedia.com</div>
+      </div>
+      <a href="contact.html" class="btn btn-gold" style="width: 100%;">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <!-- Page Hero (Unified Theme Banner matching About Us / Theme Screenshot) -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">Creative <span class="text-gold">Graphics & Branding</span></h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i> <span>Graphics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Graphics Hero Headline Section -->
+  <section class="graphics-hero" style="padding-top: 3rem; padding-bottom: 3rem;">
+    <div class="graphics-hero-glow"></div>
+    <div class="container">
+      <div class="graphics-hero-content text-center">
+        <div class="section-tag section-tag-gold" style="margin: 0 auto 1.5rem auto;">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> HIGH-IMPACT VISUAL IDENTITY & ARTWORK
+        </div>
+        <h1 class="graphics-hero-title">
+          Designs That Stop The Scroll. <br><span class="text-gold">Branding That Converts.</span>
+        </h1>
+        <p class="graphics-hero-desc">
+          We combine visual hierarchy, photorealistic 3D rendering, and psychological brand positioning to turn casual viewers into loyal customers.
+        </p>
+
+        <div class="hero-btns" style="justify-content: center; margin-bottom: 2rem;">
+          <a href="#brand-generator" class="btn btn-gold">TRY LIVE STYLE GENERATOR <i class="fa-solid fa-palette"></i></a>
+          <a href="#graphics-portfolio" class="btn btn-dark-outline">EXPLORE MASTERPIECES <i class="fa-solid fa-eye"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 1: Interactive Brand Style & Color Palette Generator -->
+  <section class="section-padding" id="brand-generator" style="background: rgba(255,255,255,0.015); border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border);">
+    <div class="container">
+      <div class="text-center" style="max-width: 750px; margin: 0 auto 3rem auto;">
+        <div class="section-tag section-tag-gold"><i class="fa-solid fa-sliders"></i> LIVE INTERACTIVE STUDIO</div>
+        <h2 class="section-title">Interactive Brand Style & Palette Generator</h2>
+        <p class="section-description">
+          Select a brand archetype below to test live visual identities, color swatches with click-to-copy hex codes, font pairings, and design aesthetic previews!
+        </p>
+
+        <!-- Archetype Selector Tabs -->
+        <div class="vibe-selector-bar" id="vibeSelector">
+          <button class="vibe-btn active" data-vibe="luxury"><i class="fa-solid fa-crown"></i> Luxury Gold & Black</button>
+          <button class="vibe-btn" data-vibe="cyberpunk"><i class="fa-solid fa-bolt"></i> Cyberpunk Neon</button>
+          <button class="vibe-btn" data-vibe="organic"><i class="fa-solid fa-leaf"></i> Minimalist Organic</button>
+          <button class="vibe-btn" data-vibe="corporate"><i class="fa-solid fa-building-columns"></i> Corporate Elite</button>
+        </div>
+      </div>
+
+      <!-- Generator Preview Container -->
+      <div class="brand-preview-stage" id="brandPreviewStage">
+        <div class="brand-card-mockup-large" id="mockupCard">
+          <div class="mockup-badge-top" id="mockupBadge">👑 LUXURY BRAND SYSTEM V2</div>
+          <h2 class="mockup-brand-name" id="mockupName">AURUM & CO.</h2>
+          <p class="mockup-tagline" id="mockupTagline">"Precision Craftsmanship Meets Modern Visual Elegance"</p>
+          
+          <div class="mockup-features-row">
+            <span><i class="fa-solid fa-check text-gold"></i> Custom Logomark</span>
+            <span><i class="fa-solid fa-check text-gold"></i> Gold Foil Specs</span>
+            <span><i class="fa-solid fa-check text-gold"></i> 4K Vector Export</span>
+          </div>
+
+          <button class="btn btn-gold" id="mockupBtn" style="margin-top:1.5rem;" onclick="orderCurrentVibeWhatsApp()">
+            ORDER BRANDING IN THIS STYLE <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </div>
+
+        <div class="brand-specs-col">
+          <h3 style="font-size:1.15rem; color:var(--text-dark-primary); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+            <i class="fa-solid fa-palette text-gold"></i> Generated Color Swatches
+          </h3>
+          <div class="swatches-grid" id="swatchesGrid">
+            <!-- Rendered by JS -->
+          </div>
+
+          <h3 style="font-size:1.15rem; color:var(--text-dark-primary); margin:1.5rem 0 1rem 0; display:flex; align-items:center; gap:0.5rem;">
+            <i class="fa-solid fa-font text-gold"></i> Typography & Vibe Specs
+          </h3>
+          <div class="vibe-spec-box" id="vibeSpecBox">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 2: Interactive Before / After Brand Transformation Slider -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center" style="max-width: 750px; margin: 0 auto 3rem auto;">
+        <div class="section-tag section-tag-gold"><i class="fa-solid fa-repeat"></i> VISUAL MAKEOVER</div>
+        <h2 class="section-title">Before vs After Brand Makeover</h2>
+        <p class="section-description">
+          Drag the slider handle below to compare a outdated generic brand logo with Ashvik Media's custom luxury visual makeover.
+        </p>
+      </div>
+
+      <div class="before-after-container" id="beforeAfterSlider">
+        <!-- Before Layer -->
+        <div class="ba-layer ba-before">
+          <div class="ba-badge label-before">BEFORE REDESIGN</div>
+          <div class="ba-card-mockup before-mockup">
+            <div style="font-size:2.5rem; color:#64748B; margin-bottom:0.5rem;"><i class="fa-solid fa-box-open"></i></div>
+            <div class="mockup-brand-title" style="color:#94A3B8;">OLD DULL BRAND</div>
+            <p style="font-size:0.85rem;">Cluttered typography, clip-art logo, 0% brand trust.</p>
+            <div class="mockup-btn-old">Buy Product</div>
+          </div>
+        </div>
+
+        <!-- After Layer (Revealed by Slider) -->
+        <div class="ba-layer ba-after" id="baAfterLayer">
+          <div class="ba-badge label-after">AFTER ASHVIK MEDIA</div>
+          <div class="ba-card-mockup after-mockup">
+            <div style="font-size:2.8rem; color:var(--primary-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-crown"></i></div>
+            <div class="mockup-brand-title text-gold">AURUM LUXURY V2</div>
+            <p style="color:var(--text-dark-primary); font-size:0.88rem;">3.4X Higher Perceived Value, Custom Vector Mark, Gold Foil Packaging.</p>
+            <div class="mockup-btn-new">EXPLORE COLLECTION <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Touch Drag Handle -->
+        <div class="ba-handle" id="baHandle">
+          <div class="handle-line"></div>
+          <div class="handle-circle">
+            <i class="fa-solid fa-arrows-left-right"></i>
+          </div>
+          <div class="handle-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: Interactive 3D Portfolio Grid & Design Lightbox -->
+  <section class="section-padding" id="graphics-portfolio" style="background: rgba(255,255,255,0.015); border-top: 1px solid var(--dark-border);">
+    <div class="container">
+      <div class="text-center" style="max-width: 700px; margin: 0 auto 3rem auto;">
+        <div class="section-tag section-tag-gold"><i class="fa-solid fa-layer-group"></i> MASTERPIECE GALLERY</div>
+        <h2 class="section-title">Design Showcase Portfolio</h2>
+        <p class="section-description">
+          Click any design project below to launch an interactive 3D inspection lightbox detailing color palettes, font pairings, and vector specs.
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="graphics-tabs" id="graphicsTabs">
+          <button class="graphics-tab active" data-filter="all">All Masterpieces</button>
+          <button class="graphics-tab" data-filter="branding">Brand Identity & Logos</button>
+          <button class="graphics-tab" data-filter="packaging">Packaging & Box</button>
+          <button class="graphics-tab" data-filter="3d">3D Renders</button>
+          <button class="graphics-tab" data-filter="social">Social & Ad Creatives</button>
+        </div>
+      </div>
+
+      <div class="graphics-grid" id="graphicsGrid">
+        <!-- Item 1 -->
+        <div class="graphic-item-card" data-category="branding" onclick="openGraphicModal('Aura Fragrance Identity System', 'Complete visual branding system with bespoke monograms, gold foil stationery, and 40-page brand guidelines.', 'branding', '#FFC700', 'Plus Jakarta Sans', '+340% Brand Perception')">
+          <div class="graphic-thumb-box graphic-bg-1">
+            <div class="graphic-overlay">
+              <span class="graphic-tag">BRAND IDENTITY</span>
+              <h3 class="graphic-card-title">Aura Fragrances Identity</h3>
+              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="graphic-item-card" data-category="packaging" onclick="openGraphicModal('Velvet Skincare Matte Box', 'Eco-friendly minimal skincare bottle label and matte gold foil outer packaging dieline design.', 'packaging', '#059669', 'Syne & Outfit', '+215% E-Com Conversion')">
+          <div class="graphic-thumb-box graphic-bg-2">
+            <div class="graphic-overlay">
+              <span class="graphic-tag">PACKAGING & BOX</span>
+              <h3 class="graphic-card-title">Velvet Skincare Packaging</h3>
+              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="graphic-item-card" data-category="3d" onclick="openGraphicModal('Zenith Smartwatch 3D Photorealism', 'Hyper-realistic 3D product CAD modeling, glass refraction shaders, and studio lighting renders.', '3d', '#7C3AED', 'Space Grotesk', 'Amazon Bestseller Badge')">
+          <div class="graphic-thumb-box graphic-bg-3">
+            <div class="graphic-overlay">
+              <span class="graphic-tag">3D RENDERING</span>
+              <h3 class="graphic-card-title">Zenith Smartwatch 3D Render</h3>
+              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="graphic-item-card" data-category="social" onclick="openGraphicModal('HyperX Fitness Meta Ad Banners', '10 high-converting Instagram story & feed ad banners engineered for maximum click-through rates.', 'social', '#DB2777', 'Inter & Montserrat', '8.4X ROAS Benchmark')">
+          <div class="graphic-thumb-box graphic-bg-4">
+            <div class="graphic-overlay">
+              <span class="graphic-tag">SOCIAL CREATIVES</span>
+              <h3 class="graphic-card-title">HyperX High-ROAS Banners</h3>
+              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="graphic-item-card" data-category="branding" onclick="openGraphicModal('Apex Web3 Crypto Exchange', 'Futuristic neon & dark theme branding for a Web3 decentralized crypto platform.', 'branding', '#2563EB', 'Cabinet Grotesk', '250K App Signups')">
+          <div class="graphic-thumb-box graphic-bg-5">
+            <div class="graphic-overlay">
+              <span class="graphic-tag">BRAND IDENTITY</span>
+              <h3 class="graphic-card-title">Apex Web3 Brand Book</h3>
+              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="graphic-item-card" data-category="packaging" onclick="openGraphicModal('Nectar Cold Brew Bottle Sleeve', 'Custom vintage typography coffee bottle label and cardboard sleeve vector dielines.', 'packaging', '#C026D3', 'Playfair Display', '+180% Retail Shelf Orders')">
+          <div class="graphic-thumb-box graphic-bg-6">
+            <div class="graphic-overlay">
+              <span class="graphic-tag">PACKAGING & BOX</span>
+              <h3 class="graphic-card-title">Nectar Coffee Packaging</h3>
+              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 4: Interactive Graphic Package Builder & Cost Estimator -->
+  <section class="section-padding" id="graphics-builder">
+    <div class="container">
+      <div class="text-center" style="max-width: 750px; margin: 0 auto 3.5rem auto;">
+        <div class="section-tag section-tag-gold"><i class="fa-solid fa-calculator"></i> PACKAGE CONFIGURATOR</div>
+        <h2 class="section-title">Build Your Custom Graphic Package</h2>
+        <p class="section-description">
+          Select the design deliverables your brand requires to receive an instant price estimation, turnaround schedule, and WhatsApp order trigger.
+        </p>
+      </div>
+
+      <div class="builder-wrapper">
+        <div class="builder-checklist">
+          <h3 class="builder-subtitle"><i class="fa-solid fa-list-check text-gold"></i> Select Required Design Assets:</h3>
+
+          <label class="builder-checkbox-card">
+            <input type="checkbox" class="gfx-check" value="4999" data-name="Custom Logo & Vector Identity Marks" checked onchange="calcGraphicsPackage()">
+            <div class="checkbox-content">
+              <strong>Custom Logo & Vector Identity Marks</strong>
+              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">3 Logo concepts, vector files (AI, EPS, SVG), color palette & typography guide.</div>
+            </div>
+            <span class="gfx-price">₹4,999</span>
+          </label>
+
+          <label class="builder-checkbox-card">
+            <input type="checkbox" class="gfx-check" value="9999" data-name="Full Brand Stylebook & Strategy Guide" onchange="calcGraphicsPackage()">
+            <div class="checkbox-content">
+              <strong>Full Brand Stylebook & Brand Guidelines (25+ Pages)</strong>
+              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">Logo usage rules, stationery mockups, icon sets, and social media layout rules.</div>
+            </div>
+            <span class="gfx-price">₹9,999</span>
+          </label>
+
+          <label class="builder-checkbox-card">
+            <input type="checkbox" class="gfx-check" value="7499" data-name="Product Packaging & Box Dieline Design" onchange="calcGraphicsPackage()">
+            <div class="checkbox-content">
+              <strong>Product Packaging & Label Dieline Design</strong>
+              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">Print-ready CMYK vector files, barcode placement, and foil stamping specs.</div>
+            </div>
+            <span class="gfx-price">₹7,499</span>
+          </label>
+
+          <label class="builder-checkbox-card">
+            <input type="checkbox" class="gfx-check" value="5999" data-name="10 Social Ad Banners & Carousels" onchange="calcGraphicsPackage()">
+            <div class="checkbox-content">
+              <strong>10 High-ROAS Social Banners & Carousels</strong>
+              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">Figma / Photoshop editable templates engineered for high CTR.</div>
+            </div>
+            <span class="gfx-price">₹5,999</span>
+          </label>
+
+          <label class="builder-checkbox-card">
+            <input type="checkbox" class="gfx-check" value="8999" data-name="3D Photorealistic Product Modeling & Rendering" onchange="calcGraphicsPackage()">
+            <div class="checkbox-content">
+              <strong>3D Photorealistic Product Render Pack (5 Angles)</strong>
+              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">4K studio lighting renders tailored for Amazon & Shopify store catalog.</div>
+            </div>
+            <span class="gfx-price">₹8,999</span>
+          </label>
+
+          <label class="builder-checkbox-card">
+            <input type="checkbox" class="gfx-check" value="6999" data-name="Animated Motion Logo Video Intro (4K)" onchange="calcGraphicsPackage()">
+            <div class="checkbox-content">
+              <strong>Animated Motion Logo Video Intro (4K 60FPS)</strong>
+              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">Custom 3D logo reveal video animation with sound effects overlay.</div>
+            </div>
+            <span class="gfx-price">₹6,999</span>
+          </label>
+        </div>
+
+        <div class="builder-summary-col">
+          <h3 class="builder-subtitle"><i class="fa-solid fa-receipt text-gold"></i> Your Custom Package Summary</h3>
+
+          <div class="builder-summary-box">
+            <div style="font-size:0.9rem; color:var(--text-dark-secondary); margin-bottom:0.8rem;">Selected Assets:</div>
+            <div id="gfxSelectedList" class="gfx-selected-list">
+              <!-- Selected items preview -->
+            </div>
+
+            <hr style="border:none; border-top:1px solid var(--dark-border); margin: 1rem 0;">
+
+            <div class="gfx-sum-row">
+              <span>Estimated Delivery:</span>
+              <span class="text-gold" id="gfxTimeframe" style="font-weight:700;">3 - 5 Business Days</span>
+            </div>
+
+            <div class="gfx-sum-row" style="margin-top:0.8rem; font-size:1.3rem; font-weight:800;">
+              <span>Total Investment:</span>
+              <span class="text-gold" id="gfxTotalPrice">₹4,999</span>
+            </div>
+          </div>
+
+          <button class="btn btn-gold" style="width: 100%; text-align: center; margin-top: 1.5rem;" onclick="orderGraphicsWhatsApp()">
+            ORDER GRAPHICS PACKAGE VIA WHATSAPP <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Lightbox for Graphic Inspection -->
+  <div class="modal-overlay" id="graphicModalOverlay" onclick="closeGraphicModal()"></div>
+  <div class="modal-card" id="graphicModal" style="max-width: 600px;">
+    <div class="modal-header">
+      <h3 id="gmTitle">Design Showcase Details</h3>
+      <button class="modal-close-btn" onclick="closeGraphicModal()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" id="gmBody">
+      <!-- Populated dynamically -->
+    </div>
+    <div class="modal-footer" style="text-align: right;">
+      <a id="gmWabtn" href="https://wa.me/919993515138" target="_blank" class="btn btn-gold">
+        REQUEST THIS DESIGN STYLE <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Footer Top Interactive CTA Banner -->
+      <div class="footer-cta-banner">
+        <div class="footer-cta-info">
+          <span class="status-indicator-pill">
+            <span class="status-dot-pulse"></span>
+            ACCEPTING NEW PROJECTS FOR 2026
+          </span>
+          <h3 class="footer-cta-heading">Ready To Scale Your Brand To <span class="text-gold">New Heights?</span></h3>
+          <p class="footer-cta-subtext">Book a free strategy session with our senior digital marketing & growth specialists today.</p>
+        </div>
+        <div class="footer-cta-actions">
+          <a href="contact.html" class="btn btn-gold footer-banner-btn">
+            <span>GET FREE STRATEGY CALL</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/919993515138" target="_blank" rel="noopener noreferrer" class="btn btn-dark-outline footer-banner-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>CHAT ON WHATSAPP</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            Ashvik Media is a premier digital marketing & performance agency crafting viral social media campaigns, high-converting e-commerce solutions, and premium graphic design.
+          </p>
+          <div class="social-links-wrapper">
+            <span class="social-label">Follow Our Journey:</span>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/919993515138" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Home</a>
+            <a href="about.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> About Us</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Services</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce</a>
+            <a href="graphics.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphics</a>
+            <a href="blog.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Blog & Insights</a>
+            <a href="contact.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Contact Us</a>
+            <a href="privacy-policy.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Privacy Policy</a>
+            <a href="terms.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-title">Expertise & Services</h4>
+          <div class="footer-links">
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
+            <a href="graphics.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
+            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-title">Headquarters</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="contact-item-label">Office Address</span>
+                <p class="contact-item-val">Brahmapuri Colony, Indore, MP 452001, India</p>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="contact-item-label">Email Us</span>
+                <a href="mailto:contact@ashvikmedia.com" class="contact-item-val link-val">contact@ashvikmedia.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span class="contact-item-label">Call / WhatsApp</span>
+                <a href="tel:+919993515138" class="contact-item-val link-val">+91 99935 15138</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>© Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.</p>
+          <div class="footer-bottom-extra">
+            <span>Crafted with <i class="fa-solid fa-heart" style="color: var(--primary-gold);"></i> for digital growth</span>
+          </div>
+        </div>
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+          <span>TOP</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
