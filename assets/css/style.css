@@ -8,7 +8,7 @@
 :root {
   --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
-  /* Color Palette */
+  /* Color Palette - Dark Black & Gold Theme */
   --primary-gold: #FFC700;
   --primary-gold-hover: #E6B400;
   --primary-gold-light: rgba(255, 199, 0, 0.12);
@@ -17,22 +17,22 @@
   --dark-card-hover: #1C2230;
   --dark-border: rgba(255, 255, 255, 0.08);
   
-  --light-bg: #FFFFFF;
-  --light-bg-alt: #F8F9FD;
-  --light-card: #FFFFFF;
-  --light-border: #E5E7EB;
+  --light-bg: #0A0C10;
+  --light-bg-alt: #131720;
+  --light-card: #131720;
+  --light-border: rgba(255, 255, 255, 0.08);
   
-  --text-dark-primary: #0F172A;
-  --text-dark-secondary: #475569;
+  --text-dark-primary: #F8FAFC;
+  --text-dark-secondary: #94A3B8;
   --text-dark-muted: #64748B;
   
   --text-light-primary: #F8FAFC;
   --text-light-secondary: #94A3B8;
   --text-light-muted: #64748B;
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
   --shadow-gold: 0 8px 24px rgba(255, 199, 0, 0.25);
   
   --radius-sm: 6px;
@@ -133,53 +133,6 @@ body.cursor-hover .custom-cursor-dot {
   filter: drop-shadow(0 0 12px rgba(255, 199, 0, 0.6));
 }
 
-/* High-Contrast Gold Text with Crisp Letter Stroke Outline for ALL White/Light Background Sections */
-.section-title .text-gold,
-.page-hero-title .text-gold,
-.pricing-grid .text-gold,
-.custom-builder-wrapper .text-gold,
-.comparison-matrix-wrapper .text-gold,
-.packages-faq-wrapper .text-gold,
-.why-choose-wrapper .text-gold,
-.services-section-wrapper .text-gold,
-.mission-section-wrapper .text-gold,
-.faq-section-wrapper .text-gold,
-.faq-section .text-gold,
-.testimonials-section .text-gold,
-.testimonials-wrapper .text-gold,
-.portfolio-section-wrapper .text-gold,
-.contact-grid .text-gold,
-.contact-info-wrapper .text-gold,
-.contact-map-section .text-gold,
-.light-bg .text-gold,
-.bg-white .text-gold {
-  background: linear-gradient(
-    90deg, 
-    #B88200 0%, 
-    #E6A100 25%, 
-    #8A6000 50%, 
-    #E6A100 75%, 
-    #B88200 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.2px #8A6000;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
-  animation: textGoldFluidFlow 3.5s linear infinite;
-  display: inline-block;
-  font-weight: 800;
-}
-
-.why-choose-wrapper .text-gold:hover,
-.services-section-wrapper .text-gold:hover,
-.mission-section-wrapper .text-gold:hover,
-.faq-section-wrapper .text-gold:hover,
-.faq-section .text-gold:hover {
-  animation: textGoldFluidFlow 1.4s linear infinite;
-  filter: drop-shadow(0 2px 10px rgba(184, 130, 0, 0.45));
-}
-
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -187,8 +140,8 @@ html {
 
 body {
   font-family: var(--font-primary);
-  background-color: var(--light-bg);
-  color: var(--text-dark-primary);
+  background-color: var(--dark-bg);
+  color: var(--text-light-primary);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -1352,14 +1305,14 @@ button {
   }
 }
 
-/* Why Choose Us Section - Clean White Theme & Creative Modern Agency Design */
+/* Why Choose Us Section - Creative Modern Dark Theme */
 .why-choose-wrapper {
   padding: 6.5rem 0;
   margin-top: 2rem;
-  background-color: #FFFFFF;
-  color: #0A0C10;
+  background-color: #0A0C10;
+  color: #F8FAFC;
   position: relative;
-  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .why-choose-grid {
@@ -1378,8 +1331,8 @@ button {
 .why-choose-img {
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-  border: 1px solid #E5E7EB;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
 }
 
@@ -1396,14 +1349,14 @@ button {
 
 .why-floating-badge {
   position: absolute;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   padding: 0.75rem 1.15rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   z-index: 2;
   transition: transform 0.3s ease;
 }
@@ -1426,9 +1379,9 @@ button {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: #FFF9E6;
+  background: rgba(255, 199, 0, 0.15);
   border: 1px solid rgba(255, 199, 0, 0.4);
-  color: #000000;
+  color: #FFC700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1439,13 +1392,13 @@ button {
 .why-floating-val {
   font-size: 1.05rem;
   font-weight: 800;
-  color: #111827;
+  color: #F8FAFC;
   line-height: 1.1;
 }
 
 .why-floating-lbl {
   font-size: 0.75rem;
-  color: #6B7280;
+  color: #94A3B8;
   margin-top: 0.15rem;
 }
 
@@ -1458,8 +1411,8 @@ button {
 }
 
 .why-feature-box {
-  background: #F9FAFB;
-  border: 1px solid #E5E7EB;
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 1.25rem 1.1rem;
   transition: all 0.3s ease;
@@ -1468,19 +1421,19 @@ button {
 }
 
 .why-feature-box:hover {
-  background: #FFFFFF;
+  background: #1C2230;
   border-color: var(--primary-gold);
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .why-feature-icon {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: #FFF9E6;
+  background: rgba(255, 199, 0, 0.15);
   border: 1px solid rgba(255, 199, 0, 0.4);
-  color: #000000;
+  color: #FFC700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1491,13 +1444,13 @@ button {
 .why-feature-title {
   font-size: 0.98rem;
   font-weight: 800;
-  color: #111827;
+  color: #F8FAFC;
   margin-bottom: 0.3rem;
 }
 
 .why-feature-desc {
   font-size: 0.82rem;
-  color: #6B7280;
+  color: #94A3B8;
   line-height: 1.45;
   margin: 0;
 }
@@ -1903,46 +1856,41 @@ button {
   }
 }
 
-/* Detailed Services Cards - Clean White Theme & Compact Creative Architecture */
+/* Detailed Services Cards - Creative Architecture Dark Theme */
 .services-section-wrapper {
   padding: 5.5rem 0;
-  background-color: #FFFFFF;
-  color: #0A0C10;
+  background-color: #0A0C10;
+  color: #F8FAFC;
   position: relative;
 }
 
 .services-pill-badge {
   display: inline-block;
   padding: 0.4rem 1.35rem;
-  border: 2px dotted #D97706;
+  border: 2px dotted #FFC700;
   border-radius: 9999px;
-  color: #D97706;
+  color: #FFC700;
   font-weight: 800;
   font-size: 0.75rem;
   letter-spacing: 1.8px;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
-  background: rgba(217, 119, 6, 0.06);
-  box-shadow: 0 0 14px rgba(217, 119, 6, 0.12);
-  background-image: linear-gradient(90deg, #D97706 0%, #FFC700 35%, #B45309 70%, #FFC700 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textGoldFluidFlow 3.5s linear infinite;
+  background: rgba(255, 199, 0, 0.08);
+  box-shadow: 0 0 14px rgba(255, 199, 0, 0.15);
 }
 
 .services-main-title {
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.15;
-  color: #0A0C10;
+  color: #F8FAFC;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 .services-main-desc {
   font-size: 1.02rem;
-  color: #4B5563;
+  color: #94A3B8;
   line-height: 1.6;
   max-width: 620px;
   margin: 0 auto;
@@ -1956,8 +1904,8 @@ button {
 }
 
 .service-card-box {
-  background: #F9FAFB;
-  border: 1px solid #E5E7EB;
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 2rem 1.6rem;
   transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -1967,10 +1915,10 @@ button {
 }
 
 .service-card-box:hover {
-  background: #FFFFFF;
+  background: #1C2230;
   transform: translateY(-8px);
   border-color: var(--primary-gold);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .service-card-header {
@@ -1984,9 +1932,9 @@ button {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: #FFF9E6;
+  background: rgba(255, 199, 0, 0.15);
   border: 1.5px solid rgba(255, 199, 0, 0.5);
-  color: #000000;
+  color: #FFC700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1996,13 +1944,13 @@ button {
 .service-card-icon-badge svg {
   width: 24px;
   height: 24px;
-  stroke: #000000;
+  stroke: #FFC700;
 }
 
 .service-card-tag {
   background: rgba(255, 199, 0, 0.12);
   border: 1px solid rgba(255, 199, 0, 0.35);
-  color: #000000;
+  color: #FFC700;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 1px;
@@ -2014,14 +1962,14 @@ button {
 .service-card-title {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #111827;
+  color: #F8FAFC;
   margin-bottom: 0.6rem;
   line-height: 1.25;
 }
 
 .service-card-desc {
   font-size: 0.88rem;
-  color: #6B7280;
+  color: #94A3B8;
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
@@ -2039,14 +1987,14 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #0A0C10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.35rem 0.75rem;
   border-radius: 8px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #374151;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  color: #CBD5E1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.25s ease;
 }
 
@@ -2068,10 +2016,10 @@ button {
   justify-content: space-between;
   width: 100%;
   padding: 0.75rem 1.15rem;
-  background: #F3F4F6;
-  border: 1px solid #E5E7EB;
+  background: #1F2937;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
-  color: #111827;
+  color: #F8FAFC;
   font-weight: 700;
   font-size: 0.85rem;
   text-decoration: none;
@@ -2565,10 +2513,11 @@ button {
   }
 }
 
-/* Mission & Numbers Section - 100% Design & Icon Match */
+/* Mission & Numbers Section - Dark Theme */
 .mission-section-wrapper {
   padding: 5rem 0;
-  background-color: #FFFFFF;
+  background-color: #0A0C10;
+  color: #F8FAFC;
 }
 
 .mission-top-grid {
@@ -2587,12 +2536,12 @@ button {
 }
 
 .stat-card-box {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 1.75rem 0.75rem;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2602,7 +2551,7 @@ button {
 .stat-card-box:hover {
   transform: translateY(-4px);
   border-color: var(--primary-gold);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
 .stat-card-icon {
@@ -2636,7 +2585,7 @@ button {
 .stat-card-label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #4B5563;
+  color: #94A3B8;
   line-height: 1.35;
 }
 
@@ -2658,7 +2607,7 @@ button {
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.15;
-  color: #000000;
+  color: #F8FAFC;
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
 }
@@ -2670,7 +2619,7 @@ button {
 
 .mission-desc {
   font-size: 1.05rem;
-  color: #4B5563;
+  color: #94A3B8;
   line-height: 1.65;
 }
 
@@ -2693,7 +2642,7 @@ button {
 .trusted-brands-divider .line {
   flex: 1;
   height: 1px;
-  background-color: #E5E7EB;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .trusted-brands-divider .text {
@@ -2715,7 +2664,7 @@ button {
 .brand-text-logo {
   font-weight: 800;
   font-size: 0.78rem;
-  color: #111827;
+  color: #F8FAFC;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -2746,8 +2695,8 @@ button {
   height: 52px;
   border-radius: 50%;
   border: 2px solid var(--primary-gold);
-  color: #000000;
-  background: #FFFFFF;
+  color: #FFC700;
+  background: #131720;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2757,29 +2706,29 @@ button {
 .mini-service-icon svg {
   width: 24px;
   height: 24px;
-  stroke: #000000;
+  stroke: #FFC700;
 }
 
 .mini-service-title {
   font-size: 0.85rem;
   font-weight: 800;
-  color: #000000;
+  color: #F8FAFC;
   text-transform: uppercase;
   line-height: 1.2;
 }
 
 .mini-service-sub {
   font-size: 0.75rem;
-  color: #6B7280;
+  color: #94A3B8;
 }
 
 /* Bottom Feature Bar Container */
 .mission-bottom-features {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 1.25rem 2rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
@@ -2790,7 +2739,7 @@ button {
   align-items: center;
   gap: 0.85rem;
   padding: 0 1rem;
-  border-right: 1px solid #E5E7EB;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .feature-bar-item:last-child {
@@ -2802,7 +2751,7 @@ button {
   height: 48px;
   border-radius: 50%;
   border: 2px solid var(--primary-gold);
-  background: #FFFFFF;
+  background: #0A0C10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2818,7 +2767,7 @@ button {
 .feature-bar-text {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #1F2937;
+  color: #F8FAFC;
   line-height: 1.3;
 }
 
@@ -2979,9 +2928,10 @@ button {
 
 .faq-section-wrapper {
   position: relative;
-  background-color: #FFFFFF;
+  background-color: #0A0C10;
   padding: 6rem 0;
   overflow: hidden;
+  color: #F8FAFC;
 }
 
 .faq-ambient-shape {
@@ -2994,6 +2944,7 @@ button {
   border-top-left-radius: 320px;
   z-index: 0;
   pointer-events: none;
+  opacity: 0.15;
 }
 
 .social-proof-divider-line {
@@ -3177,28 +3128,23 @@ button {
   align-items: center;
   gap: 0.4rem;
   padding: 0.4rem 1.25rem;
-  border: 2px dotted #D97706;
+  border: 2px dotted #FFC700;
   border-radius: 9999px;
-  color: #D97706;
+  color: #FFC700;
   font-weight: 800;
   font-size: 0.78rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  background: rgba(217, 119, 6, 0.06);
-  box-shadow: 0 0 14px rgba(217, 119, 6, 0.12);
-  background-image: linear-gradient(90deg, #D97706 0%, #FFC700 35%, #B45309 70%, #FFC700 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textGoldFluidFlow 3.5s linear infinite;
+  background: rgba(255, 199, 0, 0.08);
+  box-shadow: 0 0 14px rgba(255, 199, 0, 0.15);
 }
 
 .faq-main-title {
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.15;
-  color: #000000;
+  color: #F8FAFC;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
@@ -3216,7 +3162,7 @@ button {
 
 .faq-main-desc {
   font-size: 1.05rem;
-  color: #4B5563;
+  color: #94A3B8;
   max-width: 540px;
   margin-bottom: 2.5rem;
   line-height: 1.6;
@@ -3230,16 +3176,16 @@ button {
 }
 
 .faq-item {
-  background: #FFFFFF;
-  border: 1px solid #F3F4F6;
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
   overflow: hidden;
 }
 
 .faq-item:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   border-color: rgba(255, 199, 0, 0.4);
 }
 
@@ -3254,7 +3200,7 @@ button {
   cursor: pointer;
   font-weight: 700;
   font-size: 1.05rem;
-  color: #0F172A;
+  color: #F8FAFC;
   text-align: left;
   gap: 1rem;
 }
@@ -3283,19 +3229,19 @@ button {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid #E5E7EB;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000000;
+  color: #FFC700;
   font-size: 0.95rem;
   transition: var(--transition);
   flex-shrink: 0;
-  background: #FFFFFF;
+  background: #0A0C10;
 }
 
 .faq-item.active {
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
   border-color: var(--primary-gold);
 }
 
@@ -3311,7 +3257,7 @@ button {
   overflow: hidden;
   transition: max-height 0.35s ease, padding 0.35s ease;
   padding: 0 1.5rem;
-  color: #4B5563;
+  color: #94A3B8;
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -4021,9 +3967,9 @@ button {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--light-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow-lg);
-  background: #FFFFFF;
+  background: #131720;
 }
 
 .map-badge-overlay {

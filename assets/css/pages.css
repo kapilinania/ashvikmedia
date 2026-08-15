@@ -125,14 +125,14 @@
 }
 
 .contact-card-box {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FD 100%);
-  border: 1px solid rgba(229, 231, 235, 0.8);
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   padding: 1.5rem 1.75rem;
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
@@ -141,8 +141,8 @@
 .contact-card-box:hover {
   transform: translateY(-4px);
   border-color: var(--primary-gold);
-  box-shadow: 0 12px 30px rgba(255, 199, 0, 0.18);
-  background: #FFFFFF;
+  box-shadow: 0 12px 30px rgba(255, 199, 0, 0.2);
+  background: #1C2230;
 }
 
 .contact-card-icon {
@@ -151,7 +151,7 @@
   border-radius: 14px;
   background: rgba(255, 199, 0, 0.12);
   border: 1px solid rgba(255, 199, 0, 0.3);
-  color: #D97706;
+  color: #FFC700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,7 +193,7 @@
 }
 
 .contact-card-link:hover {
-  color: #D97706;
+  color: #FFC700;
 }
 
 .contact-card-sub {
@@ -205,7 +205,7 @@
 .contact-card-action {
   font-size: 0.8rem;
   font-weight: 700;
-  color: #D97706;
+  color: #FFC700;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -226,21 +226,22 @@
   gap: 0.4rem;
   padding: 0.4rem 0.9rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 199, 0, 0.08);
-  border: 1px solid rgba(255, 199, 0, 0.25);
+  background: rgba(255, 199, 0, 0.12);
+  border: 1px solid rgba(255, 199, 0, 0.3);
   font-size: 0.8rem;
   font-weight: 700;
-  color: #B45309;
+  color: #FFC700;
 }
 
 /* Form Styling */
 .contact-form-card {
-  background: #FFFFFF;
+  background: #131720;
   border: 1px solid rgba(255, 199, 0, 0.35);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.07);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
   position: relative;
+  color: #F8FAFC;
 }
 
 .contact-form-header {
@@ -319,7 +320,7 @@
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--primary-gold);
-  background-color: #FFFFFF;
+  background-color: #1C2230;
   box-shadow: 0 0 0 3px rgba(255, 199, 0, 0.2);
 }
 
@@ -352,30 +353,30 @@
   display: block;
   text-align: center;
   padding: 0.65rem 0.5rem;
-  background: var(--light-bg-alt);
-  border: 1px solid var(--light-border);
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--text-dark-secondary);
+  color: #94A3B8;
   cursor: pointer;
   transition: var(--transition);
 }
 
 .budget-pill-option input[type="radio"]:checked + .budget-pill-label,
 .budget-pill-label:hover {
-  background: var(--primary-gold-light);
+  background: rgba(255, 199, 0, 0.12);
   border-color: var(--primary-gold);
-  color: #B45309;
+  color: #FFC700;
 }
 
 /* Map Hub Architecture */
 .contact-map-hub-card {
-  background: #FFFFFF;
+  background: #131720;
   border: 2px solid rgba(255, 199, 0, 0.35);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
   position: relative;
 }
 
@@ -471,8 +472,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--light-bg-alt);
-  border: 1px solid var(--light-border);
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.35rem;
   border-radius: var(--radius-pill);
   margin-top: 1.5rem;
@@ -485,7 +486,7 @@
   border-radius: var(--radius-pill);
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--text-dark-secondary);
+  color: #94A3B8;
   cursor: pointer;
   transition: var(--transition);
   display: inline-flex;
@@ -496,14 +497,14 @@
 }
 
 .billing-switch-btn.active {
-  background: var(--dark-bg);
-  color: var(--primary-gold);
-  box-shadow: 0 4px 12px rgba(10, 12, 16, 0.2);
+  background: var(--primary-gold);
+  color: #0A0C10;
+  box-shadow: 0 4px 12px rgba(255, 199, 0, 0.3);
 }
 
 .billing-discount-tag {
-  background: var(--primary-gold-light);
-  color: #B45309;
+  background: rgba(255, 199, 0, 0.12);
+  color: #FFC700;
   border: 1px solid rgba(255, 199, 0, 0.3);
   font-size: 0.7rem;
   padding: 0.2rem 0.6rem;
@@ -516,23 +517,22 @@
 .comparison-matrix-wrapper .text-gold,
 .custom-builder-wrapper .text-gold,
 .packages-faq-wrapper .text-gold {
-  color: #D49B00;
-  background: linear-gradient(90deg, #B88200 0%, #FFC700 30%, #8A6000 60%, #FFC700 85%, #B88200 100%);
+  color: #FFC700;
+  background: linear-gradient(90deg, #FFC700 0%, #FFE57F 30%, #FFB300 60%, #FFE57F 85%, #FFC700 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.2px #8A6000;
   animation: textGoldFluidFlow 3.5s linear infinite;
   display: inline-block;
   font-weight: 800;
 }
 
 .pricing-card {
-  background: #FFFFFF;
-  border: 1px solid var(--light-border);
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   padding: 2.75rem 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -543,19 +543,19 @@
 .pricing-card-title {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--text-dark-primary) !important;
+  color: #F8FAFC !important;
   margin-bottom: 0.4rem;
 }
 
 .pricing-card:hover {
   transform: translateY(-6px);
   border-color: var(--primary-gold);
-  box-shadow: 0 20px 45px rgba(255, 199, 0, 0.18);
+  box-shadow: 0 20px 45px rgba(255, 199, 0, 0.25);
 }
 
 .pricing-card.featured {
   border: 2px solid var(--primary-gold);
-  box-shadow: 0 16px 40px rgba(255, 199, 0, 0.22);
+  box-shadow: 0 16px 40px rgba(255, 199, 0, 0.25);
   transform: scale(1.03);
 }
 
@@ -583,8 +583,8 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--primary-gold-light);
-  color: #B45309;
+  background: rgba(255, 199, 0, 0.12);
+  color: #FFC700;
   border: 1px solid rgba(255, 199, 0, 0.3);
   display: flex;
   align-items: center;
@@ -596,7 +596,7 @@
 .pricing-price {
   font-size: 2.6rem;
   font-weight: 800;
-  color: var(--text-dark-primary);
+  color: #F8FAFC;
   margin: 1.25rem 0;
   line-height: 1;
 }
@@ -604,7 +604,7 @@
 .pricing-price span {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-dark-muted);
+  color: #94A3B8;
 }
 
 .check-list {
@@ -620,7 +620,7 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 0.9rem;
-  color: var(--text-dark-secondary);
+  color: #CBD5E1;
 }
 
 .check-icon {
@@ -639,9 +639,9 @@
 
 /* Custom Package Estimator Section */
 .custom-builder-wrapper {
-  background: var(--light-bg-alt);
-  border-top: 1px solid var(--light-border);
-  border-bottom: 1px solid var(--light-border);
+  background: #0A0C10;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .custom-builder-grid {
@@ -671,8 +671,8 @@
 }
 
 .addon-card-item {
-  background: #FFFFFF;
-  border: 1px solid var(--light-border);
+  background: #131720;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -685,20 +685,20 @@
 
 .addon-card-item:hover {
   border-color: var(--primary-gold);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .addon-card-item.selected {
-  background: rgba(255, 199, 0, 0.06);
+  background: rgba(255, 199, 0, 0.08);
   border-color: var(--primary-gold);
-  box-shadow: 0 8px 24px rgba(255, 199, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(255, 199, 0, 0.2);
 }
 
 .addon-checkbox {
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  border: 2px solid var(--light-border);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -716,13 +716,13 @@
 .addon-card-info h5 {
   font-size: 0.95rem;
   font-weight: 800;
-  color: var(--text-dark-primary);
+  color: #F8FAFC;
   margin-bottom: 0.25rem;
 }
 
 .addon-card-info p {
   font-size: 0.8rem;
-  color: var(--text-dark-secondary);
+  color: #94A3B8;
   line-height: 1.35;
   margin-bottom: 0.5rem;
 }
@@ -730,16 +730,16 @@
 .addon-price-tag {
   font-size: 0.85rem;
   font-weight: 800;
-  color: #B45309;
+  color: #FFC700;
 }
 
 .builder-total-card {
-  background: var(--dark-bg);
+  background: #131720;
   color: #FFFFFF;
   border: 2px solid rgba(255, 199, 0, 0.35);
   border-radius: var(--radius-lg);
   padding: 2.25rem 2rem;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 100px;
 }
@@ -800,15 +800,16 @@
 /* Feature Comparison Matrix */
 .comparison-matrix-wrapper {
   padding: 5rem 0;
+  background-color: #0A0C10;
 }
 
 .comparison-table-container {
   overflow-x: auto;
   margin-top: 3rem;
-  border: 1px solid var(--light-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.05);
-  background: #FFFFFF;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+  background: #131720;
 }
 
 .comparison-table {
@@ -821,12 +822,12 @@
 .comparison-table th, 
 .comparison-table td {
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--light-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.9rem;
 }
 
 .comparison-table th {
-  background: var(--dark-bg);
+  background: #0A0C10;
   color: #FFFFFF;
   font-weight: 800;
   font-size: 0.95rem;
@@ -841,12 +842,12 @@
 }
 
 .comparison-table tr:hover {
-  background: var(--light-bg-alt);
+  background: #1C2230;
 }
 
 .comparison-feature-name {
   font-weight: 700;
-  color: var(--text-dark-primary);
+  color: #F8FAFC;
 }
 
 .comparison-cell-check {
