@@ -2,20 +2,890 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services | Ashvik Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Our Services & Growth Solutions | Ashvik Media</title>
+  <meta name="description" content="Explore Ashvik Media's full-suite growth services: E-Commerce Store Scaling, Viral Social Media Management, Luxury Graphic Design, High-ROAS Paid Ads, and CRO Funnels.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/pages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       ASHVIK MEDIA - SERVICES PAGE (ULTRA-RESPONSIVE ARCHITECTURE 2026)
+       ========================================================================== */
+    :root {
+      --primary-gold: #FFC700;
+      --gold-dark: #D9A800;
+      --gold-glow: rgba(255, 199, 0, 0.25);
+      --bg-dark: #080A0F;
+      --card-bg-dark: #10141D;
+      --card-bg-hover: #151A26;
+      --card-border-subtle: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(255, 199, 0, 0.5);
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      line-height: 1.6;
+    }
+
+    /* Section Padding Helper */
+    .section-padding {
+      padding: clamp(2.8rem, 5.5vw, 5.5rem) 0;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Page Hero */
+    .page-hero {
+      padding-top: clamp(7rem, 9.5vw, 9.5rem);
+      padding-bottom: clamp(2.5rem, 4vw, 4rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 15%, rgba(255, 199, 0, 0.12) 0%, rgba(8, 10, 15, 0) 65%);
+    }
+
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255, 199, 0, 0.08);
+      border: 1px solid rgba(255, 199, 0, 0.35);
+      padding: 0.4rem 1.15rem;
+      border-radius: 9999px;
+      font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+      font-weight: 800;
+      color: var(--primary-gold);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 16px rgba(255, 199, 0, 0.12);
+    }
+
+    .page-hero-title {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+      word-break: break-word;
+    }
+
+    .page-hero-desc {
+      max-width: 680px;
+      margin: 0 auto 1.5rem auto;
+      color: var(--text-muted);
+      font-size: clamp(0.92rem, 2vw, 1.08rem);
+      line-height: 1.65;
+    }
+
+    /* Sticky Filter & Live Search Bar */
+    .services-filter-nav {
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+      background: rgba(8, 10, 15, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.75rem 0;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .services-nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .services-tabs-list {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.2rem 0.2rem 0.6rem 0.2rem;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .services-tabs-list::-webkit-scrollbar { display: none; }
+
+    .service-tab-btn {
+      padding: 0.5rem 1.15rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-size: clamp(0.76rem, 1.8vw, 0.84rem);
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-shrink: 0;
+    }
+
+    .service-tab-btn:hover,
+    .service-tab-btn.active {
+      background: var(--primary-gold);
+      color: #080A0F;
+      border-color: var(--primary-gold);
+      box-shadow: 0 4px 14px rgba(255, 199, 0, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .service-search-box {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .service-search-input {
+      width: 100%;
+      background: #131722;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      padding: 0.52rem 1rem 0.52rem 2.3rem;
+      font-size: 0.84rem;
+      color: #F8FAFC;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .service-search-input:focus {
+      border-color: var(--primary-gold);
+      box-shadow: 0 0 12px rgba(255, 199, 0, 0.25);
+    }
+
+    .service-search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748B;
+      font-size: 0.82rem;
+      pointer-events: none;
+    }
+
+    /* Grid of Dynamic Service Cards */
+    .services-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.2rem, 2.5vw, 1.8rem);
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .service-hub-card {
+      background: var(--card-bg-dark);
+      border: 1px solid var(--card-border-subtle);
+      border-radius: 18px;
+      padding: clamp(1.25rem, 2.8vw, 1.85rem);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+      width: 100%;
+    }
+
+    .service-hub-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-hub-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--card-hover-border);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 22px rgba(255, 199, 0, 0.12);
+      background: var(--card-bg-hover);
+    }
+
+    .service-hub-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-hub-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .service-hub-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(255, 199, 0, 0.12);
+      border: 1.5px solid rgba(255, 199, 0, 0.45);
+      color: var(--primary-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 14px rgba(255, 199, 0, 0.15);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .service-hub-card:hover .service-hub-icon {
+      transform: scale(1.08) rotate(3deg);
+      background: var(--primary-gold);
+      color: #080A0F;
+    }
+
+    .service-metric-tag {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #10B981;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: nowrap;
+    }
+
+    .service-hub-title {
+      font-size: clamp(1.15rem, 2.2vw, 1.32rem);
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 0.65rem;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    .service-hub-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.35rem;
+      flex-grow: 1;
+    }
+
+    .service-deliverables-title {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary-gold);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .service-deliverables-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .service-deliverable-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: 0.84rem;
+      color: #E2E8F0;
+      line-height: 1.45;
+    }
+
+    .service-deliverable-item i {
+      color: var(--primary-gold);
+      font-size: 0.72rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .service-card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .service-btn-primary {
+      padding: 0.65rem 0.85rem;
+      background: var(--primary-gold);
+      color: #080A0F;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.25s ease;
+      border: 1px solid var(--primary-gold);
+    }
+
+    .service-btn-primary:hover {
+      background: #E5B200;
+      box-shadow: 0 4px 14px rgba(255, 199, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .service-btn-secondary {
+      padding: 0.65rem 0.85rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #F8FAFC;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.25s ease;
+    }
+
+    .service-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       REAL-TIME INTERACTIVE CUSTOMIZER (ULTRA-RESPONSIVE ARCHITECTURE)
+       ========================================================================== */
+    .estimator-section {
+      background: #0B0E14;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      position: relative;
+    }
+
+    .estimator-box {
+      background: var(--card-bg-dark);
+      border: 1px solid rgba(255, 199, 0, 0.3);
+      border-radius: clamp(16px, 3vw, 24px);
+      padding: clamp(1.2rem, 3.5vw, 2.4rem);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: clamp(1.4rem, 3vw, 2.5rem);
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    .estimator-option-group {
+      margin-bottom: 1.6rem;
+      width: 100%;
+    }
+
+    .estimator-group-title {
+      font-size: clamp(0.92rem, 2vw, 1.02rem);
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .estimator-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .tier-select-card {
+      background: #080A0F;
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: clamp(0.85rem, 2vw, 1.15rem) clamp(0.6rem, 1.5vw, 0.9rem);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.25s ease;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tier-select-card:hover {
+      border-color: rgba(255, 199, 0, 0.4);
+      background: rgba(255, 199, 0, 0.02);
+    }
+
+    .tier-select-card.active {
+      border-color: var(--primary-gold);
+      background: rgba(255, 199, 0, 0.08);
+      box-shadow: 0 0 18px rgba(255, 199, 0, 0.18);
+    }
+
+    .tier-name {
+      font-size: clamp(0.85rem, 1.8vw, 0.94rem);
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 0.25rem;
+      line-height: 1.25;
+    }
+
+    .tier-subtitle {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .addons-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      width: 100%;
+    }
+
+    .addon-item-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #080A0F;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: clamp(0.75rem, 2vw, 0.95rem) clamp(0.85rem, 2vw, 1.1rem);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      gap: 0.6rem;
+      width: 100%;
+      user-select: none;
+    }
+
+    .addon-item-label:hover {
+      border-color: rgba(255, 199, 0, 0.35);
+      background: rgba(255, 199, 0, 0.02);
+    }
+
+    .addon-item-label input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #64748B;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .addon-item-label input[type="checkbox"]:checked {
+      background: var(--primary-gold);
+      border-color: var(--primary-gold);
+    }
+
+    .addon-item-label input[type="checkbox"]:checked::after {
+      content: '✓';
+      position: absolute;
+      color: #080A0F;
+      font-size: 13px;
+      font-weight: 900;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .addon-left {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .addon-text {
+      font-size: clamp(0.8rem, 1.6vw, 0.88rem);
+      font-weight: 600;
+      color: #E2E8F0;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .addon-tag {
+      font-size: 0.72rem;
+      color: var(--primary-gold);
+      font-weight: 800;
+      background: rgba(255, 199, 0, 0.12);
+      border: 1px solid rgba(255, 199, 0, 0.25);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Estimator Summary Output Box */
+    .estimator-summary-box {
+      background: #080A0F;
+      border: 1px solid rgba(255, 199, 0, 0.35);
+      border-radius: 18px;
+      padding: clamp(1.25rem, 2.8vw, 1.85rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .summary-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--primary-gold);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .summary-title {
+      font-size: clamp(1.2rem, 2.5vw, 1.35rem);
+      font-weight: 900;
+      color: #FFFFFF;
+      word-break: break-word;
+    }
+
+    .summary-metrics-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-metric-card {
+      background: #11141D;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.9rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .summary-metric-num {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--primary-gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .summary-metric-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .scope-deliverables-pill-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .scope-pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      color: #CBD5E1;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .scope-cta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    /* 4-Step Scaling Framework Interactive Tabs */
+    .framework-timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      margin-top: 2.5rem;
+      width: 100%;
+    }
+
+    .framework-step-card {
+      background: var(--card-bg-dark);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: clamp(1.2rem, 2.5vw, 1.8rem) clamp(1rem, 2vw, 1.4rem);
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .framework-step-card:hover,
+    .framework-step-card.active {
+      border-color: var(--primary-gold);
+      background: var(--card-bg-hover);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 199, 0, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .step-number-tag {
+      font-size: 2rem;
+      font-weight: 900;
+      color: rgba(255, 199, 0, 0.25);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+      transition: color 0.3s ease;
+    }
+
+    .framework-step-card.active .step-number-tag {
+      color: var(--primary-gold);
+    }
+
+    .step-card-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 0.45rem;
+    }
+
+    .step-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Comparison Matrix Table */
+    .comparison-table-wrapper {
+      margin-top: 2.5rem;
+      background: var(--card-bg-dark);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      min-width: 580px;
+    }
+
+    .comparison-table th {
+      padding: clamp(1rem, 2vw, 1.3rem) clamp(1rem, 2vw, 1.5rem);
+      background: #151A24;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .comparison-table td {
+      padding: clamp(0.9rem, 1.8vw, 1.1rem) clamp(1rem, 2vw, 1.5rem);
+      font-size: 0.86rem;
+      color: #CBD5E1;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .check-yes {
+      color: #10B981;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .check-no {
+      color: #64748B;
+    }
+
+    /* Strategy Quote Modal */
+    .service-quote-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .service-quote-modal.active {
+      display: flex;
+    }
+
+    .quote-modal-content {
+      background: #11141D;
+      border: 1px solid rgba(255, 199, 0, 0.35);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 560px;
+      padding: clamp(1.4rem, 3vw, 2.2rem);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .quote-modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-muted);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quote-modal-close:hover {
+      background: var(--primary-gold);
+      color: #080A0F;
+    }
+
+    /* ==========================================================================
+       MEDIA QUERIES (COMPLETE RESPONSIVENESS ACROSS ALL DEVICES)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .services-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .estimator-box {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .framework-timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .floating-quick-actions-stack {
+        bottom: 0.85rem !important;
+        right: 0.65rem !important;
+        transform: scale(0.82);
+        transform-origin: bottom right;
+        z-index: 999;
+      }
+      .services-filter-nav {
+        top: 60px;
+      }
+      .service-search-box {
+        max-width: 100%;
+      }
+      .services-nav-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .service-card-actions {
+        grid-template-columns: 1fr;
+      }
+      .estimator-tier-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .services-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+      .framework-timeline-grid {
+        grid-template-columns: 1fr;
+      }
+      .addon-item-label {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .summary-metrics-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .addon-item-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+      .addon-tag {
+        align-self: flex-end;
+      }
+      .summary-metrics-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Custom Interactive Glowing Gold Cursor System -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Navigation Bar (Identical To graphics.html) -->
   <header class="navbar">
     <div class="container navbar-container">
       <a href="index.html" class="brand-logo">
         <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
       </a>
+
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link active">Services</a>
@@ -25,102 +895,573 @@
         <a href="about.html" class="nav-link">About Us</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-      <a href="contact.html" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
-      <button class="mobile-nav-toggle"><i class="fa-solid fa-bars"></i></button>
+
+      <div class="mobile-header-actions">
+        <a href="contact.html" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="mobile-nav-toggle" onclick="openMobileNav(event)" aria-label="Toggle navigation"><i class="fa-solid fa-bars-staggered"></i></button>
+      </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer-overlay"></div>
+  <!-- Sleek Minimalist Mobile Drawer (Identical To graphics.html) -->
+  <div class="mobile-drawer-overlay" onclick="closeMobileNav(event)"></div>
   <div class="mobile-drawer">
     <div class="mobile-drawer-header">
       <a href="index.html" class="brand-logo">
         <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
       </a>
-      <button class="mobile-drawer-close"><i class="fa-solid fa-xmark"></i></button>
+      <button class="mobile-drawer-close" onclick="closeMobileNav(event)" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
     </div>
+
     <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link"><span>Home</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="services.html" class="mobile-nav-link active"><span>Services</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="social-media.html" class="mobile-nav-link"><span>Social Media</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="ecommerce.html" class="mobile-nav-link"><span>E-Commerce</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="graphics.html" class="mobile-nav-link"><span>Graphics</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="about.html" class="mobile-nav-link"><span>About Us</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="contact.html" class="mobile-nav-link"><span>Contact</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="services.html" class="mobile-nav-link active"><span>Services</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="social-media.html" class="mobile-nav-link"><span>Social Media</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="ecommerce.html" class="mobile-nav-link"><span>E-Commerce</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="graphics.html" class="mobile-nav-link"><span>Graphics</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="about.html" class="mobile-nav-link"><span>About Us</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="contact.html" class="mobile-nav-link"><span>Contact</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="mobile-drawer-contact-info">
+        <div><i class="fa-solid fa-phone"></i> +91 99935 15138</div>
+        <div><i class="fa-solid fa-envelope"></i> contact@ashvikmedia.com</div>
+      </div>
+      <a href="contact.html" class="btn btn-gold" style="width: 100%;">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <h1 class="page-hero-title">Our <span class="text-gold">Services</span></h1>
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i> <span>Services</span>
+      <div class="hero-status-pill">
+        <span class="status-dot-pulse" style="background: #10B981; box-shadow: 0 0 10px #10B981;"></span>
+        <span>ACCEPTING 4 NEW BRANDS FOR Q2/Q3 2026 SCALE</span>
+      </div>
+      <h1 class="page-hero-title">Full-Suite <span style="color: var(--primary-gold);">Growth Services</span></h1>
+      <p class="page-hero-desc">
+        Data-backed marketing architectures, revenue-focused e-commerce, viral social creation, and luxury design engineered to scale modern brands.
+      </p>
+      <div class="breadcrumb" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; color: #94A3B8; font-size: 0.86rem;">
+        <a href="index.html" style="color: #94A3B8; text-decoration: none;">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.72rem;"></i> <span style="color: var(--primary-gold);">Services</span>
       </div>
     </div>
   </section>
 
-  <!-- Detailed Services -->
-  <section class="section-padding">
+  <!-- Sticky Filter & Live Search Bar -->
+  <nav class="services-filter-nav">
+    <div class="container services-nav-container">
+      <div class="services-tabs-list" id="serviceFilterTabs">
+        <button class="service-tab-btn active" data-filter="all">
+          <i class="fa-solid fa-layer-group"></i> All Services (<span id="totalServicesCount">6</span>)
+        </button>
+        <button class="service-tab-btn" data-filter="ecommerce">
+          <i class="fa-solid fa-cart-shopping"></i> E-Commerce
+        </button>
+        <button class="service-tab-btn" data-filter="social">
+          <i class="fa-solid fa-hashtag"></i> Social Media
+        </button>
+        <button class="service-tab-btn" data-filter="graphics">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Branding & Design
+        </button>
+        <button class="service-tab-btn" data-filter="ads">
+          <i class="fa-solid fa-bullseye"></i> Paid Advertising
+        </button>
+        <button class="service-tab-btn" data-filter="cro">
+          <i class="fa-solid fa-chart-line"></i> Funnels & CRO
+        </button>
+      </div>
+
+      <div class="service-search-box">
+        <i class="fa-solid fa-magnifying-glass service-search-icon"></i>
+        <input type="text" id="serviceSearchInput" class="service-search-input" placeholder="Search service, tool, deliverable...">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Detailed Interactive 6-Pillar Services Grid -->
+  <section class="section-padding" id="services-grid-section" style="background: #080A0F;">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <div class="section-tag section-tag-gold">WHAT WE DO</div>
-        <h2 class="section-title">Result-Driven Marketing Services</h2>
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <div class="section-tag section-tag-gold" style="color: var(--primary-gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem;"><i class="fa-solid fa-bolt"></i> HIGH-CONVERTING CAPABILITIES</div>
+        <h2 style="font-size: clamp(1.6rem, 3.8vw, 2.5rem); font-weight: 900; color: #FFFFFF; margin-bottom: 0.65rem;">Engineered For Measurable Revenue</h2>
+        <p style="color: var(--text-muted); font-size: clamp(0.88rem, 1.8vw, 1rem); max-width: 620px; margin: 0 auto;">Filter through our primary core pillars or calculate a tailored multi-service package below.</p>
       </div>
 
-      <div class="services-detailed-grid">
-        <div class="service-detail-card" style="border-top: 4px solid var(--primary-gold);">
-          <div class="icon-badge"><i class="fa-solid fa-cart-shopping"></i></div>
-          <h3 class="hero-card-title text-dark">E-Commerce Solutions</h3>
-          <p class="section-description" style="font-size: 0.95rem; margin-bottom: 1.5rem;">End-to-end e-commerce solutions that drive sales, enhance user experience and scale your online business.</p>
-          <div class="check-list">
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Store Setup & Customization</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Product Listing & Optimization</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Payment Gateway Integration</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Sales & Conversion Optimization</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>E-Commerce Support</span></div>
+      <div class="services-showcase-grid" id="servicesCardsGrid">
+        
+        <!-- Service Card 1: E-Commerce -->
+        <div class="service-hub-card" data-category="ecommerce" data-keywords="ecommerce shopify store setup woocommerce amazon a+ speed payment gateway product listing catalog">
+          <div class="service-hub-header">
+            <div class="service-hub-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <span class="service-metric-tag"><i class="fa-solid fa-arrow-trend-up"></i> +310% Sales Avg</span>
+          </div>
+          <h3 class="service-hub-title">E-Commerce Scaling & Store Setup</h3>
+          <p class="service-hub-desc">
+            Complete store builds, high-converting checkout funnels, catalog optimization, and headless e-commerce architectures on Shopify Plus and WooCommerce.
+          </p>
+          <div class="service-deliverables-title"><i class="fa-solid fa-circle-check"></i> Key Deliverables</div>
+          <div class="service-deliverables-list">
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Custom Shopify / WooCommerce Architecture</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> High-Speed Mobile Checkout Optimization</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Payment Gateway & Currency Integration</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Product Catalog SEO & A/B Testing</div>
+          </div>
+          <div class="service-card-actions">
+            <a href="ecommerce.html" class="service-btn-primary"><span>Explore Store</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <button class="service-btn-secondary" onclick="openQuoteModal('E-Commerce Scaling')"><i class="fa-solid fa-bolt"></i> Get Scope</button>
           </div>
         </div>
 
-        <div class="service-detail-card" style="border-top: 4px solid var(--primary-gold);">
-          <div class="icon-badge"><i class="fa-solid fa-thumbs-up"></i></div>
-          <h3 class="hero-card-title text-dark">Social Media Management</h3>
-          <p class="section-description" style="font-size: 0.95rem; margin-bottom: 1.5rem;">Strategic content, community engagement and ad campaigns that build your brand and grow your audience.</p>
-          <div class="check-list">
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Content Strategy & Creation</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Page Management & Growth</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Paid Ads Campaigns</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Community Engagement</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Performance Analytics</span></div>
+        <!-- Service Card 2: Social Media -->
+        <div class="service-hub-card" data-category="social" data-keywords="social media reels viral tiktok instagram shorts content calendar community growth influencer">
+          <div class="service-hub-header">
+            <div class="service-hub-icon"><i class="fa-solid fa-hashtag"></i></div>
+            <span class="service-metric-tag"><i class="fa-solid fa-fire"></i> 10M+ Organic Views</span>
+          </div>
+          <h3 class="service-hub-title">Viral Social Media Management</h3>
+          <p class="service-hub-desc">
+            Strategic short-form video production (Reels, TikTok, Shorts), daily community nurturing, viral trend-jacking, and brand authority positioning.
+          </p>
+          <div class="service-deliverables-title"><i class="fa-solid fa-circle-check"></i> Key Deliverables</div>
+          <div class="service-deliverables-list">
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> 15–30 High-Hook Viral Short-Form Videos</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Editorial Content Calendar & Copywriting</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> 24/7 Active DMs & Comments Engagement</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Monthly Metric Audits & Growth Sprints</div>
+          </div>
+          <div class="service-card-actions">
+            <a href="social-media.html" class="service-btn-primary"><span>Social Hub</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <button class="service-btn-secondary" onclick="openQuoteModal('Social Media Management')"><i class="fa-solid fa-bolt"></i> Get Scope</button>
           </div>
         </div>
 
-        <div class="service-detail-card" style="border-top: 4px solid var(--primary-gold);">
-          <div class="icon-badge"><i class="fa-solid fa-pen-ruler"></i></div>
-          <h3 class="hero-card-title text-dark">Graphic Services</h3>
-          <p class="section-description" style="font-size: 0.95rem; margin-bottom: 1.5rem;">Creative designs that communicate your brand story and leave a lasting impact across all platforms.</p>
-          <div class="check-list">
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Logo & Brand Identity</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Infographics, A+ Content</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Marketing Collateral</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Banner & Ad Designs</span></div>
-            <div class="check-item"><div class="check-icon"><i class="fa-solid fa-check"></i></div><span>Packaging & Cards (PDF)</span></div>
+        <!-- Service Card 3: Graphics & Brand Identity -->
+        <div class="service-hub-card" data-category="graphics" data-keywords="graphics design logo brand identity packaging 3d renders banner collateral style guide">
+          <div class="service-hub-header">
+            <div class="service-hub-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <span class="service-metric-tag"><i class="fa-solid fa-gem"></i> Top 1% Visuals</span>
+          </div>
+          <h3 class="service-hub-title">Brand Identity & Luxury Graphics</h3>
+          <p class="service-hub-desc">
+            Unforgettable visual identity systems, vector logos, 3D photorealistic packaging renders, marketing collateral, and full brand guideline books.
+          </p>
+          <div class="service-deliverables-title"><i class="fa-solid fa-circle-check"></i> Key Deliverables</div>
+          <div class="service-deliverables-list">
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Vector Logo Suites & Typography Hierarchy</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> 3D Product Box & Bottle Packaging Renders</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Ad Creatives & Social Carousel Templates</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Comprehensive Brand Style Guide PDF</div>
+          </div>
+          <div class="service-card-actions">
+            <a href="graphics.html" class="service-btn-primary"><span>Graphics Studio</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <button class="service-btn-secondary" onclick="openQuoteModal('Brand & Graphic Identity')"><i class="fa-solid fa-bolt"></i> Get Scope</button>
           </div>
         </div>
+
+        <!-- Service Card 4: Amazon A+ & Listing Optimization -->
+        <div class="service-hub-card" data-category="ecommerce" data-keywords="amazon a+ enhanced brand content storefront listing design product infographic bullet points ebc">
+          <div class="service-hub-header">
+            <div class="service-hub-icon"><i class="fa-brands fa-amazon"></i></div>
+            <span class="service-metric-tag"><i class="fa-solid fa-award"></i> +42% Conversion</span>
+          </div>
+          <h3 class="service-hub-title">Amazon A+ Content & Storefronts</h3>
+          <p class="service-hub-desc">
+            Premium Enhanced Brand Content (EBC), comparison modules, high-resolution lifestyle infographics, and branded storefronts that dominate Amazon niches.
+          </p>
+          <div class="service-deliverables-title"><i class="fa-solid fa-circle-check"></i> Key Deliverables</div>
+          <div class="service-deliverables-list">
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Custom Amazon A+ Enhanced Modules</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> 7 Main Hero & Infographic Listing Images</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Multi-Page Amazon Brand Storefront</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> High-Intent Backend Search Keywords</div>
+          </div>
+          <div class="service-card-actions">
+            <a href="ecommerce.html#services" class="service-btn-primary"><span>View A+ Portfolio</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <button class="service-btn-secondary" onclick="openQuoteModal('Amazon A+ Content')"><i class="fa-solid fa-bolt"></i> Get Scope</button>
+          </div>
+        </div>
+
+        <!-- Service Card 5: Performance Paid Advertising -->
+        <div class="service-hub-card" data-category="ads" data-keywords="paid ads meta facebook instagram google ads tiktok ads roas cpa cpc media buying retargeting">
+          <div class="service-hub-header">
+            <div class="service-hub-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <span class="service-metric-tag"><i class="fa-solid fa-bolt"></i> 4.2x Avg ROAS</span>
+          </div>
+          <h3 class="service-hub-title">Paid Ads (Meta, Google & TikTok)</h3>
+          <p class="service-hub-desc">
+            Precision media buying and algorithmic audience scaling across Meta, Google Performance Max, and TikTok Ads with server-side CAPI tracking.
+          </p>
+          <div class="service-deliverables-title"><i class="fa-solid fa-circle-check"></i> Key Deliverables</div>
+          <div class="service-deliverables-list">
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Full Funnel Architecture (Top, Mid, Bottom)</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Constant Creative Iteration & Hook Testing</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Conversions API & Triple Whale Tracking</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Transparent Real-Time ROAS Dashboard</div>
+          </div>
+          <div class="service-card-actions">
+            <a href="contact.html" class="service-btn-primary"><span>Scale Ads</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <button class="service-btn-secondary" onclick="openQuoteModal('Paid Advertising (Meta/Google)')"><i class="fa-solid fa-bolt"></i> Get Scope</button>
+          </div>
+        </div>
+
+        <!-- Service Card 6: Funnel Design & CRO -->
+        <div class="service-hub-card" data-category="cro" data-keywords="cro conversion rate optimization funnel landing page heatmaps ab testing cart abandonment">
+          <div class="service-hub-header">
+            <div class="service-hub-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="service-metric-tag"><i class="fa-solid fa-gauge-high"></i> +65% Checkout Rate</span>
+          </div>
+          <h3 class="service-hub-title">Funnels & Conversion Optimization</h3>
+          <p class="service-hub-desc">
+            Turn more clicks into paying customers. We audit drop-offs with heatmaps, build high-velocity advertorial landing pages, and eliminate friction.
+          </p>
+          <div class="service-deliverables-title"><i class="fa-solid fa-circle-check"></i> Key Deliverables</div>
+          <div class="service-deliverables-list">
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> High-Converting Advertorial / Lander Builds</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Micro-copy & Trust Badge Enhancements</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Clarity / Hotjar Heatmap Session Audits</div>
+            <div class="service-deliverable-item"><i class="fa-solid fa-check"></i> Post-Purchase Upsell & Cross-sell Flows</div>
+          </div>
+          <div class="service-card-actions">
+            <a href="contact.html" class="service-btn-primary"><span>Audit Funnel</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <button class="service-btn-secondary" onclick="openQuoteModal('Conversion Optimization (CRO)')"><i class="fa-solid fa-bolt"></i> Get Scope</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Search Results Found Alert -->
+      <div id="noResultsAlert" style="display: none; text-align: center; padding: 4rem 1rem;">
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 1rem;"></i>
+        <h3 style="color: #F8FAFC; font-size: 1.4rem;">No matching services found</h3>
+        <p style="color: #94A3B8; margin-bottom: 1.5rem;">Try searching for terms like "Shopify", "Reels", "Logo", "Ads", or "Amazon".</p>
+        <button class="btn btn-gold" onclick="resetServiceFilters()">Reset Filter</button>
       </div>
     </div>
   </section>
 
-  <!-- CTA Banner -->
-  <section class="section-padding bg-dark text-center">
+  <!-- ==========================================================================
+       REAL-TIME INTERACTIVE SCOPE & COST ESTIMATOR CUSTOMIZER
+       ========================================================================== -->
+  <section class="section-padding estimator-section" id="project-estimator">
     <div class="container">
-      <h2 class="hero-title" style="font-size: 2.5rem; color: #fff;">Ready to Scale Your Brand?</h2>
-      <p class="section-description section-description-dark" style="margin: 1rem auto 2rem auto;">Book a free strategy session with our senior marketing team today.</p>
-      <a href="contact.html" class="btn btn-gold">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <div class="section-tag section-tag-gold" style="color: var(--primary-gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem;"><i class="fa-solid fa-calculator"></i> REAL-TIME INTERACTIVE CUSTOMIZER</div>
+        <h2 style="font-size: clamp(1.6rem, 3.8vw, 2.5rem); font-weight: 900; color: #FFFFFF; margin-bottom: 0.65rem;">Interactive Project Scope & Investment Estimator</h2>
+        <p style="color: var(--text-muted); font-size: clamp(0.88rem, 1.8vw, 1rem); max-width: 650px; margin: 0 auto;">Select your core growth tier and customize your deliverables for an instant turnaround and scope forecast.</p>
+      </div>
+
+      <div class="estimator-box">
+        <!-- Controls Column -->
+        <div class="estimator-controls-col">
+          
+          <!-- 1. Tier Selection -->
+          <div class="estimator-option-group">
+            <div class="estimator-group-title">
+              <span><i class="fa-solid fa-layer-group" style="color: var(--primary-gold);"></i> 1. Choose Your Growth Level</span>
+            </div>
+            <div class="estimator-tier-grid">
+              <div class="tier-select-card active" data-tier="starter" onclick="selectEstimatorTier('starter')">
+                <div class="tier-name">Starter Launch</div>
+                <div class="tier-subtitle">For emerging brands</div>
+              </div>
+              <div class="tier-select-card" data-tier="growth" onclick="selectEstimatorTier('growth')">
+                <div class="tier-name">Growth Scale</div>
+                <div class="tier-subtitle">For scaling revenues</div>
+              </div>
+              <div class="tier-select-card" data-tier="enterprise" onclick="selectEstimatorTier('enterprise')">
+                <div class="tier-name">Enterprise Domination</div>
+                <div class="tier-subtitle">360° Omnichannel</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Interactive Add-ons Checklist -->
+          <div class="estimator-option-group">
+            <div class="estimator-group-title">
+              <span><i class="fa-solid fa-puzzle-piece" style="color: var(--primary-gold);"></i> 2. Include High-Impact Add-Ons</span>
+            </div>
+            <div class="addons-checklist">
+              <label class="addon-item-label">
+                <div class="addon-left">
+                  <input type="checkbox" id="addonAmazon" value="Amazon A+ Suite" onchange="calculateScopeEstimate()">
+                  <span class="addon-text">Amazon A+ Enhanced Modules & 7 Listing Images</span>
+                </div>
+                <span class="addon-tag">+3-4 Days</span>
+              </label>
+
+              <label class="addon-item-label">
+                <div class="addon-left">
+                  <input type="checkbox" id="addonReels" value="15 Short-Form Videos" checked onchange="calculateScopeEstimate()">
+                  <span class="addon-text">15 High-Hook 4K TikTok/Reels Video Assets</span>
+                </div>
+                <span class="addon-tag">+5 Assets</span>
+              </label>
+
+              <label class="addon-item-label">
+                <div class="addon-left">
+                  <input type="checkbox" id="addonSpeed" value="Shopify Speed Optimization" onchange="calculateScopeEstimate()">
+                  <span class="addon-text">Shopify Mobile Speed Optimization (&lt; 1.5s Load)</span>
+                </div>
+                <span class="addon-tag">Speed Pro</span>
+              </label>
+
+              <label class="addon-item-label">
+                <div class="addon-left">
+                  <input type="checkbox" id="addonPackaging" value="3D Packaging Renders" onchange="calculateScopeEstimate()">
+                  <span class="addon-text">3D Photorealistic Product & Packaging Box Renders</span>
+                </div>
+                <span class="addon-tag">3D Studio</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 3. Target Monthly Ad Spend or Scale -->
+          <div class="estimator-option-group" style="margin-bottom: 0;">
+            <div class="estimator-group-title">
+              <span><i class="fa-solid fa-sliders" style="color: var(--primary-gold);"></i> 3. Monthly Target Ad Budget / SKU Scale</span>
+              <span id="adSpendLabel" style="color: var(--primary-gold); font-size: 0.92rem; font-weight: 800;">$2,500 – $10,000 / mo</span>
+            </div>
+            <input type="range" id="adSpendSlider" min="1" max="4" value="2" step="1" style="width: 100%; accent-color: var(--primary-gold); cursor: pointer; margin-top: 0.4rem;" oninput="updateBudgetSlider(this.value)">
+          </div>
+
+        </div>
+
+        <!-- Summary & Dynamic WhatsApp Trigger Column -->
+        <div class="estimator-summary-box">
+          <div>
+            <div class="summary-header">
+              <div class="summary-badge"><i class="fa-solid fa-bolt"></i> Customized Package Summary</div>
+              <div class="summary-title" id="summaryTierTitle">Growth Scale Solution</div>
+            </div>
+
+            <div class="summary-metrics-row">
+              <div class="summary-metric-card">
+                <div class="summary-metric-num" id="summaryTurnaround">7–10 Days</div>
+                <div class="summary-metric-label">Estimated Turnaround</div>
+              </div>
+              <div class="summary-metric-card">
+                <div class="summary-metric-num" id="summaryAssetsCount">14+ Assets</div>
+                <div class="summary-metric-label">Included Assets & Systems</div>
+              </div>
+            </div>
+
+            <div style="font-size: 0.78rem; font-weight: 800; color: #94A3B8; margin-bottom: 0.6rem; text-transform: uppercase;">
+              Active Deliverables:
+            </div>
+            <div class="scope-deliverables-pill-wrap" id="summaryDeliverablesPills">
+              <span class="scope-pill"><i class="fa-solid fa-check text-gold"></i> Full Strategy Plan</span>
+              <span class="scope-pill"><i class="fa-solid fa-check text-gold"></i> Social Growth System</span>
+              <span class="scope-pill"><i class="fa-solid fa-check text-gold"></i> 15 Short-Form Videos</span>
+              <span class="scope-pill"><i class="fa-solid fa-check text-gold"></i> Conversion Optimization</span>
+            </div>
+          </div>
+
+          <div class="scope-cta-stack">
+            <button class="btn btn-gold" style="width: 100%; justify-content: center;" onclick="sendScopeToWhatsApp()">
+              <span>REQUEST SCOPE VIA WHATSAPP</span> <i class="fa-brands fa-whatsapp"></i>
+            </button>
+            <a href="contact.html" class="btn btn-dark-outline" style="width: 100%; justify-content: center; font-size: 0.84rem;">
+              <span>SCHEDULE STRATEGY CALL</span> <i class="fa-solid fa-calendar"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- Interactive Futuristic Footer -->
+  <!-- 4-Phase Growth Framework Section -->
+  <section class="section-padding" style="background: #080A0F;">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 2rem auto;">
+        <div class="section-tag section-tag-gold" style="color: var(--primary-gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem;"><i class="fa-solid fa-network-wired"></i> EXECUTION BLUEPRINT</div>
+        <h2 style="font-size: clamp(1.6rem, 3.8vw, 2.5rem); font-weight: 900; color: #FFFFFF; margin-bottom: 0.65rem;">Our 4-Phase Scaling Blueprint</h2>
+        <p style="color: var(--text-muted); font-size: clamp(0.88rem, 1.8vw, 1rem);">How we audit, engineer, launch, and dominate markets with zero wasted ad spend.</p>
+      </div>
+
+      <div class="framework-timeline-grid">
+        <div class="framework-step-card active" onclick="highlightFrameworkStep(this)">
+          <div class="step-number-tag">01</div>
+          <h3 class="step-card-title">Discovery & Growth Audit</h3>
+          <p class="step-card-desc">Deep-dive into your current store analytics, customer avatar psychographics, drop-off bottlenecks, and competitor weaknesses.</p>
+        </div>
+
+        <div class="framework-step-card" onclick="highlightFrameworkStep(this)">
+          <div class="step-number-tag">02</div>
+          <h3 class="step-card-title">Architecture & Asset Sprint</h3>
+          <p class="step-card-desc">Building high-converting Shopify checkout funnels, producing viral short-form hooks, and crafting 3D luxury packaging visuals.</p>
+        </div>
+
+        <div class="framework-step-card" onclick="highlightFrameworkStep(this)">
+          <div class="step-number-tag">03</div>
+          <h3 class="step-card-title">Algorithmic Paid Launch</h3>
+          <p class="step-card-desc">Precision media buying across Meta, TikTok, and Google PMax with server-side CAPI tracking and aggressive budget scaling.</p>
+        </div>
+
+        <div class="framework-step-card" onclick="highlightFrameworkStep(this)">
+          <div class="step-number-tag">04</div>
+          <h3 class="step-card-title">LTV & Funnel Expansion</h3>
+          <p class="step-card-desc">Continuous A/B testing, email/SMS retention flows, international currency localization, and Amazon wholesale expansion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Comparison Matrix Table -->
+  <section class="section-padding" style="background: #0B0E14; border-top: 1px solid rgba(255, 255, 255, 0.07);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div class="section-tag section-tag-gold" style="color: var(--primary-gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem;"><i class="fa-solid fa-table-columns"></i> TRANSPARENT PACKAGES</div>
+        <h2 style="font-size: clamp(1.6rem, 3.8vw, 2.5rem); font-weight: 900; color: #FFFFFF; margin-bottom: 0.65rem;">Compare Our Growth Suites</h2>
+        <p style="color: var(--text-muted); font-size: clamp(0.88rem, 1.8vw, 1rem);">Clear deliverables, zero hidden fees, and month-to-month accountability.</p>
+      </div>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature / Deliverable</th>
+              <th>Starter Launch</th>
+              <th style="color: var(--primary-gold);">Growth Scale (Popular)</th>
+              <th>Enterprise Domination</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Turnaround Timeline</strong></td>
+              <td>5–7 Business Days</td>
+              <td style="color: var(--primary-gold); font-weight: 800;">7–10 Business Days</td>
+              <td>14–20 Business Days</td>
+            </tr>
+            <tr>
+              <td><strong>E-Commerce Setup / Audit</strong></td>
+              <td><span class="check-yes">✓ Standard Setup</span></td>
+              <td><span class="check-yes">✓ Custom Shopify Architecture</span></td>
+              <td><span class="check-yes">✓ Headless / Multi-Country</span></td>
+            </tr>
+            <tr>
+              <td><strong>Viral Short-Form Content</strong></td>
+              <td>8 Video Assets / mo</td>
+              <td><span class="check-yes">✓ 15–20 Video Assets / mo</span></td>
+              <td><span class="check-yes">✓ 30+ 4K Studio Assets / mo</span></td>
+            </tr>
+            <tr>
+              <td><strong>Performance Paid Ads (Meta/Google)</strong></td>
+              <td><span class="check-no">Optional Add-on</span></td>
+              <td><span class="check-yes">✓ Full Media Buying & CAPI</span></td>
+              <td><span class="check-yes">✓ Multi-Platform Omnichannel</span></td>
+            </tr>
+            <tr>
+              <td><strong>Amazon A+ & Storefront</strong></td>
+              <td><span class="check-no">✕</span></td>
+              <td><span class="check-yes">✓ 7 Modules + Listing</span></td>
+              <td><span class="check-yes">✓ Complete Brand Store + SEO</span></td>
+            </tr>
+            <tr>
+              <td><strong>Conversion Rate Optimization (CRO)</strong></td>
+              <td>Basic Speed Audit</td>
+              <td><span class="check-yes">✓ Heatmaps & Lander A/B</span></td>
+              <td><span class="check-yes">✓ Full Funnel Overhaul</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dedicated Slack Growth Channel</strong></td>
+              <td>Email & WhatsApp</td>
+              <td><span class="check-yes">✓ Dedicated Slack + Weekly Call</span></td>
+              <td><span class="check-yes">✓ 24/7 Priority Dedicated Team</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive FAQ Accordion -->
+  <section class="section-padding" style="background: #080A0F;">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem auto;">
+        <div class="section-tag section-tag-gold" style="color: var(--primary-gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-question"></i> COMMON QUESTIONS</div>
+        <h2 style="font-size: clamp(1.6rem, 3.8vw, 2.5rem); font-weight: 900; color: #FFFFFF; margin-bottom: 0.65rem;">Services & Partnerships FAQ</h2>
+        <p style="color: var(--text-muted); font-size: clamp(0.88rem, 1.8vw, 1rem);">Everything you need to know before onboarding with Ashvik Media.</p>
+      </div>
+
+      <div class="faq-accordion-list" style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.85rem;">
+        <div class="faq-item active" style="background: #10141D; border: 1px solid rgba(255, 199, 0, 0.4); border-radius: 14px; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.2rem 1.4rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: clamp(0.92rem, 2vw, 1.05rem); color: #FFFFFF;">
+            <span>How fast can we launch our campaign or store?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--primary-gold); font-size: 0.85rem;"></i>
+          </div>
+          <div class="faq-answer" style="padding: 0 1.4rem 1.2rem 1.4rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.65;">
+            Our standard onboarding sprint takes between 5 to 10 business days depending on project scope. During this phase, we complete brand audits, tracking setup (CAPI/Pixel), content creation, and funnel QA before launching traffic.
+          </div>
+        </div>
+
+        <div class="faq-item" style="background: #10141D; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.2rem 1.4rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: clamp(0.92rem, 2vw, 1.05rem); color: #FFFFFF;">
+            <span>Do you lock clients into long-term contracts?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--primary-gold); font-size: 0.85rem;"></i>
+          </div>
+          <div class="faq-answer" style="padding: 0 1.4rem 1.2rem 1.4rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; display: none;">
+            No. We operate on performance and month-to-month retainers. We earn your partnership every single month through measurable ROAS, revenue growth, and transparent Slack communication.
+          </div>
+        </div>
+
+        <div class="faq-item" style="background: #10141D; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.2rem 1.4rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: clamp(0.92rem, 2vw, 1.05rem); color: #FFFFFF;">
+            <span>Can I customize a hybrid package across multiple services?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--primary-gold); font-size: 0.85rem;"></i>
+          </div>
+          <div class="faq-answer" style="padding: 0 1.4rem 1.2rem 1.4rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; display: none;">
+            Yes! Over 70% of our partner brands choose a hybrid package combining Shopify CRO, Viral Short-Form Video Production, and Meta/Google Paid Ads scaling. Use our interactive estimator above or chat directly with our strategists.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Strategy Proposal Modal -->
+  <div class="service-quote-modal" id="serviceQuoteModal" onclick="handleQuoteModalBackdrop(event)">
+    <div class="quote-modal-content">
+      <button class="quote-modal-close" onclick="closeQuoteModal()" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+
+      <div style="margin-bottom: 1.5rem;">
+        <span class="hero-status-pill" style="font-size: 0.72rem; padding: 0.25rem 0.85rem; margin-bottom: 0.8rem;">
+          <i class="fa-solid fa-bolt"></i> FAST 24H PROPOSAL
+        </span>
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.4rem;">Request Service Proposal</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Fill in your basic brand details and our strategy team will deliver a tailored action plan.</p>
+      </div>
+
+      <form id="quoteModalForm" onsubmit="handleQuoteSubmit(event)">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #CBD5E1; margin-bottom: 0.4rem;">Selected Service Domain</label>
+          <input type="text" id="modalServiceField" readonly style="width: 100%; background: #080A0F; border: 1px solid var(--primary-gold); border-radius: 10px; padding: 0.75rem 1rem; color: var(--primary-gold); font-weight: 700; outline: none; font-size: 0.9rem;">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #CBD5E1; margin-bottom: 0.4rem;">Your Name / Brand Name *</label>
+          <input type="text" id="modalNameField" required placeholder="e.g. John Doe / Apex Brand" style="width: 100%; background: #080A0F; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 0.75rem 1rem; color: #FFFFFF; outline: none; font-size: 0.9rem;">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #CBD5E1; margin-bottom: 0.4rem;">Store / Website URL / Instagram Handle *</label>
+          <input type="text" id="modalWebsiteField" required placeholder="e.g. yourstore.com or @yourbrand" style="width: 100%; background: #080A0F; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 0.75rem 1rem; color: #FFFFFF; outline: none; font-size: 0.9rem;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #CBD5E1; margin-bottom: 0.4rem;">WhatsApp Number / Email Address *</label>
+          <input type="text" id="modalContactField" required placeholder="e.g. +91 99935 15138" style="width: 100%; background: #080A0F; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 0.75rem 1rem; color: #FFFFFF; outline: none; font-size: 0.9rem;">
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center; font-size: 0.9rem;">
+          <span>SEND STRATEGY REQUEST</span> <i class="fa-brands fa-whatsapp"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <!-- Footer Top Interactive CTA Banner -->
@@ -145,27 +1486,15 @@
         </div>
       </div>
 
-      <!-- Main Footer Grid -->
       <div class="footer-grid">
-        <!-- Col 1: Brand & Newsletter -->
-        <div class="footer-col brand-col">
-          <a href="index.html" class="brand-logo footer-logo">
+        <!-- Col 1 -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="brand-logo">
             <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
           </a>
           <p class="footer-brand-desc">
-            Ashvik Media is a premier full-service digital agency empowering e-commerce brands, high-growth businesses, and creators with world-class marketing, design, and conversion strategies.
+            Ashvik Media is a premier digital marketing & performance agency crafting viral social media campaigns, high-converting e-commerce solutions, and premium graphic design.
           </p>
-          <div class="footer-newsletter-box">
-            <h5 class="newsletter-title">Subscribe to Growth Insights</h5>
-            <form class="newsletter-form">
-              <div class="newsletter-input-group">
-                <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
-                <button type="submit" class="newsletter-btn" aria-label="Subscribe">
-                  <i class="fa-solid fa-paper-plane"></i>
-                </button>
-              </div>
-            </form>
-          </div>
           <div class="social-links-wrapper">
             <span class="social-label">Follow Our Journey:</span>
             <div class="social-links">
@@ -200,13 +1529,12 @@
         <div class="footer-col">
           <h4 class="footer-title">Expertise & Services</h4>
           <div class="footer-links">
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Performance Marketing</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
+            <a href="graphics.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
           </div>
         </div>
 
@@ -265,7 +1593,262 @@
     </div>
   </footer>
 
+  <!-- Main JavaScript File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Interactive Page Scripts -->
+  <script>
+    // 1. Live Filter Tabs & Search Functionality
+    let activeFilter = 'all';
+    const filterTabs = document.querySelectorAll('.service-tab-btn');
+    const serviceCards = document.querySelectorAll('.service-hub-card');
+    const searchInput = document.getElementById('serviceSearchInput');
+    const noResultsAlert = document.getElementById('noResultsAlert');
+    const totalServicesCount = document.getElementById('totalServicesCount');
+
+    if (totalServicesCount) {
+      totalServicesCount.textContent = serviceCards.length;
+    }
+
+    function applyServiceFiltering() {
+      const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      let visibleCount = 0;
+
+      serviceCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const keywords = card.getAttribute('data-keywords') || '';
+        const title = card.querySelector('.service-hub-title')?.textContent.toLowerCase() || '';
+        const desc = card.querySelector('.service-hub-desc')?.textContent.toLowerCase() || '';
+
+        const matchesFilter = (activeFilter === 'all' || category === activeFilter);
+        const matchesSearch = !searchTerm || 
+                              title.includes(searchTerm) || 
+                              desc.includes(searchTerm) || 
+                              keywords.includes(searchTerm);
+
+        if (matchesFilter && matchesSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (noResultsAlert) {
+        noResultsAlert.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+    filterTabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterTabs.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.getAttribute('data-filter') || 'all';
+        applyServiceFiltering();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyServiceFiltering);
+    }
+
+    function resetServiceFilters() {
+      activeFilter = 'all';
+      if (searchInput) searchInput.value = '';
+      filterTabs.forEach(b => {
+        if (b.getAttribute('data-filter') === 'all') b.classList.add('active');
+        else b.classList.remove('active');
+      });
+      applyServiceFiltering();
+    }
+
+    // 2. Project Scope & Investment Estimator Engine
+    let currentTier = 'growth';
+    const tierData = {
+      starter: {
+        title: 'Starter Launch Suite',
+        turnaround: '5–7 Days',
+        baseAssets: 6,
+        baseDeliverables: ['Full Strategy Blueprint', 'Core Brand Identity', 'Basic Store Setup', '8 Short-Form Videos']
+      },
+      growth: {
+        title: 'Growth Scale Suite',
+        turnaround: '7–10 Days',
+        baseAssets: 14,
+        baseDeliverables: ['Full Omnichannel Strategy', 'Custom Store Architecture', '15 Short-Form Videos', 'Performance Ad Funnels', 'CRO Audit']
+      },
+      enterprise: {
+        title: 'Enterprise Domination',
+        turnaround: '14–20 Days',
+        baseAssets: 28,
+        baseDeliverables: ['Headless Store Architecture', '30+ Viral 4K Video Assets', 'Amazon A+ Suite', '3D Packaging Renders', 'Full Paid Ads Scale']
+      }
+    };
+
+    function selectEstimatorTier(tierKey) {
+      currentTier = tierKey;
+      document.querySelectorAll('.tier-select-card').forEach(card => {
+        if (card.getAttribute('data-tier') === tierKey) card.classList.add('active');
+        else card.classList.remove('active');
+      });
+      calculateScopeEstimate();
+    }
+
+    function updateBudgetSlider(val) {
+      const budgetLabels = {
+        '1': '$500 – $2,500 / mo',
+        '2': '$2,500 – $10,000 / mo',
+        '3': '$10,000 – $35,000 / mo',
+        '4': '$35,000+ / mo (Enterprise Scale)'
+      };
+      const label = document.getElementById('adSpendLabel');
+      if (label) label.textContent = budgetLabels[val] || '$2,500 – $10,000 / mo';
+      calculateScopeEstimate();
+    }
+
+    function calculateScopeEstimate() {
+      const tierInfo = tierData[currentTier] || tierData.growth;
+      let calculatedAssets = tierInfo.baseAssets;
+      let deliverables = [...tierInfo.baseDeliverables];
+      let turnaround = tierInfo.turnaround;
+
+      // Check Add-ons
+      const amazonCheck = document.getElementById('addonAmazon');
+      const reelsCheck = document.getElementById('addonReels');
+      const speedCheck = document.getElementById('addonSpeed');
+      const packagingCheck = document.getElementById('addonPackaging');
+
+      if (amazonCheck && amazonCheck.checked) {
+        calculatedAssets += 5;
+        deliverables.push('Amazon A+ Enhanced Suite');
+      }
+      if (reelsCheck && reelsCheck.checked) {
+        calculatedAssets += 5;
+        if (!deliverables.includes('15 Short-Form Videos')) deliverables.push('15 4K Viral Reels');
+      }
+      if (speedCheck && speedCheck.checked) {
+        deliverables.push('Shopify Speed <1.5s');
+      }
+      if (packagingCheck && packagingCheck.checked) {
+        calculatedAssets += 3;
+        deliverables.push('3D Packaging Renders');
+      }
+
+      // Update DOM
+      const titleEl = document.getElementById('summaryTierTitle');
+      const turnaroundEl = document.getElementById('summaryTurnaround');
+      const assetsCountEl = document.getElementById('summaryAssetsCount');
+      const pillsContainer = document.getElementById('summaryDeliverablesPills');
+
+      if (titleEl) titleEl.textContent = tierInfo.title;
+      if (turnaroundEl) turnaroundEl.textContent = turnaround;
+      if (assetsCountEl) assetsCountEl.textContent = calculatedAssets + '+ Assets';
+
+      if (pillsContainer) {
+        pillsContainer.innerHTML = '';
+        deliverables.forEach(item => {
+          const span = document.createElement('span');
+          span.className = 'scope-pill';
+          span.innerHTML = `<i class="fa-solid fa-check" style="color:var(--primary-gold); font-size:0.72rem;"></i> ${item}`;
+          pillsContainer.appendChild(span);
+        });
+      }
+    }
+
+    function sendScopeToWhatsApp() {
+      const tierInfo = tierData[currentTier] || tierData.growth;
+      const budgetText = document.getElementById('adSpendLabel')?.textContent || '$2,500 – $10,000 / mo';
+      const pills = Array.from(document.querySelectorAll('#summaryDeliverablesPills .scope-pill')).map(p => p.textContent.trim()).join(', ');
+
+      const message = `*Inquiry: Custom Service Scope from Ashvik Media Website*\n\n` +
+                      `• *Tier Selected:* ${tierInfo.title}\n` +
+                      `• *Estimated Turnaround:* ${tierInfo.turnaround}\n` +
+                      `• *Target Monthly Budget:* ${budgetText}\n` +
+                      `• *Included Deliverables:* ${pills}\n\n` +
+                      `Hi Ashvik Media team, I would like to schedule a strategy call for this tailored package!`;
+
+      const encoded = encodeURIComponent(message);
+      window.open(`https://wa.me/919993515138?text=${encoded}`, '_blank');
+    }
+
+    // 3. 4-Phase Framework Card Step Switcher
+    function highlightFrameworkStep(element) {
+      document.querySelectorAll('.framework-step-card').forEach(card => card.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    // 4. Modal Handlers
+    function openQuoteModal(serviceName) {
+      const modal = document.getElementById('serviceQuoteModal');
+      const serviceField = document.getElementById('modalServiceField');
+      if (serviceField) serviceField.value = serviceName || 'Full-Suite Marketing Scale';
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeQuoteModal() {
+      const modal = document.getElementById('serviceQuoteModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleQuoteModalBackdrop(event) {
+      if (event.target.id === 'serviceQuoteModal') {
+        closeQuoteModal();
+      }
+    }
+
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      const service = document.getElementById('modalServiceField')?.value || 'Custom Service';
+      const name = document.getElementById('modalNameField')?.value || '';
+      const website = document.getElementById('modalWebsiteField')?.value || '';
+      const contact = document.getElementById('modalContactField')?.value || '';
+
+      const msg = `*New Strategy Proposal Request:*\n\n` +
+                  `• *Service:* ${service}\n` +
+                  `• *Client Name:* ${name}\n` +
+                  `• *Brand Link:* ${website}\n` +
+                  `• *Contact Info:* ${contact}\n\n` +
+                  `Hi Ashvik Media, please review my details and send me a tailored growth proposal!`;
+
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://wa.me/919993515138?text=${encoded}`, '_blank');
+      closeQuoteModal();
+    }
+
+    // 5. FAQ Accordions Handler
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        const answer = parent.querySelector('.faq-answer');
+        const icon = item.querySelector('i');
+        const isActive = parent.classList.contains('active');
+
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('active');
+          const ans = el.querySelector('.faq-answer');
+          const ic = el.querySelector('.faq-question i');
+          if (ans) ans.style.display = 'none';
+          if (ic) ic.style.transform = 'rotate(0deg)';
+        });
+
+        if (!isActive) {
+          parent.classList.add('active');
+          if (answer) answer.style.display = 'block';
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Initialize initial calculations
+    document.addEventListener('DOMContentLoaded', () => {
+      calculateScopeEstimate();
+    });
+  </script>
 </body>
 </html>
-

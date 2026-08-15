@@ -2,12 +2,1169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Graphics & Brand Identity | Ashvik Media</title>
-  <meta name="description" content="Transform your brand with luxury graphic design, logo identity systems, high-converting packaging, 3D renders, and interactive brand style generators from Ashvik Media.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Creative Graphics, 3D Packaging & Brand Identity | Ashvik Media</title>
+  <meta name="description" content="Elevate your brand with luxury graphic design, vector logo systems, 3D photorealistic packaging renders, Amazon A+ content, and interactive brand style generators from Ashvik Media.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/pages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       ASHVIK MEDIA - LUXURY GRAPHICS STUDIO 2026 (ULTRA-RESPONSIVE ARCHITECTURE)
+       ========================================================================== */
+    :root {
+      --gold: #FFC700;
+      --gold-dark: #D9A800;
+      --gold-glow: rgba(255, 199, 0, 0.25);
+      --bg-dark: #080A0F;
+      --bg-card: #10141D;
+      --bg-card-hover: #151A26;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(255, 199, 0, 0.45);
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      line-height: 1.6;
+    }
+
+    /* Section Padding Helper */
+    .gfx-section {
+      padding: clamp(2.8rem, 5vw, 5.5rem) 0;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Hero Section */
+    .gfx-hero-wrapper {
+      padding-top: clamp(7rem, 9vw, 9.5rem);
+      padding-bottom: clamp(2.5rem, 4vw, 4.5rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 15%, rgba(255, 199, 0, 0.12) 0%, rgba(8, 10, 15, 0) 65%);
+    }
+
+    .gfx-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255, 199, 0, 0.08);
+      border: 1px solid rgba(255, 199, 0, 0.35);
+      padding: 0.4rem 1.15rem;
+      border-radius: 9999px;
+      font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 20px rgba(255, 199, 0, 0.15);
+    }
+
+    .gfx-hero-title {
+      font-size: clamp(1.9rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #FFFFFF;
+      margin-bottom: 1.2rem;
+      word-break: break-word;
+    }
+
+    .gfx-hero-desc {
+      font-size: clamp(0.92rem, 2vw, 1.12rem);
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto clamp(1.5rem, 3vw, 2.2rem) auto;
+      line-height: 1.65;
+    }
+
+    .hero-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+
+    .gfx-hero-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(0.6rem, 1.8vw, 1.2rem);
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .gfx-stat-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      padding: 0.45rem 0.9rem;
+      border-radius: 12px;
+      font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+      font-weight: 700;
+      color: #CBD5E1;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .gfx-stat-pill i {
+      color: var(--gold);
+    }
+
+    /* Section Headings */
+    .gfx-section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto clamp(1.8rem, 3.5vw, 3rem) auto;
+    }
+
+    .gfx-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--gold);
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .gfx-title {
+      font-size: clamp(1.55rem, 3.8vw, 2.4rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+      line-height: 1.22;
+      word-break: break-word;
+    }
+
+    .gfx-desc {
+      font-size: clamp(0.86rem, 1.8vw, 0.98rem);
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       FEATURE 1: INTERACTIVE LIVE BRAND STUDIO & PALETTE GENERATOR
+       ========================================================================== */
+    .brand-studio-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: clamp(16px, 3vw, 24px);
+      padding: clamp(1.2rem, 3vw, 2.2rem);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .archetype-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.55rem;
+      overflow-x: auto;
+      padding: 0.2rem 0.2rem 0.8rem 0.2rem;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 1.8rem;
+    }
+    .archetype-nav::-webkit-scrollbar { display: none; }
+
+    .archetype-btn {
+      padding: 0.55rem 1.15rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: #CBD5E1;
+      font-size: clamp(0.76rem, 1.8vw, 0.86rem);
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-shrink: 0;
+    }
+
+    .archetype-btn:hover,
+    .archetype-btn.active {
+      background: var(--gold);
+      color: #080A0F;
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px rgba(255, 199, 0, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .studio-stage-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(1.25rem, 3vw, 2.2rem);
+      align-items: stretch;
+    }
+
+    /* Live Canvas Mockup Card */
+    .studio-canvas-card {
+      background: #080A0F;
+      border: 2px solid var(--gold);
+      border-radius: 18px;
+      padding: clamp(1.6rem, 3.5vw, 2.5rem) clamp(1rem, 2.5vw, 1.8rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 199, 0, 0.12);
+      transition: all 0.4s ease;
+    }
+
+    .canvas-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #080A0F;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+
+    .canvas-logo-emblem {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin-bottom: 0.6rem;
+      color: var(--gold);
+      filter: drop-shadow(0 0 14px rgba(255, 199, 0, 0.4));
+      transition: all 0.3s ease;
+    }
+
+    .canvas-brand-name {
+      font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #FFFFFF;
+      margin-bottom: 0.45rem;
+      line-height: 1.15;
+      word-break: break-word;
+    }
+
+    .canvas-tagline {
+      font-size: clamp(0.82rem, 1.8vw, 0.95rem);
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 1.3rem;
+      max-width: 420px;
+    }
+
+    .canvas-specs-chips {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .canvas-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.3rem 0.65rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #E2E8F0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .canvas-chip i {
+      color: var(--gold);
+    }
+
+    /* Studio Specifications Panel */
+    .studio-specs-panel {
+      background: #080A0F;
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: clamp(1.2rem, 2.5vw, 1.8rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .spec-block-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .swatches-flex-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.55rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .swatch-interactive-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 0.65rem 0.3rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .swatch-interactive-box:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      background: rgba(255, 199, 0, 0.04);
+    }
+
+    .swatch-circle {
+      width: clamp(26px, 3.5vw, 32px);
+      height: clamp(26px, 3.5vw, 32px);
+      border-radius: 50%;
+      margin: 0 auto 0.35rem auto;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .swatch-hex-val {
+      font-size: clamp(0.7rem, 1.6vw, 0.78rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.5px;
+    }
+
+    .swatch-name-lbl {
+      font-size: 0.66rem;
+      color: var(--text-muted);
+    }
+
+    .spec-detail-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 0.95rem 1.1rem;
+      font-size: 0.84rem;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       FEATURE 2: BEFORE / AFTER TRANSFORMATION SLIDER
+       ========================================================================== */
+    .ba-slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      height: clamp(290px, 42vw, 380px);
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      user-select: none;
+      touch-action: none;
+      background: #080A0F;
+    }
+
+    .ba-pane {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .ba-pane-before {
+      background: #0B0E14;
+      z-index: 1;
+    }
+
+    .ba-pane-after {
+      background: #11151F;
+      width: 50%;
+      overflow: hidden;
+      border-right: 2px solid var(--gold);
+      z-index: 2;
+    }
+
+    .ba-content-holder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(0.9rem, 2.5vw, 1.8rem);
+    }
+
+    .ba-tag-badge {
+      position: absolute;
+      top: 12px;
+      font-size: clamp(0.64rem, 1.6vw, 0.72rem);
+      font-weight: 800;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      z-index: 5;
+    }
+
+    .ba-tag-before {
+      left: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .ba-tag-after {
+      right: 12px;
+      background: var(--gold);
+      color: #080A0F;
+      box-shadow: 0 0 14px rgba(255, 199, 0, 0.4);
+    }
+
+    .ba-mockup-box {
+      width: clamp(230px, 72vw, 340px);
+      padding: clamp(1rem, 2.5vw, 1.8rem);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .ba-mockup-old {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1.5px dashed rgba(255, 255, 255, 0.18);
+      color: var(--text-muted);
+    }
+
+    .ba-mockup-new {
+      background: #141924;
+      border: 2px solid var(--gold);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 199, 0, 0.2);
+    }
+
+    .ba-drag-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 40px;
+      margin-left: -20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      cursor: ew-resize;
+      touch-action: none;
+    }
+
+    .ba-handle-btn {
+      width: 38px;
+      height: 38px;
+      background: var(--gold);
+      color: #080A0F;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      box-shadow: 0 0 18px rgba(255, 199, 0, 0.8);
+      border: 2px solid #FFFFFF;
+      transition: transform 0.2s ease;
+    }
+
+    /* ==========================================================================
+       FEATURE 3: 3D MASTERPIECE SHOWCASE GALLERY
+       ========================================================================== */
+    .gallery-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.2rem 0.2rem 0.8rem 0.2rem;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 2rem;
+    }
+    .gallery-filter-bar::-webkit-scrollbar { display: none; }
+
+    .gallery-filter-btn {
+      padding: 0.55rem 1.15rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: clamp(0.76rem, 1.8vw, 0.84rem);
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .gallery-filter-btn:hover,
+    .gallery-filter-btn.active {
+      background: var(--gold);
+      color: #080A0F;
+      border-color: var(--gold);
+      box-shadow: 0 4px 14px rgba(255, 199, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .masterpiece-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1rem, 2.5vw, 1.8rem);
+    }
+
+    .masterpiece-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .masterpiece-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-gold);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 199, 0, 0.15);
+      background: var(--bg-card-hover);
+    }
+
+    .masterpiece-visual {
+      height: clamp(200px, 28vw, 250px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .visual-bg-1 { background: radial-gradient(circle, #27272A 0%, #18181B 100%); }
+    .visual-bg-2 { background: radial-gradient(circle, #064E3B 0%, #022C22 100%); }
+    .visual-bg-3 { background: radial-gradient(circle, #4C1D95 0%, #2E1065 100%); }
+    .visual-bg-4 { background: radial-gradient(circle, #831843 0%, #500724 100%); }
+    .visual-bg-5 { background: radial-gradient(circle, #1E3A8A 0%, #172554 100%); }
+    .visual-bg-6 { background: radial-gradient(circle, #701A75 0%, #4A044E 100%); }
+
+    .visual-center-icon {
+      font-size: 3.8rem;
+      color: rgba(255, 255, 255, 0.8);
+      transition: transform 0.4s ease;
+    }
+
+    .masterpiece-card:hover .visual-center-icon {
+      transform: scale(1.15) rotate(4deg);
+      color: var(--gold);
+    }
+
+    .visual-metric-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(10, 12, 16, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-gold);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+    }
+
+    .masterpiece-info {
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .masterpiece-category {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .masterpiece-card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.45rem;
+      line-height: 1.3;
+    }
+
+    .masterpiece-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 0.9rem;
+      flex-grow: 1;
+    }
+
+    .masterpiece-inspect-action {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #CBD5E1;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s ease;
+    }
+
+    .masterpiece-card:hover .masterpiece-inspect-action {
+      color: var(--gold);
+    }
+
+    /* ==========================================================================
+       FEATURE 4: PACKAGE BUILDER & LIVE SCOPE ESTIMATOR (PREMIUM MOBILE UX)
+       ========================================================================== */
+    .builder-layout-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: clamp(1.25rem, 3vw, 2.2rem);
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .builder-cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      width: 100%;
+    }
+
+    /* Modern Responsive Interactive Item Card */
+    .builder-item-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: clamp(0.95rem, 2.5vw, 1.25rem);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      width: 100%;
+      user-select: none;
+    }
+
+    .builder-item-row:hover {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .builder-item-row.is-active {
+      border-color: var(--gold);
+      background: rgba(255, 199, 0, 0.05);
+      box-shadow: 0 8px 24px rgba(255, 199, 0, 0.12);
+    }
+
+    .builder-item-row input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #64748B;
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.2s ease;
+    }
+
+    .builder-item-row input[type="checkbox"]:checked {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .builder-item-row input[type="checkbox"]:checked::after {
+      content: '✓';
+      position: absolute;
+      color: #080A0F;
+      font-size: 14px;
+      font-weight: 900;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .builder-item-details {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .builder-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .builder-item-title {
+      font-size: clamp(0.88rem, 1.8vw, 1rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.35;
+    }
+
+    .builder-item-price-badge {
+      background: rgba(255, 199, 0, 0.12);
+      border: 1px solid rgba(255, 199, 0, 0.35);
+      color: var(--gold);
+      font-size: clamp(0.82rem, 1.8vw, 0.95rem);
+      font-weight: 900;
+      padding: 0.2rem 0.65rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.3px;
+    }
+
+    .builder-item-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Summary Card */
+    .builder-summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 199, 0, 0.1);
+      position: sticky;
+      top: 90px;
+      width: 100%;
+    }
+
+    .summary-heading {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .selected-items-box {
+      font-size: 0.84rem;
+      color: #CBD5E1;
+      line-height: 1.6;
+      max-height: 160px;
+      overflow-y: auto;
+      margin-bottom: 1.1rem;
+      padding-right: 0.4rem;
+    }
+
+    .summary-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.65rem 0;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
+    }
+
+    .summary-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.95rem;
+      border-top: 1px solid rgba(255, 199, 0, 0.35);
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #FFFFFF;
+    }
+
+    /* Mobile Sticky Bottom Floating Summary Bar */
+    .mobile-builder-sticky-bar {
+      display: none;
+    }
+
+    /* ==========================================================================
+       NEW SECTION 1: 4-STEP DESIGN EXECUTION BLUEPRINT
+       ========================================================================== */
+    .process-timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(0.9rem, 2vw, 1.4rem);
+      margin-top: 2rem;
+    }
+
+    .process-step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: clamp(1.2rem, 2.5vw, 1.6rem);
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .process-step-card:hover,
+    .process-step-card.active {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 199, 0, 0.12);
+    }
+
+    .process-step-num {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: rgba(255, 199, 0, 0.25);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .process-step-card.active .process-step-num {
+      color: var(--gold);
+    }
+
+    .process-step-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.45rem;
+    }
+
+    .process-step-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       NEW SECTION 2: BRAND TRANSFORMATION CASE STUDIES
+       ========================================================================== */
+    .case-studies-wrapper {
+      margin-top: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: clamp(1.25rem, 3vw, 2.2rem);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .case-tabs-row {
+      display: flex;
+      justify-content: flex-start;
+      gap: 0.55rem;
+      overflow-x: auto;
+      padding: 0.2rem 0.2rem 0.8rem 0.2rem;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .case-tabs-row::-webkit-scrollbar { display: none; }
+
+    .case-tab-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 9999px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .case-tab-btn:hover,
+    .case-tab-btn.active {
+      color: var(--gold);
+      background: rgba(255, 199, 0, 0.08);
+      border-color: var(--border-gold);
+    }
+
+    .case-content-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(1.25rem, 3vw, 2.2rem);
+      align-items: center;
+    }
+
+    .case-metrics-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.3rem;
+    }
+
+    .case-metric-box {
+      background: #080A0F;
+      border: 1px solid var(--border-subtle);
+      padding: 0.9rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .case-metric-val {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 0.15rem;
+    }
+
+    .case-metric-lbl {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .case-preview-card {
+      background: #080A0F;
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      padding: clamp(1.4rem, 3vw, 2rem);
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       NEW SECTION 3: DESIGN FAQS ACCORDION
+       ========================================================================== */
+    .faq-accordion-list {
+      max-width: 850px;
+      margin: 2rem auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .faq-acc-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .faq-acc-item.active {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
+    }
+
+    .faq-acc-header {
+      padding: 1.1rem 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: clamp(0.9rem, 2vw, 1.02rem);
+      color: #FFFFFF;
+    }
+
+    .faq-acc-chevron {
+      color: var(--gold);
+      transition: transform 0.3s ease;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+
+    .faq-acc-item.active .faq-acc-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-acc-body {
+      padding: 0 1.3rem 1.15rem 1.3rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      display: none;
+    }
+
+    .faq-acc-item.active .faq-acc-body {
+      display: block;
+    }
+
+    /* ==========================================================================
+       LIGHTBOX INSPECT MODAL
+       ========================================================================== */
+    .gfx-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .gfx-modal-backdrop.active {
+      display: flex;
+    }
+
+    .gfx-modal-panel {
+      background: #11151F;
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 580px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: clamp(1.3rem, 3vw, 2rem);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .modal-close-icon {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.1rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-muted);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .modal-close-icon:hover {
+      background: var(--gold);
+      color: #080A0F;
+    }
+
+    /* ==========================================================================
+       MEDIA QUERIES (FULL RESPONSIVENESS ACROSS ALL SCREENS)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .masterpiece-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .studio-stage-grid {
+        grid-template-columns: 1fr;
+      }
+      .builder-layout-grid {
+        grid-template-columns: 1fr;
+      }
+      .builder-summary-card {
+        position: static;
+        margin-top: 1.5rem;
+      }
+      .process-timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .case-content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .floating-quick-actions-stack {
+        bottom: 0.85rem !important;
+        right: 0.65rem !important;
+        transform: scale(0.82);
+        transform-origin: bottom right;
+        z-index: 999;
+      }
+      .hero-btns {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-btns .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .builder-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+      .builder-item-price-badge {
+        align-self: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .masterpiece-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-timeline-grid {
+        grid-template-columns: 1fr;
+      }
+      .swatches-flex-grid {
+        gap: 0.4rem;
+      }
+      .swatch-interactive-box {
+        padding: 0.5rem 0.2rem;
+      }
+      .canvas-specs-chips {
+        flex-direction: column;
+        align-items: center;
+      }
+      .ba-mockup-box {
+        width: 200px;
+        padding: 0.85rem;
+      }
+      .case-metrics-matrix {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -34,10 +1191,7 @@
 
       <div class="mobile-header-actions">
         <a href="contact.html" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
-
-        <button class="mobile-nav-toggle" onclick="openMobileNav(event)" aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars-staggered"></i>
-        </button>
+        <button class="mobile-nav-toggle" onclick="openMobileNav(event)" aria-label="Toggle navigation"><i class="fa-solid fa-bars-staggered"></i></button>
       </div>
     </div>
   </header>
@@ -53,40 +1207,13 @@
     </div>
 
     <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">
-        <span>Home</span>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </a>
-
-      <a href="services.html" class="mobile-nav-link">
-        <span>Services</span>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </a>
-
-      <a href="social-media.html" class="mobile-nav-link">
-        <span>Social Media</span>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </a>
-
-      <a href="ecommerce.html" class="mobile-nav-link">
-        <span>E-Commerce</span>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </a>
-
-      <a href="graphics.html" class="mobile-nav-link active">
-        <span>Graphics</span>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </a>
-
-      <a href="about.html" class="mobile-nav-link">
-        <span>About Us</span>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </a>
-
-      <a href="contact.html" class="mobile-nav-link">
-        <span>Contact</span>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </a>
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="services.html" class="mobile-nav-link"><span>Services</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="social-media.html" class="mobile-nav-link"><span>Social Media</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="ecommerce.html" class="mobile-nav-link"><span>E-Commerce</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="graphics.html" class="mobile-nav-link active"><span>Graphics</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="about.html" class="mobile-nav-link"><span>About Us</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="contact.html" class="mobile-nav-link"><span>Contact</span> <i class="fa-solid fa-arrow-right-long"></i></a>
     </div>
 
     <div class="mobile-drawer-footer">
@@ -98,344 +1225,554 @@
     </div>
   </div>
 
-  <!-- Page Hero (Unified Theme Banner matching About Us / Theme Screenshot) -->
-  <section class="page-hero">
+  <!-- Page Hero Banner -->
+  <section class="gfx-hero-wrapper">
     <div class="container">
-      <h1 class="page-hero-title">Creative <span class="text-gold">Graphics & Branding</span></h1>
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i> <span>Graphics</span>
+      <div class="gfx-hero-pill">
+        <span class="status-dot-pulse" style="background: #10B981; box-shadow: 0 0 10px #10B981;"></span>
+        <span>LUXURY GRAPHIC STUDIO & 3D PACKAGING ARCHITECTURE</span>
+      </div>
+      
+      <h1 class="gfx-hero-title">
+        Visuals That Stop The Scroll.<br>
+        <span style="color: var(--gold);">Branding That Multiplies Revenue.</span>
+      </h1>
+
+      <p class="gfx-hero-desc">
+        We engineer high-converting brand identity systems, 3D photorealistic packaging renders, Amazon A+ design suites, and viral social assets for 8-figure brands.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#brand-studio" class="btn btn-gold">TRY LIVE BRAND GENERATOR <i class="fa-solid fa-palette"></i></a>
+        <a href="#masterpieces" class="btn btn-dark-outline">EXPLORE MASTERPIECES <i class="fa-solid fa-eye"></i></a>
+      </div>
+
+      <div class="gfx-hero-stats">
+        <div class="gfx-stat-pill"><i class="fa-solid fa-crown"></i> 350+ Brand Identities Built</div>
+        <div class="gfx-stat-pill"><i class="fa-solid fa-arrow-trend-up"></i> 3.4X Perceived Value Lift</div>
+        <div class="gfx-stat-pill"><i class="fa-solid fa-cube"></i> 4K Vector & 3D CAD Export</div>
       </div>
     </div>
   </section>
 
-  <!-- Graphics Hero Headline Section -->
-  <section class="graphics-hero" style="padding-top: 3rem; padding-bottom: 3rem;">
-    <div class="graphics-hero-glow"></div>
+  <!-- ==========================================================================
+       SECTION 1: LIVE INTERACTIVE BRAND STYLE & PALETTE STUDIO
+       ========================================================================== -->
+  <section class="gfx-section" id="brand-studio" style="background: #0B0E14; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
-      <div class="graphics-hero-content text-center">
-        <div class="section-tag section-tag-gold" style="margin: 0 auto 1.5rem auto;">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> HIGH-IMPACT VISUAL IDENTITY & ARTWORK
-        </div>
-        <h1 class="graphics-hero-title">
-          Designs That Stop The Scroll. <br><span class="text-gold">Branding That Converts.</span>
-        </h1>
-        <p class="graphics-hero-desc">
-          We combine visual hierarchy, photorealistic 3D rendering, and psychological brand positioning to turn casual viewers into loyal customers.
-        </p>
-
-        <div class="hero-btns" style="justify-content: center; margin-bottom: 2rem;">
-          <a href="#brand-generator" class="btn btn-gold">TRY LIVE STYLE GENERATOR <i class="fa-solid fa-palette"></i></a>
-          <a href="#graphics-portfolio" class="btn btn-dark-outline">EXPLORE MASTERPIECES <i class="fa-solid fa-eye"></i></a>
-        </div>
+      <div class="gfx-section-header">
+        <div class="gfx-tag"><i class="fa-solid fa-sliders"></i> LIVE INTERACTIVE STUDIO</div>
+        <h2 class="gfx-title">Interactive Brand Archetype & Style Generator</h2>
+        <p class="gfx-desc">Select an aesthetic archetype below to preview bespoke typography pairings, copyable hex swatches, and live luxury packaging mockups.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Feature 1: Interactive Brand Style & Color Palette Generator -->
-  <section class="section-padding" id="brand-generator" style="background: rgba(255,255,255,0.015); border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border);">
-    <div class="container">
-      <div class="text-center" style="max-width: 750px; margin: 0 auto 3rem auto;">
-        <div class="section-tag section-tag-gold"><i class="fa-solid fa-sliders"></i> LIVE INTERACTIVE STUDIO</div>
-        <h2 class="section-title">Interactive Brand Style & Palette Generator</h2>
-        <p class="section-description">
-          Select a brand archetype below to test live visual identities, color swatches with click-to-copy hex codes, font pairings, and design aesthetic previews!
-        </p>
-
+      <div class="brand-studio-wrapper">
         <!-- Archetype Selector Tabs -->
-        <div class="vibe-selector-bar" id="vibeSelector">
-          <button class="vibe-btn active" data-vibe="luxury"><i class="fa-solid fa-crown"></i> Luxury Gold & Black</button>
-          <button class="vibe-btn" data-vibe="cyberpunk"><i class="fa-solid fa-bolt"></i> Cyberpunk Neon</button>
-          <button class="vibe-btn" data-vibe="organic"><i class="fa-solid fa-leaf"></i> Minimalist Organic</button>
-          <button class="vibe-btn" data-vibe="corporate"><i class="fa-solid fa-building-columns"></i> Corporate Elite</button>
-        </div>
-      </div>
-
-      <!-- Generator Preview Container -->
-      <div class="brand-preview-stage" id="brandPreviewStage">
-        <div class="brand-card-mockup-large" id="mockupCard">
-          <div class="mockup-badge-top" id="mockupBadge">👑 LUXURY BRAND SYSTEM V2</div>
-          <h2 class="mockup-brand-name" id="mockupName">AURUM & CO.</h2>
-          <p class="mockup-tagline" id="mockupTagline">"Precision Craftsmanship Meets Modern Visual Elegance"</p>
-          
-          <div class="mockup-features-row">
-            <span><i class="fa-solid fa-check text-gold"></i> Custom Logomark</span>
-            <span><i class="fa-solid fa-check text-gold"></i> Gold Foil Specs</span>
-            <span><i class="fa-solid fa-check text-gold"></i> 4K Vector Export</span>
-          </div>
-
-          <button class="btn btn-gold" id="mockupBtn" style="margin-top:1.5rem;" onclick="orderCurrentVibeWhatsApp()">
-            ORDER BRANDING IN THIS STYLE <i class="fa-brands fa-whatsapp"></i>
+        <div class="archetype-nav" id="archetypeNav">
+          <button class="archetype-btn active" onclick="selectStudioArchetype('luxury', this)">
+            <i class="fa-solid fa-crown"></i> Imperial Luxury
+          </button>
+          <button class="archetype-btn" onclick="selectStudioArchetype('cyberpunk', this)">
+            <i class="fa-solid fa-bolt"></i> Cyberpunk Neon
+          </button>
+          <button class="archetype-btn" onclick="selectStudioArchetype('organic', this)">
+            <i class="fa-solid fa-leaf"></i> Botanical Organic
+          </button>
+          <button class="archetype-btn" onclick="selectStudioArchetype('tech', this)">
+            <i class="fa-solid fa-gem"></i> Minimalist Tech
+          </button>
+          <button class="archetype-btn" onclick="selectStudioArchetype('streetwear', this)">
+            <i class="fa-solid fa-fire"></i> Streetwear Bold
           </button>
         </div>
 
-        <div class="brand-specs-col">
-          <h3 style="font-size:1.15rem; color:var(--text-dark-primary); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
-            <i class="fa-solid fa-palette text-gold"></i> Generated Color Swatches
-          </h3>
-          <div class="swatches-grid" id="swatchesGrid">
-            <!-- Rendered by JS -->
+        <div class="studio-stage-grid">
+          <!-- Left: Live Render Canvas -->
+          <div class="studio-canvas-card" id="studioCanvasCard">
+            <span class="canvas-badge" id="canvasBadge">👑 IMPERIAL LUXURY SYSTEM</span>
+            <div class="canvas-logo-emblem" id="canvasEmblem"><i class="fa-solid fa-crown"></i></div>
+            <h3 class="canvas-brand-name" id="canvasName" style="font-family: 'Cinzel', serif;">AURUM & CO.</h3>
+            <p class="canvas-tagline" id="canvasTagline">"Precision Craftsmanship Meets Haute Horlogerie Visual Elegance"</p>
+
+            <div class="canvas-specs-chips">
+              <div class="canvas-chip"><i class="fa-solid fa-check"></i> Bespoke Monogram</div>
+              <div class="canvas-chip"><i class="fa-solid fa-check"></i> Gold Foil Specs</div>
+              <div class="canvas-chip"><i class="fa-solid fa-check"></i> 4K Vector Export</div>
+            </div>
+
+            <button class="btn btn-gold" style="width: 100%; max-width: 380px; justify-content: center;" onclick="orderStudioVibeWhatsApp()">
+              <span>ORDER THIS BRAND IDENTITY</span> <i class="fa-brands fa-whatsapp"></i>
+            </button>
           </div>
 
-          <h3 style="font-size:1.15rem; color:var(--text-dark-primary); margin:1.5rem 0 1rem 0; display:flex; align-items:center; gap:0.5rem;">
-            <i class="fa-solid fa-font text-gold"></i> Typography & Vibe Specs
-          </h3>
-          <div class="vibe-spec-box" id="vibeSpecBox">
-            <!-- Rendered by JS -->
+          <!-- Right: Interactive Specs & Swatches Panel -->
+          <div class="studio-specs-panel">
+            <div>
+              <div class="spec-block-title"><i class="fa-solid fa-palette text-gold"></i> Live Color Swatches (Click to Copy Hex)</div>
+              <div class="swatches-flex-grid" id="studioSwatchesGrid">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <div>
+              <div class="spec-block-title"><i class="fa-solid fa-font text-gold"></i> Typography & Psychology Architecture</div>
+              <div class="spec-detail-box" id="studioSpecBox">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Feature 2: Interactive Before / After Brand Transformation Slider -->
-  <section class="section-padding">
+  <!-- ==========================================================================
+       SECTION 2: BEFORE / AFTER BRAND MAKEOVER SLIDER
+       ========================================================================== -->
+  <section class="gfx-section" style="background: var(--bg-dark);">
     <div class="container">
-      <div class="text-center" style="max-width: 750px; margin: 0 auto 3rem auto;">
-        <div class="section-tag section-tag-gold"><i class="fa-solid fa-repeat"></i> VISUAL MAKEOVER</div>
-        <h2 class="section-title">Before vs After Brand Makeover</h2>
-        <p class="section-description">
-          Drag the slider handle below to compare a outdated generic brand logo with Ashvik Media's custom luxury visual makeover.
-        </p>
+      <div class="gfx-section-header">
+        <div class="gfx-tag"><i class="fa-solid fa-repeat"></i> VISUAL MAKEOVER TRANSFORMATION</div>
+        <h2 class="gfx-title">Before vs After Brand Evolution</h2>
+        <p class="gfx-desc">Drag the interactive slider handle below to see how Ashvik Media elevates amateur graphics into authoritative market leaders.</p>
       </div>
 
-      <div class="before-after-container" id="beforeAfterSlider">
+      <div class="ba-slider-container" id="baSliderContainer">
         <!-- Before Layer -->
-        <div class="ba-layer ba-before">
-          <div class="ba-badge label-before">BEFORE REDESIGN</div>
-          <div class="ba-card-mockup before-mockup">
-            <div style="font-size:2.5rem; color:#64748B; margin-bottom:0.5rem;"><i class="fa-solid fa-box-open"></i></div>
-            <div class="mockup-brand-title" style="color:#94A3B8;">OLD DULL BRAND</div>
-            <p style="font-size:0.85rem;">Cluttered typography, clip-art logo, 0% brand trust.</p>
-            <div class="mockup-btn-old">Buy Product</div>
+        <div class="ba-pane ba-pane-before">
+          <span class="ba-tag-badge ba-tag-before">BEFORE REDESIGN</span>
+          <div class="ba-content-holder">
+            <div class="ba-mockup-box ba-mockup-old">
+              <div style="font-size:2.2rem; color:#64748B; margin-bottom:0.4rem;"><i class="fa-solid fa-box-open"></i></div>
+              <div style="font-size:1.15rem; font-weight:800; color:#94A3B8; margin-bottom:0.4rem;">GENERIC DULL BRAND</div>
+              <p style="font-size:0.8rem; line-height:1.4;">Default system fonts, clipart logo, low-contrast packaging, 0% customer loyalty.</p>
+              <div style="background:#334155; color:#FFFFFF; padding:0.4rem 1rem; border-radius:6px; font-size:0.75rem; margin-top:0.8rem; display:inline-block;">Old Store Design</div>
+            </div>
           </div>
         </div>
 
-        <!-- After Layer (Revealed by Slider) -->
-        <div class="ba-layer ba-after" id="baAfterLayer">
-          <div class="ba-badge label-after">AFTER ASHVIK MEDIA</div>
-          <div class="ba-card-mockup after-mockup">
-            <div style="font-size:2.8rem; color:var(--primary-gold); margin-bottom:0.5rem;"><i class="fa-solid fa-crown"></i></div>
-            <div class="mockup-brand-title text-gold">AURUM LUXURY V2</div>
-            <p style="color:var(--text-dark-primary); font-size:0.88rem;">3.4X Higher Perceived Value, Custom Vector Mark, Gold Foil Packaging.</p>
-            <div class="mockup-btn-new">EXPLORE COLLECTION <i class="fa-solid fa-arrow-right"></i></div>
+        <!-- After Layer -->
+        <div class="ba-pane ba-pane-after" id="baPaneAfter">
+          <span class="ba-tag-badge ba-tag-after">AFTER ASHVIK MEDIA</span>
+          <div class="ba-content-holder" id="baAfterHolder">
+            <div class="ba-mockup-box ba-mockup-new">
+              <div style="font-size:2.4rem; color:var(--gold); margin-bottom:0.4rem;"><i class="fa-solid fa-crown"></i></div>
+              <div style="font-size:1.2rem; font-weight:900; color:var(--gold); margin-bottom:0.4rem; font-family:'Cinzel', serif;">AURUM LUXURY V2</div>
+              <p style="font-size:0.82rem; color:#FFFFFF; line-height:1.4;">3.4X Higher Perceived Value, Custom Vector Monogram, 3D Embossed Gold Foil.</p>
+              <div class="btn btn-gold" style="font-size:0.75rem; padding:0.4rem 1rem; margin-top:0.8rem; display:inline-flex; align-items:center; gap:0.4rem;">
+                <span>EXPLORE COLLECTION</span> <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Touch Drag Handle -->
-        <div class="ba-handle" id="baHandle">
-          <div class="handle-line"></div>
-          <div class="handle-circle">
+        <!-- Draggable Handle -->
+        <div class="ba-drag-handle" id="baDragHandle">
+          <div class="ba-handle-btn">
             <i class="fa-solid fa-arrows-left-right"></i>
           </div>
-          <div class="handle-line"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Feature 3: Interactive 3D Portfolio Grid & Design Lightbox -->
-  <section class="section-padding" id="graphics-portfolio" style="background: rgba(255,255,255,0.015); border-top: 1px solid var(--dark-border);">
+  <!-- ==========================================================================
+       SECTION 3: 3D MASTERPIECE SHOWCASE PORTFOLIO
+       ========================================================================== -->
+  <section class="gfx-section" id="masterpieces" style="background: #0B0E14; border-top: 1px solid var(--border-subtle);">
     <div class="container">
-      <div class="text-center" style="max-width: 700px; margin: 0 auto 3rem auto;">
-        <div class="section-tag section-tag-gold"><i class="fa-solid fa-layer-group"></i> MASTERPIECE GALLERY</div>
-        <h2 class="section-title">Design Showcase Portfolio</h2>
-        <p class="section-description">
-          Click any design project below to launch an interactive 3D inspection lightbox detailing color palettes, font pairings, and vector specs.
-        </p>
+      <div class="gfx-section-header">
+        <div class="gfx-tag"><i class="fa-solid fa-layer-group"></i> CURATED MASTERPIECE GALLERY</div>
+        <h2 class="gfx-title">Visual Identity & 3D Packaging Gallery</h2>
+        <p class="gfx-desc">Explore our flagship projects across brand identity, luxury packaging dielines, Amazon A+ suites, and high-CTR social ads.</p>
 
-        <!-- Category Filter Tabs -->
-        <div class="graphics-tabs" id="graphicsTabs">
-          <button class="graphics-tab active" data-filter="all">All Masterpieces</button>
-          <button class="graphics-tab" data-filter="branding">Brand Identity & Logos</button>
-          <button class="graphics-tab" data-filter="packaging">Packaging & Box</button>
-          <button class="graphics-tab" data-filter="3d">3D Renders</button>
-          <button class="graphics-tab" data-filter="social">Social & Ad Creatives</button>
+        <!-- Category Filters -->
+        <div class="gallery-filter-bar" id="galleryFilterBar">
+          <button class="gallery-filter-btn active" data-filter="all">All Masterpieces</button>
+          <button class="gallery-filter-btn" data-filter="branding">Brand Identity & Logos</button>
+          <button class="gallery-filter-btn" data-filter="packaging">Packaging & Box Dielines</button>
+          <button class="gallery-filter-btn" data-filter="3d">3D Photorealistic Renders</button>
+          <button class="gallery-filter-btn" data-filter="social">Social & Ad Creatives</button>
         </div>
       </div>
 
-      <div class="graphics-grid" id="graphicsGrid">
+      <div class="masterpiece-grid" id="masterpieceGrid">
         <!-- Item 1 -->
-        <div class="graphic-item-card" data-category="branding" onclick="openGraphicModal('Aura Fragrance Identity System', 'Complete visual branding system with bespoke monograms, gold foil stationery, and 40-page brand guidelines.', 'branding', '#FFC700', 'Plus Jakarta Sans', '+340% Brand Perception')">
-          <div class="graphic-thumb-box graphic-bg-1">
-            <div class="graphic-overlay">
-              <span class="graphic-tag">BRAND IDENTITY</span>
-              <h3 class="graphic-card-title">Aura Fragrances Identity</h3>
-              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
-            </div>
+        <div class="masterpiece-card" data-category="branding" onclick="openMasterpieceModal('Aura Fragrance Identity System', 'Bespoke geometric monogram, gold foil hot stamping stationery, and complete 45-page brand manual.', 'branding', '#FFC700', 'Cinzel & Plus Jakarta', '+340% Brand Perception', 'Vector AI, EPS, SVG, 4K PNG')">
+          <div class="masterpiece-visual visual-bg-1">
+            <i class="fa-solid fa-crown visual-center-icon"></i>
+            <span class="visual-metric-badge"><i class="fa-solid fa-arrow-trend-up"></i> +340% Lift</span>
+          </div>
+          <div class="masterpiece-info">
+            <span class="masterpiece-category">Brand Identity System</span>
+            <h3 class="masterpiece-card-title">Aura Fragrances Identity</h3>
+            <p class="masterpiece-card-desc">Luxury typography hierarchy, gold foil stationary suite, and unified omnichannel visual guidelines.</p>
+            <div class="masterpiece-inspect-action"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
           </div>
         </div>
 
         <!-- Item 2 -->
-        <div class="graphic-item-card" data-category="packaging" onclick="openGraphicModal('Velvet Skincare Matte Box', 'Eco-friendly minimal skincare bottle label and matte gold foil outer packaging dieline design.', 'packaging', '#059669', 'Syne & Outfit', '+215% E-Com Conversion')">
-          <div class="graphic-thumb-box graphic-bg-2">
-            <div class="graphic-overlay">
-              <span class="graphic-tag">PACKAGING & BOX</span>
-              <h3 class="graphic-card-title">Velvet Skincare Packaging</h3>
-              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
-            </div>
+        <div class="masterpiece-card" data-category="packaging" onclick="openMasterpieceModal('Velvet Skincare Matte Box', 'Sustainable cosmetic glass bottle label and matte finish outer box dieline with UV spot gloss.', 'packaging', '#10B981', 'Syne & Outfit', '+215% Amazon Conversion', 'CMYK Dieline PDF, AI, 3D OBJ')">
+          <div class="masterpiece-visual visual-bg-2">
+            <i class="fa-solid fa-bottle-droplet visual-center-icon"></i>
+            <span class="visual-metric-badge"><i class="fa-solid fa-cart-shopping"></i> +215% E-Com</span>
+          </div>
+          <div class="masterpiece-info">
+            <span class="masterpiece-category">Packaging & Box Dielines</span>
+            <h3 class="masterpiece-card-title">Velvet Skincare Matte Box</h3>
+            <p class="masterpiece-card-desc">Eco-friendly cosmetic bottle labels, barcode placement, and gold foil outer box print dielines.</p>
+            <div class="masterpiece-inspect-action"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
           </div>
         </div>
 
         <!-- Item 3 -->
-        <div class="graphic-item-card" data-category="3d" onclick="openGraphicModal('Zenith Smartwatch 3D Photorealism', 'Hyper-realistic 3D product CAD modeling, glass refraction shaders, and studio lighting renders.', '3d', '#7C3AED', 'Space Grotesk', 'Amazon Bestseller Badge')">
-          <div class="graphic-thumb-box graphic-bg-3">
-            <div class="graphic-overlay">
-              <span class="graphic-tag">3D RENDERING</span>
-              <h3 class="graphic-card-title">Zenith Smartwatch 3D Render</h3>
-              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
-            </div>
+        <div class="masterpiece-card" data-category="3d" onclick="openMasterpieceModal('Zenith Smartwatch 3D Photorealism', 'Studio lighting CAD modeling, glass refraction shaders, and 5-angle 4K Amazon listing images.', '3d', '#8B5CF6', 'Space Grotesk', 'Amazon Bestseller Rank', '4K EXR, GLTF, Blender 3D')">
+          <div class="masterpiece-visual visual-bg-3">
+            <i class="fa-solid fa-cube visual-center-icon"></i>
+            <span class="visual-metric-badge"><i class="fa-solid fa-award"></i> Bestseller</span>
+          </div>
+          <div class="masterpiece-info">
+            <span class="masterpiece-category">3D Photorealistic Rendering</span>
+            <h3 class="masterpiece-card-title">Zenith Smartwatch 3D Render</h3>
+            <p class="masterpiece-card-desc">Ultra-high-definition product modeling with photorealistic metal textures and dramatic studio rim lighting.</p>
+            <div class="masterpiece-inspect-action"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
           </div>
         </div>
 
         <!-- Item 4 -->
-        <div class="graphic-item-card" data-category="social" onclick="openGraphicModal('HyperX Fitness Meta Ad Banners', '10 high-converting Instagram story & feed ad banners engineered for maximum click-through rates.', 'social', '#DB2777', 'Inter & Montserrat', '8.4X ROAS Benchmark')">
-          <div class="graphic-thumb-box graphic-bg-4">
-            <div class="graphic-overlay">
-              <span class="graphic-tag">SOCIAL CREATIVES</span>
-              <h3 class="graphic-card-title">HyperX High-ROAS Banners</h3>
-              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
-            </div>
+        <div class="masterpiece-card" data-category="social" onclick="openMasterpieceModal('HyperX Fitness High-ROAS Banners', 'Scroll-stopping Instagram story and feed ad creative templates engineered for high click-through rates.', 'social', '#EC4899', 'Inter & Montserrat', '8.4X ROAS Benchmark', 'Figma, PSD, 1080x1920 MP4')">
+          <div class="masterpiece-visual visual-bg-4">
+            <i class="fa-solid fa-bullhorn visual-center-icon"></i>
+            <span class="visual-metric-badge"><i class="fa-solid fa-bolt"></i> 8.4X ROAS</span>
+          </div>
+          <div class="masterpiece-info">
+            <span class="masterpiece-category">Social Ad Creatives</span>
+            <h3 class="masterpiece-card-title">HyperX High-ROAS Banners</h3>
+            <p class="masterpiece-card-desc">10 editable Figma/Photoshop performance marketing templates engineered for paid traffic scaling.</p>
+            <div class="masterpiece-inspect-action"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
           </div>
         </div>
 
         <!-- Item 5 -->
-        <div class="graphic-item-card" data-category="branding" onclick="openGraphicModal('Apex Web3 Crypto Exchange', 'Futuristic neon & dark theme branding for a Web3 decentralized crypto platform.', 'branding', '#2563EB', 'Cabinet Grotesk', '250K App Signups')">
-          <div class="graphic-thumb-box graphic-bg-5">
-            <div class="graphic-overlay">
-              <span class="graphic-tag">BRAND IDENTITY</span>
-              <h3 class="graphic-card-title">Apex Web3 Brand Book</h3>
-              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
-            </div>
+        <div class="masterpiece-card" data-category="branding" onclick="openMasterpieceModal('Apex Web3 Crypto Ecosystem', 'Futuristic typography, dark-mode neon color system, and isometric 3D asset library for Web3 app.', 'branding', '#3B82F6', 'Space Grotesk & Cabinet', '250K App Signups', 'Vector Icon Kit, Web UI Kit')">
+          <div class="masterpiece-visual visual-bg-5">
+            <i class="fa-solid fa-fingerprint visual-center-icon"></i>
+            <span class="visual-metric-badge"><i class="fa-solid fa-users"></i> 250K Users</span>
+          </div>
+          <div class="masterpiece-info">
+            <span class="masterpiece-category">Brand Identity & Digital</span>
+            <h3 class="masterpiece-card-title">Apex Web3 Brand Book</h3>
+            <p class="masterpiece-card-desc">Cyberpunk brand tokens, dark UI components, and futuristic vector iconography suite.</p>
+            <div class="masterpiece-inspect-action"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
           </div>
         </div>
 
         <!-- Item 6 -->
-        <div class="graphic-item-card" data-category="packaging" onclick="openGraphicModal('Nectar Cold Brew Bottle Sleeve', 'Custom vintage typography coffee bottle label and cardboard sleeve vector dielines.', 'packaging', '#C026D3', 'Playfair Display', '+180% Retail Shelf Orders')">
-          <div class="graphic-thumb-box graphic-bg-6">
-            <div class="graphic-overlay">
-              <span class="graphic-tag">PACKAGING & BOX</span>
-              <h3 class="graphic-card-title">Nectar Coffee Packaging</h3>
-              <div class="btn-preview-icon"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
-            </div>
+        <div class="masterpiece-card" data-category="packaging" onclick="openMasterpieceModal('Nectar Cold Brew Bottle Sleeve', 'Custom vintage typography coffee bottle label and kraft cardboard outer sleeve vector dielines.', 'packaging', '#D946EF', 'Playfair Display', '+180% Shelf Velocity', 'Print-Ready CMYK PDF, AI')">
+          <div class="masterpiece-visual visual-bg-6">
+            <i class="fa-solid fa-mug-hot visual-center-icon"></i>
+            <span class="visual-metric-badge"><i class="fa-solid fa-store"></i> +180% Retail</span>
+          </div>
+          <div class="masterpiece-info">
+            <span class="masterpiece-category">Packaging & Box Dielines</span>
+            <h3 class="masterpiece-card-title">Nectar Coffee Packaging</h3>
+            <p class="masterpiece-card-desc">Artisan vintage typography labels, kraft cardboard carrier box, and tactile finish specifications.</p>
+            <div class="masterpiece-inspect-action"><i class="fa-solid fa-expand"></i> Inspect Design Specs</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Feature 4: Interactive Graphic Package Builder & Cost Estimator -->
-  <section class="section-padding" id="graphics-builder">
+  <!-- ==========================================================================
+       SECTION 4: PACKAGE BUILDER & LIVE SCOPE ESTIMATOR (RESPONSIVE)
+       ========================================================================== -->
+  <section class="gfx-section" id="graphics-builder" style="background: var(--bg-dark);">
     <div class="container">
-      <div class="text-center" style="max-width: 750px; margin: 0 auto 3.5rem auto;">
-        <div class="section-tag section-tag-gold"><i class="fa-solid fa-calculator"></i> PACKAGE CONFIGURATOR</div>
-        <h2 class="section-title">Build Your Custom Graphic Package</h2>
-        <p class="section-description">
-          Select the design deliverables your brand requires to receive an instant price estimation, turnaround schedule, and WhatsApp order trigger.
-        </p>
+      <div class="gfx-section-header">
+        <div class="gfx-tag"><i class="fa-solid fa-calculator"></i> LIVE ESTIMATION CUSTOMIZER</div>
+        <h2 class="gfx-title">Build Your Custom Graphic Design Package</h2>
+        <p class="gfx-desc">Select the exact design deliverables you need to get instant turnaround timeline, asset breakdown, and direct WhatsApp booking.</p>
       </div>
 
-      <div class="builder-wrapper">
-        <div class="builder-checklist">
-          <h3 class="builder-subtitle"><i class="fa-solid fa-list-check text-gold"></i> Select Required Design Assets:</h3>
-
-          <label class="builder-checkbox-card">
-            <input type="checkbox" class="gfx-check" value="4999" data-name="Custom Logo & Vector Identity Marks" checked onchange="calcGraphicsPackage()">
-            <div class="checkbox-content">
-              <strong>Custom Logo & Vector Identity Marks</strong>
-              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">3 Logo concepts, vector files (AI, EPS, SVG), color palette & typography guide.</div>
+      <div class="builder-layout-grid">
+        <!-- Checklist Column -->
+        <div class="builder-cards-stack">
+          <label class="builder-item-row is-active" id="builderRow_0">
+            <input type="checkbox" class="gfx-item-check" value="4999" data-name="Custom Vector Logo Suite & Marks" checked onchange="calculateGraphicsEstimate()">
+            <div class="builder-item-details">
+              <div class="builder-item-header">
+                <span class="builder-item-title">Custom Logo Suite & Vector Identity Marks</span>
+                <span class="builder-item-price-badge">₹4,999</span>
+              </div>
+              <p class="builder-item-subtitle">3 Unique concepts, vector master files (AI, EPS, SVG, PDF), color tokens & font kit.</p>
             </div>
-            <span class="gfx-price">₹4,999</span>
           </label>
 
-          <label class="builder-checkbox-card">
-            <input type="checkbox" class="gfx-check" value="9999" data-name="Full Brand Stylebook & Strategy Guide" onchange="calcGraphicsPackage()">
-            <div class="checkbox-content">
-              <strong>Full Brand Stylebook & Brand Guidelines (25+ Pages)</strong>
-              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">Logo usage rules, stationery mockups, icon sets, and social media layout rules.</div>
+          <label class="builder-item-row" id="builderRow_1">
+            <input type="checkbox" class="gfx-item-check" value="9999" data-name="Full 30+ Page Luxury Brand Stylebook" onchange="calculateGraphicsEstimate()">
+            <div class="builder-item-details">
+              <div class="builder-item-header">
+                <span class="builder-item-title">Full 30+ Page Luxury Brand Guidelines</span>
+                <span class="builder-item-price-badge">₹9,999</span>
+              </div>
+              <p class="builder-item-subtitle">Logo usage rules, stationery mockups, iconography sets, and digital brand governance PDF.</p>
             </div>
-            <span class="gfx-price">₹9,999</span>
           </label>
 
-          <label class="builder-checkbox-card">
-            <input type="checkbox" class="gfx-check" value="7499" data-name="Product Packaging & Box Dieline Design" onchange="calcGraphicsPackage()">
-            <div class="checkbox-content">
-              <strong>Product Packaging & Label Dieline Design</strong>
-              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">Print-ready CMYK vector files, barcode placement, and foil stamping specs.</div>
+          <label class="builder-item-row" id="builderRow_2">
+            <input type="checkbox" class="gfx-item-check" value="7499" data-name="Product Packaging & Box Dieline Suite" onchange="calculateGraphicsEstimate()">
+            <div class="builder-item-details">
+              <div class="builder-item-header">
+                <span class="builder-item-title">Product Packaging & Label Dieline Design</span>
+                <span class="builder-item-price-badge">₹7,499</span>
+              </div>
+              <p class="builder-item-subtitle">Print-ready CMYK vector dielines, barcode placement, and gold foil stamping specs.</p>
             </div>
-            <span class="gfx-price">₹7,499</span>
           </label>
 
-          <label class="builder-checkbox-card">
-            <input type="checkbox" class="gfx-check" value="5999" data-name="10 Social Ad Banners & Carousels" onchange="calcGraphicsPackage()">
-            <div class="checkbox-content">
-              <strong>10 High-ROAS Social Banners & Carousels</strong>
-              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">Figma / Photoshop editable templates engineered for high CTR.</div>
+          <label class="builder-item-row" id="builderRow_3">
+            <input type="checkbox" class="gfx-item-check" value="5999" data-name="10 High-ROAS Social Ad Carousels" onchange="calculateGraphicsEstimate()">
+            <div class="builder-item-details">
+              <div class="builder-item-header">
+                <span class="builder-item-title">10 High-ROAS Social Ad Banners & Carousels</span>
+                <span class="builder-item-price-badge">₹5,999</span>
+              </div>
+              <p class="builder-item-subtitle">Figma / Photoshop editable templates engineered for high click-through rates.</p>
             </div>
-            <span class="gfx-price">₹5,999</span>
           </label>
 
-          <label class="builder-checkbox-card">
-            <input type="checkbox" class="gfx-check" value="8999" data-name="3D Photorealistic Product Modeling & Rendering" onchange="calcGraphicsPackage()">
-            <div class="checkbox-content">
-              <strong>3D Photorealistic Product Render Pack (5 Angles)</strong>
-              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">4K studio lighting renders tailored for Amazon & Shopify store catalog.</div>
+          <label class="builder-item-row" id="builderRow_4">
+            <input type="checkbox" class="gfx-item-check" value="8999" data-name="3D Photorealistic Product Render Pack (5 Angles)" onchange="calculateGraphicsEstimate()">
+            <div class="builder-item-details">
+              <div class="builder-item-header">
+                <span class="builder-item-title">3D Photorealistic Product Render Pack (5 Angles)</span>
+                <span class="builder-item-price-badge">₹8,999</span>
+              </div>
+              <p class="builder-item-subtitle">4K studio lighting renders tailored for Amazon & Shopify store catalog domination.</p>
             </div>
-            <span class="gfx-price">₹8,999</span>
           </label>
 
-          <label class="builder-checkbox-card">
-            <input type="checkbox" class="gfx-check" value="6999" data-name="Animated Motion Logo Video Intro (4K)" onchange="calcGraphicsPackage()">
-            <div class="checkbox-content">
-              <strong>Animated Motion Logo Video Intro (4K 60FPS)</strong>
-              <div style="font-size:0.85rem; color:var(--text-dark-secondary);">Custom 3D logo reveal video animation with sound effects overlay.</div>
+          <label class="builder-item-row" id="builderRow_5">
+            <input type="checkbox" class="gfx-item-check" value="6999" data-name="4K 60FPS 3D Animated Motion Logo Intro" onchange="calculateGraphicsEstimate()">
+            <div class="builder-item-details">
+              <div class="builder-item-header">
+                <span class="builder-item-title">4K 60FPS 3D Animated Motion Logo Intro</span>
+                <span class="builder-item-price-badge">₹6,999</span>
+              </div>
+              <p class="builder-item-subtitle">Bespoke 3D logo reveal video animation with custom sound effects overlay.</p>
             </div>
-            <span class="gfx-price">₹6,999</span>
           </label>
         </div>
 
-        <div class="builder-summary-col">
-          <h3 class="builder-subtitle"><i class="fa-solid fa-receipt text-gold"></i> Your Custom Package Summary</h3>
+        <!-- Live Summary Column -->
+        <div class="builder-summary-card">
+          <div class="summary-heading"><i class="fa-solid fa-receipt text-gold"></i> Custom Package Summary</div>
 
-          <div class="builder-summary-box">
-            <div style="font-size:0.9rem; color:var(--text-dark-secondary); margin-bottom:0.8rem;">Selected Assets:</div>
-            <div id="gfxSelectedList" class="gfx-selected-list">
-              <!-- Selected items preview -->
-            </div>
-
-            <hr style="border:none; border-top:1px solid var(--dark-border); margin: 1rem 0;">
-
-            <div class="gfx-sum-row">
-              <span>Estimated Delivery:</span>
-              <span class="text-gold" id="gfxTimeframe" style="font-weight:700;">3 - 5 Business Days</span>
-            </div>
-
-            <div class="gfx-sum-row" style="margin-top:0.8rem; font-size:1.3rem; font-weight:800;">
-              <span>Total Investment:</span>
-              <span class="text-gold" id="gfxTotalPrice">₹4,999</span>
-            </div>
+          <div style="font-size:0.75rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.5rem;">
+            Selected Assets:
+          </div>
+          <div class="selected-items-box" id="builderSelectedList">
+            <!-- Selected items list -->
           </div>
 
-          <button class="btn btn-gold" style="width: 100%; text-align: center; margin-top: 1.5rem;" onclick="orderGraphicsWhatsApp()">
-            ORDER GRAPHICS PACKAGE VIA WHATSAPP <i class="fa-brands fa-whatsapp"></i>
+          <div class="summary-stat-row">
+            <span style="color:var(--text-muted);">Estimated Delivery:</span>
+            <span style="font-weight:800; color:var(--gold);" id="builderTimeframe">3–5 Business Days</span>
+          </div>
+
+          <div class="summary-total-row">
+            <span>Total Investment:</span>
+            <span style="color:var(--gold);" id="builderTotalPrice">₹4,999</span>
+          </div>
+
+          <button class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 1.3rem;" onclick="dispatchGraphicsWhatsApp()">
+            <span>ORDER PACKAGE VIA WHATSAPP</span> <i class="fa-brands fa-whatsapp"></i>
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Modal Lightbox for Graphic Inspection -->
-  <div class="modal-overlay" id="graphicModalOverlay" onclick="closeGraphicModal()"></div>
-  <div class="modal-card" id="graphicModal" style="max-width: 600px;">
-    <div class="modal-header">
-      <h3 id="gmTitle">Design Showcase Details</h3>
-      <button class="modal-close-btn" onclick="closeGraphicModal()"><i class="fa-solid fa-xmark"></i></button>
+  <!-- ==========================================================================
+       NEW SECTION 1: 4-STEP DESIGN EXECUTION BLUEPRINT
+       ========================================================================== -->
+  <section class="gfx-section" style="background: #0B0E14; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="gfx-section-header">
+        <div class="gfx-tag"><i class="fa-solid fa-compass-drafting"></i> THE CREATIVE BLUEPRINT</div>
+        <h2 class="gfx-title">Our 4-Phase Design Architecture</h2>
+        <p class="gfx-desc">A structured, iterative methodology engineered to deliver high-converting luxury assets with zero guesswork.</p>
+      </div>
+
+      <div class="process-timeline-grid">
+        <div class="process-step-card active">
+          <div class="process-step-num">01</div>
+          <h3 class="process-step-title">Brand Discovery & Moodboarding</h3>
+          <p class="process-step-desc">We analyze your target demographics, competitive visual gaps, and psychological color archetypes to establish a distinct design direction.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="process-step-num">02</div>
+          <h3 class="process-step-title">3 Concept Directions & Monograms</h3>
+          <p class="process-step-desc">Our lead artists craft three unique vector concept directions with golden-ratio geometric grid precision and custom typography pairings.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="process-step-num">03</div>
+          <h3 class="process-step-title">3D CAD Modeling & Photorealism</h3>
+          <p class="process-step-desc">We simulate your branding on photorealistic 3D packaging, embossed gold foil boxes, and storefront signage to preview real-world impact.</p>
+        </div>
+
+        <div class="process-step-card">
+          <div class="process-step-num">04</div>
+          <h3 class="process-step-title">Production Kit & Style Guide Handoff</h3>
+          <p class="process-step-desc">You receive full commercial trademark rights, factory-ready print CMYK dielines, vector master suites (AI, SVG, EPS), and a 30+ page stylebook.</p>
+        </div>
+      </div>
     </div>
-    <div class="modal-body" id="gmBody">
-      <!-- Populated dynamically -->
+  </section>
+
+  <!-- ==========================================================================
+       NEW SECTION 2: BRAND TRANSFORMATION CASE STUDIES
+       ========================================================================== -->
+  <section class="gfx-section" style="background: var(--bg-dark);">
+    <div class="container">
+      <div class="gfx-section-header">
+        <div class="gfx-tag"><i class="fa-solid fa-trophy"></i> PROVEN CASE IMPACT</div>
+        <h2 class="gfx-title">Client Transformation Case Studies</h2>
+        <p class="gfx-desc">Explore how our visual identities and 3D packaging designs directly translated into measurable revenue and retail expansion.</p>
+      </div>
+
+      <div class="case-studies-wrapper">
+        <div class="case-tabs-row">
+          <button class="case-tab-btn active" onclick="switchCaseStudy('fragrance', this)">Luxe D2C Fragrance</button>
+          <button class="case-tab-btn" onclick="switchCaseStudy('wearable', this)">Zenith Wearables</button>
+          <button class="case-tab-btn" onclick="switchCaseStudy('coffee', this)">Nectar Artisan Cold Brew</button>
+        </div>
+
+        <div class="case-content-grid" id="caseContentGrid">
+          <div>
+            <span class="gfx-tag" id="caseIndustryTag">D2C E-COMMERCE LUXURY</span>
+            <h3 style="font-size: clamp(1.2rem, 3.5vw, 1.55rem); font-weight: 900; color: #FFFFFF; margin-bottom: 0.8rem; word-break: break-word; line-height: 1.25;" id="caseHeadline">Aura Fragrances: Packaging Overhaul Drives +340% AOV</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.2rem;" id="caseSummary">
+              Transitioned an emerging fragrance label from stock glass bottles into bespoke gold-foiled outer boxes with luxury geometric monogram branding, instantly unlocking premium pricing power.
+            </p>
+
+            <div class="case-metrics-matrix">
+              <div class="case-metric-box">
+                <div class="case-metric-val" id="caseMetric1">+340%</div>
+                <div class="case-metric-lbl" id="caseLabel1">Average Order Value</div>
+              </div>
+              <div class="case-metric-box">
+                <div class="case-metric-val" id="caseMetric2">4.2X</div>
+                <div class="case-metric-lbl" id="caseLabel2">Meta Ad ROAS Return</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-preview-card">
+            <div id="casePreviewIconContainer" style="margin-bottom: 0.8rem;">
+              <i class="fa-solid fa-crown" style="font-size: 3.2rem; color: var(--gold);"></i>
+            </div>
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.45rem;" id="casePreviewTitle">Full Omnichannel Rebrand</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.3rem;" id="casePreviewDesc">Delivered print-ready CMYK box dielines, 3D bottle CAD renders, and Instagram carousel templates.</p>
+            <a href="contact.html" class="btn btn-gold" style="width: 100%; justify-content: center;">
+              <span>REQUEST SIMILAR SCOPE</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="modal-footer" style="text-align: right;">
-      <a id="gmWabtn" href="https://wa.me/919993515138" target="_blank" class="btn btn-gold">
-        REQUEST THIS DESIGN STYLE <i class="fa-brands fa-whatsapp"></i>
+  </section>
+
+  <!-- ==========================================================================
+       NEW SECTION 3: DESIGN FAQS ACCORDION
+       ========================================================================== -->
+  <section class="gfx-section" style="background: #0B0E14; border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="gfx-section-header">
+        <div class="gfx-tag"><i class="fa-solid fa-circle-question"></i> HAVE QUESTIONS?</div>
+        <h2 class="gfx-title">Frequently Asked Questions</h2>
+        <p class="gfx-desc">Everything you need to know about our graphic design workflows, IP ownership, and file deliverables.</p>
+      </div>
+
+      <div class="faq-accordion-list">
+        <div class="faq-acc-item active">
+          <div class="faq-acc-header" onclick="toggleGfxFaq(this)">
+            <span>Do I own 100% full commercial copyright and trademark rights?</span>
+            <i class="fa-solid fa-chevron-down faq-acc-chevron"></i>
+          </div>
+          <div class="faq-acc-body">
+            <p>Yes, absolutely. Upon project completion and final milestone approval, 100% intellectual property, trademark, and commercial distribution rights are transferred directly to your business.</p>
+          </div>
+        </div>
+
+        <div class="faq-acc-item">
+          <div class="faq-acc-header" onclick="toggleGfxFaq(this)">
+            <span>Which file formats are provided upon project completion?</span>
+            <i class="fa-solid fa-chevron-down faq-acc-chevron"></i>
+          </div>
+          <div class="faq-acc-body">
+            <p>You receive full industry-standard production suites: Vector master files (Adobe Illustrator .AI, .EPS, .SVG, .PDF), high-resolution web formats (4K PNG, JPG, WebP), editable Figma/PSD templates, and 3D CAD files (.OBJ, .GLTF, .FBX).</p>
+          </div>
+        </div>
+
+        <div class="faq-acc-item">
+          <div class="faq-acc-header" onclick="toggleGfxFaq(this)">
+            <span>How many revision rounds are included in my project?</span>
+            <i class="fa-solid fa-chevron-down faq-acc-chevron"></i>
+          </div>
+          <div class="faq-acc-body">
+            <p>All our packages include iterative refinement rounds during active design sprints to guarantee that the final logo, 3D packaging, and visual assets exceed your highest standards.</p>
+          </div>
+        </div>
+
+        <div class="faq-acc-item">
+          <div class="faq-acc-header" onclick="toggleGfxFaq(this)">
+            <span>Are your packaging and box dielines ready for factory printing?</span>
+            <i class="fa-solid fa-chevron-down faq-acc-chevron"></i>
+          </div>
+          <div class="faq-acc-body">
+            <p>Yes. We build custom CMYK print dielines with millimeter-exact trim/bleed margins, barcode placement, foil stamping layers, spot UV masks, and embossing vectors compatible with global packaging manufacturers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MODAL INSPECTION LIGHTBOX
+       ========================================================================== -->
+  <div class="gfx-modal-backdrop" id="gfxModalBackdrop" onclick="handleBackdropClick(event)">
+    <div class="gfx-modal-panel">
+      <button class="modal-close-icon" onclick="closeMasterpieceModal()" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+
+      <div style="margin-bottom: 1.5rem;">
+        <span class="gfx-tag" id="modalCategoryTag">BRAND IDENTITY</span>
+        <h3 style="font-size: 1.45rem; font-weight: 900; color: #FFFFFF; margin-bottom: 0.5rem;" id="modalTitle">Project Specs</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;" id="modalDesc"></p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 1.2rem; margin-bottom: 1.5rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.84rem;">
+          <div>
+            <span style="color: var(--text-muted); display: block; font-size: 0.72rem; text-transform: uppercase;">Font Pairing</span>
+            <strong style="color: #FFFFFF;" id="modalFonts">Cinzel + Montserrat</strong>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); display: block; font-size: 0.72rem; text-transform: uppercase;">Proven ROI</span>
+            <strong style="color: var(--gold);" id="modalRoi">+340% Lift</strong>
+          </div>
+          <div style="grid-column: span 2;">
+            <span style="color: var(--text-muted); display: block; font-size: 0.72rem; text-transform: uppercase;">Delivered Formats</span>
+            <strong style="color: #E2E8F0;" id="modalFormats">Vector AI, EPS, SVG, PDF, 4K PNG</strong>
+          </div>
+        </div>
+      </div>
+
+      <a id="modalWhatsAppBtn" href="https://wa.me/919993515138" target="_blank" class="btn btn-gold" style="width: 100%; justify-content: center;">
+        <span>REQUEST THIS DESIGN STYLE</span> <i class="fa-brands fa-whatsapp"></i>
       </a>
     </div>
   </div>
@@ -551,7 +1888,7 @@
         <div class="footer-bottom-content">
           <p>© Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.</p>
           <div class="footer-bottom-extra">
-            <span>Crafted with <i class="fa-solid fa-heart" style="color: var(--primary-gold);"></i> for digital growth</span>
+            <span>Crafted with <i class="fa-solid fa-heart" style="color: var(--gold);"></i> for digital growth</span>
           </div>
         </div>
         <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top">
@@ -562,6 +1899,390 @@
     </div>
   </footer>
 
+  <!-- Main JavaScript File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // 1. Studio Archetype Preset Data
+    const studioArchetypes = {
+      luxury: {
+        badge: '👑 IMPERIAL LUXURY SYSTEM',
+        emblem: '<i class="fa-solid fa-crown"></i>',
+        name: 'AURUM & CO.',
+        tagline: '"Precision Craftsmanship Meets Haute Horlogerie Visual Elegance"',
+        fontFamily: "'Cinzel', serif",
+        swatches: [
+          { hex: '#FFC700', label: 'Imperial Gold' },
+          { hex: '#080A0F', label: 'Obsidian Black' },
+          { hex: '#E2E8F0', label: 'Platinum Foil' }
+        ],
+        specText: '<strong>Font Hierarchy:</strong> Cinzel (Display) + Plus Jakarta Sans (Body)<br><strong>Design Psychology:</strong> High-contrast prestige luxury engineered to command 3X higher pricing.'
+      },
+      cyberpunk: {
+        badge: '⚡ CYBERPUNK VELOCITY',
+        emblem: '<i class="fa-solid fa-bolt"></i>',
+        name: 'NEO-NEXUS',
+        tagline: '"Hyper-Speed Decentralized Intelligence For Next-Gen Creators"',
+        fontFamily: "'Space Grotesk', sans-serif",
+        swatches: [
+          { hex: '#06B6D4', label: 'Electric Cyan' },
+          { hex: '#A855F7', label: 'Neon Violet' },
+          { hex: '#0F172A', label: 'Deep Abyss' }
+        ],
+        specText: '<strong>Font Hierarchy:</strong> Space Grotesk + Inter<br><strong>Design Psychology:</strong> High-energy digital futurism creating instant viral appeal on TikTok & Web3.'
+      },
+      organic: {
+        badge: '🌿 BOTANICAL ORGANIC',
+        emblem: '<i class="fa-solid fa-leaf"></i>',
+        name: 'VERDANT LAB',
+        tagline: '"Sustainably Harvested Pure Botanical Alchemy & Earth Science"',
+        fontFamily: "'Syne', sans-serif",
+        swatches: [
+          { hex: '#10B981', label: 'Emerald Sage' },
+          { hex: '#D1FAE5', label: 'Alabaster Milk' },
+          { hex: '#064E3B', label: 'Forest Velvet' }
+        ],
+        specText: '<strong>Font Hierarchy:</strong> Syne (Organic Headline) + Outfit (Clean Body)<br><strong>Design Psychology:</strong> Earth-conscious authenticity driving clean beauty & wellness conversions.'
+      },
+      tech: {
+        badge: '💎 MINIMALIST TECH',
+        emblem: '<i class="fa-solid fa-gem"></i>',
+        name: 'APEX ANALYTICS',
+        tagline: '"Algorithmic Precision Engineering For High-Velocity Scale"',
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        swatches: [
+          { hex: '#3B82F6', label: 'Cobalt Azure' },
+          { hex: '#F8FAFC', label: 'Pure White' },
+          { hex: '#1E293B', label: 'Slate Carbon' }
+        ],
+        specText: '<strong>Font Hierarchy:</strong> Plus Jakarta Sans + Inter Mono<br><strong>Design Psychology:</strong> Corporate authority and institutional trust for fintech & SaaS enterprises.'
+      },
+      streetwear: {
+        badge: '🔥 STREETWEAR BOLD',
+        emblem: '<i class="fa-solid fa-fire"></i>',
+        name: 'RAW ATELIER',
+        tagline: '"Unapologetic High-Impact Visuals For Cultural Disruptors"',
+        fontFamily: "'Syne', sans-serif",
+        swatches: [
+          { hex: '#F97316', label: 'Blaze Orange' },
+          { hex: '#EF4444', label: 'Crimson Drop' },
+          { hex: '#000000', label: 'Raw Carbon' }
+        ],
+        specText: '<strong>Font Hierarchy:</strong> Syne 800 + Space Grotesk<br><strong>Design Psychology:</strong> Scarcity-driven hype branding for D2C apparel drops and youth culture.'
+      }
+    };
+
+    let currentArchetypeKey = 'luxury';
+
+    function selectStudioArchetype(key, btn) {
+      currentArchetypeKey = key;
+      document.querySelectorAll('.archetype-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const data = studioArchetypes[key];
+      if (!data) return;
+
+      const badge = document.getElementById('canvasBadge');
+      const emblem = document.getElementById('canvasEmblem');
+      const name = document.getElementById('canvasName');
+      const tagline = document.getElementById('canvasTagline');
+      const swatchesGrid = document.getElementById('studioSwatchesGrid');
+      const specBox = document.getElementById('studioSpecBox');
+
+      if (badge) badge.textContent = data.badge;
+      if (emblem) emblem.innerHTML = data.emblem;
+      if (name) {
+        name.textContent = data.name;
+        name.style.fontFamily = data.fontFamily;
+      }
+      if (tagline) tagline.textContent = data.tagline;
+
+      if (swatchesGrid) {
+        swatchesGrid.innerHTML = '';
+        data.swatches.forEach(sw => {
+          const div = document.createElement('div');
+          div.className = 'swatch-interactive-box';
+          div.onclick = () => copyHex(sw.hex);
+          div.innerHTML = `
+            <div class="swatch-circle" style="background: ${sw.hex};"></div>
+            <div class="swatch-hex-val">${sw.hex}</div>
+            <div class="swatch-name-lbl">${sw.label}</div>
+          `;
+          swatchesGrid.appendChild(div);
+        });
+      }
+
+      if (specBox) {
+        specBox.innerHTML = data.specText;
+      }
+    }
+
+    function copyHex(hex) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(hex);
+        alert(`Copied ${hex} to clipboard!`);
+      }
+    }
+
+    function orderStudioVibeWhatsApp() {
+      const data = studioArchetypes[currentArchetypeKey];
+      const msg = `*Brand Identity Inquiry from Ashvik Media Studio*\n\n` +
+                  `• *Style Archetype:* ${data.badge}\n` +
+                  `• *Concept Reference:* ${data.name}\n` +
+                  `• *Primary Colors:* ${data.swatches.map(s => s.hex).join(', ')}\n\n` +
+                  `Hi Ashvik Media team! I would like to design my brand identity in this exact visual aesthetic.`;
+      window.open(`https://wa.me/919993515138?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // 2. Responsive Before/After Slider Engine
+    function initResponsiveBaSlider() {
+      const container = document.getElementById('baSliderContainer');
+      const paneAfter = document.getElementById('baPaneAfter');
+      const afterHolder = document.getElementById('baAfterHolder');
+      const handle = document.getElementById('baDragHandle');
+      if (!container || !paneAfter || !afterHolder || !handle) return;
+
+      let isDragging = false;
+
+      function updateInnerWidth() {
+        if (container && afterHolder) {
+          afterHolder.style.width = container.clientWidth + 'px';
+        }
+      }
+      updateInnerWidth();
+      window.addEventListener('resize', updateInnerWidth);
+
+      function setSliderPosition(clientX) {
+        const rect = container.getBoundingClientRect();
+        let posX = clientX - rect.left;
+        if (posX < 0) posX = 0;
+        if (posX > rect.width) posX = rect.width;
+
+        const percentage = (posX / rect.width) * 100;
+        paneAfter.style.width = percentage + '%';
+        handle.style.left = percentage + '%';
+      }
+
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        setSliderPosition(e.clientX);
+      });
+      window.addEventListener('mouseup', () => { isDragging = false; });
+      window.addEventListener('mousemove', (e) => {
+        if (isDragging) setSliderPosition(e.clientX);
+      });
+
+      container.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        setSliderPosition(e.touches[0].clientX);
+      }, { passive: true });
+      window.addEventListener('touchend', () => { isDragging = false; });
+      window.addEventListener('touchmove', (e) => {
+        if (isDragging) setSliderPosition(e.touches[0].clientX);
+      }, { passive: true });
+    }
+
+    // 3. Masterpiece Gallery Filtering
+    function initGalleryFilters() {
+      const buttons = document.querySelectorAll('.gallery-filter-btn');
+      const cards = document.querySelectorAll('.masterpiece-card');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter') || 'all';
+          cards.forEach(card => {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    // 4. Modal Lightbox
+    function openMasterpieceModal(title, desc, cat, color, fonts, roi, formats) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('modalCategoryTag').textContent = cat.toUpperCase();
+      document.getElementById('modalFonts').textContent = fonts;
+      document.getElementById('modalRoi').textContent = roi;
+      document.getElementById('modalFormats').textContent = formats;
+
+      const btn = document.getElementById('modalWhatsAppBtn');
+      if (btn) {
+        const msg = `*Design Inspection Inquiry:*\n\n` +
+                    `• *Project:* ${title}\n` +
+                    `• *Category:* ${cat.toUpperCase()}\n` +
+                    `• *Required Formats:* ${formats}\n\n` +
+                    `Hi Ashvik Media, I'd like a custom proposal for this design package!`;
+        btn.href = `https://wa.me/919993515138?text=${encodeURIComponent(msg)}`;
+      }
+
+      document.getElementById('gfxModalBackdrop').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMasterpieceModal() {
+      document.getElementById('gfxModalBackdrop').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'gfxModalBackdrop') {
+        closeMasterpieceModal();
+      }
+    }
+
+    // 5. Package Configurator Engine
+    function calculateGraphicsEstimate() {
+      const checkboxes = document.querySelectorAll('.gfx-item-check');
+      let total = 0;
+      let names = [];
+
+      checkboxes.forEach((cb, index) => {
+        const row = document.getElementById('builderRow_' + index);
+        if (cb.checked) {
+          total += parseInt(cb.value, 10);
+          names.push(cb.getAttribute('data-name'));
+          if (row) row.classList.add('is-active');
+        } else {
+          if (row) row.classList.remove('is-active');
+        }
+      });
+
+      const listEl = document.getElementById('builderSelectedList');
+      const priceEl = document.getElementById('builderTotalPrice');
+      const timeEl = document.getElementById('builderTimeframe');
+
+      if (listEl) {
+        if (names.length === 0) {
+          listEl.innerHTML = '<span style="color:#64748B;">No deliverables selected yet.</span>';
+        } else {
+          listEl.innerHTML = names.map(n => `<div style="margin-bottom:0.35rem; display:flex; align-items:center; gap:0.4rem;"><i class="fa-solid fa-check" style="color:var(--gold); font-size:0.75rem;"></i> ${n}</div>`).join('');
+        }
+      }
+
+      if (priceEl) priceEl.textContent = '₹' + total.toLocaleString('en-IN');
+      if (timeEl) {
+        if (total > 20000) timeEl.textContent = '7–10 Business Days';
+        else if (total > 10000) timeEl.textContent = '4–6 Business Days';
+        else timeEl.textContent = '3–5 Business Days';
+      }
+    }
+
+    function dispatchGraphicsWhatsApp() {
+      const checkboxes = document.querySelectorAll('.gfx-item-check:checked');
+      if (checkboxes.length === 0) {
+        alert('Please check at least one design deliverable.');
+        return;
+      }
+
+      let total = 0;
+      let names = [];
+      checkboxes.forEach(cb => {
+        total += parseInt(cb.value, 10);
+        names.push(cb.getAttribute('data-name'));
+      });
+
+      const timeText = document.getElementById('builderTimeframe')?.textContent || '3-5 Days';
+
+      const msg = `*🎨 Custom Graphic Design Package Inquiry*\n\n` +
+                  `• *Selected Assets:*\n${names.map(n => `  - ${n}`).join('\n')}\n\n` +
+                  `• *Estimated Turnaround:* ${timeText}\n` +
+                  `• *Total Estimated Investment:* ₹${total.toLocaleString('en-IN')}\n\n` +
+                  `Hi Ashvik Media, please send me the onboarding link to get started!`;
+
+      window.open(`https://wa.me/919993515138?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // 6. Case Studies Switcher Data
+    const caseStudiesData = {
+      fragrance: {
+        industry: 'D2C E-COMMERCE LUXURY',
+        headline: 'Aura Fragrances: Packaging Overhaul Drives +340% AOV',
+        summary: 'Transitioned an emerging fragrance label from stock glass bottles into bespoke gold-foiled outer boxes with luxury geometric monogram branding, instantly unlocking premium pricing power.',
+        m1: '+340%', l1: 'Average Order Value',
+        m2: '4.2X', l2: 'Meta Ad ROAS Return',
+        icon: '<i class="fa-solid fa-crown" style="font-size:3.2rem; color:var(--gold);"></i>',
+        title: 'Full Omnichannel Rebrand',
+        desc: 'Delivered print-ready CMYK box dielines, 3D bottle CAD renders, and Instagram carousel templates.'
+      },
+      wearable: {
+        industry: 'CONSUMER ELECTRONICS',
+        headline: 'Zenith Smartwatch: 3D CAD Renders Unlock #1 Amazon Bestseller',
+        summary: 'Engineered studio lighting renders and 7 Amazon A+ Enhanced Brand Content lifestyle infographics, boosting click-to-cart conversion by +215%.',
+        m1: '+215%', l1: 'Listing Conversion Lift',
+        m2: '#1', l2: 'Amazon Category Rank',
+        icon: '<i class="fa-solid fa-cube" style="font-size:3.2rem; color:var(--gold);"></i>',
+        title: '3D Photorealistic Listing',
+        desc: 'Delivered 4K metal shader CAD renders, explosion diagram infographics, and branded storefront.'
+      },
+      coffee: {
+        industry: 'RETAIL FMCG & BEVERAGES',
+        headline: 'Nectar Cold Brew: Artisan Labels Secure 150+ Retail Shelves',
+        summary: 'Crafted bespoke typography sleeve dielines and tactile kraft packaging that stood out on supermarket shelves, driving rapid wholesale retail expansion.',
+        m1: '150+', l1: 'Retail Stores Secured',
+        m2: '+180%', l2: 'First Month Shelf Velocity',
+        icon: '<i class="fa-solid fa-mug-hot" style="font-size:3.2rem; color:var(--gold);"></i>',
+        title: 'Retail Packaging Dielines',
+        desc: 'Delivered industrial CMYK barcode-compliant dielines, spot UV masks, and carrier box templates.'
+      }
+    };
+
+    function switchCaseStudy(key, btn) {
+      document.querySelectorAll('.case-tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const data = caseStudiesData[key];
+      if (!data) return;
+
+      const indEl = document.getElementById('caseIndustryTag');
+      const headEl = document.getElementById('caseHeadline');
+      const sumEl = document.getElementById('caseSummary');
+      const m1El = document.getElementById('caseMetric1');
+      const l1El = document.getElementById('caseLabel1');
+      const m2El = document.getElementById('caseMetric2');
+      const l2El = document.getElementById('caseLabel2');
+      const iconContainer = document.getElementById('casePreviewIconContainer');
+      const titleEl = document.getElementById('casePreviewTitle');
+      const descEl = document.getElementById('casePreviewDesc');
+
+      if (indEl) indEl.textContent = data.industry;
+      if (headEl) headEl.textContent = data.headline;
+      if (sumEl) sumEl.textContent = data.summary;
+      if (m1El) m1El.textContent = data.m1;
+      if (l1El) l1El.textContent = data.l1;
+      if (m2El) m2El.textContent = data.m2;
+      if (l2El) l2El.textContent = data.l2;
+      if (iconContainer) iconContainer.innerHTML = data.icon;
+      if (titleEl) titleEl.textContent = data.title;
+      if (descEl) descEl.textContent = data.desc;
+    }
+
+    // 7. Design FAQ Accordion Toggle
+    function toggleGfxFaq(headerEl) {
+      const item = headerEl.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-acc-item').forEach(el => el.classList.remove('active'));
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      selectStudioArchetype('luxury');
+      initResponsiveBaSlider();
+      initGalleryFilters();
+      calculateGraphicsEstimate();
+    });
+  </script>
 </body>
 </html>

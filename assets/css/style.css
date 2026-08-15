@@ -4386,20 +4386,23 @@ button {
 /* Mobile Responsive Safeguards */
 @media (max-width: 768px) {
   .floating-quick-actions-stack {
-    bottom: 1.25rem;
-    right: 1rem;
-    gap: 0.65rem;
+    bottom: 1rem;
+    right: 0.75rem;
+    gap: 0.5rem;
+    z-index: 999;
   }
 
   .floating-action-btn {
-    width: 46px;
-    height: 46px;
-    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   }
 
   .floating-action-tooltip {
     display: none;
   }
 }
+
 
 

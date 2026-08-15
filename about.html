@@ -3,12 +3,567 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Ashvik Media</title>
+  <title>About Us | Ashvik Media - Digital Growth & Creative Agency</title>
+  <meta name="description" content="Learn about Ashvik Media: Our journey, passionate growth team, data-driven methodology, core values, and mission to scale high-performing brands worldwide.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/pages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* About Page Premium Dark & Gold Interactive Styles */
+    :root {
+      --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      --about-card-bg: #11141B;
+      --about-card-hover: #161B26;
+      --about-border: rgba(255, 255, 255, 0.08);
+      --about-border-gold: rgba(255, 199, 0, 0.5);
+    }
+
+    /* Hero Status Pill */
+    .about-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255, 199, 0, 0.08);
+      border: 1px solid rgba(255, 199, 0, 0.35);
+      padding: 0.4rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 1.25rem;
+      box-shadow: 0 0 16px rgba(255, 199, 0, 0.12);
+    }
+
+    /* Story Section Split Showcase */
+    .story-grid-container {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .story-media-wrap {
+      position: relative;
+    }
+
+    .story-main-img {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .story-media-wrap:hover .story-main-img {
+      transform: scale(1.02);
+    }
+
+    .story-floating-badge {
+      position: absolute;
+      background: rgba(17, 20, 27, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid var(--primary-gold);
+      border-radius: 16px;
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 199, 0, 0.2);
+    }
+
+    .badge-pos-bottom {
+      bottom: -25px;
+      right: -20px;
+    }
+
+    .badge-pos-top {
+      top: -20px;
+      left: -20px;
+    }
+
+    .floating-badge-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--primary-gold);
+      color: #0A0C10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .floating-badge-num {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }
+
+    .floating-badge-txt {
+      font-size: 0.72rem;
+      color: #94A3B8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Interactive Vision/Mission/Philosophy Tabs */
+    .story-interactive-tabs {
+      display: flex;
+      gap: 0.75rem;
+      margin: 1.8rem 0 1.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.75rem;
+    }
+
+    .story-tab-btn {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0.4rem 0.8rem;
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .story-tab-btn:hover,
+    .story-tab-btn.active {
+      color: var(--primary-gold);
+    }
+
+    .story-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -0.75rem;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary-gold);
+      box-shadow: 0 0 8px var(--primary-gold);
+    }
+
+    .story-tab-content-box {
+      background: #141822;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      min-height: 130px;
+    }
+
+    .story-tab-text {
+      font-size: 0.93rem;
+      color: #CBD5E1;
+      line-height: 1.65;
+    }
+
+    /* Interactive Core Values (3D Glass Cards) */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .value-card {
+      background: var(--about-card-bg);
+      border: 1px solid var(--about-border);
+      border-radius: 18px;
+      padding: 2rem 1.5rem;
+      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      background: var(--about-card-hover);
+      border-color: var(--about-border-gold);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 199, 0, 0.1);
+    }
+
+    .value-card:hover::before {
+      opacity: 1;
+    }
+
+    .value-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(255, 199, 0, 0.1);
+      border: 1.5px solid rgba(255, 199, 0, 0.4);
+      color: var(--primary-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      margin-bottom: 1.25rem;
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:hover .value-icon-box {
+      transform: scale(1.1) rotate(4deg);
+      background: var(--primary-gold);
+      color: #0A0C10;
+    }
+
+    .value-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 0.6rem;
+    }
+
+    .value-desc {
+      font-size: 0.88rem;
+      color: #94A3B8;
+      line-height: 1.55;
+    }
+
+    /* Interactive Timeline Journey */
+    .timeline-interactive-container {
+      margin-top: 3.5rem;
+      position: relative;
+    }
+
+    .timeline-nav-row {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-nav-row::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .timeline-year-node {
+      position: relative;
+      z-index: 2;
+      background: #11141B;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+      padding: 0.5rem 1.25rem;
+      color: #94A3B8;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-year-node:hover,
+    .timeline-year-node.active {
+      border-color: var(--primary-gold);
+      background: var(--primary-gold);
+      color: #0A0C10;
+      box-shadow: 0 0 16px rgba(255, 199, 0, 0.5);
+      transform: scale(1.08);
+    }
+
+    .timeline-milestone-card {
+      background: #131722;
+      border: 1px solid rgba(255, 199, 0, 0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .milestone-highlight-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--primary-gold);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .milestone-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .milestone-desc {
+      font-size: 0.95rem;
+      color: #94A3B8;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .milestone-metrics-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .milestone-metric-box {
+      background: #0A0C10;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .milestone-metric-num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary-gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .milestone-metric-lbl {
+      font-size: 0.72rem;
+      color: #94A3B8;
+      text-transform: uppercase;
+    }
+
+    /* Team Leadership Grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+      margin-top: 3rem;
+    }
+
+    .team-member-card {
+      background: var(--about-card-bg);
+      border: 1px solid var(--about-border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-member-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--about-border-gold);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 199, 0, 0.15);
+    }
+
+    .team-photo-wrap {
+      height: 220px;
+      background: #181D29;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-avatar-icon {
+      font-size: 4.5rem;
+      color: rgba(255, 199, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .team-member-card:hover .team-avatar-icon {
+      color: var(--primary-gold);
+      transform: scale(1.08);
+    }
+
+    .team-info-body {
+      padding: 1.5rem 1.3rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-role-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--primary-gold);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .team-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-bio {
+      font-size: 0.84rem;
+      color: #94A3B8;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+      flex: 1;
+    }
+
+    .team-skills-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .team-chip {
+      background: #0A0C10;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #CBD5E1;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    /* Technology Stack Logos */
+    .tech-stack-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    .tech-badge-item {
+      background: #11141B;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.9rem 1.6rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #E2E8F0;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+    }
+
+    .tech-badge-item:hover {
+      border-color: var(--primary-gold);
+      background: #181D29;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .tech-badge-item i {
+      color: var(--primary-gold);
+      font-size: 1.2rem;
+    }
+
+    /* Animated Stat Counters Bar */
+    .about-stats-strip {
+      background: #0D1017;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4rem 0;
+    }
+
+    .stat-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .strip-stat-num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary-gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .strip-stat-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 0.3rem;
+    }
+
+    .strip-stat-desc {
+      font-size: 0.82rem;
+      color: #94A3B8;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .story-grid-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .timeline-milestone-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .stat-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      .stat-strip-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline-nav-row {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        gap: 0.5rem;
+      }
+      .badge-pos-bottom, .badge-pos-top {
+        position: static;
+        margin-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Custom Interactive Glowing Gold Cursor System -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
 
   <!-- Navigation Bar -->
   <header class="navbar">
@@ -25,82 +580,333 @@
         <a href="about.html" class="nav-link active">About Us</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-      <a href="contact.html" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
-      <button class="mobile-nav-toggle"><i class="fa-solid fa-bars"></i></button>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="contact.html" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="mobile-nav-toggle" onclick="openMobileNav(event)" aria-label="Toggle navigation"><i class="fa-solid fa-bars-staggered"></i></button>
+      </div>
     </div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-drawer-overlay"></div>
+  <div class="mobile-drawer-overlay" onclick="closeMobileNav(event)"></div>
   <div class="mobile-drawer">
     <div class="mobile-drawer-header">
       <a href="index.html" class="brand-logo">
         <img src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
       </a>
-      <button class="mobile-drawer-close"><i class="fa-solid fa-xmark"></i></button>
+      <button class="mobile-drawer-close" onclick="closeMobileNav(event)" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link"><span>Home</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="services.html" class="mobile-nav-link"><span>Services</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="social-media.html" class="mobile-nav-link"><span>Social Media</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="ecommerce.html" class="mobile-nav-link"><span>E-Commerce</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="graphics.html" class="mobile-nav-link"><span>Graphics</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="about.html" class="mobile-nav-link active"><span>About Us</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
-      <a href="contact.html" class="mobile-nav-link"><span>Contact</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="services.html" class="mobile-nav-link"><span>Services</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="social-media.html" class="mobile-nav-link"><span>Social Media</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="ecommerce.html" class="mobile-nav-link"><span>E-Commerce</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="graphics.html" class="mobile-nav-link"><span>Graphics</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="about.html" class="mobile-nav-link active"><span>About Us</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="contact.html" class="mobile-nav-link"><span>Contact</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <div class="mobile-drawer-contact-info" style="margin-bottom: 1.2rem; font-size: 0.85rem; color: #94A3B8;">
+        <div style="margin-bottom: 0.4rem;"><i class="fa-solid fa-phone" style="color: var(--primary-gold);"></i> +91 99935 15138</div>
+        <div><i class="fa-solid fa-envelope" style="color: var(--primary-gold);"></i> contact@ashvikmedia.com</div>
+      </div>
+      <a href="contact.html" class="btn btn-gold" style="width: 100%;">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <h1 class="page-hero-title">About <span class="text-gold">Ashvik Media</span></h1>
+      <div class="about-hero-pill">
+        <span class="status-dot-pulse" style="background: #10B981; box-shadow: 0 0 10px #10B981;"></span>
+        <span>EMPOWERING 200+ HIGH-GROWTH BRANDS WORLDWIDE</span>
+      </div>
+      <h1 class="page-hero-title">Pioneering The Future Of <span class="text-gold">Brand Scaling</span></h1>
+      <p style="max-width: 680px; margin: 0 auto 1.5rem auto; color: #94A3B8; font-size: 1.05rem; line-height: 1.6;">
+        We are a multidisciplinary team of digital growth engineers, viral creative directors, 3D visual artists, and conversion strategists headquartered in Indore, India.
+      </p>
       <div class="breadcrumb">
         <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i> <span>About Us</span>
       </div>
     </div>
   </section>
 
-  <!-- About Content -->
-  <section class="section-padding">
+  <!-- Section 1: The Ashvik Origin & Story Split Showcase -->
+  <section class="section-padding" style="background: #0A0C10;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+      <div class="story-grid-container">
+        <!-- Story Text & Interactive Mission Switcher -->
         <div>
-          <div class="section-tag section-tag-gold">OUR STORY</div>
-          <h2 class="section-title">We Help Brands Grow Online With Powerful Digital Strategies</h2>
+          <div class="section-tag section-tag-gold"><i class="fa-solid fa-compass"></i> OUR ORIGIN & PURPOSE</div>
+          <h2 class="section-title">Built To Replace Fluff With Measurable Revenue</h2>
+          <p class="section-description" style="margin-bottom: 1.2rem;">
+            Ashvik Media was founded with a singular conviction: <strong>Great design must drive sales, and smart marketing must be backed by numbers.</strong> Too many agencies build pretty websites that don't convert or run ads without creative hook strategy.
+          </p>
           <p class="section-description" style="margin-bottom: 1.5rem;">
-            Ashvik Media is a full-service marketing agency headquartered in Indore, Madhya Pradesh, India. We deliver result-driven E-Commerce, Social Media Management, and Graphic Design solutions that maximize brand value and scale online revenue.
+            We unite 360° e-commerce architecture, viral short-form video production, luxury graphic identity, and algorithmic media buying into one cohesive growth engine for modern brands.
           </p>
-          <p class="section-description">
-            With over 5 years of industry experience, our team of dedicated strategists, designers, and growth marketers have served 200+ brands with an astounding 98% client satisfaction rate.
-          </p>
+
+          <!-- Interactive Tabbed Switcher -->
+          <div class="story-interactive-tabs">
+            <button class="story-tab-btn active" onclick="switchStoryTab('mission', this)">Our Mission</button>
+            <button class="story-tab-btn" onclick="switchStoryTab('vision', this)">Our Vision</button>
+            <button class="story-tab-btn" onclick="switchStoryTab('philosophy', this)">Core Philosophy</button>
+          </div>
+
+          <div class="story-tab-content-box" id="storyTabContentBox">
+            <p class="story-tab-text" id="storyTabText">
+              <strong>Mission:</strong> To engineer scalable, high-margin revenue systems for D2C brands, online retailers, and creators through relentless creative testing and data-driven execution.
+            </p>
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-gold">PARTNER WITH US <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="services.html" class="btn btn-dark-outline">EXPLORE CAPABILITIES <i class="fa-solid fa-bolt"></i></a>
+          </div>
         </div>
-        <div>
-          <img src="assets/images/layout/team-meeting.jpg" alt="Ashvik Media Team" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+
+        <!-- Story Visual with Floating Metrics -->
+        <div class="story-media-wrap">
+          <img src="assets/images/layout/team-meeting.jpg" alt="Ashvik Media Strategy Room" class="story-main-img">
+          
+          <div class="story-floating-badge badge-pos-top">
+            <div class="floating-badge-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div>
+              <div class="floating-badge-num">₹150M+</div>
+              <div class="floating-badge-txt">Revenue Generated</div>
+            </div>
+          </div>
+
+          <div class="story-floating-badge badge-pos-bottom">
+            <div class="floating-badge-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div>
+              <div class="floating-badge-num">98.4%</div>
+              <div class="floating-badge-txt">Client Retention Rate</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Bar -->
-  <section class="section-padding bg-dark text-center">
+  <!-- Section 2: Animated Stats Strip -->
+  <section class="about-stats-strip">
     <div class="container">
-      <div class="mission-stats-grid">
-        <div class="circle-stat-card">
-          <div class="circle-stat-icon">200+</div>
-          <h4 class="circle-stat-title" style="color: #fff;">Happy Clients</h4>
+      <div class="stat-strip-grid">
+        <div>
+          <div class="strip-stat-num">200+</div>
+          <div class="strip-stat-title">Brands Scaled</div>
+          <div class="strip-stat-desc">From startups to international market leaders</div>
         </div>
-        <div class="circle-stat-card">
-          <div class="circle-stat-icon">350+</div>
-          <h4 class="circle-stat-title" style="color: #fff;">Projects Completed</h4>
+        <div>
+          <div class="strip-stat-num">350+</div>
+          <div class="strip-stat-title">Projects Shipped</div>
+          <div class="strip-stat-desc">High-speed e-com stores, packaging & ad funnels</div>
         </div>
-        <div class="circle-stat-card">
-          <div class="circle-stat-icon">98%</div>
-          <h4 class="circle-stat-title" style="color: #fff;">Satisfaction Rate</h4>
+        <div>
+          <div class="strip-stat-num">4.2x</div>
+          <div class="strip-stat-title">Average ROAS</div>
+          <div class="strip-stat-desc">Blended ad returns across Meta, TikTok & Google</div>
         </div>
-        <div class="circle-stat-card">
-          <div class="circle-stat-icon">5+</div>
-          <h4 class="circle-stat-title" style="color: #fff;">Years Experience</h4>
+        <div>
+          <div class="strip-stat-num">24/7</div>
+          <div class="strip-stat-title">Always Active</div>
+          <div class="strip-stat-desc">Dedicated client communication via Slack & WhatsApp</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Interactive Core Values -->
+  <section class="section-padding" style="background: #0A0C10;">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div class="section-tag section-tag-gold"><i class="fa-solid fa-gem"></i> GUIDING PRINCIPLES</div>
+        <h2 class="section-title">The Values That Fuel Our Excellence</h2>
+        <p class="section-description">Our non-negotiable standards ensure that every campaign and asset delivered exceeds market benchmarks.</p>
+      </div>
+
+      <div class="values-grid">
+        <!-- Value 1 -->
+        <div class="value-card">
+          <div class="value-icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3 class="value-title">Radical Transparency</h3>
+          <p class="value-desc">No smoke and mirrors. You get live 24/7 dashboards tracking real revenue, CAC, ROAS, and clear weekly attribution breakdowns.</p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="value-card">
+          <div class="value-icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="value-title">Top 1% Visual Polish</h3>
+          <p class="value-desc">Every 3D packaging render, vector logo, and high-hook video ad is crafted to stop the scroll and establish undeniable luxury authority.</p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="value-card">
+          <div class="value-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+          <h3 class="value-title">High-Velocity Sprints</h3>
+          <p class="value-desc">Speed is the ultimate competitive moat. We launch store optimizations, ad variations, and campaigns in days—not months.</p>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="value-card">
+          <div class="value-icon-box"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+          <h3 class="value-title">End-To-End Ownership</h3>
+          <p class="value-desc">We don't pass the blame. From store UX and checkout speed to ad creatives and retention flows, we own the full revenue funnel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Interactive Growth Timeline & Milestones -->
+  <section class="section-padding" style="background: #0E1118; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 1.5rem auto;">
+        <div class="section-tag section-tag-gold"><i class="fa-solid fa-timeline"></i> OUR JOURNEY</div>
+        <h2 class="section-title">The Evolution of Ashvik Media</h2>
+        <p class="section-description">Click through our milestone years to see how we grew from a small creative studio into a full-scale digital power house.</p>
+      </div>
+
+      <div class="timeline-interactive-container">
+        <!-- Interactive Year Nodes -->
+        <div class="timeline-nav-row">
+          <button class="timeline-year-node" onclick="showTimelineYear(2021, this)">2021: Inception</button>
+          <button class="timeline-year-node" onclick="showTimelineYear(2022, this)">2022: E-Com Scale</button>
+          <button class="timeline-year-node" onclick="showTimelineYear(2023, this)">2023: Viral Studio</button>
+          <button class="timeline-year-node" onclick="showTimelineYear(2024, this)">2024: Global Reach</button>
+          <button class="timeline-year-node active" onclick="showTimelineYear(2026, this)">2025–2026: AI & Scale</button>
+        </div>
+
+        <!-- Active Milestone Card Container -->
+        <div class="timeline-milestone-card" id="timelineMilestoneCard">
+          <div>
+            <div class="milestone-highlight-badge" id="milestoneYearBadge"><i class="fa-solid fa-flag-checkered"></i> 2025–2026 Milestone Phase</div>
+            <h3 class="milestone-title" id="milestoneTitle">AI-Assisted Growth & 200+ Global Brands</h3>
+            <p class="milestone-desc" id="milestoneDesc">
+              Integrated real-time conversion API data stacks, 3D visual rendering, and automated multichannel ad scaling. Surpassed 200+ active partner brands across India, UAE, and North America.
+            </p>
+            <div class="milestone-metrics-list">
+              <div class="milestone-metric-box">
+                <div class="milestone-metric-num" id="milestoneMetric1">200+</div>
+                <div class="milestone-metric-lbl" id="milestoneLabel1">Active Brand Partners</div>
+              </div>
+              <div class="milestone-metric-box">
+                <div class="milestone-metric-num" id="milestoneMetric2">₹150M+</div>
+                <div class="milestone-metric-lbl" id="milestoneLabel2">Client Revenue Scale</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; background: #0A0C10; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem;">
+            <i class="fa-solid fa-rocket" style="font-size: 3.5rem; color: var(--primary-gold); margin-bottom: 1rem;"></i>
+            <h4 style="color: #FFFFFF; font-size: 1.2rem; margin-bottom: 0.5rem;" id="milestoneSubHeading">Omnichannel Scale Protocol</h4>
+            <p style="color: #94A3B8; font-size: 0.85rem;" id="milestoneSubText">Delivering 24/7 strategic support and full funnel execution for modern brands.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Leadership & Growth Team -->
+  <section class="section-padding" style="background: #0A0C10;">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div class="section-tag section-tag-gold"><i class="fa-solid fa-users-gear"></i> THE MINDS BEHIND THE METRICS</div>
+        <h2 class="section-title">Meet Our Strategic Leadership</h2>
+        <p class="section-description">Experienced growth architects, senior designers, and media buyers committed to your brand's rapid expansion.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="team-member-card">
+          <div class="team-photo-wrap">
+            <i class="fa-solid fa-user-tie team-avatar-icon"></i>
+          </div>
+          <div class="team-info-body">
+            <span class="team-role-tag">Founder & Growth Director</span>
+            <h3 class="team-name">Kapil Inania</h3>
+            <p class="team-bio">Growth architect with 5+ years scaling Shopify and D2C brands via Meta performance ads and conversion engineering.</p>
+            <div class="team-skills-chips">
+              <span class="team-chip">E-Commerce</span>
+              <span class="team-chip">Paid Ads</span>
+              <span class="team-chip">CRO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-member-card">
+          <div class="team-photo-wrap">
+            <i class="fa-solid fa-palette team-avatar-icon"></i>
+          </div>
+          <div class="team-info-body">
+            <span class="team-role-tag">Creative & 3D Brand Lead</span>
+            <h3 class="team-name">Akhil Sharma</h3>
+            <p class="team-bio">Visual storyteller specializing in luxury packaging 3D renders, Amazon A+ suites, and high-impact identity design.</p>
+            <div class="team-skills-chips">
+              <span class="team-chip">3D Renders</span>
+              <span class="team-chip">Amazon A+</span>
+              <span class="team-chip">Branding</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-member-card">
+          <div class="team-photo-wrap">
+            <i class="fa-solid fa-video team-avatar-icon"></i>
+          </div>
+          <div class="team-info-body">
+            <span class="team-role-tag">Viral Content Lead</span>
+            <h3 class="team-name">Social Strategy Lead</h3>
+            <p class="team-bio">Short-form video maestro crafting high-hook TikTok & Instagram Reels generating millions of organic impressions.</p>
+            <div class="team-skills-chips">
+              <span class="team-chip">Reels Hooks</span>
+              <span class="team-chip">TikTok Ads</span>
+              <span class="team-chip">Viral Copy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-member-card" style="background: rgba(255, 199, 0, 0.04); border-color: rgba(255, 199, 0, 0.3); justify-content: center; text-align: center; padding: 2rem;">
+          <i class="fa-solid fa-user-plus" style="font-size: 2.8rem; color: var(--primary-gold); margin-bottom: 1rem;"></i>
+          <h3 class="team-name" style="font-size: 1.25rem;">Join Our Scaling Team</h3>
+          <p class="team-bio" style="margin-bottom: 1.5rem;">We are always scouting ambitious media buyers, 3D artists, and content creators.</p>
+          <a href="contact.html" class="btn btn-gold" style="justify-content: center; width: 100%;">APPLY NOW <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Official Tech Partnerships & Ecosystem -->
+  <section class="section-padding" style="background: #0E1118; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container text-center">
+      <div class="section-tag section-tag-gold"><i class="fa-solid fa-plug"></i> TECHNOLOGY ECOSYSTEM</div>
+      <h2 class="section-title">Official Tools & Ecosystem Partners</h2>
+      <p class="section-description" style="max-width: 600px; margin: 0 auto;">We leverage state-of-the-art enterprise platforms to deliver speed, conversion, and accurate attribution.</p>
+
+      <div class="tech-stack-row">
+        <div class="tech-badge-item"><i class="fa-brands fa-shopify"></i> Shopify & Shopify Plus</div>
+        <div class="tech-badge-item"><i class="fa-brands fa-amazon"></i> Amazon Brand Registry</div>
+        <div class="tech-badge-item"><i class="fa-brands fa-meta"></i> Meta Ads Manager</div>
+        <div class="tech-badge-item"><i class="fa-brands fa-google"></i> Google Performance Max</div>
+        <div class="tech-badge-item"><i class="fa-brands fa-tiktok"></i> TikTok For Business</div>
+        <div class="tech-badge-item"><i class="fa-brands fa-wordpress"></i> WooCommerce Pro</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Quick CTA Banner -->
+  <section class="section-padding bg-dark text-center" style="background: #0A0C10; position: relative;">
+    <div class="container">
+      <h2 class="hero-title" style="font-size: 2.6rem; color: #fff; margin-bottom: 1rem;">Ready to Write Your Brand's <span class="text-gold">Success Story?</span></h2>
+      <p class="section-description section-description-dark" style="margin: 0 auto 2.2rem auto; max-width: 620px;">
+        Book a 1-on-1 growth audit with our senior directors. We'll identify bottlenecks and map out a 90-day scaling plan.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-gold">SCHEDULE FREE STRATEGY CALL <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://wa.me/919993515138" target="_blank" rel="noopener noreferrer" class="btn btn-dark-outline"><i class="fa-brands fa-whatsapp"></i> CHAT WITH US</a>
       </div>
     </div>
   </section>
@@ -185,13 +991,12 @@
         <div class="footer-col">
           <h4 class="footer-title">Expertise & Services</h4>
           <div class="footer-links">
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
-            <a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Performance Marketing</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
+            <a href="graphics.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
+            <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
           </div>
         </div>
 
@@ -250,7 +1055,104 @@
     </div>
   </footer>
 
+  <!-- Main JavaScript File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Interactive About Scripts -->
+  <script>
+    // 1. Interactive Mission/Vision/Philosophy Tabs
+    const storyTabTexts = {
+      mission: '<strong>Mission:</strong> To engineer scalable, high-margin revenue systems for D2C brands, online retailers, and creators through relentless creative testing and data-driven execution.',
+      vision: '<strong>Vision:</strong> To become the global gold standard for performance design and omnichannel brand acceleration, empowering 1,000+ businesses with market dominance by 2030.',
+      philosophy: '<strong>Core Philosophy:</strong> "Art That Sells, Data That Scales." We believe aesthetic brilliance and conversion mathematics must work together without compromise.'
+    };
+
+    function switchStoryTab(tabKey, btn) {
+      document.querySelectorAll('.story-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const textEl = document.getElementById('storyTabText');
+      if (textEl && storyTabTexts[tabKey]) {
+        textEl.style.opacity = '0';
+        setTimeout(() => {
+          textEl.innerHTML = storyTabTexts[tabKey];
+          textEl.style.opacity = '1';
+        }, 150);
+      }
+    }
+
+    // 2. Interactive Timeline Milestone Switcher
+    const timelineData = {
+      2021: {
+        yearBadge: '<i class="fa-solid fa-seedling"></i> 2021 Founding Phase',
+        title: 'Ashvik Media Founded in Indore',
+        desc: 'Started as a boutique growth studio with 3 dedicated strategists helping local retailers transition to digital commerce with custom store builds.',
+        m1: '15+', l1: 'Early Client Stores',
+        m2: '₹5M+', l2: 'First Year Revenue Lift',
+        subHead: 'The Spark of Innovation',
+        subTxt: 'Laying the technical foundation for scalable e-commerce.'
+      },
+      2022: {
+        yearBadge: '<i class="fa-solid fa-cart-shopping"></i> 2022 Scaling Phase',
+        title: 'D2C E-Commerce & Amazon Dominance',
+        desc: 'Expanded into Shopify Plus architectures and Amazon A+ Enhanced Brand Content, scaling over 50 storefronts across multiple product categories.',
+        m1: '50+', l1: 'Stores Scaled',
+        m2: '₹30M+', l2: 'Client GMV Handled',
+        subHead: 'E-Commerce Acceleration',
+        subTxt: 'Mastering conversion rate optimization and catalog SEO.'
+      },
+      2023: {
+        yearBadge: '<i class="fa-solid fa-video"></i> 2023 Creative Expansion',
+        title: 'Viral Short-Form & 3D Packaging Studio',
+        desc: 'Launched our in-house 4K video production and 3D rendering pipeline, achieving over 10M+ organic views for partner brands across Instagram and TikTok.',
+        m1: '10M+', l1: 'Organic Video Views',
+        m2: '120+', l2: '3D Render Bundles',
+        subHead: 'Creative Authority',
+        subTxt: 'High-hook video and photorealistic 3D visual assets.'
+      },
+      2024: {
+        yearBadge: '<i class="fa-solid fa-earth-americas"></i> 2024 Global Footprint',
+        title: 'International Retainers & Paid Ad Mastery',
+        desc: 'Scaled partner brands across India, the US, and UAE. Cross-channel Meta and Google ad budgets exceeded ₹50M+ with consistent 4x+ average ROAS.',
+        m1: '150+', l1: 'Global Clients',
+        m2: '4.2x', l2: 'Average Blended ROAS',
+        subHead: 'Global Media Buying',
+        subTxt: 'Omnichannel paid traffic scaling with server-side CAPI.'
+      },
+      2026: {
+        yearBadge: '<i class="fa-solid fa-flag-checkered"></i> 2025–2026 Milestone Phase',
+        title: 'AI-Assisted Growth & 200+ Global Brands',
+        desc: 'Integrated real-time conversion API data stacks, 3D visual rendering, and automated multichannel ad scaling. Surpassed 200+ active partner brands worldwide.',
+        m1: '200+', l1: 'Active Brand Partners',
+        m2: '₹150M+', l2: 'Client Revenue Scale',
+        subHead: 'Omnichannel Scale Protocol',
+        subTxt: 'Delivering 24/7 strategic support and full funnel execution for modern brands.'
+      }
+    };
+
+    function showTimelineYear(year, btn) {
+      document.querySelectorAll('.timeline-year-node').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = timelineData[year];
+      if (!data) return;
+
+      const card = document.getElementById('timelineMilestoneCard');
+      if (card) {
+        card.style.opacity = '0.4';
+        setTimeout(() => {
+          document.getElementById('milestoneYearBadge').innerHTML = data.yearBadge;
+          document.getElementById('milestoneTitle').textContent = data.title;
+          document.getElementById('milestoneDesc').textContent = data.desc;
+          document.getElementById('milestoneMetric1').textContent = data.m1;
+          document.getElementById('milestoneLabel1').textContent = data.l1;
+          document.getElementById('milestoneMetric2').textContent = data.m2;
+          document.getElementById('milestoneLabel2').textContent = data.l2;
+          document.getElementById('milestoneSubHeading').textContent = data.subHead;
+          document.getElementById('milestoneSubText').textContent = data.subTxt;
+          card.style.opacity = '1';
+        }, 150);
+      }
+    }
+  </script>
 </body>
 </html>
-
