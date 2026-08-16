@@ -647,6 +647,275 @@
   flex-shrink: 0;
 }
 
+/* ==========================================================================
+   SOCIAL MEDIA MANAGEMENT PACKAGES (2-TIER INTERACTIVE & RESPONSIVE GRID)
+   ========================================================================== */
+.social-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.2rem;
+  max-width: 1000px;
+  margin: 0 auto 3.5rem auto;
+  align-items: stretch;
+}
+
+.smm-pkg-card {
+  background: linear-gradient(180deg, #131A26 0%, #0E131F 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.75rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smm-pkg-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 199, 0, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 199, 0, 0.12);
+}
+
+.smm-pkg-card.featured {
+  border: 2px solid var(--primary-gold);
+  background: linear-gradient(180deg, #161F2E 0%, #0E1422 100%);
+  box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 199, 0, 0.15);
+}
+
+.smm-popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #FFC700 0%, #FFA800 100%);
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.6px;
+  padding: 0.35rem 1.1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 14px rgba(255, 199, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.smm-pkg-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--primary-gold);
+  background: rgba(255, 199, 0, 0.1);
+  border: 1px solid rgba(255, 199, 0, 0.25);
+  padding: 0.25rem 0.8rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.smm-pkg-badge.standard-badge {
+  background: var(--primary-gold);
+  color: #000000;
+  border-color: var(--primary-gold);
+}
+
+.smm-pkg-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.4rem;
+}
+
+.smm-pkg-desc {
+  font-size: 0.86rem;
+  color: var(--text-dark-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  min-height: 2.6rem;
+}
+
+.smm-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.smm-currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-gold);
+}
+
+.smm-amount {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.smm-period {
+  font-size: 0.9rem;
+  color: var(--text-dark-secondary);
+  font-weight: 500;
+  margin-left: 0.3rem;
+}
+
+.smm-deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.smm-grid-tile {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.smm-grid-tile:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 199, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+.smm-grid-tile.highlight {
+  background: rgba(255, 199, 0, 0.04);
+  border-color: rgba(255, 199, 0, 0.18);
+}
+
+.smm-grid-tile.highlight:hover {
+  background: rgba(255, 199, 0, 0.08);
+  border-color: rgba(255, 199, 0, 0.45);
+}
+
+.tile-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 199, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.tile-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.tile-content strong {
+  font-size: 0.86rem;
+  color: #FFFFFF;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: normal;
+}
+
+.tile-content span {
+  font-size: 0.74rem;
+  color: var(--text-dark-secondary);
+  line-height: 1.35;
+  white-space: normal;
+  word-break: normal;
+  margin-top: 2px;
+}
+
+.smm-card-footer {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.smm-order-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 0.85rem 1.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: normal;
+  text-align: center;
+}
+
+.smm-quick-comparison-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 18px;
+  padding: 2.2rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.smm-comp-header {
+  margin-bottom: 1.8rem;
+}
+
+.smm-comp-header h4 {
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.smm-comp-header .comp-sub {
+  font-size: 0.85rem;
+  color: var(--text-dark-secondary);
+}
+
+.smm-comp-table-wrap {
+  width: 100%;
+}
+
+.smm-comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.smm-comp-table th, .smm-comp-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #CBD5E1;
+}
+
+.smm-comp-table th {
+  background: rgba(255, 255, 255, 0.03);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.smm-comp-table .highlight-col {
+  background: rgba(255, 199, 0, 0.04);
+  color: #FFFFFF;
+}
+
 /* Custom Package Estimator Section */
 .custom-builder-wrapper {
   background: #0A0C10;
@@ -3158,6 +3427,7 @@
   .roadmap-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .pricing-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .pricing-card.featured { transform: none; }
+  .social-packages-grid { grid-template-columns: 1fr; max-width: 580px; gap: 2.2rem; }
 }
 
 @media (max-width: 768px) {
@@ -3207,6 +3477,68 @@
   .vibe-btn { flex-shrink: 0; white-space: nowrap; padding: 0.5rem 1rem; font-size: 0.82rem; }
   .brand-card-mockup-large { padding: 2rem 1.2rem; }
   .mockup-brand-name { font-size: 2rem; }
+
+  /* SMM Quick Comparison Breakdown Mobile Card Layout */
+  .smm-quick-comparison-box { padding: 1.4rem 1.1rem; border-radius: 16px; }
+  .smm-comp-header { margin-bottom: 1.2rem; }
+  .smm-comp-header h4 { font-size: 1.1rem; }
+  .smm-comp-table thead { display: none; }
+  .smm-comp-table, .smm-comp-table tbody, .smm-comp-table tr, .smm-comp-table td { display: block; width: 100%; }
+  .smm-comp-table tr {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    padding: 0.85rem;
+  }
+  .smm-comp-table td:first-child {
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 0.88rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0 0 0.45rem 0;
+    margin-bottom: 0.45rem;
+    text-align: left !important;
+  }
+  .smm-comp-table td:nth-child(2) {
+    font-size: 0.82rem;
+    color: #CBD5E1;
+    padding: 0.3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    text-align: right !important;
+  }
+  .smm-comp-table td:nth-child(2)::before {
+    content: "BASIC (₹5,999):";
+    font-weight: 700;
+    font-size: 0.68rem;
+    color: var(--text-dark-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .smm-comp-table td:nth-child(3) {
+    font-size: 0.82rem;
+    color: #FFFFFF;
+    background: rgba(255, 199, 0, 0.08);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    margin-top: 0.35rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 199, 0, 0.25);
+    text-align: right !important;
+  }
+  .smm-comp-table td:nth-child(3)::before {
+    content: "STANDARD (₹14,999):";
+    font-weight: 800;
+    font-size: 0.68rem;
+    color: var(--primary-gold);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
 }
 
 @media (max-width: 600px) {
@@ -3220,8 +3552,19 @@
   .product-title { font-size: 1rem; }
   .product-content { padding: 1rem; }
   .calc-wrapper { padding: 1.2rem 1rem; }
-  .calc-platform-grid { grid-template-columns: repeat(2, 1fr); }
-  
+  .social-packages-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+  .smm-pkg-card { padding: 1.8rem 1.25rem; border-radius: 16px; }
+  .smm-pkg-title { font-size: 1.3rem; }
+  .smm-amount { font-size: 2.2rem; }
+  .smm-deliverables-grid { grid-template-columns: 1fr; gap: 0.6rem; }
+  .smm-grid-tile { padding: 0.75rem 0.9rem; gap: 0.75rem; border-radius: 10px; }
+  .tile-icon-box { width: 34px; height: 34px; font-size: 0.95rem; }
+  .tile-content strong { font-size: 0.85rem; line-height: 1.3; }
+  .tile-content span { font-size: 0.74rem; line-height: 1.3; }
+  .smm-order-btn { padding: 0.8rem 1rem; font-size: 0.84rem; }
+  .smm-quick-comparison-box { padding: 1.2rem 1rem; border-radius: 14px; }
+  .smm-comp-table th, .smm-comp-table td { padding: 0.75rem 0.75rem; font-size: 0.8rem; }
+
   .before-after-container { height: 260px; }
   .ba-layer { padding: 1rem; }
   .ba-card-mockup { width: 200px; padding: 0.8rem; }
