@@ -654,18 +654,6 @@ const ecomProducts = [
     highlights: ['Custom Storefront', 'Lifestyle Banners', 'Curated Pages']
   },
   {
-    id: 'prod-5',
-    title: 'Amazon Account & ASIN Reinstatement',
-    category: 'reinstatement',
-    categoryName: 'Account Health',
-    rating: 5.0,
-    reviews: 43,
-    badge: 'URGENT CARE',
-    image: 'assets/images/product/5.jpg',
-    desc: 'Expert Plan of Action (POA) crafting for suspended seller accounts, ASIN suppression, IP complaints, Section 3 violations, and policy deactivations.',
-    highlights: ['POA Letter Crafting', 'Section 3 Appeal', 'Urgent Support']
-  },
-  {
     id: 'prod-6',
     title: 'Amazon Brand & Product-Specific Videos',
     category: 'creative',
