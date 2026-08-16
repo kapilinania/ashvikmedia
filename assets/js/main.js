@@ -357,7 +357,9 @@ document.addEventListener('DOMContentLoaded', () => {
         totalValEl.textContent = `₹${total.toLocaleString('en-IN')}`;
 
         if (customProposalBtn) {
-          customProposalBtn.href = `contact.html?custom_package=true&total=${total}`;
+          const isSub = window.location.pathname.split('/').filter(Boolean).length > 0 && !window.location.pathname.endsWith('index.html');
+          const contactBase = isSub ? '../contact/' : 'contact/';
+          customProposalBtn.href = `${contactBase}?custom_package=true&total=${total}`;
         }
       }
 
@@ -501,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </a>
 
             <!-- 2. Instagram Button (Middle) -->
-            <a href="https://instagram.com/ashvikmedia" target="_blank" rel="noopener noreferrer" class="floating-action-btn btn-instagram" aria-label="Follow on Instagram">
+            <a href="https://www.instagram.com/ashvikmedia01?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="floating-action-btn btn-instagram" aria-label="Follow on Instagram">
               <i class="fa-brands fa-instagram"></i>
               <span class="floating-action-tooltip">Follow on Instagram</span>
             </a>
@@ -528,49 +530,84 @@ window.updateSocialCalc = function() {
   const budgetVal = document.getElementById('budgetVal');
   if (!budgetRange || !budgetVal) return;
 
-  const budget = parseInt(budgetRange.value, 10);
+  const budget = parseInt(budgetRange.value, 10) || 5000;
   budgetVal.innerText = '₹' + budget.toLocaleString('en-IN');
+
+  // Dynamically update slider track fill gradient
+  const min = parseInt(budgetRange.min, 10) || 100;
+  const max = parseInt(budgetRange.max, 10) || 250000;
+  const sliderPct = Math.min(100, Math.max(0, ((budget - min) / (max - min)) * 100));
+  budgetRange.style.background = `linear-gradient(to right, #FFC700 0%, #FFC700 ${sliderPct}%, rgba(255,255,255,0.12) ${sliderPct}%, rgba(255,255,255,0.12) 100%)`;
 
   const activePlatBtn = document.querySelector('.calc-platform-btn.active');
   const platform = activePlatBtn ? activePlatBtn.dataset.platform : 'instagram';
-  const objective = document.getElementById('calcObjective')?.value || 'sales';
+  const platformName = activePlatBtn ? activePlatBtn.innerText.trim() : 'Instagram';
+  const objectiveSelect = document.getElementById('calcObjective');
+  const objective = objectiveSelect ? objectiveSelect.value : 'sales';
+  const objectiveText = objectiveSelect ? objectiveSelect.options[objectiveSelect.selectedIndex].text : 'Direct E-Commerce Product Sales';
 
-  // Multipliers based on platform & objective
-  let multReach = 7.4;
-  let multViews = 16.8;
-  let multConv = 0.035;
-  let roasVal = '5.2X';
+  // Realistic CPM and Conversion multipliers
+  let multReach = 9.5;
+  let multViews = 22.0;
+  let multConv = 0.042;
+  let roasVal = '5.4X';
 
-  if (platform === 'google') { multReach = 8.5; multViews = 20.0; multConv = 0.042; roasVal = '6.4X'; }
-  else if (platform === 'meta') { multReach = 6.5; multViews = 12.0; multConv = 0.048; roasVal = '4.8X'; }
-  else if (platform === 'youtube') { multReach = 5.8; multViews = 10.5; multConv = 0.040; roasVal = '5.0X'; }
-  else if (platform === 'linkedin') { multReach = 3.2; multViews = 6.0; multConv = 0.065; roasVal = '7.1X'; }
+  if (platform === 'google') { 
+    multReach = 11.2; multViews = 26.5; multConv = 0.048; roasVal = '6.5X'; 
+  } else if (platform === 'meta') { 
+    multReach = 8.8; multViews = 18.5; multConv = 0.045; roasVal = '5.0X'; 
+  } else if (platform === 'youtube') { 
+    multReach = 7.5; multViews = 15.0; multConv = 0.038; roasVal = '5.2X'; 
+  } else if (platform === 'linkedin') { 
+    multReach = 4.2; multViews = 8.5; multConv = 0.068; roasVal = '7.2X'; 
+  }
 
-  if (objective === 'viral') { multReach *= 1.5; multViews *= 1.8; multConv *= 0.6; }
-  else if (objective === 'leads') { multReach *= 0.8; multConv *= 1.4; }
+  if (objective === 'viral') { 
+    multReach *= 1.6; multViews *= 2.0; multConv *= 0.5; roasVal = '4.6X';
+  } else if (objective === 'leads') { 
+    multReach *= 0.85; multConv *= 1.45; roasVal = '5.8X';
+  } else if (objective === 'retargeting') { 
+    multReach *= 0.65; multConv *= 2.2; roasVal = '7.8X';
+  }
 
-  const reach = Math.round(budget * multReach);
-  const views = Math.round(budget * multViews);
-  const convMin = Math.round(budget * multConv * 0.8);
-  const convMax = Math.round(budget * multConv * 1.2);
+  const reach = Math.max(750, Math.round(budget * multReach));
+  const views = Math.max(1500, Math.round(budget * multViews));
+  const convMin = Math.max(5, Math.round(budget * multConv * 0.75));
+  const convMax = Math.max(12, Math.round(budget * multConv * 1.25));
 
-  document.getElementById('resReach').innerText = reach.toLocaleString('en-IN') + '+';
-  document.getElementById('resViews').innerText = views.toLocaleString('en-IN') + '+';
-  document.getElementById('resConversions').innerText = convMin + ' - ' + convMax;
-  document.getElementById('resROI').innerText = roasVal;
+  const resReach = document.getElementById('resReach');
+  const resViews = document.getElementById('resViews');
+  const resConversions = document.getElementById('resConversions');
+  const resROI = document.getElementById('resROI');
 
-  const maxBudget = 250000;
-  const pct = Math.min(100, Math.max(20, Math.round((budget / maxBudget) * 100)));
+  if (resReach) resReach.innerText = reach.toLocaleString('en-IN') + '+';
+  if (resViews) resViews.innerText = views.toLocaleString('en-IN') + '+';
+  if (resConversions) resConversions.innerText = convMin.toLocaleString('en-IN') + ' - ' + convMax.toLocaleString('en-IN');
+  if (resROI) resROI.innerText = roasVal;
+
+  // Visual logarithmic fill bars
+  const logPct = Math.min(100, Math.max(15, Math.round((Math.log10(budget) / Math.log10(max)) * 100)));
   const barReach = document.getElementById('barReach');
   const barViews = document.getElementById('barViews');
   const barConversions = document.getElementById('barConversions');
-  if (barReach) barReach.style.width = pct + '%';
-  if (barViews) barViews.style.width = Math.min(100, pct + 15) + '%';
-  if (barConversions) barConversions.style.width = Math.min(100, pct + 10) + '%';
+  if (barReach) barReach.style.width = logPct + '%';
+  if (barViews) barViews.style.width = Math.min(100, logPct + 12) + '%';
+  if (barConversions) barConversions.style.width = Math.min(100, logPct + 8) + '%';
+
+  // Update WhatsApp Direct Action URL
+  const waBtn = document.querySelector('.calc-results-col .btn-gold');
+  if (waBtn) {
+    const msg = `Hi Ashvik Media, I configured a campaign with ₹${budget.toLocaleString('en-IN')} budget on ${platformName} for "${objectiveText}" (Projected: ${reach.toLocaleString('en-IN')}+ Reach, ${roasVal} ROAS). Let's discuss launching this!`;
+    waBtn.href = `https://wa.me/919993515138?text=${encodeURIComponent(msg)}`;
+  }
 };
 
 // Platform Selection Buttons
 document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('budgetRange')) {
+    window.updateSocialCalc();
+  }
+
   const platBtns = document.querySelectorAll('.calc-platform-btn');
   platBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow internal scripts & tools
+Disallow: /scratch/
+Disallow: /assets/css/*.map
+
+# Sitemap Location
+Sitemap: https://ashvikmedia.com/sitemap.xml
