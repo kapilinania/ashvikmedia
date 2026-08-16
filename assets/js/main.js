@@ -655,16 +655,45 @@ window.toggleReelMute = function(btn) {
   const video = parentBox.querySelector('video');
   if (!video) return;
 
-  video.muted = !video.muted;
-  const icon = btn.querySelector('i');
-  if (icon) {
-    if (video.muted) {
-      icon.className = 'fa-solid fa-volume-xmark';
-      btn.title = 'Unmute Audio';
-    } else {
+  const isCurrentlyMuted = video.muted;
+
+  if (isCurrentlyMuted) {
+    // USER IS ENABLING SOUND FOR THIS REEL:
+    // 1. Automatically mute ALL other video reels on the page
+    const allReelBoxes = document.querySelectorAll('.video-media-box');
+    allReelBoxes.forEach(box => {
+      const otherVid = box.querySelector('video');
+      const otherBtn = box.querySelector('.mute-btn');
+      if (otherVid && otherVid !== video) {
+        otherVid.muted = true;
+      }
+      if (otherBtn && otherBtn !== btn) {
+        otherBtn.classList.remove('active-unmuted');
+        const otherIcon = otherBtn.querySelector('i');
+        if (otherIcon) {
+          otherIcon.className = 'fa-solid fa-volume-xmark';
+        }
+        otherBtn.title = 'Unmute Audio';
+      }
+    });
+
+    // 2. Unmute current video & set active sound icon
+    video.muted = false;
+    btn.classList.add('active-unmuted');
+    const icon = btn.querySelector('i');
+    if (icon) {
       icon.className = 'fa-solid fa-volume-high';
-      btn.title = 'Mute Audio';
     }
+    btn.title = 'Mute Audio';
+  } else {
+    // USER IS MUTING CURRENT REEL
+    video.muted = true;
+    btn.classList.remove('active-unmuted');
+    const icon = btn.querySelector('i');
+    if (icon) {
+      icon.className = 'fa-solid fa-volume-xmark';
+    }
+    btn.title = 'Unmute Audio';
   }
 };
 
