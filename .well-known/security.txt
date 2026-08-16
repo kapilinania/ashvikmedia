@@ -1,0 +1,9 @@
+# Ashvik Media Responsible Vulnerability Disclosure Policy (RFC 9116)
+Contact: mailto:security@ashvikmedia01.com
+Contact: https://ashvikmedia.com/contact/
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, hi
+Canonical: https://ashvikmedia.com/.well-known/security.txt
+Policy: https://ashvikmedia.com/privacy-policy/
+Hiring: https://ashvikmedia.com/contact/
+Acknowledgments: https://ashvikmedia.com/about/

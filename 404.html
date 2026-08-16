@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    // Dynamic Base Root Resolution for arbitrary nested broken paths (e.g. /about/dsfsdfsdf)
+    (function() {
+      if (window.location.protocol !== 'file:') {
+        var base = document.createElement('base');
+        base.href = '/';
+        document.head.appendChild(base);
+      }
+    })();
+  </script>
+  <!-- Primary Essential Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Page Not Found | Ashvik Media</title>
+  <meta name="title" content="Page Not Found | Ashvik Media">
+  <meta name="description" content="The page you are looking for does not exist, has been moved, or is temporarily unavailable. Return to Ashvik Media homepage or explore our services.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://ashvikmedia.com/404.html">
+  <meta name="theme-color" content="#0A0C10">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Core Web Vitals & Resource Preconnections -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ashvik Media">
+  <meta property="og:title" content="Page Not Found | Ashvik Media">
+  <meta property="og:description" content="The page you are looking for does not exist or has been moved.">
+  <meta property="og:image" content="https://ashvikmedia.com/assets/images/logos/logo-main.png">
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" href="assets/images/logos/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/logos/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Dedicated Error Page Styles */
+    .error-hero-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 6rem 1rem 4rem;
+      background: radial-gradient(circle at center, rgba(255, 199, 0, 0.04) 0%, rgba(10, 12, 16, 0.98) 70%);
+      overflow: hidden;
+    }
+
+    .error-bg-glow {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(255, 199, 0, 0.12) 0%, rgba(255, 199, 0, 0) 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+      animation: pulseGlow 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+      100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+    }
+
+    .error-container {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .error-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 199, 0, 0.08);
+      border: 1px solid rgba(255, 199, 0, 0.25);
+      border-radius: 9999px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .error-big-code {
+      font-size: clamp(5.5rem, 16vw, 10.5rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #FFFFFF 30%, #FFC700 75%, #D97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 10px 40px rgba(255, 199, 0, 0.2);
+      user-select: none;
+    }
+
+    .error-title {
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .error-desc {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--text-dark-secondary, #94A3B8);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .error-search-box {
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+
+    .error-search-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 0.95rem 3.2rem 0.95rem 1.25rem;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      outline: none;
+    }
+
+    .error-search-input:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--primary-gold);
+      box-shadow: 0 0 20px rgba(255, 199, 0, 0.25);
+    }
+
+    .error-search-btn {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--primary-gold);
+      color: #0A0C10;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .error-search-btn:hover {
+      transform: translateY(-50%) scale(1.05);
+      background: #FFD54F;
+    }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .error-quick-links {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .quick-links-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary-gold);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .quick-link-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.65rem 0.9rem;
+      color: #E2E8F0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .quick-link-pill:hover {
+      background: rgba(255, 199, 0, 0.12);
+      border-color: rgba(255, 199, 0, 0.35);
+      color: var(--primary-gold);
+      transform: translateY(-2px);
+    }
+
+    .quick-link-pill i {
+      color: var(--primary-gold);
+      font-size: 0.8rem;
+    }
+
+    .error-diagnostics {
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: #64748B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .diagnostic-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    @media (max-width: 768px) {
+      .error-hero-section {
+        padding: 5rem 1rem 3rem;
+        min-height: 75vh;
+      }
+      .error-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .error-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .quick-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .quick-links-grid {
+        grid-template-columns: 1fr;
+      }
+      .error-badge-pill {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Interactive Glowing Gold Cursor System -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="./" class="brand-logo">
+        <img decoding="async" src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links">
+        <a href="./" class="nav-link">Home</a>
+        <a href="services/" class="nav-link">Services</a>
+        <a href="social-media/" class="nav-link">Social Media</a>
+        <a href="ecommerce/" class="nav-link">E-Commerce</a>
+        <a href="graphics/" class="nav-link">Graphics</a>
+        <a href="about/" class="nav-link">About Us</a>
+        <a href="contact/" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="mobile-header-actions">
+        <a href="contact/" class="btn btn-gold navbar-btn">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+
+        <button class="mobile-nav-toggle" onclick="openMobileNav(event)" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sleek Minimalist Mobile Drawer -->
+  <div class="mobile-drawer-overlay" onclick="closeMobileNav(event)"></div>
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="./" class="brand-logo">
+        <img decoding="async" src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+      </a>
+      <button class="mobile-drawer-close" onclick="closeMobileNav(event)" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="./" class="mobile-nav-link">
+        <span>Home</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+      <a href="services/" class="mobile-nav-link">
+        <span>Services</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+      <a href="social-media/" class="mobile-nav-link">
+        <span>Social Media</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+      <a href="ecommerce/" class="mobile-nav-link">
+        <span>E-Commerce</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+      <a href="graphics/" class="mobile-nav-link">
+        <span>Graphics</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+      <a href="about/" class="mobile-nav-link">
+        <span>About Us</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+      <a href="contact/" class="mobile-nav-link">
+        <span>Contact</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="mobile-drawer-contact-info">
+        <div><i class="fa-solid fa-phone"></i> +91 99935 15138</div>
+        <div><i class="fa-solid fa-envelope"></i> contact@ashvikmedia01.com</div>
+      </div>
+      <a href="contact/" class="btn btn-gold" style="width: 100%;">GET A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <!-- Main Error Hero Section -->
+  <main class="error-hero-section">
+    <div class="error-bg-glow"></div>
+    <div class="container error-container">
+      <div class="error-badge-pill" id="errorBadge">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span id="errorBadgeText">Error 404 • Resource Not Found</span>
+      </div>
+
+      <div class="error-big-code" id="errorCodeDisplay">404</div>
+
+      <h1 class="error-title" id="errorTitle">Oops! Looks Like You've Wandered Off The Grid</h1>
+      <p class="error-desc" id="errorDesc">
+        The link you followed may be broken, outdated, or the page might have been removed or relocated to a new destination.
+      </p>
+
+      <!-- Instant Live Search Bar -->
+      <form class="error-search-box" onsubmit="handleErrorSearch(event)">
+        <input type="text" id="errorSearchInput" class="error-search-input" placeholder="Search services, reels, growth strategies..." aria-label="Search website content">
+        <button type="submit" class="error-search-btn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <!-- Primary Action Buttons -->
+      <div class="error-actions">
+        <a href="./" class="btn btn-gold">
+          <i class="fa-solid fa-house"></i>
+          <span>BACK TO HOMEPAGE</span>
+        </a>
+        <a href="services/" class="btn btn-dark-outline">
+          <i class="fa-solid fa-cubes"></i>
+          <span>EXPLORE SERVICES</span>
+        </a>
+        <button class="btn btn-dark-outline" onclick="reportBrokenLink()" style="border-color: rgba(255, 199, 0, 0.35);">
+          <i class="fa-brands fa-whatsapp text-gold"></i>
+          <span>REPORT ISSUE</span>
+        </button>
+      </div>
+
+      <!-- Quick Links Directory -->
+      <div class="error-quick-links">
+        <div class="quick-links-title">
+          <i class="fa-solid fa-compass"></i> Popular Navigation Hubs
+        </div>
+        <div class="quick-links-grid">
+          <a href="ecommerce/" class="quick-link-pill">
+            <i class="fa-solid fa-store"></i> E-Commerce
+          </a>
+          <a href="social-media/" class="quick-link-pill">
+            <i class="fa-solid fa-hashtag"></i> Social Media
+          </a>
+          <a href="graphics/" class="quick-link-pill">
+            <i class="fa-solid fa-palette"></i> Graphic Design
+          </a>
+          <a href="about/" class="quick-link-pill">
+            <i class="fa-solid fa-users"></i> About Agency
+          </a>
+          <a href="contact/" class="quick-link-pill">
+            <i class="fa-solid fa-paper-plane"></i> Contact Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Diagnostics Footer -->
+      <div class="error-diagnostics">
+        <div class="diagnostic-item">
+          <i class="fa-solid fa-shield-halved text-gold"></i>
+          <span>Cyber Shield Active</span>
+        </div>
+        <div class="diagnostic-item">
+          <i class="fa-solid fa-server text-gold"></i>
+          <span id="diagnosticServer">Host: Ashvik Edge Server</span>
+        </div>
+        <div class="diagnostic-item">
+          <i class="fa-solid fa-clock text-gold"></i>
+          <span id="diagnosticTime"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Interactive Futuristic Footer -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col brand-col">
+          <a href="./" class="brand-logo footer-logo">
+            <img decoding="async" src="assets/images/logos/logo-light.png" alt="Ashvik Media Logo" class="brand-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            Ashvik Media is a premier full-service digital agency empowering e-commerce brands, high-growth businesses, and creators with world-class marketing, design, and conversion strategies.
+          </p>
+          <div class="social-links-wrapper">
+            <span class="social-label">Follow Our Journey:</span>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/ashvikmedia01?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/919993515138" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Navigation</h4>
+          <div class="footer-links">
+            <a href="./" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Home</a>
+            <a href="about/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> About Us</a>
+            <a href="services/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Services</a>
+            <a href="social-media/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media</a>
+            <a href="ecommerce/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce</a>
+            <a href="graphics/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphics</a>
+            <a href="blog/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Blog & Insights</a>
+            <a href="contact/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Contact Us</a>
+            <a href="privacy-policy/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Privacy Policy</a>
+            <a href="terms/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-title">Expertise & Services</h4>
+          <div class="footer-links">
+            <a href="services/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> E-Commerce Solutions</a>
+            <a href="services/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
+            <a href="services/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
+            <a href="services/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
+            <a href="services/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & Google Paid Ads</a>
+            <a href="services/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
+            <a href="services/" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Performance Marketing</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-title">Headquarters</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <span class="contact-item-label">Office Address</span>
+                <p class="contact-item-val">Brahmapuri Colony, Indore, Madhya Pradesh 452001, India</p>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="contact-item-label">Email Us</span>
+                <a href="mailto:contact@ashvikmedia01.com" class="contact-item-val link-val">contact@ashvikmedia01.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span class="contact-item-label">Call / WhatsApp</span>
+                <a href="tel:+919993515138" class="contact-item-val link-val">+91 99935 15138</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <span class="contact-item-label">Working Hours</span>
+                <p class="contact-item-val" style="display: flex; align-items: center; gap: 0.4rem; color: #10B981; font-weight: 700;">
+                  <span class="status-dot-pulse" style="background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+                  24/7 Always Active Support
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>© Copyright 2026 <strong>Ashvik Media</strong>. All Rights Reserved.</p>
+          <div class="footer-bottom-extra">
+            <span>Crafted with <i class="fa-solid fa-heart" style="color: var(--primary-gold);"></i> for digital growth</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Multi-State Dynamic Error Engine
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code') || (!navigator.onLine ? 'offline' : '404');
+      
+      const badgeEl = document.getElementById('errorBadgeText');
+      const codeEl = document.getElementById('errorCodeDisplay');
+      const titleEl = document.getElementById('errorTitle');
+      const descEl = document.getElementById('errorDesc');
+      const timeEl = document.getElementById('diagnosticTime');
+
+      if (timeEl) {
+        timeEl.innerText = new Date().toUTCString();
+      }
+
+      if (code === '403') {
+        document.title = 'Access Forbidden (403) | Ashvik Media';
+        if (badgeEl) badgeEl.innerText = 'Security 403 • Access Restricted';
+        if (codeEl) codeEl.innerText = '403';
+        if (titleEl) titleEl.innerText = 'Access Forbidden / Unauthorized';
+        if (descEl) descEl.innerText = 'You do not have permission to view this directory or resource. If you believe this is in error, please contact our administrative team.';
+      } else if (code === '500') {
+        document.title = 'Server Error (500) | Ashvik Media';
+        if (badgeEl) badgeEl.innerText = 'System 500 • Server Exception';
+        if (codeEl) codeEl.innerText = '500';
+        if (titleEl) titleEl.innerText = 'Internal Server Error';
+        if (descEl) descEl.innerText = 'Our servers encountered an unexpected hiccup. Our engineering team has been notified and is on it. Please try refreshing in a few moments.';
+      } else if (code === '503') {
+        document.title = 'Service Unavailable (503) | Ashvik Media';
+        if (badgeEl) badgeEl.innerText = 'System 503 • Under Maintenance';
+        if (codeEl) codeEl.innerText = '503';
+        if (titleEl) titleEl.innerText = 'Maintenance In Progress';
+        if (descEl) descEl.innerText = 'We are currently deploying performance upgrades to enhance our digital experience. We will be back online shortly!';
+      } else if (code === 'offline' || !navigator.onLine) {
+        document.title = 'Offline Disconnected | Ashvik Media';
+        if (badgeEl) badgeEl.innerText = 'Network • Connection Lost';
+        if (codeEl) codeEl.innerHTML = '<i class="fa-solid fa-wifi-slash" style="font-size:0.8em;"></i>';
+        if (titleEl) titleEl.innerText = 'You Appear To Be Offline';
+        if (descEl) descEl.innerText = 'Please check your internet connection or Wi-Fi network. Once you are reconnected, this page will automatically sync.';
+      }
+    });
+
+    window.handleErrorSearch = function(e) {
+      e.preventDefault();
+      const val = document.getElementById('errorSearchInput')?.value.trim().toLowerCase();
+      if (!val) return;
+
+      if (val.includes('ecom') || val.includes('shop') || val.includes('amazon') || val.includes('store')) {
+        window.location.href = 'ecommerce/';
+      } else if (val.includes('reel') || val.includes('social') || val.includes('instagram') || val.includes('video') || val.includes('media')) {
+        window.location.href = 'social-media/';
+      } else if (val.includes('graphic') || val.includes('logo') || val.includes('design') || val.includes('brand')) {
+        window.location.href = 'graphics/';
+      } else if (val.includes('contact') || val.includes('call') || val.includes('phone') || val.includes('email')) {
+        window.location.href = 'contact/';
+      } else if (val.includes('about') || val.includes('team')) {
+        window.location.href = 'about/';
+      } else {
+        window.location.href = 'services/';
+      }
+    };
+
+    window.reportBrokenLink = function() {
+      const currentUrl = window.location.href;
+      const refUrl = document.referrer || 'Direct Visit';
+      const msg = `Hi Ashvik Media Team, I encountered a broken link on your website:\n• URL: ${currentUrl}\n• Referrer: ${refUrl}\nPlease look into it!`;
+      window.open(`https://wa.me/919993515138?text=${encodeURIComponent(msg)}`, '_blank');
+    };
+  </script>
+</body>
+</html>

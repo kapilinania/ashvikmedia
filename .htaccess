@@ -1,0 +1,91 @@
+# ==============================================================================
+# ASHVIK MEDIA - ENTERPRISE CYBERSECURITY & PERFORMANCE CONFIGURATION (.htaccess)
+# ==============================================================================
+
+# 1. CUSTOM ERROR DOCUMENT ROUTING
+# Route all HTTP error codes to the central branded error recovery page
+ErrorDocument 400 /404.html?code=400
+ErrorDocument 401 /404.html?code=401
+ErrorDocument 403 /404.html?code=403
+ErrorDocument 404 /404.html
+ErrorDocument 500 /404.html?code=500
+ErrorDocument 502 /404.html?code=502
+ErrorDocument 503 /404.html?code=503
+
+# 2. DIRECTORY BROWSING & SENSITIVE FILE ACCESS RESTRICTIONS
+# Disable directory index listings
+Options -Indexes -MultiViews
+
+# Block access to hidden system and version control files (.git, .env, .htaccess, etc.)
+<FilesMatch "(^\.|\.env|\.git|\.bak|\.config|\.sql|\.log|\.jsonL|\.lock|\.yml|\.yaml)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Prevent direct access to .htaccess and .htpasswd
+<Files ~ "^.*\.([Hh][Tt][AaPp])">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</Files>
+
+# 3. BLOCK INSECURE HTTP METHODS (TRACE, TRACK, DEBUG)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|DEBUG) [NC]
+    RewriteRule .* - [F]
+</IfModule>
+
+# 4. ENTERPRISE HTTP SECURITY HEADERS
+<IfModule mod_headers.c>
+    # Content-Security-Policy (CSP) - Authorizes trustworthy scripts, styles, fonts, and embeds
+    Header set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; media-src 'self' data: https: blob:; connect-src 'self' https:; frame-ancestors 'self';"
+
+    # Anti-Clickjacking: Only allow frames from the same origin
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Anti-MIME Sniffing: Force browsers to adhere to declared content-type
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Strict Referrer Policy: Send full URL on same-origin, domain-only cross-origin
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy: Restrict invasive browser APIs
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+    # Cross-Site Scripting Filter Protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # HTTP Strict Transport Security (HSTS - 1 Year)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+</IfModule>
+
+# 5. GZIP & DEFLATE COMPRESSION (PERFORMANCE OPTIMIZATION)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# 6. BROWSER CACHING HEADERS
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType text/javascript "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/font-woff2 "access plus 1 month"
+</IfModule>

@@ -1,9 +1,13 @@
 User-agent: *
 Allow: /
 
-# Disallow internal scripts & tools
+# Disallow private assets, temporary files & system configurations
+Disallow: /.git/
+Disallow: /.well-known/
 Disallow: /scratch/
 Disallow: /assets/css/*.map
+Disallow: /404.html
+Disallow: /*?code=*
 
 # Sitemap Location
 Sitemap: https://ashvikmedia.com/sitemap.xml
