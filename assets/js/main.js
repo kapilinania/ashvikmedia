@@ -602,125 +602,180 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* ==========================================================================
-   E-COMMERCE STORE ENGINE (Products, Cart, WhatsApp Checkout, LocalStorage Order History)
+   E-COMMERCE STORE ENGINE (Services, Selection Cart, WhatsApp Direct Checkout, LocalStorage Inquiries)
    ========================================================================== */
 const ecomProducts = [
   {
-    id: 'p1',
-    title: 'Shopify E-Com Scaling Blueprint Theme',
-    category: 'shopify',
-    price: 4999,
-    originalPrice: 9999,
+    id: 'prod-1',
+    title: 'Amazon Account Launch & Registration',
+    category: 'launch',
+    categoryName: 'Account & Launch',
     rating: 5.0,
-    reviews: 48,
-    badge: 'BESTSELLER',
-    icon: 'fa-bag-shopping',
-    desc: 'High-converting custom Shopify theme loaded with sticky add-to-cart, countdown timers, up-sell slide drawer, and 0.9s load speed.'
+    reviews: 64,
+    badge: 'TOP SELLER',
+    image: 'assets/images/product/1.jpg',
+    desc: 'Complete end-to-end seller onboarding, GST & brand verification, category approval, brand registry, and initial catalog setup for high-speed launch.',
+    highlights: ['Brand Registry', 'GST & Bank Setup', 'Fast-Track Launch']
   },
   {
-    id: 'p2',
-    title: 'Amazon A+ Content & Brand Store Kit',
-    category: 'amazon',
-    price: 7999,
-    originalPrice: 14999,
+    id: 'prod-2',
+    title: 'Amazon Account Management',
+    category: 'launch',
+    categoryName: 'Account & Launch',
     rating: 4.9,
-    reviews: 62,
-    badge: 'HOT',
-    icon: 'fa-amazon',
-    desc: '7 Premium module Amazon A+ EBC visual designs, keyword-rich listing copy, and storefront banners built for 3.2X higher sales.'
+    reviews: 82,
+    badge: 'POPULAR',
+    image: 'assets/images/product/2.jpg',
+    desc: 'Dedicated Amazon account management including daily seller central health monitoring, inventory replenishment alerts, pricing control, and case management.',
+    highlights: ['Daily Health Check', 'Inventory Alerts', 'Case Support']
   },
   {
-    id: 'p3',
-    title: 'Complete D2C E-Commerce Growth Bundle',
-    category: 'scaling',
-    price: 24999,
-    originalPrice: 45000,
+    id: 'prod-3',
+    title: 'Amazon Advertising & PPC Management',
+    category: 'ads',
+    categoryName: 'Advertising & PPC',
+    rating: 5.0,
+    reviews: 95,
+    badge: 'HIGH ROAS',
+    image: 'assets/images/product/3.jpg',
+    desc: 'Sponsored Products, Brands & Display campaign optimization with AI keyword harvesting, negative targeting, bid adjustments, and lowering TACoS/ACoS.',
+    highlights: ['TACoS Reduction', 'AI Keyword Bidding', 'Sponsored Ads']
+  },
+  {
+    id: 'prod-4',
+    title: 'Amazon Storefront Creation & Design',
+    category: 'creative',
+    categoryName: 'Creative & Storefront',
+    rating: 4.9,
+    reviews: 58,
+    badge: 'FEATURED',
+    image: 'assets/images/product/4.jpg',
+    desc: 'Bespoke multi-page immersive brand store design with dynamic product tiles, lifestyle banners, video showcases, and curated category collections.',
+    highlights: ['Custom Storefront', 'Lifestyle Banners', 'Curated Pages']
+  },
+  {
+    id: 'prod-5',
+    title: 'Amazon Account & ASIN Reinstatement',
+    category: 'reinstatement',
+    categoryName: 'Account Health',
+    rating: 5.0,
+    reviews: 43,
+    badge: 'URGENT CARE',
+    image: 'assets/images/product/5.jpg',
+    desc: 'Expert Plan of Action (POA) crafting for suspended seller accounts, ASIN suppression, IP complaints, Section 3 violations, and policy deactivations.',
+    highlights: ['POA Letter Crafting', 'Section 3 Appeal', 'Urgent Support']
+  },
+  {
+    id: 'prod-6',
+    title: 'Amazon Brand & Product-Specific Videos',
+    category: 'creative',
+    categoryName: 'Creative & Storefront',
+    rating: 4.9,
+    reviews: 71,
+    badge: 'HIGH CONVERTING',
+    image: 'assets/images/product/6.jpg',
+    desc: 'High-impact 3D product renders, unboxing & feature walkthrough videos optimized specifically for Amazon video ads and main image carousel slots.',
+    highlights: ['3D Product Video', 'High-ROAS Video Ads', 'Feature Showcase']
+  },
+  {
+    id: 'prod-7',
+    title: 'Cataloging - Listing On Multiple Portals',
+    category: 'listing',
+    categoryName: 'Listing & Multi-Portal',
+    rating: 4.8,
+    reviews: 53,
+    badge: 'MULTI-CHANNEL',
+    image: 'assets/images/product/7.jpg',
+    desc: 'Multi-marketplace bulk catalog mapping and seamless listing synchronization across Amazon, Flipkart, Shopify, eBay, Walmart, and Meesho.',
+    highlights: ['Multi-Marketplace', 'Bulk Catalog Sync', 'Zero Error Mapping']
+  },
+  {
+    id: 'prod-8',
+    title: 'Amazon Product Listing & SEO Optimization',
+    category: 'listing',
+    categoryName: 'Listing & Multi-Portal',
     rating: 5.0,
     reviews: 89,
-    badge: 'FEATURED BUNDLE',
-    icon: 'fa-chart-line',
-    desc: 'Full suite solution: Shopify Store Build + Meta/Google Ad Creatives + 20 Viral Short Video Hooks + WhatsApp Order Automation.'
+    badge: 'BESTSELLER',
+    image: 'assets/images/product/8.jpg',
+    desc: 'High-ranking keyword indexed titles, persuasive bullet points, HTML descriptions, backend search terms, and mobile-optimized search conversion copy.',
+    highlights: ['Keyword Indexing', 'High CTR Titles', 'A9 Algorithm SEO']
   },
   {
-    id: 'p4',
-    title: 'High-Conversion Checkout & CRO Audit Pack',
-    category: 'cro',
-    price: 6499,
-    originalPrice: 11999,
-    rating: 4.8,
-    reviews: 31,
-    badge: 'POPULAR',
-    icon: 'fa-bolt',
-    desc: 'Full UI/UX audit of your checkout funnel, cart abandonment recovery email templates, and speed optimization checklist.'
-  },
-  {
-    id: 'p5',
-    title: 'Shopify Custom Subscription Store Template',
-    category: 'shopify',
-    price: 8999,
-    originalPrice: 16999,
-    rating: 4.9,
-    reviews: 24,
-    badge: 'NEW',
-    icon: 'fa-repeat',
-    desc: 'Specialized layout for recurring subscription products, box delivery, customer portal, and tiered loyalty rewards.'
-  },
-  {
-    id: 'p6',
-    title: 'E-Commerce Performance Marketing Toolkit',
-    category: 'scaling',
-    price: 12999,
-    originalPrice: 22000,
+    id: 'prod-9',
+    title: 'A+ Content (Enhanced Brand Content)',
+    category: 'creative',
+    categoryName: 'Creative & Storefront',
     rating: 5.0,
-    reviews: 57,
-    badge: 'PRO TOOLKIT',
-    icon: 'fa-bullseye',
-    desc: 'Meta & Google Ads audience targeting templates, high-ROAS ad copies, UTM tracking sheet, and retargeting workflows.'
+    reviews: 112,
+    badge: 'MUST HAVE',
+    image: 'assets/images/product/9.jpg',
+    desc: '7 Premium custom A+ graphic modules, comparison charts, high-resolution lifestyle visual storytelling, and mobile-responsive EBC design layout.',
+    highlights: ['7 Custom Modules', 'Comparison Matrix', '3X Conversions']
   }
 ];
 
 let cart = JSON.parse(localStorage.getItem('ashvik_cart')) || [];
-let appliedDiscountPct = 0;
+
+window.renderStarRating = function(rating) {
+  let starsHtml = '';
+  for (let i = 1; i <= 5; i++) {
+    if (rating >= i) {
+      starsHtml += '<i class="fa-solid fa-star"></i>';
+    } else if (rating >= i - 0.5) {
+      starsHtml += '<i class="fa-solid fa-star-half-stroke"></i>';
+    } else {
+      starsHtml += '<i class="fa-regular fa-star"></i>';
+    }
+  }
+  return starsHtml;
+};
 
 window.renderProducts = function(items = ecomProducts) {
   const grid = document.getElementById('productGrid');
   if (!grid) return;
 
   if (items.length === 0) {
-    grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--text-dark-secondary);">No products matching your search query or filter.</div>`;
+    grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--text-dark-secondary);">No services matching your search query or category filter.</div>`;
     return;
   }
 
   grid.innerHTML = items.map(p => `
     <div class="product-card">
-      ${p.badge ? `<div class="product-badge-tag">${p.badge}</div>` : ''}
-      <div class="product-img-box">
-        <i class="fa-brands ${p.icon.startsWith('fa-amazon') ? 'fa-amazon' : 'fa-solid ' + p.icon}"></i>
+      <div class="product-card-top">
+        ${p.badge ? `<div class="product-badge-tag"><i class="fa-solid fa-sparkles"></i> ${p.badge}</div>` : ''}
+        <div class="product-img-box">
+          <img src="${p.image}" alt="${p.title}" loading="lazy" onerror="this.src='assets/images/product/1.jpg';">
+          <button class="product-quickview-trigger" onclick="openQuickView('${p.id}')" title="Quick Overview">
+            <i class="fa-solid fa-eye"></i> Quick View
+          </button>
+        </div>
       </div>
       <div class="product-content">
-        <div class="product-cat">${p.category.toUpperCase()}</div>
-        <h3 class="product-title">${p.title}</h3>
+        <div class="product-meta-row">
+          <span class="product-cat"><i class="fa-solid fa-circle" style="font-size:0.35rem; vertical-align:middle; margin-right:4px; color:var(--primary-gold);"></i>${p.categoryName || p.category.toUpperCase()}</span>
+          <span class="product-trust-badge"><i class="fa-solid fa-shield-check"></i> Verified</span>
+        </div>
+        <h3 class="product-title" onclick="openQuickView('${p.id}')">${p.title}</h3>
         <div class="product-rating">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <span style="color:var(--text-dark-secondary); margin-left:0.3rem;">(${p.rating} / ${p.reviews} reviews)</span>
+          <div class="stars">
+            ${window.renderStarRating(p.rating)}
+          </div>
+          <span class="rating-num">${p.rating.toFixed(1)}</span>
+          <span class="rating-count">(${p.reviews} verified reviews)</span>
         </div>
         <p class="product-desc">${p.desc}</p>
 
-        <div class="product-price-row">
-          <span class="price-current">₹${p.price.toLocaleString('en-IN')}</span>
-          <span class="price-original">₹${p.originalPrice.toLocaleString('en-IN')}</span>
+        <div class="product-highlights">
+          ${(p.highlights || []).map(h => `<span class="highlight-pill"><i class="fa-solid fa-check text-gold"></i> ${h}</span>`).join('')}
         </div>
 
         <div class="product-actions">
-          <button class="btn btn-gold" style="flex-grow:1; font-size:0.85rem;" onclick="addToCart('${p.id}')">
+          <button class="btn btn-gold product-add-btn" onclick="addToCart('${p.id}')">
             <i class="fa-solid fa-cart-plus"></i> Add To Cart
           </button>
-          <button class="btn btn-dark-outline" style="padding:0.6rem 0.8rem;" onclick="openQuickView('${p.id}')" title="Quick View">
-            <i class="fa-solid fa-eye"></i>
+          <button class="btn btn-dark-outline product-qv-btn" onclick="openQuickView('${p.id}')" title="Quick Overview">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </button>
         </div>
       </div>
@@ -740,8 +795,7 @@ window.filterProducts = function() {
     return matchCat && matchQuery;
   });
 
-  if (sortVal === 'price-low') filtered.sort((a,b) => a.price - b.price);
-  else if (sortVal === 'price-high') filtered.sort((a,b) => b.price - a.price);
+  if (sortVal === 'name-az') filtered.sort((a,b) => a.title.localeCompare(b.title));
   else if (sortVal === 'rating') filtered.sort((a,b) => b.rating - a.rating);
 
   window.renderProducts(filtered);
@@ -795,22 +849,15 @@ window.removeFromCart = function(index) {
   window.updateCartUI();
 };
 
-window.applyPromoCode = function() {
-  const code = document.getElementById('promoInput')?.value.trim().toUpperCase();
-  if (code === 'ASHVIK10') {
-    appliedDiscountPct = 0.10;
-    alert('🎉 Promo Code ASHVIK10 Applied! 10% Discount calculated.');
-  } else {
-    alert('Invalid promo code. Try "ASHVIK10" for 10% off!');
-    appliedDiscountPct = 0;
-  }
-  window.updateCartUI();
-};
-
 window.updateCartUI = function() {
   const countBadges = document.querySelectorAll('#cartCountBadge, #cartHeaderCount');
   const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
   countBadges.forEach(b => b.innerText = totalQty);
+
+  const totalItemsCountEl = document.getElementById('cartTotalItemsCount');
+  if (totalItemsCountEl) {
+    totalItemsCountEl.innerText = `${totalQty} service${totalQty === 1 ? '' : 's'}`;
+  }
 
   const body = document.getElementById('cartDrawerBody');
   if (!body) return;
@@ -819,101 +866,98 @@ window.updateCartUI = function() {
     body.innerHTML = `
       <div style="text-align:center; padding:3rem 1rem; color:var(--text-dark-secondary);">
         <i class="fa-solid fa-cart-shopping" style="font-size:3rem; color:var(--dark-border); margin-bottom:1rem;"></i>
-        <p>Your cart is empty.</p>
-        <button class="btn btn-gold" style="margin-top:1rem;" onclick="toggleCartDrawer()">Browse Store</button>
+        <p style="font-size:1rem; color:var(--text-dark-primary); margin-bottom:0.4rem;">Your cart is empty</p>
+        <p style="font-size:0.85rem; color:var(--text-dark-secondary);">Add services from the catalog to build your custom package.</p>
+        <button class="btn btn-gold" style="margin-top:1.2rem;" onclick="toggleCartDrawer()">Browse Services</button>
       </div>
     `;
-    document.getElementById('cartSubtotalVal').innerText = '₹0';
-    document.getElementById('cartTotalVal').innerText = '₹0';
-    document.getElementById('discountRow').style.display = 'none';
     return;
   }
 
   body.innerHTML = cart.map((item, idx) => `
     <div class="cart-item">
-      <div class="cart-item-icon"><i class="fa-solid ${item.icon}"></i></div>
+      <img src="${item.image}" alt="${item.title}" class="cart-item-img">
       <div class="cart-item-info">
         <div class="cart-item-title">${item.title}</div>
-        <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')}</div>
+        <div class="cart-item-tag">${item.categoryName || item.category}</div>
         <div class="cart-qty-ctrl">
-          <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
+          <button class="qty-btn" onclick="changeQty(${idx}, -1)" title="Decrease">-</button>
           <span style="font-size:0.85rem; color:#FFF; min-width:16px; text-align:center;">${item.qty}</span>
-          <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+          <button class="qty-btn" onclick="changeQty(${idx}, 1)" title="Increase">+</button>
         </div>
       </div>
       <button class="cart-item-remove" onclick="removeFromCart(${idx})" title="Remove"><i class="fa-solid fa-trash"></i></button>
     </div>
   `).join('');
-
-  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-  const discountAmt = subtotal * appliedDiscountPct;
-  const total = subtotal - discountAmt;
-
-  document.getElementById('cartSubtotalVal').innerText = '₹' + subtotal.toLocaleString('en-IN');
-  if (appliedDiscountPct > 0) {
-    document.getElementById('discountRow').style.display = 'flex';
-    document.getElementById('cartDiscountVal').innerText = '-₹' + discountAmt.toLocaleString('en-IN');
-  } else {
-    document.getElementById('discountRow').style.display = 'none';
-  }
-  document.getElementById('cartTotalVal').innerText = '₹' + total.toLocaleString('en-IN');
 };
 
-// WhatsApp Direct Checkout & LocalStorage Order Persistence
+// WhatsApp Direct Checkout & LocalStorage Inquiry Persistence
 window.executeWhatsAppCheckout = function() {
   if (cart.length === 0) {
-    alert('Your cart is empty! Please add products before checking out.');
+    alert('Your service selection is empty! Please add at least one service before checking out.');
     return;
   }
 
-  const name = document.getElementById('custName')?.value.trim() || 'Valued Customer';
-  const phone = document.getElementById('custPhone')?.value.trim() || 'Not Provided';
-  const note = document.getElementById('custNote')?.value.trim() || 'N/A';
+  const name = document.getElementById('custName')?.value.trim();
+  const phone = document.getElementById('custPhone')?.value.trim();
+  const storeUrl = document.getElementById('custStore')?.value.trim() || 'Not Provided';
+  const note = document.getElementById('custNote')?.value.trim() || 'None';
 
-  const orderId = '#AM-' + Math.floor(10000 + Math.random() * 90000);
-  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-  const discountAmt = subtotal * appliedDiscountPct;
-  const total = subtotal - discountAmt;
-  const dateStr = new Date().toLocaleString();
+  if (!name) {
+    alert('Please enter your Full Name.');
+    document.getElementById('custName')?.focus();
+    return;
+  }
 
-  let message = `🛒 *NEW E-COMMERCE STORE ORDER - ASHVIK MEDIA*\n`;
-  message += `----------------------------------\n`;
-  message += `*Order ID:* ${orderId}\n`;
-  message += `*Date:* ${dateStr}\n\n`;
-  message += `*Customer Details:*\n`;
-  message += `• Name: ${name}\n`;
-  message += `• WhatsApp Phone: ${phone}\n`;
-  message += `• Notes / Requirements: ${note}\n\n`;
-  message += `*Order Items:*\n`;
+  if (!phone) {
+    alert('Please enter your WhatsApp Phone Number.');
+    document.getElementById('custPhone')?.focus();
+    return;
+  }
+
+  const orderId = '#AM-ECOM-' + Math.floor(10000 + Math.random() * 90000);
+  const totalServices = cart.reduce((sum, item) => sum + item.qty, 0);
+  const dateStr = new Date().toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' });
+
+  let message = `🚀 *NEW E-COMMERCE SERVICE INQUIRY - ASHVIK MEDIA*\n`;
+  message += `━━━━━━━━━━━━━━━━━━━━━\n`;
+  message += `📋 *Reference ID:* ${orderId}\n`;
+  message += `📅 *Date:* ${dateStr}\n\n`;
+  message += `👤 *Client Details:*\n`;
+  message += `• *Name:* ${name}\n`;
+  message += `• *WhatsApp Phone:* ${phone}\n`;
+  if (storeUrl !== 'Not Provided') {
+    message += `• *Brand / Store Link:* ${storeUrl}\n`;
+  }
+  if (note !== 'None') {
+    message += `• *Requirements / Notes:* ${note}\n`;
+  }
+  message += `\n📦 *Selected Services (${totalServices} items):*\n`;
 
   cart.forEach((item, i) => {
-    message += `${i+1}. ${item.title} (x${item.qty}) - ₹${(item.price * item.qty).toLocaleString('en-IN')}\n`;
+    message += `${i+1}. *${item.title}* (Qty: ${item.qty})\n`;
   });
 
-  message += `\n----------------------------------\n`;
-  message += `*Subtotal:* ₹${subtotal.toLocaleString('en-IN')}\n`;
-  if (appliedDiscountPct > 0) {
-    message += `*Discount (ASHVIK10):* -₹${discountAmt.toLocaleString('en-IN')}\n`;
-  }
-  message += `*Total Amount:* ₹${total.toLocaleString('en-IN')}\n`;
-  message += `----------------------------------\n`;
-  message += `Thank you! Please confirm my order placement.`;
+  message += `\n━━━━━━━━━━━━━━━━━━━━━\n`;
+  message += `💬 *Request:* Hi Ashvik Media Team, I would like to get a customized quote and execution plan for the above services. Please get back to me with the details!`;
 
-  // 1. Save to LocalStorage order history
+  // 1. Save to LocalStorage inquiry history
   const orders = JSON.parse(localStorage.getItem('ashvik_orders')) || [];
   const newOrder = {
     id: orderId,
     date: dateStr,
     name: name,
     phone: phone,
+    storeUrl: storeUrl,
+    note: note,
     items: [...cart],
-    total: total,
+    totalServices: totalServices,
     status: 'Sent to WhatsApp'
   };
   orders.unshift(newOrder);
   localStorage.setItem('ashvik_orders', JSON.stringify(orders));
 
-  // 2. Clear Cart
+  // 2. Clear Cart & Close Drawer
   cart = [];
   localStorage.removeItem('ashvik_cart');
   window.updateCartUI();
@@ -923,7 +967,6 @@ window.executeWhatsAppCheckout = function() {
   const waUrl = `https://wa.me/919993515138?text=${encodeURIComponent(message)}`;
   window.open(waUrl, '_blank');
   window.toggleCartDrawer();
-  alert(`Order ${orderId} saved to local storage and redirected to WhatsApp!`);
 };
 
 window.openOrderHistoryModal = function() {
@@ -954,9 +997,10 @@ window.renderOrderHistory = function() {
 
   if (orders.length === 0) {
     body.innerHTML = `
-      <div style="text-align:center; padding:2rem; color:var(--text-dark-secondary);">
+      <div style="text-align:center; padding:2.5rem 1rem; color:var(--text-dark-secondary);">
         <i class="fa-solid fa-clock-rotate-left" style="font-size:2.5rem; color:var(--dark-border); margin-bottom:1rem;"></i>
-        <p>No previous order history found in local storage.</p>
+        <p style="font-size:1rem; color:var(--text-dark-primary); margin-bottom:0.3rem;">No past inquiries found</p>
+        <p style="font-size:0.85rem; color:var(--text-dark-secondary);">Your future WhatsApp service inquiries will be recorded here.</p>
       </div>
     `;
     return;
@@ -968,14 +1012,14 @@ window.renderOrderHistory = function() {
         <span class="oh-id">${o.id}</span>
         <span class="oh-status"><i class="fa-brands fa-whatsapp"></i> ${o.status}</span>
       </div>
-      <div style="font-size:0.78rem; color:var(--text-dark-muted); margin-bottom:0.4rem;">Placed on: ${o.date}</div>
+      <div style="font-size:0.78rem; color:var(--text-dark-muted); margin-bottom:0.4rem;">Inquired on: ${o.date}</div>
       <div class="oh-items">
-        ${o.items.map(it => `<div>• ${it.title} (x${it.qty}) - ₹${(it.price * it.qty).toLocaleString('en-IN')}</div>`).join('')}
+        ${o.items.map(it => `<div>• <strong>${it.title}</strong> (Qty: ${it.qty})</div>`).join('')}
       </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--dark-border); padding-top:0.6rem;">
-        <span style="font-weight:800; color:var(--primary-gold);">Total Paid: ₹${o.total.toLocaleString('en-IN')}</span>
-        <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20inquiring%20about%20my%20order%20${o.id}" target="_blank" class="btn btn-gold" style="padding:0.3rem 0.8rem; font-size:0.75rem;">
-          Track / Re-Order <i class="fa-brands fa-whatsapp"></i>
+      <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--dark-border); padding-top:0.6rem; margin-top:0.6rem;">
+        <span style="font-size:0.85rem; color:var(--primary-gold); font-weight:600;"><i class="fa-solid fa-layer-group"></i> ${o.items.length} Services Selected</span>
+        <a href="https://wa.me/919993515138?text=${encodeURIComponent("Hi Ashvik Media, I'm following up on my service inquiry " + o.id)}" target="_blank" class="btn btn-gold" style="padding:0.35rem 0.85rem; font-size:0.75rem;">
+          Track on WhatsApp <i class="fa-brands fa-whatsapp"></i>
         </a>
       </div>
     </div>
@@ -983,7 +1027,7 @@ window.renderOrderHistory = function() {
 };
 
 window.clearOrderHistory = function() {
-  if (confirm('Are you sure you want to clear all order history from LocalStorage?')) {
+  if (confirm('Are you sure you want to clear all inquiry history from LocalStorage?')) {
     localStorage.removeItem('ashvik_orders');
     window.renderOrderHistory();
   }
@@ -1007,16 +1051,26 @@ window.openQuickView = function(id) {
   if (modal && overlay && body) {
     title.innerText = item.title;
     body.innerHTML = `
-      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center;">
-        <div style="width:120px; height:120px; background:#181E29; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-size:3rem; color:var(--primary-gold);">
-          <i class="fa-solid ${item.icon}"></i>
+      <div class="quickview-grid">
+        <div class="quickview-img-box">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='assets/images/product/1.jpg';">
         </div>
-        <div style="flex-grow:1;">
-          <div class="product-cat">${item.category}</div>
-          <div style="font-size:1.8rem; font-weight:800; color:var(--primary-gold); margin:0.4rem 0;">₹${item.price.toLocaleString('en-IN')} <span style="font-size:1rem; color:var(--text-dark-muted); text-decoration:line-through;">₹${item.originalPrice.toLocaleString('en-IN')}</span></div>
-          <p style="font-size:0.9rem; color:var(--text-dark-secondary); line-height:1.5;">${item.desc}</p>
-          <button class="btn btn-gold" style="margin-top:1.2rem; width:100%;" onclick="addToCart('${item.id}'); closeQuickView();">
-            ADD TO CART & CHECKOUT VIA WHATSAPP <i class="fa-solid fa-cart-plus"></i>
+        <div class="quickview-info">
+          <div class="product-cat">${item.categoryName || item.category.toUpperCase()}</div>
+          <div class="product-rating">
+            <div class="stars" style="color:#F59E0B; display:inline-flex; gap:2px; margin-right:4px;">
+              ${window.renderStarRating(item.rating)}
+            </div>
+            <span style="font-weight:700; color:#FFF;">${item.rating.toFixed(1)}</span>
+            <span style="color:var(--text-dark-secondary); margin-left:0.3rem;">(${item.reviews} verified reviews)</span>
+          </div>
+          <p class="product-desc">${item.desc}</p>
+          <div class="product-highlights" style="margin-bottom:1.2rem;">
+            ${(item.highlights || []).map(h => `<span class="highlight-pill"><i class="fa-solid fa-check text-gold"></i> ${h}</span>`).join('')}
+          </div>
+          <button class="btn btn-gold quickview-btn" onclick="addToCart('${item.id}'); closeQuickView();">
+            <span>ADD TO CART & PROCEED</span>
+            <i class="fa-solid fa-cart-plus"></i>
           </button>
         </div>
       </div>

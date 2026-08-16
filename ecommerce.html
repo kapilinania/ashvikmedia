@@ -121,26 +121,39 @@
   </section>
 
   <!-- Store Hero Banner -->
-  <section class="ecom-hero" style="padding-top: 3rem;">
+  <section class="ecom-hero">
     <div class="container">
       <div class="ecom-hero-card">
         <div class="ecom-hero-text">
-          <div class="section-tag section-tag-gold" style="margin-bottom:1rem;"><i class="fa-solid fa-store"></i> ASHVIK E-STORE</div>
-          <h1 class="ecom-hero-title">Scale Your E-Commerce Store With Proven Solutions</h1>
+          <div class="ecom-hero-tag">
+            <i class="fa-solid fa-store text-gold"></i>
+            <span>ASHVIK E-COMMERCE SERVICES</span>
+          </div>
+          <h2 class="ecom-hero-title">Scale Your Marketplace Sales With <span class="text-gold">Proven Solutions</span></h2>
           <p class="ecom-hero-desc">
-            Explore ready-to-launch Shopify themes, Amazon A+ content kits, high-ROAS marketing packages, and custom digital growth bundles. Instant checkout via WhatsApp & Local Storage order history!
+            Explore dedicated Amazon account management, high-ROAS PPC advertising, A+ brand content, storefront creation, multi-portal cataloging, and suspension reinstatement. Select your required services and checkout directly on WhatsApp!
           </p>
-          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
-            <a href="#store-catalog" class="btn btn-gold">BROWSE PRODUCTS <i class="fa-solid fa-arrow-down"></i></a>
-            <button class="btn btn-dark-outline" onclick="openOrderHistoryModal()"><i class="fa-solid fa-clock-rotate-left text-gold"></i> VIEW MY ORDERS</button>
+          <div class="ecom-hero-actions">
+            <a href="#store-catalog" class="btn btn-gold hero-action-btn">
+              <span>EXPLORE SERVICES</span>
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <button class="btn btn-dark-outline hero-action-btn" onclick="openOrderHistoryModal()">
+              <i class="fa-solid fa-clock-rotate-left text-gold"></i>
+              <span>VIEW INQUIRIES</span>
+            </button>
           </div>
         </div>
         <div class="ecom-hero-badge-box">
           <div class="hero-whatsapp-pill">
-            <i class="fa-brands fa-whatsapp" style="font-size:1.8rem; color:#25D366;"></i>
-            <div>
-              <strong>Instant WhatsApp Checkout</strong>
-              <div style="font-size:0.8rem; color:var(--text-dark-secondary);">No credit card required. Direct order confirmation.</div>
+            <div class="pill-icon-wrap">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span class="pill-live-dot"></span>
+            </div>
+            <div class="pill-text-wrap">
+              <div class="pill-status">Direct Consultation</div>
+              <strong class="pill-heading">Instant WhatsApp Checkout</strong>
+              <p class="pill-sub">No online payment needed. Get custom strategy & quotation.</p>
             </div>
           </div>
         </div>
@@ -155,16 +168,17 @@
         <!-- Search -->
         <div class="store-search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="storeSearchInput" placeholder="Search products, Shopify templates, Amazon kits..." onkeyup="filterProducts()">
+          <input type="text" id="storeSearchInput" placeholder="Search services (e.g. Amazon Launch, PPC, A+ Content, Listing...)" onkeyup="filterProducts()">
         </div>
 
         <!-- Filter Categories -->
         <div class="store-filter-pills" id="categoryPills">
-          <button class="filter-pill active" data-category="all">All Products</button>
-          <button class="filter-pill" data-category="shopify">Shopify Themes</button>
-          <button class="filter-pill" data-category="amazon">Amazon A+ Kits</button>
-          <button class="filter-pill" data-category="scaling">Growth Bundles</button>
-          <button class="filter-pill" data-category="cro">CRO & Funnels</button>
+          <button class="filter-pill active" data-category="all">All Services</button>
+          <button class="filter-pill" data-category="launch">Account & Launch</button>
+          <button class="filter-pill" data-category="ads">Advertising & PPC</button>
+          <button class="filter-pill" data-category="creative">Creative & Storefront</button>
+          <button class="filter-pill" data-category="listing">Listing & Cataloging</button>
+          <button class="filter-pill" data-category="reinstatement">Account Health</button>
         </div>
 
         <!-- Sort Select -->
@@ -172,8 +186,7 @@
           <label for="storeSortSelect"><i class="fa-solid fa-arrow-down-short-wide" style="color: var(--primary-gold); font-size: 0.85rem;"></i> Sort:</label>
           <select id="storeSortSelect" onchange="sortProducts()">
             <option value="featured">Featured First</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
+            <option value="name-az">Service Name: A to Z</option>
             <option value="rating">Top Rated</option>
           </select>
         </div>
@@ -194,8 +207,8 @@
   <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
   <div class="cart-drawer" id="cartDrawer">
     <div class="cart-drawer-header">
-      <h3 style="display:flex; align-items:center; gap:0.5rem; color:var(--text-dark-primary); font-size:1.2rem;">
-        <i class="fa-solid fa-cart-shopping text-gold"></i> Your Shopping Cart (<span id="cartHeaderCount">0</span>)
+      <h3 style="display:flex; align-items:center; gap:0.5rem; color:var(--text-dark-primary); font-size:1.15rem;">
+        <i class="fa-solid fa-cart-shopping text-gold"></i> Selected Services (<span id="cartHeaderCount">0</span>)
       </h3>
       <button class="cart-drawer-close" onclick="toggleCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
     </div>
@@ -205,32 +218,24 @@
     </div>
 
     <div class="cart-drawer-footer">
-      <div class="promo-code-row">
-        <input type="text" id="promoInput" placeholder="Enter Promo (e.g. ASHVIK10)" style="text-transform:uppercase;">
-        <button class="btn btn-dark-outline" onclick="applyPromoCode()">Apply</button>
-      </div>
-
       <div class="cart-summary-box">
         <div class="cart-sum-row">
-          <span>Subtotal:</span>
-          <span id="cartSubtotalVal">₹0</span>
+          <span>Total Selected Services:</span>
+          <span class="text-gold" id="cartTotalItemsCount" style="font-weight:700;">0 services</span>
         </div>
-        <div class="cart-sum-row text-gold" id="discountRow" style="display:none;">
-          <span>Discount Applied:</span>
-          <span id="cartDiscountVal">-₹0</span>
-        </div>
-        <div class="cart-sum-row cart-total-row">
-          <span>Total Payable:</span>
-          <span class="text-gold" id="cartTotalVal">₹0</span>
+        <div class="cart-sum-row">
+          <span>Quote & Consultation:</span>
+          <span class="text-gold" style="font-size:0.85rem; font-weight:600;"><i class="fa-brands fa-whatsapp"></i> Free Direct Quote</span>
         </div>
       </div>
 
       <!-- Customer Checkout Details Form -->
       <div class="checkout-customer-fields">
-        <h4 style="font-size:0.9rem; margin-bottom:0.6rem; color:var(--text-dark-primary);">Customer Quick Details:</h4>
-        <input type="text" id="custName" placeholder="Your Name *" required class="checkout-input">
+        <h4 style="font-size:0.9rem; margin-bottom:0.6rem; color:var(--text-dark-primary);">Your Contact Information:</h4>
+        <input type="text" id="custName" placeholder="Your Full Name *" required class="checkout-input">
         <input type="tel" id="custPhone" placeholder="WhatsApp Phone Number *" required class="checkout-input">
-        <input type="text" id="custNote" placeholder="Special requirements or website URL..." class="checkout-input">
+        <input type="text" id="custStore" placeholder="Your Brand / Store / Website (Optional)" class="checkout-input">
+        <input type="text" id="custNote" placeholder="Specific requirements or questions..." class="checkout-input">
       </div>
 
       <button class="btn btn-gold whatsapp-checkout-btn" onclick="executeWhatsAppCheckout()">
@@ -243,7 +248,7 @@
   <div class="modal-overlay" id="orderModalOverlay" onclick="closeOrderHistoryModal()"></div>
   <div class="modal-card" id="orderHistoryModal">
     <div class="modal-header">
-      <h3><i class="fa-solid fa-clock-rotate-left text-gold"></i> Your Order History (LocalStorage)</h3>
+      <h3><i class="fa-solid fa-clock-rotate-left text-gold"></i> Your Service Inquiry History</h3>
       <button class="modal-close-btn" onclick="closeOrderHistoryModal()"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="modal-body" id="orderModalBody">
@@ -251,7 +256,7 @@
     </div>
     <div class="modal-footer" style="display:flex; justify-content:space-between; align-items:center;">
       <button class="btn btn-dark-outline" style="color:#EF4444; border-color:rgba(239,68,68,0.3);" onclick="clearOrderHistory()">
-        <i class="fa-solid fa-trash"></i> Clear Order History
+        <i class="fa-solid fa-trash"></i> Clear History
       </button>
       <button class="btn btn-gold" onclick="closeOrderHistoryModal()">Close</button>
     </div>
@@ -259,9 +264,9 @@
 
   <!-- Quick View Product Modal -->
   <div class="modal-overlay" id="quickViewOverlay" onclick="closeQuickView()"></div>
-  <div class="modal-card" id="quickViewModal" style="max-width: 650px;">
+  <div class="modal-card" id="quickViewModal" style="max-width: 680px;">
     <div class="modal-header">
-      <h3 id="qvTitle">Product Quick View</h3>
+      <h3 id="qvTitle">Service Overview</h3>
       <button class="modal-close-btn" onclick="closeQuickView()"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="modal-body" id="qvBody">
