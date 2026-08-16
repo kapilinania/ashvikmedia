@@ -241,25 +241,53 @@
 
     /* Interactive Timeline Journey */
     .timeline-interactive-container {
-      margin-top: 3.5rem;
+      margin-top: 3rem;
       position: relative;
+      width: 100%;
+    }
+
+    .timeline-nav-wrapper {
+      position: relative;
+      margin-bottom: 2.5rem;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding: 0.5rem 0.25rem 1rem 0.25rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-gold) rgba(255, 255, 255, 0.06);
+    }
+
+    .timeline-nav-wrapper::-webkit-scrollbar {
+      height: 4px;
+    }
+    .timeline-nav-wrapper::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+    }
+    .timeline-nav-wrapper::-webkit-scrollbar-thumb {
+      background: var(--primary-gold);
+      border-radius: 4px;
     }
 
     .timeline-nav-row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       position: relative;
-      margin-bottom: 2.5rem;
+      min-width: 780px;
+      gap: 1rem;
+      padding: 0 10px;
     }
 
     .timeline-nav-row::before {
       content: '';
       position: absolute;
       top: 50%;
-      left: 0;
-      right: 0;
+      left: 20px;
+      right: 20px;
       height: 2px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
       transform: translateY(-50%);
       z-index: 1;
     }
@@ -270,11 +298,13 @@
       background: #11141B;
       border: 2px solid rgba(255, 255, 255, 0.2);
       border-radius: 9999px;
-      padding: 0.5rem 1.25rem;
+      padding: 0.55rem 1.25rem;
       color: #94A3B8;
       font-weight: 800;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
       transition: all 0.3s ease;
     }
 
@@ -283,8 +313,8 @@
       border-color: var(--primary-gold);
       background: var(--primary-gold);
       color: #0A0C10;
-      box-shadow: 0 0 16px rgba(255, 199, 0, 0.5);
-      transform: scale(1.08);
+      box-shadow: 0 0 18px rgba(255, 199, 0, 0.45);
+      transform: translateY(-2px);
     }
 
     .timeline-milestone-card {
@@ -294,9 +324,10 @@
       padding: 2.5rem;
       box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 2.5rem;
       align-items: center;
+      transition: opacity 0.2s ease;
     }
 
     .milestone-highlight-badge {
@@ -530,6 +561,7 @@
       .timeline-milestone-card {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 2rem;
       }
       .stat-strip-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -547,14 +579,47 @@
       .stat-strip-grid {
         grid-template-columns: 1fr;
       }
+      .timeline-interactive-container {
+        margin-top: 2rem;
+      }
+      .timeline-nav-wrapper {
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+      }
       .timeline-nav-row {
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-        gap: 0.5rem;
+        min-width: 680px;
+        gap: 0.6rem;
+      }
+      .timeline-year-node {
+        padding: 0.45rem 1rem;
+        font-size: 0.82rem;
+      }
+      .timeline-milestone-card {
+        padding: 1.5rem 1.2rem;
+        border-radius: 16px;
+      }
+      .milestone-title {
+        font-size: 1.3rem;
+      }
+      .milestone-desc {
+        font-size: 0.88rem;
+      }
+      .milestone-metrics-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+      .milestone-metric-num {
+        font-size: 1.2rem;
       }
       .badge-pos-bottom, .badge-pos-top {
         position: static;
         margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .milestone-metrics-list {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -706,7 +771,7 @@
         <div>
           <div class="strip-stat-num">4.2x</div>
           <div class="strip-stat-title">Average ROAS</div>
-          <div class="strip-stat-desc">Blended ad returns across Meta, TikTok & Google</div>
+          <div class="strip-stat-desc">Blended ad returns across Meta, Google & YouTube</div>
         </div>
         <div>
           <div class="strip-stat-num">24/7</div>
@@ -768,13 +833,15 @@
       </div>
 
       <div class="timeline-interactive-container">
-        <!-- Interactive Year Nodes -->
-        <div class="timeline-nav-row">
-          <button class="timeline-year-node" onclick="showTimelineYear(2021, this)">2021: Inception</button>
-          <button class="timeline-year-node" onclick="showTimelineYear(2022, this)">2022: E-Com Scale</button>
-          <button class="timeline-year-node" onclick="showTimelineYear(2023, this)">2023: Viral Studio</button>
-          <button class="timeline-year-node" onclick="showTimelineYear(2024, this)">2024: Global Reach</button>
-          <button class="timeline-year-node active" onclick="showTimelineYear(2026, this)">2025–2026: AI & Scale</button>
+        <!-- Interactive Year Nodes with Responsive Scroll Track -->
+        <div class="timeline-nav-wrapper">
+          <div class="timeline-nav-row">
+            <button class="timeline-year-node" onclick="showTimelineYear(2021, this)">2021: Inception</button>
+            <button class="timeline-year-node" onclick="showTimelineYear(2022, this)">2022: E-Com Scale</button>
+            <button class="timeline-year-node" onclick="showTimelineYear(2023, this)">2023: Viral Studio</button>
+            <button class="timeline-year-node" onclick="showTimelineYear(2024, this)">2024: Global Reach</button>
+            <button class="timeline-year-node active" onclick="showTimelineYear(2026, this)">2025–2026: AI & Scale</button>
+          </div>
         </div>
 
         <!-- Active Milestone Card Container -->
@@ -859,10 +926,10 @@
           <div class="team-info-body">
             <span class="team-role-tag">Viral Content Lead</span>
             <h3 class="team-name">Social Strategy Lead</h3>
-            <p class="team-bio">Short-form video maestro crafting high-hook TikTok & Instagram Reels generating millions of organic impressions.</p>
+            <p class="team-bio">Short-form video maestro crafting high-hook YouTube Shorts & Instagram Reels generating millions of organic impressions.</p>
             <div class="team-skills-chips">
               <span class="team-chip">Reels Hooks</span>
-              <span class="team-chip">TikTok Ads</span>
+              <span class="team-chip">YouTube Ads</span>
               <span class="team-chip">Viral Copy</span>
             </div>
           </div>
@@ -891,7 +958,7 @@
         <div class="tech-badge-item"><i class="fa-brands fa-amazon"></i> Amazon Brand Registry</div>
         <div class="tech-badge-item"><i class="fa-brands fa-meta"></i> Meta Ads Manager</div>
         <div class="tech-badge-item"><i class="fa-brands fa-google"></i> Google Performance Max</div>
-        <div class="tech-badge-item"><i class="fa-brands fa-tiktok"></i> TikTok For Business</div>
+        <div class="tech-badge-item"><i class="fa-brands fa-youtube"></i> YouTube Studio Pro</div>
         <div class="tech-badge-item"><i class="fa-brands fa-wordpress"></i> WooCommerce Pro</div>
       </div>
     </div>
@@ -995,7 +1062,7 @@
             <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Social Media Growth</a>
             <a href="graphics.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Graphic Design & Branding</a>
             <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Amazon A+ Content</a>
-            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & TikTok Paid Ads</a>
+            <a href="social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Meta & Google Paid Ads</a>
             <a href="ecommerce.html" class="footer-link"><i class="fa-solid fa-chevron-right link-arrow"></i> Conversion Rate Optimization</a>
           </div>
         </div>
@@ -1103,7 +1170,7 @@
       2023: {
         yearBadge: '<i class="fa-solid fa-video"></i> 2023 Creative Expansion',
         title: 'Viral Short-Form & 3D Packaging Studio',
-        desc: 'Launched our in-house 4K video production and 3D rendering pipeline, achieving over 10M+ organic views for partner brands across Instagram and TikTok.',
+        desc: 'Launched our in-house 4K video production and 3D rendering pipeline, achieving over 10M+ organic views for partner brands across Instagram and YouTube.',
         m1: '10M+', l1: 'Organic Video Views',
         m2: '120+', l2: '3D Render Bundles',
         subHead: 'Creative Authority',

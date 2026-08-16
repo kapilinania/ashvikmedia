@@ -170,6 +170,15 @@ button, input, select, textarea {
   outline: none;
 }
 
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background-color: #0E131F;
+  color: #FFFFFF;
+}
+
 button {
   cursor: pointer;
   background: none;

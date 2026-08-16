@@ -294,6 +294,16 @@
   transition: var(--transition);
 }
 
+.form-select {
+  color-scheme: dark;
+}
+
+.form-select option {
+  background-color: #0E131F !important;
+  color: #FFFFFF !important;
+  padding: 10px 14px;
+}
+
 .input-icon-wrapper {
   position: relative;
 }
@@ -1283,7 +1293,7 @@
   font-size: 1.2rem;
 }
 .platform-ig i { color: #E1306C; }
-.platform-tiktok i { color: #00F2FE; }
+.platform-google i { color: #4285F4; }
 .platform-meta i { color: #1877F2; }
 .platform-yt i { color: #FF0000; }
 .platform-in i { color: #0A66C2; }
@@ -1394,6 +1404,13 @@
   color: var(--text-dark-primary);
   font-size: 0.95rem;
   outline: none;
+  color-scheme: dark;
+}
+
+.calc-select option {
+  background-color: #0E131F !important;
+  color: #FFFFFF !important;
+  padding: 10px 14px;
 }
 
 .calc-slider {
@@ -1812,14 +1829,49 @@
   border-color: var(--primary-gold);
 }
 
-.store-sort-box select {
-  background: rgba(255,255,255,0.04);
+.store-sort-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--dark-border);
-  border-radius: var(--radius-md);
-  color: var(--text-dark-primary);
-  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.store-sort-box:hover,
+.store-sort-box:focus-within {
+  border-color: rgba(255, 199, 0, 0.4);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.store-sort-box label {
   font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.store-sort-box select {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 0.88rem;
+  font-weight: 600;
   outline: none;
+  cursor: pointer;
+  padding: 0.15rem 0.3rem;
+  color-scheme: dark;
+}
+
+.store-sort-box select option {
+  background-color: #0E131F !important;
+  color: #FFFFFF !important;
+  padding: 10px 14px;
 }
 
 .product-grid {

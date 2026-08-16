@@ -541,7 +541,7 @@ window.updateSocialCalc = function() {
   let multConv = 0.035;
   let roasVal = '5.2X';
 
-  if (platform === 'tiktok') { multReach = 9.2; multViews = 24.0; multConv = 0.028; roasVal = '6.4X'; }
+  if (platform === 'google') { multReach = 8.5; multViews = 20.0; multConv = 0.042; roasVal = '6.4X'; }
   else if (platform === 'meta') { multReach = 6.5; multViews = 12.0; multConv = 0.048; roasVal = '4.8X'; }
   else if (platform === 'youtube') { multReach = 5.8; multViews = 10.5; multConv = 0.040; roasVal = '5.0X'; }
   else if (platform === 'linkedin') { multReach = 3.2; multViews = 6.0; multConv = 0.065; roasVal = '7.1X'; }
@@ -639,7 +639,7 @@ const ecomProducts = [
     reviews: 89,
     badge: 'FEATURED BUNDLE',
     icon: 'fa-chart-line',
-    desc: 'Full suite solution: Shopify Store Build + Meta/TikTok Ad Creatives + 20 Viral Short Video Hooks + WhatsApp Order Automation.'
+    desc: 'Full suite solution: Shopify Store Build + Meta/Google Ad Creatives + 20 Viral Short Video Hooks + WhatsApp Order Automation.'
   },
   {
     id: 'p4',
@@ -732,6 +732,7 @@ window.filterProducts = function() {
   const query = document.getElementById('storeSearchInput')?.value.toLowerCase().trim() || '';
   const activePill = document.querySelector('.filter-pill.active');
   const cat = activePill ? activePill.dataset.category : 'all';
+  const sortVal = document.getElementById('storeSortSelect')?.value || 'featured';
 
   let filtered = ecomProducts.filter(p => {
     const matchCat = cat === 'all' || p.category === cat;
@@ -739,18 +740,15 @@ window.filterProducts = function() {
     return matchCat && matchQuery;
   });
 
+  if (sortVal === 'price-low') filtered.sort((a,b) => a.price - b.price);
+  else if (sortVal === 'price-high') filtered.sort((a,b) => b.price - a.price);
+  else if (sortVal === 'rating') filtered.sort((a,b) => b.rating - a.rating);
+
   window.renderProducts(filtered);
 };
 
 window.sortProducts = function() {
-  const sortVal = document.getElementById('storeSortSelect')?.value || 'featured';
-  let copy = [...ecomProducts];
-
-  if (sortVal === 'price-low') copy.sort((a,b) => a.price - b.price);
-  else if (sortVal === 'price-high') copy.sort((a,b) => b.price - a.price);
-  else if (sortVal === 'rating') copy.sort((a,b) => b.rating - a.rating);
-
-  window.renderProducts(copy);
+  window.filterProducts();
 };
 
 window.toggleCartDrawer = function() {
