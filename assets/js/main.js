@@ -734,23 +734,53 @@ window.toggleReelMute = function(btn) {
   }
 };
 
+// Helper to dynamically resolve relative asset paths based on whether current page is in a subfolder
+function resolveAssetPath(path) {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  if (path.startsWith('../')) return path;
+
+  const isSubfolder = document.querySelector('link[href^="../assets"]') !== null || 
+                      document.querySelector('script[src^="../assets"]') !== null ||
+                      window.location.pathname.includes('/ecommerce') ||
+                      window.location.pathname.includes('/social-media') ||
+                      window.location.pathname.includes('/graphics') ||
+                      window.location.pathname.includes('/services') ||
+                      window.location.pathname.includes('/about') ||
+                      window.location.pathname.includes('/contact') ||
+                      window.location.pathname.includes('/blog') ||
+                      window.location.pathname.includes('/privacy-policy') ||
+                      window.location.pathname.includes('/terms');
+
+  let clean = path;
+  if (clean.startsWith('./')) clean = clean.substring(2);
+  if (clean.startsWith('/')) clean = clean.substring(1);
+
+  return isSubfolder ? '../' + clean : clean;
+}
+
 window.openReelModal = function(src, type, title) {
   const modal = document.getElementById('reelModal');
   const overlay = document.getElementById('reelModalOverlay');
   const body = document.getElementById('reelModalBody');
   if (!modal || !overlay || !body) return;
 
+  const resolvedSrc = resolveAssetPath(src);
+  const fallbackImg = resolveAssetPath('assets/images/reel/1.jpg');
+
   let mediaHtml = '';
   if (type === 'video') {
     mediaHtml = `
       <div class="modal-media-wrap">
-        <video src="${src}" controls autoplay playsinline loop style="width: 100%; height: 100%;"></video>
+        <video src="${resolvedSrc}" controls autoplay playsinline loop style="width: 100%; height: 100%;"></video>
       </div>
     `;
   } else {
     mediaHtml = `
       <div class="modal-media-wrap">
-        <img src="${src}" alt="${title}">
+        <img src="${resolvedSrc}" alt="${title}" onerror="this.onerror=null; this.src='${fallbackImg}';">
       </div>
     `;
   }
@@ -804,7 +834,7 @@ const ecomProducts = [
     rating: 5.0,
     reviews: 64,
     badge: 'TOP SELLER',
-    image: 'assets/images/product/1.jpg',
+    image: '../assets/images/product/1.jpg',
     desc: 'Complete end-to-end seller onboarding, GST & brand verification, category approval, brand registry, and initial catalog setup for high-speed launch.',
     highlights: ['Brand Registry', 'GST & Bank Setup', 'Fast-Track Launch']
   },
@@ -816,7 +846,7 @@ const ecomProducts = [
     rating: 4.9,
     reviews: 82,
     badge: 'POPULAR',
-    image: 'assets/images/product/2.jpg',
+    image: '../assets/images/product/2.jpg',
     desc: 'Dedicated Amazon account management including daily seller central health monitoring, inventory replenishment alerts, pricing control, and case management.',
     highlights: ['Daily Health Check', 'Inventory Alerts', 'Case Support']
   },
@@ -828,7 +858,7 @@ const ecomProducts = [
     rating: 5.0,
     reviews: 95,
     badge: 'HIGH ROAS',
-    image: 'assets/images/product/3.jpg',
+    image: '../assets/images/product/3.jpg',
     desc: 'Sponsored Products, Brands & Display campaign optimization with AI keyword harvesting, negative targeting, bid adjustments, and lowering TACoS/ACoS.',
     highlights: ['TACoS Reduction', 'AI Keyword Bidding', 'Sponsored Ads']
   },
@@ -840,7 +870,7 @@ const ecomProducts = [
     rating: 4.9,
     reviews: 58,
     badge: 'FEATURED',
-    image: 'assets/images/product/4.jpg',
+    image: '../assets/images/product/4.jpg',
     desc: 'Bespoke multi-page immersive brand store design with dynamic product tiles, lifestyle banners, video showcases, and curated category collections.',
     highlights: ['Custom Storefront', 'Lifestyle Banners', 'Curated Pages']
   },
@@ -852,7 +882,7 @@ const ecomProducts = [
     rating: 4.9,
     reviews: 71,
     badge: 'HIGH CONVERTING',
-    image: 'assets/images/product/6.jpg',
+    image: '../assets/images/product/6.jpg',
     desc: 'High-impact 3D product renders, unboxing & feature walkthrough videos optimized specifically for Amazon video ads and main image carousel slots.',
     highlights: ['3D Product Video', 'High-ROAS Video Ads', 'Feature Showcase']
   },
@@ -864,7 +894,7 @@ const ecomProducts = [
     rating: 4.8,
     reviews: 53,
     badge: 'MULTI-CHANNEL',
-    image: 'assets/images/product/7.jpg',
+    image: '../assets/images/product/7.jpg',
     desc: 'Multi-marketplace bulk catalog mapping and seamless listing synchronization across Amazon, Flipkart, Shopify, eBay, Walmart, and Meesho.',
     highlights: ['Multi-Marketplace', 'Bulk Catalog Sync', 'Zero Error Mapping']
   },
@@ -876,7 +906,7 @@ const ecomProducts = [
     rating: 5.0,
     reviews: 89,
     badge: 'BESTSELLER',
-    image: 'assets/images/product/8.jpg',
+    image: '../assets/images/product/8.jpg',
     desc: 'High-ranking keyword indexed titles, persuasive bullet points, HTML descriptions, backend search terms, and mobile-optimized search conversion copy.',
     highlights: ['Keyword Indexing', 'High CTR Titles', 'A9 Algorithm SEO']
   },
@@ -888,13 +918,18 @@ const ecomProducts = [
     rating: 5.0,
     reviews: 112,
     badge: 'MUST HAVE',
-    image: 'assets/images/product/9.jpg',
+    image: '../assets/images/product/9.jpg',
     desc: '7 Premium custom A+ graphic modules, comparison charts, high-resolution lifestyle visual storytelling, and mobile-responsive EBC design layout.',
     highlights: ['7 Custom Modules', 'Comparison Matrix', '3X Conversions']
   }
 ];
 
 let cart = JSON.parse(localStorage.getItem('ashvik_cart')) || [];
+// Clean up any old broken image paths stored in localStorage
+cart = cart.map(item => ({
+  ...item,
+  image: resolveAssetPath(item.image)
+}));
 
 window.renderStarRating = function(rating) {
   let starsHtml = '';
@@ -919,12 +954,16 @@ window.renderProducts = function(items = ecomProducts) {
     return;
   }
 
-  grid.innerHTML = items.map(p => `
+  const fallbackSrc = resolveAssetPath('assets/images/product/1.jpg');
+
+  grid.innerHTML = items.map(p => {
+    const imgSrc = resolveAssetPath(p.image);
+    return `
     <div class="product-card">
       <div class="product-card-top">
         ${p.badge ? `<div class="product-badge-tag"><i class="fa-solid fa-sparkles"></i> ${p.badge}</div>` : ''}
         <div class="product-img-box">
-          <img src="${p.image}" alt="${p.title}" loading="lazy" onerror="this.src='assets/images/product/1.jpg';">
+          <img src="${imgSrc}" alt="${p.title}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSrc}';">
           <button class="product-quickview-trigger" onclick="openQuickView('${p.id}')" title="Quick Overview">
             <i class="fa-solid fa-eye"></i> Quick View
           </button>
@@ -959,7 +998,8 @@ window.renderProducts = function(items = ecomProducts) {
         </div>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 };
 
 window.filterProducts = function() {
@@ -1053,9 +1093,13 @@ window.updateCartUI = function() {
     return;
   }
 
-  body.innerHTML = cart.map((item, idx) => `
+  const fallbackSrc = resolveAssetPath('assets/images/product/1.jpg');
+
+  body.innerHTML = cart.map((item, idx) => {
+    const imgSrc = resolveAssetPath(item.image);
+    return `
     <div class="cart-item">
-      <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+      <img src="${imgSrc}" alt="${item.title}" class="cart-item-img" onerror="this.onerror=null; this.src='${fallbackSrc}';">
       <div class="cart-item-info">
         <div class="cart-item-title">${item.title}</div>
         <div class="cart-item-tag">${item.categoryName || item.category}</div>
@@ -1067,7 +1111,8 @@ window.updateCartUI = function() {
       </div>
       <button class="cart-item-remove" onclick="removeFromCart(${idx})" title="Remove"><i class="fa-solid fa-trash"></i></button>
     </div>
-  `).join('');
+  `;
+  }).join('');
 };
 
 // WhatsApp Direct Checkout & LocalStorage Inquiry Persistence
@@ -1228,11 +1273,13 @@ window.openQuickView = function(id) {
   const body = document.getElementById('qvBody');
 
   if (modal && overlay && body) {
+    const imgSrc = resolveAssetPath(item.image);
+    const fallbackSrc = resolveAssetPath('assets/images/product/1.jpg');
     title.innerText = item.title;
     body.innerHTML = `
       <div class="quickview-grid">
         <div class="quickview-img-box">
-          <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='assets/images/product/1.jpg';">
+          <img src="${imgSrc}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSrc}';">
         </div>
         <div class="quickview-info">
           <div class="product-cat">${item.categoryName || item.category.toUpperCase()}</div>
