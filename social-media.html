@@ -263,64 +263,95 @@
   </section>
 
   <!-- Interactive 3D Social Content Feed Showcase -->
-  <section class="section-padding">
+  <section class="section-padding" id="viral-reels-showcase">
     <div class="container">
-      <div class="text-center" style="max-width: 700px; margin: 0 auto 3rem auto;">
-        <div class="section-tag section-tag-gold"><i class="fa-solid fa-photo-film"></i> CREATIVE GALLERY</div>
+      <div class="text-center" style="max-width: 750px; margin: 0 auto 3rem auto;">
+        <div class="section-tag section-tag-gold"><i class="fa-solid fa-clapperboard"></i> LIVE CREATIVE VAULT</div>
         <h2 class="section-title">Viral Reels & High-ROAS Ad Showcase</h2>
         <p class="section-description">
-          Take a look at the short-form videos, carousels, and high-converting ad concepts crafted by our creative team.
+          Experience our high-retention short-form video reels, viral hooks, and high-converting ad concepts. Videos autoplay in seamless infinite loops with interactive audio & playback controls.
         </p>
 
         <!-- Filter Tags -->
         <div class="feed-tabs" id="feedTabs">
-          <button class="feed-tab active" data-filter="all">All Content</button>
-          <button class="feed-tab" data-filter="reels">Viral Reels</button>
-          <button class="feed-tab" data-filter="ads">Meta & Google Ads</button>
-          <button class="feed-tab" data-filter="carousels">Carousels</button>
+          <button class="feed-tab active" data-filter="all">All Showcase (13)</button>
+          <button class="feed-tab" data-filter="reels"><i class="fa-solid fa-video text-gold"></i> Viral Video Reels (7)</button>
+          <button class="feed-tab" data-filter="creatives"><i class="fa-solid fa-photo-film text-gold"></i> High-ROAS Creatives (6)</button>
         </div>
       </div>
 
       <div class="feed-grid" id="feedGrid">
-        <!-- Feed Card 1 -->
+        
+        <!-- Item 1: Reel 1 (Video) -->
         <div class="feed-card" data-category="reels">
           <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
             <div>
               <div class="feed-user">@ashvikmedia</div>
               <div class="feed-subtitle">Instagram Reel • 2.4M Views</div>
             </div>
-            <i class="fa-brands fa-instagram text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
+            <i class="fa-brands fa-instagram text-gold feed-platform-icon"></i>
           </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder reel-bg-1">
+          <div class="feed-media-box video-media-box" onclick="toggleReelPlay(this)">
+            <div class="reel-loader-overlay">
+              <img src="assets/images/logos/logo-light.png" alt="Loading" class="reel-loader-logo">
+              <div class="reel-spinner"></div>
+            </div>
+            <video class="feed-reel-video" poster="assets/images/reel/1.jpg" autoplay loop muted playsinline preload="metadata" onloadeddata="handleReelLoaded(this)">
+              <source src="assets/images/reel/reel1.mp4" type="video/mp4">
+            </video>
+            <div class="reel-controls-overlay">
               <div class="ad-badge-pill">🔥 2.4M VIEWS</div>
-              <div class="play-pulse-btn"><i class="fa-solid fa-play"></i></div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn mute-btn" onclick="event.stopPropagation(); toggleReelMute(this);" title="Mute/Unmute Audio">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <button class="reel-action-btn zoom-btn" onclick="event.stopPropagation(); openReelModal('assets/images/reel/reel1.mp4', 'video', '3-Second D2C Viral Hook Reel');" title="Expand Fullscreen">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+              <div class="reel-center-play-btn" title="Click to Pause/Play">
+                <i class="fa-solid fa-play"></i>
+              </div>
               <div class="feed-overlay-stats">
                 <span><i class="fa-solid fa-eye"></i> 2.4M Views</span>
                 <span><i class="fa-solid fa-heart"></i> 182K Likes</span>
+              </div>
+              <div class="reel-progress-track">
+                <div class="reel-progress-bar"></div>
               </div>
             </div>
           </div>
           <div class="feed-card-footer">
             <p class="feed-caption"><strong>"3-Second D2C Hook Reel scaling monthly order volume by 310%."</strong></p>
-            <div class="feed-tags">#ViralReels #D2CGrowth</div>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#ViralReels #D2CGrowth</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Viral%20Reel%201!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Feed Card 2 -->
-        <div class="feed-card" data-category="ads">
+        <!-- Item 2: Creative 1 (Image) -->
+        <div class="feed-card" data-category="creatives">
           <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
             <div>
               <div class="feed-user">@ashvikmedia</div>
-              <div class="feed-subtitle">Meta Paid Ad • 9.2X ROAS</div>
+              <div class="feed-subtitle">Meta Paid Ad • 9.4X ROAS</div>
             </div>
-            <i class="fa-brands fa-facebook text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
+            <i class="fa-brands fa-facebook text-gold feed-platform-icon"></i>
           </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder ad-bg-1">
-              <div class="ad-badge-pill">⚡ 9.2X ROAS</div>
+          <div class="feed-media-box image-media-box" onclick="openReelModal('assets/images/reel/1.jpg', 'image', 'High-Converting E-Commerce Graphic');">
+            <img src="assets/images/reel/1.jpg" alt="E-Commerce Graphic" class="feed-image-media" loading="lazy">
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">⚡ 9.4X ROAS</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn zoom-btn" title="View Full Creative">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+              </div>
               <div class="feed-overlay-stats">
                 <span><i class="fa-solid fa-cart-shopping"></i> 4,820 Sales</span>
                 <span><i class="fa-solid fa-bolt"></i> ₹14.8L Rev</span>
@@ -328,186 +359,502 @@
             </div>
           </div>
           <div class="feed-card-footer">
-            <p class="feed-caption"><strong>"UGC problem-solution ad hook driving high-converting checkout."</strong></p>
-            <div class="feed-tags">#MetaAds #EcomScaling</div>
+            <p class="feed-caption"><strong>"High-converting E-Commerce graphic showcase driving instant checkout."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#MetaAds #CreativeDesign</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Creative%20Ad%201!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Feed Card 3 -->
+        <!-- Item 3: Reel 2 (Video) -->
         <div class="feed-card" data-category="reels">
           <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
             <div>
               <div class="feed-user">@ashvikmedia</div>
-              <div class="feed-subtitle">YouTube Shorts • Viral Trend</div>
+              <div class="feed-subtitle">YouTube Shorts • 1.8M Views</div>
             </div>
-            <i class="fa-brands fa-youtube text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
+            <i class="fa-brands fa-youtube text-gold feed-platform-icon"></i>
           </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder reel-bg-2">
+          <div class="feed-media-box video-media-box" onclick="toggleReelPlay(this)">
+            <div class="reel-loader-overlay">
+              <img src="assets/images/logos/logo-light.png" alt="Loading" class="reel-loader-logo">
+              <div class="reel-spinner"></div>
+            </div>
+            <video class="feed-reel-video" poster="assets/images/reel/2.jpg" autoplay loop muted playsinline preload="metadata" onloadeddata="handleReelLoaded(this)">
+              <source src="assets/images/reel/reel2.mp4" type="video/mp4">
+            </video>
+            <div class="reel-controls-overlay">
               <div class="ad-badge-pill">🚀 VIRAL TREND</div>
-              <div class="play-pulse-btn"><i class="fa-solid fa-play"></i></div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn mute-btn" onclick="event.stopPropagation(); toggleReelMute(this);" title="Mute/Unmute Audio">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <button class="reel-action-btn zoom-btn" onclick="event.stopPropagation(); openReelModal('assets/images/reel/reel2.mp4', 'video', 'Trending Dynamic Transition Reel');" title="Expand Fullscreen">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+              <div class="reel-center-play-btn" title="Click to Pause/Play">
+                <i class="fa-solid fa-play"></i>
+              </div>
               <div class="feed-overlay-stats">
                 <span><i class="fa-solid fa-eye"></i> 1.8M Views</span>
                 <span><i class="fa-solid fa-share-nodes"></i> 94K Shares</span>
               </div>
-            </div>
-          </div>
-          <div class="feed-card-footer">
-            <p class="feed-caption"><strong>"Trending audio sync combined with fast-cut aesthetic motion cuts."</strong></p>
-            <div class="feed-tags">#YouTubeShorts #ShortsViral</div>
-          </div>
-        </div>
-
-        <!-- Feed Card 4 -->
-        <div class="feed-card" data-category="carousels">
-          <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
-            <div>
-              <div class="feed-user">@ashvikmedia</div>
-              <div class="feed-subtitle">LinkedIn Deck • Educational</div>
-            </div>
-            <i class="fa-brands fa-linkedin-in text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
-          </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder carousel-bg-1">
-              <div class="ad-badge-pill">💎 22.4K SAVES</div>
-              <div class="carousel-slide-indicator">1 / 7 Slides</div>
-              <div class="feed-overlay-stats">
-                <span><i class="fa-solid fa-bookmark"></i> 22.4K Saves</span>
+              <div class="reel-progress-track">
+                <div class="reel-progress-bar"></div>
               </div>
             </div>
           </div>
           <div class="feed-card-footer">
-            <p class="feed-caption"><strong>"7 Graphic Design secrets that doubled profile bookmark rates."</strong></p>
-            <div class="feed-tags">#Branding #LinkedInGrowth</div>
+            <p class="feed-caption"><strong>"Trending audio sync combined with fast-cut dynamic motion transitions."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#YouTubeShorts #ShortsViral</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Viral%20Reel%202!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Feed Card 5 -->
-        <div class="feed-card" data-category="reels">
+        <!-- Item 4: Creative 2 (Image) -->
+        <div class="feed-card" data-category="creatives">
           <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
             <div>
               <div class="feed-user">@ashvikmedia</div>
-              <div class="feed-subtitle">Founder Reel • Story Arc</div>
+              <div class="feed-subtitle">Instagram Deck • 28K Saves</div>
             </div>
-            <i class="fa-brands fa-instagram text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
+            <i class="fa-brands fa-instagram text-gold feed-platform-icon"></i>
           </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder reel-bg-1">
+          <div class="feed-media-box image-media-box" onclick="openReelModal('assets/images/reel/2.jpg', 'image', 'Viral Carousel Visual Identity');">
+            <img src="assets/images/reel/2.jpg" alt="Carousel Deck" class="feed-image-media" loading="lazy">
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">💎 28K SAVES</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn zoom-btn" title="View Full Creative">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+              </div>
+              <div class="feed-overlay-stats">
+                <span><i class="fa-solid fa-bookmark"></i> 28.4K Saves</span>
+                <span><i class="fa-solid fa-arrow-trend-up"></i> 4.2X CTR</span>
+              </div>
+            </div>
+          </div>
+          <div class="feed-card-footer">
+            <p class="feed-caption"><strong>"Viral carousel visual identity & product storytelling design layout."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#Branding #CarouselDesign</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Creative%202!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Reel 3 (Video) -->
+        <div class="feed-card" data-category="reels">
+          <div class="feed-card-header">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
+            <div>
+              <div class="feed-user">@ashvikmedia</div>
+              <div class="feed-subtitle">Founder Reel • 890K Views</div>
+            </div>
+            <i class="fa-brands fa-instagram text-gold feed-platform-icon"></i>
+          </div>
+          <div class="feed-media-box video-media-box" onclick="toggleReelPlay(this)">
+            <div class="reel-loader-overlay">
+              <img src="assets/images/logos/logo-light.png" alt="Loading" class="reel-loader-logo">
+              <div class="reel-spinner"></div>
+            </div>
+            <video class="feed-reel-video" poster="assets/images/reel/3.jpg" autoplay loop muted playsinline preload="metadata" onloadeddata="handleReelLoaded(this)">
+              <source src="assets/images/reel/reel3.mp4" type="video/mp4">
+            </video>
+            <div class="reel-controls-overlay">
               <div class="ad-badge-pill">👑 890K VIEWS</div>
-              <div class="play-pulse-btn"><i class="fa-solid fa-play"></i></div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn mute-btn" onclick="event.stopPropagation(); toggleReelMute(this);" title="Mute/Unmute Audio">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <button class="reel-action-btn zoom-btn" onclick="event.stopPropagation(); openReelModal('assets/images/reel/reel3.mp4', 'video', 'Founder Story Arc Conversion Reel');" title="Expand Fullscreen">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+              <div class="reel-center-play-btn" title="Click to Pause/Play">
+                <i class="fa-solid fa-play"></i>
+              </div>
               <div class="feed-overlay-stats">
                 <span><i class="fa-solid fa-eye"></i> 890K Views</span>
                 <span><i class="fa-solid fa-user-plus"></i> 12K Leads</span>
               </div>
-            </div>
-          </div>
-          <div class="feed-card-footer">
-            <p class="feed-caption"><strong>"Authentic founder arc building instant trust & qualified leads."</strong></p>
-            <div class="feed-tags">#BrandStory #Founder</div>
-          </div>
-        </div>
-
-        <!-- Feed Card 6 -->
-        <div class="feed-card" data-category="ads">
-          <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
-            <div>
-              <div class="feed-user">@ashvikmedia</div>
-              <div class="feed-subtitle">Google PMax Ad • 7.8X ROAS</div>
-            </div>
-            <i class="fa-brands fa-google text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
-          </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder ad-bg-1">
-              <div class="ad-badge-pill">⚡ 7.8X ROAS</div>
-              <div class="feed-overlay-stats">
-                <span><i class="fa-solid fa-bag-shopping"></i> 5,400 Sales</span>
+              <div class="reel-progress-track">
+                <div class="reel-progress-bar"></div>
               </div>
             </div>
           </div>
           <div class="feed-card-footer">
-            <p class="feed-caption"><strong>"Native creator reaction video driving rapid impulse purchases."</strong></p>
-            <div class="feed-tags">#GoogleAds #PerformancePMax</div>
+            <p class="feed-caption"><strong>"Authentic founder arc building instant trust & high-intent leads."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#BrandStory #FounderReel</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Viral%20Reel%203!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Feed Card 7 -->
-        <div class="feed-card" data-category="reels">
+        <!-- Item 6: Creative 3 (Image) -->
+        <div class="feed-card" data-category="creatives">
           <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
             <div>
               <div class="feed-user">@ashvikmedia</div>
-              <div class="feed-subtitle">Product Reel • Macro ASMR</div>
+              <div class="feed-subtitle">Performance Ad • 8.6X ROAS</div>
             </div>
-            <i class="fa-brands fa-youtube text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
+            <i class="fa-brands fa-google text-gold feed-platform-icon"></i>
           </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder reel-bg-2">
+          <div class="feed-media-box image-media-box" onclick="openReelModal('assets/images/reel/3.jpg', 'image', 'Direct Response Product Creative');">
+            <img src="assets/images/reel/3.jpg" alt="Performance Ad" class="feed-image-media" loading="lazy">
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">🎯 HIGH CONVERTING</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn zoom-btn" title="View Full Creative">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+              </div>
+              <div class="feed-overlay-stats">
+                <span><i class="fa-solid fa-bag-shopping"></i> 6,120 Sales</span>
+                <span><i class="fa-solid fa-bolt"></i> 8.6X ROAS</span>
+              </div>
+            </div>
+          </div>
+          <div class="feed-card-footer">
+            <p class="feed-caption"><strong>"Direct response product feature highlight & conversion creative."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#ProductAd #PerformanceCreative</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Creative%203!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7: Reel 4 (Video) -->
+        <div class="feed-card" data-category="reels">
+          <div class="feed-card-header">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
+            <div>
+              <div class="feed-user">@ashvikmedia</div>
+              <div class="feed-subtitle">Meta Paid Ad • 8.8X ROAS</div>
+            </div>
+            <i class="fa-brands fa-facebook text-gold feed-platform-icon"></i>
+          </div>
+          <div class="feed-media-box video-media-box" onclick="toggleReelPlay(this)">
+            <div class="reel-loader-overlay">
+              <img src="assets/images/logos/logo-light.png" alt="Loading" class="reel-loader-logo">
+              <div class="reel-spinner"></div>
+            </div>
+            <video class="feed-reel-video" poster="assets/images/reel/4.jpg" autoplay loop muted playsinline preload="metadata" onloadeddata="handleReelLoaded(this)">
+              <source src="assets/images/reel/reel4.mp4" type="video/mp4">
+            </video>
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">⚡ 8.8X ROAS</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn mute-btn" onclick="event.stopPropagation(); toggleReelMute(this);" title="Mute/Unmute Audio">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <button class="reel-action-btn zoom-btn" onclick="event.stopPropagation(); openReelModal('assets/images/reel/reel4.mp4', 'video', 'UGC Problem Solution Video Ad');" title="Expand Fullscreen">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+              <div class="reel-center-play-btn" title="Click to Pause/Play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="feed-overlay-stats">
+                <span><i class="fa-solid fa-eye"></i> 1.2M Views</span>
+                <span><i class="fa-solid fa-cart-shopping"></i> ₹22.5L Rev</span>
+              </div>
+              <div class="reel-progress-track">
+                <div class="reel-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="feed-card-footer">
+            <p class="feed-caption"><strong>"UGC problem-solution video ad hook driving rapid impulse checkouts."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#UGCAds #MetaGrowth</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Viral%20Reel%204!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 8: Creative 4 (Image) -->
+        <div class="feed-card" data-category="creatives">
+          <div class="feed-card-header">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
+            <div>
+              <div class="feed-user">@ashvikmedia</div>
+              <div class="feed-subtitle">Brand Identity • 350K Reach</div>
+            </div>
+            <i class="fa-brands fa-instagram text-gold feed-platform-icon"></i>
+          </div>
+          <div class="feed-media-box image-media-box" onclick="openReelModal('assets/images/reel/4.jpg', 'image', 'Luxury Aesthetic Visual Identity');">
+            <img src="assets/images/reel/4.jpg" alt="Brand Identity" class="feed-image-media" loading="lazy">
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">🎨 LUXURY BRANDING</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn zoom-btn" title="View Full Creative">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+              </div>
+              <div class="feed-overlay-stats">
+                <span><i class="fa-solid fa-eye"></i> 350K Reach</span>
+                <span><i class="fa-solid fa-thumbs-up"></i> 99.2% Positive</span>
+              </div>
+            </div>
+          </div>
+          <div class="feed-card-footer">
+            <p class="feed-caption"><strong>"Luxury aesthetic visual identity & synchronized social color palette."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#LuxuryBranding #Aesthetic</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Creative%204!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 9: Reel 5 (Video) -->
+        <div class="feed-card" data-category="reels">
+          <div class="feed-card-header">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
+            <div>
+              <div class="feed-user">@ashvikmedia</div>
+              <div class="feed-subtitle">Product Reel • 1.5M Views</div>
+            </div>
+            <i class="fa-brands fa-youtube text-gold feed-platform-icon"></i>
+          </div>
+          <div class="feed-media-box video-media-box" onclick="toggleReelPlay(this)">
+            <div class="reel-loader-overlay">
+              <img src="assets/images/logos/logo-light.png" alt="Loading" class="reel-loader-logo">
+              <div class="reel-spinner"></div>
+            </div>
+            <video class="feed-reel-video" poster="assets/images/reel/5.jpg" autoplay loop muted playsinline preload="metadata" onloadeddata="handleReelLoaded(this)">
+              <source src="assets/images/reel/reel5.mp4" type="video/mp4">
+            </video>
+            <div class="reel-controls-overlay">
               <div class="ad-badge-pill">✨ 1.5M VIEWS</div>
-              <div class="play-pulse-btn"><i class="fa-solid fa-play"></i></div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn mute-btn" onclick="event.stopPropagation(); toggleReelMute(this);" title="Mute/Unmute Audio">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <button class="reel-action-btn zoom-btn" onclick="event.stopPropagation(); openReelModal('assets/images/reel/reel5.mp4', 'video', 'Cinematic Macro ASMR Product Reel');" title="Expand Fullscreen">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+              <div class="reel-center-play-btn" title="Click to Pause/Play">
+                <i class="fa-solid fa-play"></i>
+              </div>
               <div class="feed-overlay-stats">
                 <span><i class="fa-solid fa-eye"></i> 1.5M Views</span>
                 <span><i class="fa-solid fa-heart"></i> 96K Likes</span>
               </div>
-            </div>
-          </div>
-          <div class="feed-card-footer">
-            <p class="feed-caption"><strong>"Crisp audio & macro detail shots for luxury product branding."</strong></p>
-            <div class="feed-tags">#ProductReel #ASMR</div>
-          </div>
-        </div>
-
-        <!-- Feed Card 8 -->
-        <div class="feed-card" data-category="carousels">
-          <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
-            <div>
-              <div class="feed-user">@ashvikmedia</div>
-              <div class="feed-subtitle">Visual Proof • Carousel Ad</div>
-            </div>
-            <i class="fa-brands fa-instagram text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
-          </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder carousel-bg-1">
-              <div class="ad-badge-pill">🔥 14.2K SAVES</div>
-              <div class="carousel-slide-indicator">1 / 5 Slides</div>
-              <div class="feed-overlay-stats">
-                <span><i class="fa-solid fa-arrow-trend-up"></i> 3.4X CTR</span>
+              <div class="reel-progress-track">
+                <div class="reel-progress-bar"></div>
               </div>
             </div>
           </div>
           <div class="feed-card-footer">
-            <p class="feed-caption"><strong>"Side-by-side visual transformation deck slashing CPA by 42%."</strong></p>
-            <div class="feed-tags">#VisualProof #AdCreative</div>
+            <p class="feed-caption"><strong>"Cinematic macro detail video shots for premium luxury product branding."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#ProductReel #Cinematic</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Viral%20Reel%205!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Feed Card 9 -->
-        <div class="feed-card" data-category="ads">
+        <!-- Item 10: Creative 5 (Image) -->
+        <div class="feed-card" data-category="creatives">
           <div class="feed-card-header">
-            <img src="assets/images/logos/logo-light.png" alt="Avatar" class="feed-avatar">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
             <div>
               <div class="feed-user">@ashvikmedia</div>
-              <div class="feed-subtitle">Retargeting Story • 11.4X ROAS</div>
+              <div class="feed-subtitle">Flash Sale Ad • 11.2X ROAS</div>
             </div>
-            <i class="fa-brands fa-facebook text-gold" style="margin-left: auto; font-size: 1.2rem;"></i>
+            <i class="fa-brands fa-facebook text-gold feed-platform-icon"></i>
           </div>
-          <div class="feed-media-box">
-            <div class="feed-media-placeholder ad-bg-1">
-              <div class="ad-badge-pill">🚀 11.4X ROAS</div>
+          <div class="feed-media-box image-media-box" onclick="openReelModal('assets/images/reel/5.jpg', 'image', 'Urgency-Driven Promotional Banner');">
+            <img src="assets/images/reel/5.jpg" alt="Festive Sale Ad" class="feed-image-media" loading="lazy">
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">🔥 11.2X ROAS</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn zoom-btn" title="View Full Creative">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+              </div>
               <div class="feed-overlay-stats">
-                <span><i class="fa-solid fa-cart-check"></i> ₹8.2L Rev</span>
+                <span><i class="fa-solid fa-bag-shopping"></i> 8,400 Orders</span>
+                <span><i class="fa-solid fa-bolt"></i> High ROAS</span>
               </div>
             </div>
           </div>
           <div class="feed-card-footer">
-            <p class="feed-caption"><strong>"Urgency-driven story countdown recovering abandoned carts."</strong></p>
-            <div class="feed-tags">#Retargeting #CRO</div>
+            <p class="feed-caption"><strong>"Urgency-driven promotional banner & festive campaign creative artwork."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#FestiveCampaign #HighROAS</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Creative%205!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
           </div>
         </div>
+
+        <!-- Item 11: Reel 6 (Video) -->
+        <div class="feed-card" data-category="reels">
+          <div class="feed-card-header">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
+            <div>
+              <div class="feed-user">@ashvikmedia</div>
+              <div class="feed-subtitle">Motion Graphic • 2.1M Views</div>
+            </div>
+            <i class="fa-brands fa-instagram text-gold feed-platform-icon"></i>
+          </div>
+          <div class="feed-media-box video-media-box" onclick="toggleReelPlay(this)">
+            <div class="reel-loader-overlay">
+              <img src="assets/images/logos/logo-light.png" alt="Loading" class="reel-loader-logo">
+              <div class="reel-spinner"></div>
+            </div>
+            <video class="feed-reel-video" poster="assets/images/reel/6.jpg" autoplay loop muted playsinline preload="metadata" onloadeddata="handleReelLoaded(this)">
+              <source src="assets/images/reel/reel6.mp4" type="video/mp4">
+            </video>
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">🚀 TOP PERFORMER</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn mute-btn" onclick="event.stopPropagation(); toggleReelMute(this);" title="Mute/Unmute Audio">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <button class="reel-action-btn zoom-btn" onclick="event.stopPropagation(); openReelModal('assets/images/reel/reel6.mp4', 'video', 'Motion Graphic & Kinetic Typography Reel');" title="Expand Fullscreen">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+              <div class="reel-center-play-btn" title="Click to Pause/Play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="feed-overlay-stats">
+                <span><i class="fa-solid fa-eye"></i> 2.1M Views</span>
+                <span><i class="fa-solid fa-heart"></i> 140K Likes</span>
+              </div>
+              <div class="reel-progress-track">
+                <div class="reel-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="feed-card-footer">
+            <p class="feed-caption"><strong>"Engaging kinetic typography & motion graphic animation reel."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#MotionGraphics #Kinetic</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Viral%20Reel%206!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 12: Creative 6 (Image) -->
+        <div class="feed-card" data-category="creatives">
+          <div class="feed-card-header">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
+            <div>
+              <div class="feed-user">@ashvikmedia</div>
+              <div class="feed-subtitle">Social Grid Theme • 50K Growth</div>
+            </div>
+            <i class="fa-brands fa-instagram text-gold feed-platform-icon"></i>
+          </div>
+          <div class="feed-media-box image-media-box" onclick="openReelModal('assets/images/reel/6.jpg', 'image', 'Curated Cohesive Aesthetic Grid');">
+            <img src="assets/images/reel/6.jpg" alt="Social Grid" class="feed-image-media" loading="lazy">
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">💎 9-GRID THEME</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn zoom-btn" title="View Full Creative">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+              </div>
+              <div class="feed-overlay-stats">
+                <span><i class="fa-solid fa-users"></i> 50K Followers</span>
+                <span><i class="fa-solid fa-star"></i> 4.8 Rating</span>
+              </div>
+            </div>
+          </div>
+          <div class="feed-card-footer">
+            <p class="feed-caption"><strong>"Curated cohesive aesthetic grid layout for high-ticket premium brands."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#InstagramGrid #FeedTheme</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Creative%206!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 13: Reel 7 (Video) -->
+        <div class="feed-card" data-category="reels">
+          <div class="feed-card-header">
+            <img src="assets/images/logos/logo-light.png" alt="Ashvik Media" class="feed-avatar">
+            <div>
+              <div class="feed-user">@ashvikmedia</div>
+              <div class="feed-subtitle">Viral Showcase • 3.1M Views</div>
+            </div>
+            <i class="fa-brands fa-instagram text-gold feed-platform-icon"></i>
+          </div>
+          <div class="feed-media-box video-media-box" onclick="toggleReelPlay(this)">
+            <div class="reel-loader-overlay">
+              <img src="assets/images/logos/logo-light.png" alt="Loading" class="reel-loader-logo">
+              <div class="reel-spinner"></div>
+            </div>
+            <video class="feed-reel-video" poster="assets/images/reel/1.jpg" autoplay loop muted playsinline preload="metadata" onloadeddata="handleReelLoaded(this)">
+              <source src="assets/images/reel/reel7.mp4" type="video/mp4">
+            </video>
+            <div class="reel-controls-overlay">
+              <div class="ad-badge-pill">🏆 3.1M VIEWS</div>
+              <div class="reel-quick-actions">
+                <button class="reel-action-btn mute-btn" onclick="event.stopPropagation(); toggleReelMute(this);" title="Mute/Unmute Audio">
+                  <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                <button class="reel-action-btn zoom-btn" onclick="event.stopPropagation(); openReelModal('assets/images/reel/reel7.mp4', 'video', 'High-Retention Curiosity Loop Reel');" title="Expand Fullscreen">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+              <div class="reel-center-play-btn" title="Click to Pause/Play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="feed-overlay-stats">
+                <span><i class="fa-solid fa-eye"></i> 3.1M Views</span>
+                <span><i class="fa-solid fa-heart"></i> 210K Likes</span>
+              </div>
+              <div class="reel-progress-track">
+                <div class="reel-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="feed-card-footer">
+            <p class="feed-caption"><strong>"High-retention curiosity loop reel with seamless infinite playback."</strong></p>
+            <div class="feed-footer-bottom">
+              <span class="feed-tags">#ViralLoop #AlgorithmHack</span>
+              <a href="https://wa.me/919993515138?text=Hi%20Ashvik%20Media,%20I'm%20interested%20in%20Viral%20Reel%207!" target="_blank" class="feed-inquire-btn">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -893,6 +1240,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Interactive Reel & Creative Lightbox Modal -->
+  <div class="reel-modal-overlay" id="reelModalOverlay" onclick="closeReelModal()"></div>
+  <div class="reel-modal-card" id="reelModal">
+    <button class="reel-modal-close" onclick="closeReelModal()" title="Close Viewer">&times;</button>
+    <div class="reel-modal-body" id="reelModalBody">
+      <!-- Injected via JavaScript -->
+    </div>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>

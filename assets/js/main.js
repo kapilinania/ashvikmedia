@@ -598,7 +598,132 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // Attach progress track listener to reel videos
+  const reelVideos = document.querySelectorAll('.feed-reel-video');
+  reelVideos.forEach(v => {
+    v.addEventListener('timeupdate', () => {
+      if (v.duration) {
+        const pct = (v.currentTime / v.duration) * 100;
+        const parentBox = v.closest('.video-media-box');
+        if (parentBox) {
+          const bar = parentBox.querySelector('.reel-progress-bar');
+          if (bar) bar.style.width = pct + '%';
+        }
+      }
+    });
+    // If video loaded before listener
+    if (v.readyState >= 2) {
+      window.handleReelLoaded(v);
+    }
+  });
 });
+
+/* ==========================================================================
+   VIRAL REELS & HIGH-ROAS SHOWCASE ENGINE (Autoplay, Mute Toggle, Lightbox)
+   ========================================================================== */
+window.handleReelLoaded = function(video) {
+  if (!video) return;
+  const parentBox = video.closest('.video-media-box');
+  if (parentBox) {
+    const loader = parentBox.querySelector('.reel-loader-overlay');
+    if (loader) {
+      loader.classList.add('hidden');
+    }
+  }
+  video.play().catch(() => {});
+};
+
+window.toggleReelPlay = function(mediaBox) {
+  if (!mediaBox) return;
+  const video = mediaBox.querySelector('video');
+  if (!video) return;
+
+  if (video.paused) {
+    video.play();
+    mediaBox.classList.remove('paused');
+  } else {
+    video.pause();
+    mediaBox.classList.add('paused');
+  }
+};
+
+window.toggleReelMute = function(btn) {
+  if (!btn) return;
+  const parentBox = btn.closest('.video-media-box');
+  if (!parentBox) return;
+  const video = parentBox.querySelector('video');
+  if (!video) return;
+
+  video.muted = !video.muted;
+  const icon = btn.querySelector('i');
+  if (icon) {
+    if (video.muted) {
+      icon.className = 'fa-solid fa-volume-xmark';
+      btn.title = 'Unmute Audio';
+    } else {
+      icon.className = 'fa-solid fa-volume-high';
+      btn.title = 'Mute Audio';
+    }
+  }
+};
+
+window.openReelModal = function(src, type, title) {
+  const modal = document.getElementById('reelModal');
+  const overlay = document.getElementById('reelModalOverlay');
+  const body = document.getElementById('reelModalBody');
+  if (!modal || !overlay || !body) return;
+
+  let mediaHtml = '';
+  if (type === 'video') {
+    mediaHtml = `
+      <div class="modal-media-wrap">
+        <video src="${src}" controls autoplay playsinline loop style="width: 100%; height: 100%;"></video>
+      </div>
+    `;
+  } else {
+    mediaHtml = `
+      <div class="modal-media-wrap">
+        <img src="${src}" alt="${title}">
+      </div>
+    `;
+  }
+
+  body.innerHTML = `
+    ${mediaHtml}
+    <div class="modal-info-wrap">
+      <div class="ad-badge-pill" style="align-self: flex-start;">${type === 'video' ? '🔥 VIRAL REEL SHOWCASE' : '⚡ HIGH-ROAS CREATIVE'}</div>
+      <h3 class="modal-title">${title}</h3>
+      <p style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.45;">
+        Want high-retention viral content, motion graphics, and high-converting ad creative built for your brand?
+      </p>
+      <div class="modal-cta-row">
+        <a href="https://wa.me/919993515138?text=${encodeURIComponent('Hi Ashvik Media, I would like to create content like: ' + title)}" target="_blank" class="btn btn-gold">
+          <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+        </a>
+        <button onclick="closeReelModal()" class="btn btn-dark-outline">Close</button>
+      </div>
+    </div>
+  `;
+
+  overlay.classList.add('active');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeReelModal = function() {
+  const modal = document.getElementById('reelModal');
+  const overlay = document.getElementById('reelModalOverlay');
+  const body = document.getElementById('reelModalBody');
+  if (body) {
+    const video = body.querySelector('video');
+    if (video) video.pause();
+    body.innerHTML = '';
+  }
+  if (modal) modal.classList.remove('active');
+  if (overlay) overlay.classList.remove('active');
+  document.body.style.overflow = '';
+};
 
 
 /* ==========================================================================
